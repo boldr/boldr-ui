@@ -12,17 +12,20 @@
     "build:umd": "webpack --config internal/webpack/webpack.prod.config.js --progress --colors",
     "build:es": "NODE_ENV=production babel --ignore=__tests__,__mocks__,src/**/*.test.js ./src -d ./lib",
     "build:sass": "npm run sass && cp -r src/styles lib && cp dist/boldrui.css lib",
+    "changelog": "conventional-changelog -p atom -i CHANGELOG.md",
     "clean": "rimraf dist && rimraf lib",
     "sass": "node-sass --output-style compressed src/styles/boldrui.scss -o dist",
     "build:test": "echo \"nothing\" && exit 0",
     "format": "prettier-eslint --write \"src/**/*.js\"",
     "start": "cross-env NODE_ENV=development UV_THREADPOOL_SIZE=100 node ./server",
-    "test": "NODE_ENV=test jest -w 4 -u --config=internal/jest/jest.browser.json --forceExit",
-    "test:ci": "NODE_ENV=test jest -w 4 -u --config=internal/jest/jest.browser.json --forceExit"
+    "test": "NODE_ENV=test jest -w 4 -u --config=internal/jest/jest.json",
+    "test:ci": "NODE_ENV=test jest -w 4 -u --config=internal/jest/jest.json --forceExit"
   },
   "files": [
     "dist/",
     "lib/",
+    "README.md",
+    "CHANGELOG.md",
     "LICENSE"
   ],
   "keywords": [
@@ -54,6 +57,7 @@
     "babel-preset-stage-2": "^6.22.0",
     "cross-env": "^4.0.0",
     "css-loader": "^0.28.0",
+    "cz-conventional-kawaii": "^0.1.4",
     "draft-js": "^0.10.0",
     "draft-js-import-html": "^0.3.2",
     "draftjs-to-html": "^0.7.0",
@@ -89,5 +93,10 @@
     "webpack-dev-middleware": "^1.10.1",
     "webpack-dev-server": "^2.4.2",
     "webpack-hot-middleware": "^2.18.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-kawaii"
+    }
   }
 }

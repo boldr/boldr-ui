@@ -10,7 +10,6 @@ global.shallow = shallow;
 global.render = render;
 global.render = mount;
 global.shallowToJson = shallowToJson;
-global.Promise = require('bluebird');
 // Skip createElement warnings but fail tests on any other warning
 console.error = message => {
   if (!/(React.createElement: type should not be null)/.test(message)) {

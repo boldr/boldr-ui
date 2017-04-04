@@ -1,0 +1,14 @@
+engines:
+  eslint:
+    channel: eslint-3
+    enabled: true
+ratings:
+   paths:
+   - src/**
+   - "**.js"
+exclude_paths:
+  - ./node_modules/**/*
+  - docs/**
+  - bin/**
+  - flow-typed/**
+  - dev/**
