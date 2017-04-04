@@ -36,11 +36,11 @@ $md-menu-cascading-list-padding: 16px;
 /// @example scss - Example Usage SCSS
 ///   @include react-md-menus;
 ///
-/// @param {Boolean} include-media [$md-media-included] - Boolean if the media queries are included
+/// @param {Boolean} include-media [$media-included] - Boolean if the media queries are included
 ///     for menus.
 /// @param {Boolean} include-cascading [$md-menu-include-cascading] - Boolean if the desktop cascading
 ///     styles for menus should be included.
-@mixin react-md-menus($include-media: $md-media-included, $include-cascading: $md-menu-include-cascading) {
+@mixin react-md-menus($include-media: $media-included, $include-cascading: $md-menu-include-cascading) {
   @if $include-media {
     @include react-md-menus-media;
   }
@@ -148,7 +148,7 @@ $md-menu-cascading-list-padding: 16px;
 }
 
 @mixin react-md-menus-cascading {
-  @media #{$md-desktop-media} {
+  @media #{$desktop-media} {
     .md-list--menu-cascading {
       padding-bottom: $md-menu-cascading-list-padding;
       padding-top: $md-menu-cascading-list-padding;
@@ -208,7 +208,7 @@ $md-menu-cascading-list-padding: 16px;
 /// be used a media query.
 ///
 /// @example scss - Example Usage SCSS
-///   @media #{$md-desktop-media} {
+///   @media #{$desktop-media} {
 ///     @include react-md-menus-desktop;
 ///   }
 /// @group menus, media-queries
@@ -228,7 +228,7 @@ $md-menu-cascading-list-padding: 16px;
     @include react-md-menus-mobile;
   }
 
-  @media #{$md-desktop-media} {
+  @media #{$desktop-media} {
     @include react-md-menus-desktop;
   }
 }

@@ -47,9 +47,9 @@ $md-tooltip-opacity: .9 !default;
 /// @example scss - Example Usage SCSS
 ///   @include react-md-tooltips;
 ///
-/// @param {Boolean} media-included [$md-media-included] - Boolean if the
+/// @param {Boolean} media-included [$media-included] - Boolean if the
 ///     media queries should be included.
-@mixin react-md-tooltips($media-included: $md-media-included) {
+@mixin react-md-tooltips($media-included: $media-included) {
   @if $media-included {
     @include react-md-tooltips-media;
   }
@@ -77,7 +77,7 @@ $md-tooltip-opacity: .9 !default;
     white-space: nowrap;
 
     &--active {
-      transition-duration: $md-transition-time;
+      transition-duration: $transition-time;
       transition-property: opacity, transform;
     }
 
@@ -160,7 +160,7 @@ $md-tooltip-opacity: .9 !default;
 /// be used in a media query.
 ///
 /// @example scss - Example Usage SCSS
-///   @media #{$md-desktop-media} {
+///   @media #{$desktop-media} {
 ///     @include react-md-tooltips-desktop;
 ///   }
 /// @group tooltips, media-queries
@@ -200,7 +200,7 @@ $md-tooltip-opacity: .9 !default;
     @include react-md-tooltips-mobile;
   }
 
-  @media #{$md-desktop-media} {
+  @media #{$desktop-media} {
     @include react-md-tooltips-desktop;
   }
 }

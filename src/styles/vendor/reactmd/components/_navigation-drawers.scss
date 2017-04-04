@@ -17,7 +17,7 @@ $md-navigation-drawer-include-cross-fade: true !default;
 
 /// The transition time for the cross-fade transition.
 /// @type Number
-$md-cross-fade-transition-time: $md-transition-time * 2 !default;
+$md-cross-fade-transition-time: $transition-time * 2 !default;
 
 /// The distance that the new content should move during the cross-fade transition.
 /// @type Number
@@ -30,10 +30,10 @@ $md-cross-fade-distance: 16px !default;
 ///
 /// @see react-md-drawers
 /// @see react-md-toolbars
-/// @param {Boolean} include-media [$md-media-included] - Boolean if the media queries should be included.
+/// @param {Boolean} include-media [$media-included] - Boolean if the media queries should be included.
 /// @param {Boolean} include-cross-fade [$md-navigation-drawer-include-cross-fade] - Boolean if the cross
 ///   fade transiiton should be included.
-@mixin react-md-navigation-drawers($include-media: $md-media-included, $include-cross-fade: $md-navigation-drawer-include-cross-fade, $enforce-height: $md-navigation-drawer-enforce-height) {
+@mixin react-md-navigation-drawers($include-media: $media-included, $include-cross-fade: $md-navigation-drawer-include-cross-fade, $enforce-height: $md-navigation-drawer-enforce-height) {
   @if $include-media {
     @include react-md-navigation-drawers-media($enforce-height);
   }
@@ -181,7 +181,7 @@ $md-cross-fade-distance: 16px !default;
 /// This should be used within a media query.
 ///
 /// @example scss - Example Usage SCSS
-///   @media #{$md-desktop-media} {
+///   @media #{$desktop-media} {
 ///     @include react-md-navigation-drawers-desktop;
 ///   }
 ///
@@ -216,7 +216,7 @@ $md-cross-fade-distance: 16px !default;
   }
 
   @if $md-drawer-tablet-width != $md-drawer-desktop-width {
-    @media #{$md-desktop-media} {
+    @media #{$desktop-media} {
       @include react-md-navigation-drawers-desktop;
     }
   }

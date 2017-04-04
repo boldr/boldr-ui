@@ -22,14 +22,14 @@ const InputField = (
 ) => {
   return (
     <TextField
-      {...input}
-      id={input.name}
-      label={label}
-      placeholder={input.placeholder}
-      type={type}
-      errorText={error}
-      rows={rows}
-      maxRows={maxRows}
+      { ...input }
+      id={ input.name }
+      label={ label }
+      placeholder={ input.placeholder }
+      type={ type }
+      errorText={ error }
+      rows={ rows }
+      maxRows={ maxRows }
     />
   );
 };

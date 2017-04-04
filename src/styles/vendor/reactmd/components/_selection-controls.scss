@@ -44,9 +44,9 @@ $md-switch-track-radius: $md-switch-track-height / 2;
 $md-switch-thumb-offset: $md-switch-track-height / 4;
 
 $md-switch-light-theme-thumb-off: $md-grey-50;
-$md-switch-light-theme-track-off: rgba($md-black-base, .38);
+$md-switch-light-theme-track-off: rgba($black-base, .38);
 $md-switch-light-theme-thumb-disabled: $md-grey-400;
-$md-switch-light-theme-track-disabled: rgba($md-black-base, .12);
+$md-switch-light-theme-track-disabled: rgba($black-base, .12);
 
 $md-switch-dark-theme-thumb-off: $md-grey-400;
 $md-switch-dark-theme-track-off: rgba($md-white-base, .30);
@@ -75,7 +75,7 @@ $md-switch-ball-fallback-color: null !default;
 @mixin react-md-selection-controls(
   $secondary-color: $md-secondary-color,
   $light-theme: $md-light-theme,
-  $include-media: $md-media-included,
+  $include-media: $media-included,
   $include-group: $md-selection-controls-include-group,
   $include-switches: $md-selection-controls-include-switches
 ) {
@@ -167,7 +167,7 @@ $md-switch-ball-fallback-color: null !default;
     display: block;
     height: $md-switch-thumb-size;
     position: absolute;
-    transition-duration: $md-transition-time;
+    transition-duration: $transition-time;
     transition-property: background, transform;
     width: $md-switch-thumb-size;
   }
@@ -276,7 +276,7 @@ $md-switch-ball-fallback-color: null !default;
     @include react-md-selection-controls-mobile;
   }
 
-  @media #{$md-desktop-media} {
+  @media #{$desktop-media} {
     @include react-md-selection-controls-desktop;
   }
 }

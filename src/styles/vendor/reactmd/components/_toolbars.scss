@@ -92,7 +92,7 @@ $md-toolbar-tablet-title-keyline: 80px;
 ///
 /// @param {Boolean} light-theme [$md-light-theme] - Boolean if the toolbars should be themed
 ///     for the light theme.
-/// @param {Boolean} include-media [$md-media-included] - Boolena if the toolbar media queries
+/// @param {Boolean} include-media [$media-included] - Boolena if the toolbar media queries
 ///     should be included.
 /// @param {Boolean} include-themed [$md-toolbar-include-themed] - Boolean if the themed toolbars
 ///     should be included.
@@ -109,7 +109,7 @@ $md-toolbar-tablet-title-keyline: 80px;
 ///     for select fields in toolbars should be included.
 @mixin react-md-toolbars(
   $light-theme: $md-light-theme,
-  $include-media: $md-media-included,
+  $include-media: $media-included,
   $include-themed: $md-toolbar-include-themed,
   $include-prominent: $md-toolbar-include-prominent,
   $include-btn-text: $md-toolbar-include-btn-text,
@@ -151,7 +151,7 @@ $md-toolbar-tablet-title-keyline: 80px;
   .md-title--toolbar {
     color: if($light-theme, get-color('text', $light-theme), $md-white-base);
     margin-bottom: 0;
-    transition-duration: $md-transition-time;
+    transition-duration: $transition-time;
     transition-property: transform;
   }
 
@@ -571,7 +571,7 @@ $md-toolbar-tablet-title-keyline: 80px;
       @include react-md-toolbars-tablet-landscape($include-select-fields);
     }
 
-    @media #{$md-desktop-media} {
+    @media #{$desktop-media} {
       @include react-md-toolbars-desktop($include-select-fields);
     }
   }

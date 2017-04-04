@@ -403,7 +403,7 @@ $md-line-height: 20 / $md-font-size-base !default;
 ///
 /// @param {Boolean} light-theme [$md-light-theme] - Boolean if the application
 ///     is using the light theme.
-/// @param {Boolean} include-media [$md-media-included] - Boolean if the media queries
+/// @param {Boolean} include-media [$media-included] - Boolean if the media queries
 ///     should be included.
 /// @param {Boolean} extend-html-tags [$md-typography-extended] - Boolean if the base html tags should
 ///     be updated or not.
@@ -413,7 +413,7 @@ $md-line-height: 20 / $md-font-size-base !default;
 ///     text helper class names should be included.
 @mixin react-md-typography(
   $light-theme: $md-light-theme,
-  $include-media: $md-media-included,
+  $include-media: $media-included,
   $extend-html-tags: $md-typography-extended,
   $include-text-container: $md-typography-include-text-container,
   $include-utilities: $md-typography-include-utilities
@@ -682,7 +682,7 @@ $md-line-height: 20 / $md-font-size-base !default;
 /// a media query.
 ///
 /// @example scss - Example Usage SCSS
-///   @media #{$md-desktop-media} {
+///   @media #{$desktop-media} {
 ///     @include react-md-typography-desktop;
 ///   }
 ///
@@ -727,7 +727,7 @@ $md-line-height: 20 / $md-font-size-base !default;
     @include react-md-typography-mobile($extend-html-tags);
   }
 
-  @media #{$md-desktop-media} {
+  @media #{$desktop-media} {
     @include react-md-typography-desktop($extend-html-tags);
   }
 }

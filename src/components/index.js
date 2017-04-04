@@ -4,6 +4,8 @@ import { Grid, Col, Row } from './Layout';
 import Modal from './Modal';
 import Hero from './Hero';
 import Widget from './Widget';
+import Paper from './Paper';
+import Divider from './Divider';
 import Image from './Image';
 import Icon from './Icon';
 import Loader from './Loader';
@@ -11,6 +13,7 @@ import { FormCard, FormGroup, InputField } from './Form';
 import StatsWidget, { StatValue, StatLabel } from './StatsWidget';
 import Social, { Github, Facebook, Twitter, Google, LinkedIn } from './Social';
 import Paragraph from './Paragraph';
+import Media, { MediaOverlay } from './Media';
 
 export {
   Col,
@@ -21,8 +24,10 @@ export {
   Heading,
   Hero,
   Icon,
+  Paper,
   Image,
   InputField,
+  Divider,
   Loader,
   Modal,
   Row,
@@ -37,4 +42,6 @@ export {
   StatsWidget,
   StatValue,
   StatLabel,
+  Media,
+  MediaOverlay,
 };

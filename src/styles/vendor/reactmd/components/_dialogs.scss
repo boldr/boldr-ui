@@ -4,7 +4,7 @@
 
 /// The transition time for the dialogs to enter or leave.
 /// @type Number
-$md-dialog-transition-time: $md-transition-time * 2 !default;
+$md-dialog-transition-time: $transition-time * 2 !default;
 
 /// The z index for a dialog's overlay.
 /// type Number

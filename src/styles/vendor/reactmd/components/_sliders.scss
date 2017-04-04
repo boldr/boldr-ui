@@ -53,7 +53,7 @@ $md-slider-discrete-tick-height: $md-slider-track-height !default;
 /// The transition time to use for the Discrete Slider's ink appearance
 /// when the user focuses with the keyboard.
 /// @type Number
-$md-slider-discrete-ink-transition-time: $md-transition-time * 2 !default;
+$md-slider-discrete-ink-transition-time: $transition-time * 2 !default;
 
 /// The opacity to use for the Slider's thumb ink. This will appear when the user
 /// focuses with the keybord or touches the slider on a mobile device.
@@ -72,7 +72,7 @@ $md-slider-discrete-mask-ink-opacity: .3 !default;
 /// The off color to use for the Slider when using the light theme.
 /// @type Color
 /// @access private
-$md-slider-light-theme-off-color: rgba($md-black-base, .26);
+$md-slider-light-theme-off-color: rgba($black-base, .26);
 
 /// The off color to use for the Slider when using the dark theme.
 /// @type Color
@@ -95,7 +95,7 @@ $md-slider-warn-md: true !default;
 ///     a `-200` suffix.
 /// @param {Boolean} $light-theme [$md-light-theme] - A boolean if the application using the
 ///     light theme.
-/// @param {Boolean} $inlude-media [$md-media-included] - Boolean if the media queries should be included.
+/// @param {Boolean} $inlude-media [$media-included] - Boolean if the media queries should be included.
 /// @param {Boolean} $include-discrete [$md-slider-include-discrete] - A boolean if the discrete slider's scss should be included.
 /// @param {Boolean} $include-editor [$md-slider-include-editor] - A boolean if the editable slider's scss should be included.
 /// @param {Boolean} $include-indicators [$md-slider-include-indiccators] - A boolean if the small scss for displaying indicators/icons
@@ -103,7 +103,7 @@ $md-slider-warn-md: true !default;
 @mixin react-md-sliders(
   $primary-color: $md-primary-color,
   $light-theme: $md-light-theme,
-  $include-media: $md-media-included,
+  $include-media: $media-included,
   $include-discrete: $md-slider-include-discrete,
   $include-editor: $md-slider-include-editor,
   $include-indicators: $md-slider-include-indicators
@@ -156,7 +156,7 @@ $md-slider-warn-md: true !default;
     margin: 0;
     position: absolute;
     top: 0;
-    transition-duration: $md-transition-time;
+    transition-duration: $transition-time;
     transition-property: width;
   }
 
@@ -171,7 +171,7 @@ $md-slider-warn-md: true !default;
     height: $md-slider-thumb-size;
     position: absolute;
     top: -(($md-slider-thumb-size / 2) - ($md-slider-track-height / 2));
-    transition-duration: $md-transition-time;
+    transition-duration: $transition-time;
     transition-property: left, transform, background;
     width: $md-slider-thumb-size;
     z-index: $md-slider-thumb-z-index;
@@ -264,7 +264,7 @@ $md-slider-warn-md: true !default;
       left: 0;
       position: absolute;
       top: 10px;
-      transition-duration: $md-transition-time;
+      transition-duration: $transition-time;
       transition-property: border-top-color, transform;
       width: 0;
     }
@@ -279,7 +279,7 @@ $md-slider-warn-md: true !default;
     }
 
     &-off {
-      background: if($light-theme, $md-black-base, $md-white-base);
+      background: if($light-theme, $black-base, $md-white-base);
     }
 
     &-active-off {
@@ -312,14 +312,14 @@ $md-slider-warn-md: true !default;
     position: absolute;
     text-align: center;
     transform: translate3d(-7px, -43px, 0);
-    transition-duration: $md-transition-time;
+    transition-duration: $transition-time;
     transition-property: left;
     width: $md-slider-thumb-size * 2;
     z-index: $md-slider-thumb-z-index + 1;
   }
 
   .md-slider-discrete-tick {
-    background: if($light-theme, $md-black-base, $md-white-base);
+    background: if($light-theme, $black-base, $md-white-base);
     content: '';
     height: $md-slider-discrete-tick-height;
     position: absolute;
@@ -347,9 +347,9 @@ $md-slider-warn-md: true !default;
 }
 
 /// This includes the small scss for displaying `.md-icon` or indicators with a Slider.
-/// @param {Boolean} include-media [$md-media-included] - Boolean if the media queries
+/// @param {Boolean} include-media [$media-included] - Boolean if the media queries
 ///     should be included.
-@mixin react-md-slider-indicators($include-media: $md-media-included) {
+@mixin react-md-slider-indicators($include-media: $media-included) {
   @if $include-media {
     @include react-md-slider-indicators-media;
   }
@@ -396,7 +396,7 @@ $md-slider-warn-md: true !default;
 /// be used within a media query.
 ///
 /// @example scss - Example Usage SCSS
-///   @media #{$md-desktop-media} {
+///   @media #{$desktop-media} {
 ///     @include react-md-slider-indicators-desktop;
 ///   }
 /// @group sliders, media-queries
@@ -417,7 +417,7 @@ $md-slider-warn-md: true !default;
     @include react-md-slider-indicators-mobile;
   }
 
-  @media #{$md-desktop-media} {
+  @media #{$desktop-media} {
     @include react-md-slider-indicators-desktop;
   }
 }

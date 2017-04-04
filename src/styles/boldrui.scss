@@ -6,3 +6,7 @@
 
 @import 'base/all';
 @import 'components/all';
+
+@include boldrui-paper;
+@include boldrui-media;
+@include boldrui-divider;

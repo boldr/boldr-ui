@@ -838,7 +838,7 @@ $md-blue-grey-900: #263238;
 
 
 /// @type Color
-$md-black-base: #000;
+$black-base: #000;
 
 /// @type Color
 $md-white-base: #fff;
@@ -1107,28 +1107,28 @@ $md-color-map: (
   md-blue-grey-700: $md-blue-grey-700,
   md-blue-grey-800: $md-blue-grey-800,
   md-blue-grey-900: $md-blue-grey-900,
-  md-black-base: $md-black-base,
+  md-black-base: $black-base,
   md-white-base: $md-white-base
 );
 
 
 /// @type Color
-$md-light-theme-text-color: rgba($md-black-base, .87);
+$md-light-theme-text-color: rgba($black-base, .87);
 
 /// @type Color
-$md-light-theme-secondary-text-color: rgba($md-black-base, .54);
+$md-light-theme-secondary-text-color: rgba($black-base, .54);
 
 /// @type Color
 $md-light-theme-icon-text-color: $md-light-theme-secondary-text-color;
 
 /// @type Color
-$md-light-theme-disabled-text-color: rgba($md-black-base, .38);
+$md-light-theme-disabled-text-color: rgba($black-base, .38);
 
 /// @type Color
 $md-light-theme-hint-text-color: $md-light-theme-disabled-text-color;
 
 /// @type Color
-$md-light-theme-divider-color: rgba($md-black-base, .12);
+$md-light-theme-divider-color: rgba($black-base, .12);
 
 /// @type Color
 $md-light-theme-status-bar-color: $md-grey-300;
@@ -1163,7 +1163,7 @@ $md-dark-theme-hint-text-color: $md-dark-theme-disabled-text-color;
 $md-dark-theme-divider-color: rgba($md-white-base, .12);
 
 /// @type Color
-$md-dark-theme-status-bar-color: $md-black-base;
+$md-dark-theme-status-bar-color: $black-base;
 
 /// @type Color
 $md-dark-theme-app-bar-color: $md-grey-900;
@@ -1200,7 +1200,7 @@ $md-dark-theme-colors: (
   divider: $md-dark-theme-divider-color,
   background: $md-dark-theme-background-color,
   card: $md-dark-theme-card-color,
-  hover: rgba($md-black-base, .12),
+  hover: rgba($black-base, .12),
   toolbar: $md-dark-theme-app-bar-color,
 );
 
@@ -1242,7 +1242,7 @@ $md-dark-theme-colors: (
 /// @param {Color} primary-color [$md-primary-color] - The primary color to use.
 /// @param {Color} secondary-color [$md-secondary-color] - The secondary color to use.
 /// @param {Boolean} light-theme [$md-light-theme] - Boolean if styling with the light theme.
-/// @param {Boolean} include-media [$md-media-included] - Boolean if the media queries should also be included.
+/// @param {Boolean} include-media [$media-included] - Boolean if the media queries should also be included.
 /// @param {Boolean} include-color-class-names [$md-colors-include-class-names] - Boolean if a class name
 ///     should be created for every color as well.
 /// @param {Number} primary-opacity [$md-primary-opacity] - The opacity to apply to the primary color with the `md-background--primary`
@@ -1258,7 +1258,7 @@ $md-dark-theme-colors: (
   $primary-color: $md-primary-color,
   $secondary-color: $md-secondary-color,
   $light-theme: $md-light-theme,
-  $include-media: $md-media-included,
+  $include-media: $media-included,
   $include-color-class-names: $md-colors-include-class-names,
   $primary-opacity: $md-primary-hover-opacity,
   $primary-background-text-color: $md-primary-background-text-color,
@@ -1329,7 +1329,7 @@ $md-dark-theme-colors: (
 /// @param {Color} primary-color [$md-primary-color] - The primary color to use.
 /// @param {Color} secondary-color [$md-secondary-color] - The secondary color to use.
 /// @param {Boolean} light-theme [$md-light-theme] - Boolean if styling with the light theme.
-/// @param {Boolean} include-media [$md-media-included] - Boolean if the media queries for the hover effects should
+/// @param {Boolean} include-media [$media-included] - Boolean if the media queries for the hover effects should
 ///     also be included
 /// @param {Number} primary-opacity [$md-primary-hover-opacity] - The opacity to apply to the primary color.
 /// @param {Color} primary-background-text-color [$md-primary-background-text-color] - The text color for any text
@@ -1342,7 +1342,7 @@ $md-dark-theme-colors: (
   $primary-color: $md-primary-color,
   $secondary-color: $md-secondary-color,
   $light-theme: $md-light-theme,
-  $include-media: $md-media-included,
+  $include-media: $media-included,
   $primary-opacity: $md-primary-hover-opacity,
   $primary-background-text-color: $md-primary-background-text-color,
   $secondary-opacity: $md-secondary-hover-opacity,
@@ -1434,7 +1434,7 @@ $md-dark-theme-colors: (
 ///     hover effect.
 /// @param {Number} secondary-opacity [$md-secondary-hover-opacity] - The opacity to apply to the secondary color.
 @mixin react-md-colors-hover($primary-color: $md-primary-color, $primary-opacity: $md-primary-hover-opacity, $secondary-color: $md-secondary-color, $secondary-opacity: $md-secondary-hover-opacity) {
-  @media #{$md-desktop-media} {
+  @media #{$desktop-media} {
     .md-background--primary-hover:hover {
       background: rgba($primary-color, $primary-opacity);
     }

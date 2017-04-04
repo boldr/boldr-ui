@@ -32,15 +32,15 @@ const Footer = (props: Props) => {
 
   const renderCol = (
     <Row>
-      <Col xs={12} md={6}>
+      <Col xs={ 12 } md={ 6 }>
         {props.colMain}
       </Col>
-      <Col xs={12} md={6}>
+      <Col xs={ 12 } md={ 6 }>
         <Row>
-          <Col xs={12} md={3}>
+          <Col xs={ 12 } md={ 3 }>
             {props.col2}
           </Col>
-          <Col xs={12} md={3}>
+          <Col xs={ 12 } md={ 3 }>
             {props.col3}
           </Col>
         </Row>
@@ -55,7 +55,7 @@ const Footer = (props: Props) => {
     </Row>
   );
   return (
-    <footer className={classes}>
+    <footer className={ classes }>
       <FooterInner>
 
         {props.single ? renderSingle : renderCol}

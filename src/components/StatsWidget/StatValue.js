@@ -25,7 +25,7 @@ const StatValue = (props: Props) => {
   } = props;
 
   const classes = classnames(BASE_ELEMENT, className);
-  return <Tag {...attributes} className={classes}>{total}</Tag>;
+  return <Tag { ...attributes } className={ classes }>{total}</Tag>;
 };
 
 StatValue.defaultProps = defaultProps;

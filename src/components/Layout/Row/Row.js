@@ -94,7 +94,7 @@ class Row extends PureComponent {
     );
 
     return (
-      <ComponentClass className={classes} style={this.props.style}>
+      <ComponentClass className={ classes } style={ this.props.style }>
         {this.props.children}
       </ComponentClass>
     );

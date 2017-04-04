@@ -27,7 +27,7 @@ const StatLabel = (props: Props) => {
 
   const classes = classnames(BASE_ELEMENT, className);
 
-  return <Tag {...attributes} className={classes}>{name}</Tag>;
+  return <Tag { ...attributes } className={ classes }>{name}</Tag>;
 };
 
 StatLabel.defaultProps = defaultProps;

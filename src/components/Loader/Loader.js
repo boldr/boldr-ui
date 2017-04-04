@@ -1,9 +1,19 @@
+/* @flow */
 import React from 'react';
+import classnames from 'classnames';
+import { StyleClasses, BOLDR_NS } from '../../theme/styleClasses';
 
-function Loader() {
+type Props = {
+  className: string,
+};
+
+const BASE_ELEMENT = StyleClasses.LOADER;
+
+function Loader(props: Props) {
+  const classes = classnames(BASE_ELEMENT, props.className);
   return (
-    <div className="boldr-loader">
-      <div className="boldr-loader__item">
+    <div className={ classes }>
+      <div className={ `${BASE_ELEMENT}__item` }>
         <div />
         <div />
         <div />

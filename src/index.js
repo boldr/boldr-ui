@@ -1,5 +1,5 @@
 import { BOLDR_NS, StyleClasses } from './theme/styleClasses';
-import { media } from './theme/theme';
+import { mediaQuery } from './theme/theme';
 
 import {
   Col,
@@ -14,7 +14,8 @@ import {
   InputField,
   Loader,
   Modal,
-  MainHeader,
+  Divider,
+  Paper,
   Row,
   Widget,
   Github,
@@ -27,6 +28,8 @@ import {
   StatsWidget,
   StatValue,
   StatLabel,
+  Media,
+  MediaOverlay,
 } from './components';
 
 export {
@@ -42,20 +45,23 @@ export {
   InputField,
   Loader,
   Modal,
-  MainHeader,
+  Paper,
   Row,
   Widget,
   Github,
   Facebook,
   Twitter,
+  Divider,
   Google,
   LinkedIn,
   Social,
   Paragraph,
   BOLDR_NS,
   StyleClasses,
-  media,
+  mediaQuery,
   StatsWidget,
   StatValue,
   StatLabel,
+  Media,
+  MediaOverlay,
 };

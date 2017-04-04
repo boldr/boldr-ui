@@ -7,7 +7,7 @@ const SIZES = {
   small: 768,
 };
 
-export const media = Object.keys(SIZES).reduce(
+export const mediaQuery = Object.keys(SIZES).reduce(
   (accumulator, label) => {
     // use em in breakpoints to work properly cross-browser and support users
     // changing their browsers font-size: https://zellwk.com/blog/media-query-units/
