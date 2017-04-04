@@ -1,37 +1,32 @@
 sudo: true
 language: node_js
 node_js:
-  - 7.7
-
+- 7.7
 branches:
   only:
   - master
   - develop
-
 env:
   NODE_ENV: test
   CXX: g++-4.8
-
 git:
   depth: 3
-
 addons:
   apt:
     sources:
-      - ubuntu-toolchain-r-test
+    - ubuntu-toolchain-r-test
     packages:
-      - g++-4.8
-
+    - g++-4.8
 install:
-  - yarn
-
+- yarn
 script:
-  - yarn test:ci
-
+- yarn test:ci
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
-
+- bash <(curl -s https://codecov.io/bash)
 cache:
   yarn: true
   directories:
-    - node_modules
+  - node_modules
+notifications:
+  slack:
+    secure: XhArAoAsIUhRSfZrEDOkqoU9OEqzOV0K6V18V5hu5IrGdgPywy2cYyEgaTccsnk8fSaxmiZnOuXRnPUYzvZN6utuh4bNTO4mZ3bYascJ4lKXsh5rCQFWgEpndwSn7mtrEIWodfURZqrcWSMFMddmNWrDtiGRWPrhpFsgWIauKjlXAT5wBUELuQzrl+EgFGMENG/KSh1mTpWdsragqgXfe+oh2wX6uukvkDTmeueXylxa/Q9xW8170NBJkgFAb8LulNJo7nTomJggslTJx56RR+1C1lgrfZxHUdFoCcpPaTTI/cQQ1NcCWufBpNQEJf6LzYfTkofMr+RpNYWrzw2kenmnlHkndsBwhxvUmcrRTV4ylfoioALQbiAkHDjWYW+tNWGZvUGOt8Li/MPAJ2zOCyu4Zio/4xsyohzpzsaGixuxFRnvMk1YWA6o2mYJthWeS7ymCP+NARlBFyKXvjKvWs3ikl0zl15kZwQ9mtW2m+KRaBymnD30opDG9B01TLSMatL6YVQIBfs7gggcQ53rSbkfGfIcueUGyLrP2brflGEvVWdLoxWo52dhJjJr+TAJz89IeVYdra9t79pUe8gpPyI3nctmghPahScUrK136PxJrUOfQf5TBoDKkvIHJBNY+0x2/0yHvsbGfEIj3P1EEdRxHiWGrb4R1fvAUUXzwbw=
