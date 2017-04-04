@@ -1,4 +1,4 @@
-sudo: false
+sudo: true
 language: node_js
 node_js:
   - 7.7
@@ -10,8 +10,17 @@ branches:
 
 env:
   NODE_ENV: test
+  CXX: g++-4.8
+
 git:
   depth: 3
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
 
 install:
   - yarn
