@@ -7,12 +7,14 @@ import NavLink from 'react-router-dom/NavLink';
 import Avatar from 'react-md/lib/Avatars';
 import Button from 'react-md/lib/Buttons';
 import classnames from 'classnames';
-
+import Icon from '../Icon';
+import type { ReactElement } from '../../types/react.js.flow';
 import { StyleClasses } from '../../theme/styleClasses';
 
 type Props = {
   me: Object,
   className: ?string,
+  iconColor: ?string,
 };
 
 type State = {
@@ -21,6 +23,9 @@ type State = {
 const BASE_ELEMENT = StyleClasses.TOPBAR;
 
 class Topbar extends Component {
+  static defaultProps: {
+    iconColor: '#222',
+  };
   constructor(props: Props) {
     super(props);
 
@@ -61,16 +66,21 @@ class Topbar extends Component {
     const classes = classnames(BASE_ELEMENT, 'navbar', this.props.className);
     return (
       <header className={ classes }>
-        <button
+        <Icon
+          kind="menu"
           className="navbar-toggler mobile-sidebar-toggler hidden-lg-up"
           onClick={ this.mobileSidebarToggle }
-          type="button"
-        >
-          ☰
-        </button>
+          color={ this.props.iconColor }
+        />
+        <span className="navbar-brand" />
         <ul className="nav navbar-nav hidden-md-down">
           <li className="nav-item">
-            <a className="nav-link navbar-toggler sidebar-toggler" onClick={ this.sidebarToggle } href="#">☰</a>
+            <Icon
+              kind="menu"
+              className="nav-link navbar-toggler sidebar-toggler"
+              onClick={ this.sidebarToggle }
+              color={ this.props.iconColor }
+            />
           </li>
           <li className="nav-item px-1">
             <NavLink to="/admin" className="nav-link">Dashboard</NavLink>

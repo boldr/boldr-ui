@@ -8,14 +8,14 @@
 }
 nav.#{$boldr-ns}topbar {
   position: absolute;
-  top: $navbar-height;
+  top: $topbar-height;
   left: 0;
   z-index: $zindex-navbar - 1;
   display: inline !important;
   width: 100%;
-  height: $top-nav-height;
-  background: $top-nav-bg;
-  @include borders($top-nav-borders);
+  height: $topbar-nav-height;
+  background: $topbar-nav-bg;
+  @include borders($topbar-nav-borders);
 
   ul.nav {
     white-space: nowrap;
@@ -30,8 +30,8 @@ nav.#{$boldr-ns}topbar {
         padding: 0;
         margin: 0;
         white-space: normal;
-        background: $top-nav-bg;
-        @include borders($top-nav-ul-borders);
+        background: $topbar-nav-bg;
+        @include borders($topbar-nav-ul-borders);
 
 
         li {
@@ -44,8 +44,8 @@ nav.#{$boldr-ns}topbar {
         padding: 0 15px;
         font-size: 12px;
         font-weight: 400;
-        line-height: $top-nav-height;
-        color: $top-nav-color;
+        line-height: $topbar-nav-height;
+        color: $topbar-nav-color;
         text-decoration: none;
         text-transform: uppercase;
 
@@ -55,7 +55,7 @@ nav.#{$boldr-ns}topbar {
           width: 20px;
           margin: 0 10px 0 0;
           font-size: 14px;
-          line-height: $top-nav-height - 1px;
+          line-height: $topbar-nav-height - 1px;
           text-align: center;
         }
 
@@ -66,20 +66,20 @@ nav.#{$boldr-ns}topbar {
         }
 
         &:hover {
-          color: $top-nav-hover-color;
-          background: $top-nav-hover-bg;
+          color: $topbar-nav-hover-color;
+          background: $topbar-nav-hover-bg;
 
         }
 
         &.active {
-          color: $top-nav-active-color;
-          background: $top-nav-active-bg;
+          color: $topbar-nav-active-color;
+          background: $topbar-nav-active-bg;
         }
       }
 
       ul {
         position: absolute;
-        top: $top-nav-height - 1px;
+        top: $topbar-nav-height - 1px;
         left: 0;
 
         li {

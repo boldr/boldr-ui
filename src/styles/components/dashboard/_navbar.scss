@@ -1,24 +1,24 @@
 header.navbar {
   position: relative;
   flex-direction: row;
-  height: $navbar-height;
+  height: $topbar-height;
   padding: 0;
-  background-color: $navbar-bg;
-  @include borders($navbar-border);
+  background-color: $topbar-bg;
+  @include borders($topbar-border);
 
 
   .navbar-brand {
     display: inline-block;
-    width: $navbar-brand-width;
-    height: $navbar-height;
-    padding: $navbar-padding-y $navbar-padding-x;
+    width: $topbar-brand-width;
+    height: $topbar-height;
+    padding: $topbar-padding-y $topbar-padding-x;
     margin-right: 0;
-    background-color: $navbar-brand-bg;
-    background-image: $navbar-brand-logo;
+    background-color: $topbar-brand-bg;
+    background-image: $topbar-brand-logo;
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: $navbar-brand-logo-size;
-    @include borders($navbar-brand-border);
+    background-size: $topbar-brand-logo-size;
+    @include borders($topbar-brand-border);
   }
 
   .navbar-nav {
@@ -45,7 +45,7 @@ header.navbar {
       }
 
       > .img-avatar {
-        height: $navbar-height - 20px;
+        height: $topbar-height - 20px;
         margin: 0 10px;
       }
     }
@@ -62,19 +62,19 @@ header.navbar {
 }
 
 .navbar-brand {
-  color: $navbar-active-color;
+  color: $topbar-active-color;
 
   @include hover-focus {
-    color: $navbar-active-color;
+    color: $topbar-active-color;
   }
 }
 
 .navbar-nav {
   .nav-link {
-    color: $navbar-color;
+    color: $topbar-color;
 
     @include hover-focus {
-      color: $navbar-hover-color;
+      color: $topbar-hover-color;
     }
   }
 
@@ -83,7 +83,7 @@ header.navbar {
   .nav-link.open,
   .nav-link.active {
     @include plain-hover-focus {
-      color: $navbar-active-color;
+      color: $topbar-active-color;
     }
   }
 }

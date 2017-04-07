@@ -171,7 +171,7 @@ $md-list-desktop-three-lines-height: 76px;
     padding-left: $md-default-padding;
     padding-right: $md-default-padding;
     text-decoration: none;
-    transition-duration: $transition-time;
+    transition-duration: $transition-length;
     transition-property: background;
 
     &--active {

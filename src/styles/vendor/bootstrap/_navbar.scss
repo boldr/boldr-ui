@@ -19,7 +19,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: $navbar-padding-y $navbar-padding-x;
+  padding: $topbar-padding-y $topbar-padding-x;
 }
 
 
@@ -31,7 +31,7 @@
   display: inline-block;
   padding-top: .25rem;
   padding-bottom: .25rem;
-  margin-right: $navbar-padding-x;
+  margin-right: $topbar-padding-x;
   font-size: $font-size-lg;
   line-height: inherit;
   white-space: nowrap;
@@ -79,12 +79,12 @@
 // Button for toggling the navbar when in its collapsed state
 .navbar-toggler {
   align-self: flex-start; // Prevent toggler from growing to full width when it's the only visible navbar child
-  padding: $navbar-toggler-padding-y $navbar-toggler-padding-x;
-  font-size: $navbar-toggler-font-size;
+  padding: $topbar-toggler-padding-y $topbar-toggler-padding-x;
+  font-size: $topbar-toggler-font-size;
   line-height: 1;
   background: transparent; // remove default button style
   border: $border-width solid transparent; // remove default button style
-  @include border-radius($navbar-toggler-border-radius);
+  @include border-radius($topbar-toggler-border-radius);
 
   @include hover-focus {
     text-decoration: none;
@@ -107,11 +107,11 @@
 // item and allow easy placement.
 .navbar-toggler-left {
   position: absolute;
-  left: $navbar-padding-x;
+  left: $topbar-padding-x;
 }
 .navbar-toggler-right {
   position: absolute;
-  right: $navbar-padding-x;
+  right: $topbar-padding-x;
 }
 
 // Generate series of `.navbar-toggleable-*` responsive classes for configuring
@@ -181,23 +181,23 @@
 .navbar-light {
   .navbar-brand,
   .navbar-toggler {
-    color: $navbar-light-active-color;
+    color: $topbar-light-active-color;
 
     @include hover-focus {
-      color: $navbar-light-active-color;
+      color: $topbar-light-active-color;
     }
   }
 
   .navbar-nav {
     .nav-link {
-      color: $navbar-light-color;
+      color: $topbar-light-color;
 
       @include hover-focus {
-        color: $navbar-light-hover-color;
+        color: $topbar-light-hover-color;
       }
 
       &.disabled {
-        color: $navbar-light-disabled-color;
+        color: $topbar-light-disabled-color;
       }
     }
 
@@ -205,20 +205,20 @@
     .active > .nav-link,
     .nav-link.open,
     .nav-link.active {
-      color: $navbar-light-active-color;
+      color: $topbar-light-active-color;
     }
   }
 
   .navbar-toggler {
-    border-color: $navbar-light-toggler-border;
+    border-color: $topbar-light-toggler-border;
   }
 
   .navbar-toggler-icon {
-    background-image: $navbar-light-toggler-bg;
+    background-image: $topbar-light-toggler-bg;
   }
 
   .navbar-text {
-    color: $navbar-light-color;
+    color: $topbar-light-color;
   }
 }
 
@@ -226,23 +226,23 @@
 .navbar-inverse {
   .navbar-brand,
   .navbar-toggler {
-    color: $navbar-inverse-active-color;
+    color: $topbar-inverse-active-color;
 
     @include hover-focus {
-      color: $navbar-inverse-active-color;
+      color: $topbar-inverse-active-color;
     }
   }
 
   .navbar-nav {
     .nav-link {
-      color: $navbar-inverse-color;
+      color: $topbar-inverse-color;
 
       @include hover-focus {
-        color: $navbar-inverse-hover-color;
+        color: $topbar-inverse-hover-color;
       }
 
       &.disabled {
-        color: $navbar-inverse-disabled-color;
+        color: $topbar-inverse-disabled-color;
       }
     }
 
@@ -250,19 +250,19 @@
     .active > .nav-link,
     .nav-link.open,
     .nav-link.active {
-      color: $navbar-inverse-active-color;
+      color: $topbar-inverse-active-color;
     }
   }
 
   .navbar-toggler {
-    border-color: $navbar-inverse-toggler-border;
+    border-color: $topbar-inverse-toggler-border;
   }
 
   .navbar-toggler-icon {
-    background-image: $navbar-inverse-toggler-bg;
+    background-image: $topbar-inverse-toggler-bg;
   }
 
   .navbar-text {
-    color: $navbar-inverse-color;
+    color: $topbar-inverse-color;
   }
 }

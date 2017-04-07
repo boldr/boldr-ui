@@ -151,7 +151,7 @@ $md-toolbar-tablet-title-keyline: 80px;
   .md-title--toolbar {
     color: if($light-theme, get-color('text', $light-theme), $md-white-base);
     margin-bottom: 0;
-    transition-duration: $transition-time;
+    transition-duration: $transition-length;
     transition-property: transform;
   }
 

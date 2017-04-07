@@ -17,7 +17,7 @@ $md-overlay-z-index: 16 !default;
 
 /// The transition time for the overlay to transition the opacity.
 /// @type Number
-$md-overlay-transition-time: $transition-time !default;
+$md-overlay-transition-time: $transition-length !default;
 
 /// The default color for overlays.
 /// @type Color

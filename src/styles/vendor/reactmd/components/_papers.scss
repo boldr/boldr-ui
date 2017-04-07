@@ -5,7 +5,7 @@
 
 /// The defualt transition time for the paper to raise from 0 to 3
 /// @type Number
-$paper-transition-time: $transition-time * 2 !default;
+$paper-transition-time: $transition-length * 2 !default;
 
 /// Creates the styles for paper.
 @mixin react-md-papers($include-media: $media-included) {

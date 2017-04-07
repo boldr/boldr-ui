@@ -90,7 +90,7 @@ $md-year-active-font-size: 24px !default;
 /// The transition time to use for the date picker's active date background circle
 /// to appear.
 /// @type Number
-$md-date-picker-transition-time: $transition-time * 2 !default;
+$md-date-picker-transition-time: $transition-length * 2 !default;
 
 /// The size for a date in the date picker's calendar while portrait.
 /// @type Number
@@ -290,7 +290,7 @@ $md-clock-padding: 4px;
     > * {
       font-weight: inherit;
       margin: 0;
-      transition-duration: $transition-time;
+      transition-duration: $transition-length;
       transition-property: color, font;
     }
   }
@@ -434,7 +434,7 @@ $md-clock-padding: 4px;
   .md-year {
     font-size: $md-year-font-size;
     padding: 12px;
-    transition-duration: $transition-time;
+    transition-duration: $transition-length;
     transition-property: color, font-size;
 
     &:focus:not(.md-year--active) {
@@ -458,7 +458,7 @@ $md-clock-padding: 4px;
       position: absolute;
       top: 50%;
       transform: translateX(-50%) translateY(-50%) scale(0);
-      transition-duration: $transition-time;
+      transition-duration: $transition-length;
       transition-property: transform;
       z-index: 0;
     }
@@ -519,7 +519,7 @@ $md-clock-padding: 4px;
     height: 2px;
     position: absolute;
     transform-origin: 0 0;
-    transition-duration: $transition-time;
+    transition-duration: $transition-length;
     transition-property: width;
     z-index: 1;
 
@@ -547,7 +547,7 @@ $md-clock-padding: 4px;
       height: $md-clock-time-size;
       right: -$md-clock-time-size / 2 + $md-clock-padding / 2;
       top: -$md-clock-time-size / 2;
-      transition-duration: $transition-time;
+      transition-duration: $transition-length;
       transition-property: background, border, transform;
       width: $md-clock-time-size;
     }

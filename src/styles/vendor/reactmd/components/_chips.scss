@@ -85,7 +85,7 @@ $md-chip-contact-font-size: 14px;
     padding-left: $md-chip-default-padding;
     padding-right: $md-chip-default-padding;
     position: relative;
-    transition-duration: $transition-time;
+    transition-duration: $transition-length;
     transition-property: box-shadow, background;
     vertical-align: top;
     white-space: nowrap;
@@ -103,7 +103,7 @@ $md-chip-contact-font-size: 14px;
   .md-chip-text {
     color: if($light-theme, $md-chip-light-theme-color, $md-chip-dark-theme-color);
     font-size: $md-chip-font-size;
-    transition-duration: $transition-time;
+    transition-duration: $transition-length;
     transition-property: color;
   }
 

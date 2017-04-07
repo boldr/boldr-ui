@@ -77,7 +77,7 @@ $md-tooltip-opacity: .9 !default;
     white-space: nowrap;
 
     &--active {
-      transition-duration: $transition-time;
+      transition-duration: $transition-length;
       transition-property: opacity, transform;
     }
 

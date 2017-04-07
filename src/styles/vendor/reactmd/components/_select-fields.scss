@@ -8,7 +8,7 @@ $md-select-field-drop-distance: 6px !default;
 
 /// The transition time that a new value in a select field should drop.
 /// @type Number
-$md-select-field-drop-transition-time: $transition-time * 2 !default;
+$md-select-field-drop-transition-time: $transition-length * 2 !default;
 
 /// The left padding for a select field that has a postition of `SelectField.Positions.BELOW`
 /// @type Number

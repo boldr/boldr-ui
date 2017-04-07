@@ -614,7 +614,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
   @if $include-multiline {
     .md-text-field-multiline-container,
     .md-text-field-container--multiline {
-      transition-duration: $transition-time;
+      transition-duration: $transition-length;
       transition-property: height;
     }
 
@@ -761,7 +761,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
     pointer-events: none;
     position: absolute;
     top: 0;
-    transition-duration: $transition-time;
+    transition-duration: $transition-length;
     transition-property: transform, font-size, color;
     white-space: nowrap;
   }
@@ -914,7 +914,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
       content: '';
       display: block;
       height: $md-text-field-divider-active-height;
-      transition-duration: $transition-time;
+      transition-duration: $transition-length;
       transition-property: width;
       width: 0;
     }
@@ -1055,7 +1055,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
 
   .md-text-field-message {
     flex-grow: 1;
-    transition-duration: $transition-time;
+    transition-duration: $transition-length;
     transition-property: opacity;
   }
 

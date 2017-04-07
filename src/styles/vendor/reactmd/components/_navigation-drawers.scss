@@ -17,7 +17,7 @@ $md-navigation-drawer-include-cross-fade: true !default;
 
 /// The transition time for the cross-fade transition.
 /// @type Number
-$md-cross-fade-transition-time: $transition-time * 2 !default;
+$md-cross-fade-transition-time: $transition-length * 2 !default;
 
 /// The distance that the new content should move during the cross-fade transition.
 /// @type Number

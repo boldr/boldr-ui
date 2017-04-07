@@ -17,7 +17,7 @@ $md-drawer-z-index: 17 !default;
 
 /// The transiiton time for the drawer to enter or leave the view.
 /// @type Number
-$md-drawer-transition-time: $transition-time * 2 !default;
+$md-drawer-transition-time: $transition-length * 2 !default;
 
 /// The drawer's max width on mobile devices when positioned to the left of the screen.
 /// @type Number

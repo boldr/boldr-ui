@@ -144,7 +144,7 @@ $md-btn-dark-theme-pressed-color: rgba($md-btn-dark-theme-base-color, .25);
     border: 0;
     border-radius: 2px;
     position: relative;
-    transition-duration: $transition-time;
+    transition-duration: $transition-length;
     transition-property: background, color;
 
     // Prevents click event from firing when clicking a child
@@ -187,7 +187,7 @@ $md-btn-dark-theme-pressed-color: rgba($md-btn-dark-theme-base-color, .25);
       min-width: $md-btn-min-width;
       padding: 8px $md-btn-lr-padding;
       text-transform: uppercase;
-      transition-duration: $transition-time;
+      transition-duration: $transition-length;
     }
   }
 
@@ -195,7 +195,7 @@ $md-btn-dark-theme-pressed-color: rgba($md-btn-dark-theme-base-color, .25);
     .md-btn--raised {
       @include md-box-shadow(1);
 
-      transition: background $transition-time, box-shadow $transition-time * 2, color $transition-time;
+      transition: background $transition-length, box-shadow $transition-length * 2, color $transition-length;
     }
 
     .md-btn--raised-disabled {

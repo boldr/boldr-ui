@@ -10,7 +10,7 @@ $md-bottom-navigation-shifting-ink-color: rgba($md-white-base, .12) !default;
 /// The transition time it takes for the bottom navigation to slide out of view when
 /// it is dynamic. It is also the transition time for switching the background color.
 /// @type Number
-$md-bottom-navigation-transition-time: $transition-time * 2 !default;
+$md-bottom-navigation-transition-time: $transition-length * 2 !default;
 
 /// Boolean if the shifting bottom navigation style should be included by default.
 /// @type Boolean
@@ -159,7 +159,7 @@ $md-bottom-navigation-shifting-inactive-max-width: 96px;
       &--shifting {
         min-width: $md-bottom-navigation-shifting-active-min-width;
         position: initial;
-        transition-duration: $transition-time;
+        transition-duration: $transition-length;
         transition-property: max-width;
 
         &-inactive {
@@ -179,7 +179,7 @@ $md-bottom-navigation-shifting-inactive-max-width: 96px;
     }
 
     &-label {
-      transition-duration: $transition-time;
+      transition-duration: $transition-length;
       transition-property: color, font-size;
 
       @if $include-shifting {

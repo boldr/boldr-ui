@@ -16,7 +16,7 @@
 $md-snackbar-z-index: 10 !default;
 
 /// The default transiiton time for the snackbar to appear and disappear
-$md-snackbar-transition-time: $transition-time * 2 !default;
+$md-snackbar-transition-time: $transition-length * 2 !default;
 
 /// The background color for the snackbar.
 /// @type Color
@@ -168,7 +168,7 @@ $md-snackbar-desktop-max-width: 568px;
   }
 
   .md-btn--snackbar-floating {
-    transition: bottom $md-snackbar-transition-time, background $transition-time, box-shadow $transition-time, color $transition-time;
+    transition: bottom $md-snackbar-transition-time, background $transition-length, box-shadow $transition-length, color $transition-length;
     will-change: bottom;
   }
 

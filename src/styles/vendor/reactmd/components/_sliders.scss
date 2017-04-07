@@ -53,7 +53,7 @@ $md-slider-discrete-tick-height: $md-slider-track-height !default;
 /// The transition time to use for the Discrete Slider's ink appearance
 /// when the user focuses with the keyboard.
 /// @type Number
-$md-slider-discrete-ink-transition-time: $transition-time * 2 !default;
+$md-slider-discrete-ink-transition-time: $transition-length * 2 !default;
 
 /// The opacity to use for the Slider's thumb ink. This will appear when the user
 /// focuses with the keybord or touches the slider on a mobile device.
@@ -156,7 +156,7 @@ $md-slider-warn-md: true !default;
     margin: 0;
     position: absolute;
     top: 0;
-    transition-duration: $transition-time;
+    transition-duration: $transition-length;
     transition-property: width;
   }
 
@@ -171,7 +171,7 @@ $md-slider-warn-md: true !default;
     height: $md-slider-thumb-size;
     position: absolute;
     top: -(($md-slider-thumb-size / 2) - ($md-slider-track-height / 2));
-    transition-duration: $transition-time;
+    transition-duration: $transition-length;
     transition-property: left, transform, background;
     width: $md-slider-thumb-size;
     z-index: $md-slider-thumb-z-index;
@@ -264,7 +264,7 @@ $md-slider-warn-md: true !default;
       left: 0;
       position: absolute;
       top: 10px;
-      transition-duration: $transition-time;
+      transition-duration: $transition-length;
       transition-property: border-top-color, transform;
       width: 0;
     }
@@ -312,7 +312,7 @@ $md-slider-warn-md: true !default;
     position: absolute;
     text-align: center;
     transform: translate3d(-7px, -43px, 0);
-    transition-duration: $transition-time;
+    transition-duration: $transition-length;
     transition-property: left;
     width: $md-slider-thumb-size * 2;
     z-index: $md-slider-thumb-z-index + 1;

@@ -167,7 +167,7 @@ $md-switch-ball-fallback-color: null !default;
     display: block;
     height: $md-switch-thumb-size;
     position: absolute;
-    transition-duration: $transition-time;
+    transition-duration: $transition-length;
     transition-property: background, transform;
     width: $md-switch-thumb-size;
   }

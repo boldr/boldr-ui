@@ -1,8 +1,8 @@
 .#{$boldr-ns}dashboard-footer {
-  min-height: $footer-height;
+  min-height: $dashboard-footer-height;
   padding: 0 $spacer-x;
-  line-height: $footer-height;
-  color: $footer-color;
-  background: $footer-bg;
-  @include borders($footer-borders);
+  line-height: $dashboard-footer-height;
+  color: $dashboard-footer-color;
+  background: $dashboard-footer-bg;
+  @include borders($dashboard-footer-borders);
 }

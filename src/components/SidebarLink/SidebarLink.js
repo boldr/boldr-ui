@@ -18,7 +18,7 @@ const SECOND_ELEMENT = StyleClasses.SIDEBAR_LINK_ACT;
 
 const SidebarLink = (props: Props) => {
   const classes = classnames(BASE_ELEMENT, props.className);
-  const secondaryClasses = classnames(BASE_ELEMENT, props.className);
+  const secondaryClasses = classnames(SECOND_ELEMENT, props.className);
   return (
     <li className="nav-item">
       <NavLink to={ props.href } className={ classes } activeClassName={ secondaryClasses }>

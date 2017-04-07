@@ -42,7 +42,7 @@ $md-expansion-panel-expanded-height: 64px;
 
   .md-expansion-panel {
     background: get-color('card', $light-theme);
-    transition-duration: $transition-time;
+    transition-duration: $transition-length;
     transition-property: margin;
 
     &--expanded {
@@ -68,7 +68,7 @@ $md-expansion-panel-expanded-height: 64px;
     justify-content: space-between;
     padding-left: $md-expansion-panel-padding;
     padding-right: $md-expansion-panel-padding;
-    transition-duration: $transition-time;
+    transition-duration: $transition-length;
     transition-property: background, height;
 
     &--expanded {
