@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SidebarLink /> renders snapshot 1`] = `
+<li
+  className="nav-item"
+>
+  <NavLink
+    activeClassName="boldrui-sidebar-link"
+    className="boldrui-sidebar-link"
+    to="/asf"
+  >
+    <FontIcon
+      iconClassName="material-icons"
+    >
+      cat
+    </FontIcon>
+     
+    widget
+  </NavLink>
+</li>
+`;

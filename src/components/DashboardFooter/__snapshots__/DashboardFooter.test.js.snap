@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DashboardFooter /> renders snapshot 1`] = `
+<footer
+  className="boldrui-dashboard-footer"
+>
+  <span
+    className="boldrui-dashboard-footer-copyright"
+  >
+    widget
+  </span>
+  <span
+    className="float-right"
+  >
+    Powered by 
+    <a
+      href="https://boldr.io"
+    >
+      Boldr
+    </a>
+  </span>
+</footer>
+`;

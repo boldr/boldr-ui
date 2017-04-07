@@ -1,37 +1,21 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
 import '../src/styles/boldrui.scss';
+import Sink from './Sink';
 
-import { Grid, Loader, Col, Row, Footer, Heading, FormGroup, StatsWidget } from '../src/components';
-import Paper from '../src/components/Paper';
+const Root = () => (
+  <Router>
+    <div>
+      <ul>
+        <li><Link to="/">Home</Link></li>
+      </ul>
 
-class Root extends Component {
-  render() {
-    const testStats = {
-      posts: 3,
-      users: 4,
-      tags: 3,
-      dogs: 9,
-      cats: 0,
-    };
-    return (
-      <div>
-        <Grid>
-          <Row>
-            <Col md={ 12 }>
-              <Paper zDepth={ 3 }>
-                <Heading size={ 1 }>Hi, Heading</Heading>
-                <FormGroup paddingTop="20px" paddingBottom="25px">Hi</FormGroup>
-              </Paper>
+      <hr />
 
-              <StatsWidget stats={ testStats } />
-            </Col>
-          </Row>
-          <Loader />
-        </Grid>
-        <Footer />
-      </div>
-    );
-  }
-}
+      <Route exact path="/" component={ Sink } />
+    </div>
+  </Router>
+);
 
 export default Root;

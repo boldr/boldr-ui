@@ -14,6 +14,11 @@ import StatsWidget, { StatValue, StatLabel } from './StatsWidget';
 import Social, { Github, Facebook, Twitter, Google, LinkedIn } from './Social';
 import Paragraph from './Paragraph';
 import Media, { MediaOverlay } from './Media';
+import Sidebar from './Sidebar';
+import SidebarLink from './SidebarLink';
+import SidebarTitle from './SidebarTitle';
+import Topbar from './Topbar';
+import DashboardFooter from './DashboardFooter';
 
 export {
   Col,
@@ -23,6 +28,7 @@ export {
   Grid,
   Heading,
   Hero,
+  DashboardFooter,
   Icon,
   Paper,
   Image,
@@ -44,4 +50,8 @@ export {
   StatLabel,
   Media,
   MediaOverlay,
+  Sidebar,
+  SidebarLink,
+  SidebarTitle,
+  Topbar,
 };

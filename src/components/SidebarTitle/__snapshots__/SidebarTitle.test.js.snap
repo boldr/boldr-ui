@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SidebarTitle /> renders snapshot 1`] = `
+<li
+  className="boldrui-sidebar-title"
+>
+  widget
+</li>
+`;

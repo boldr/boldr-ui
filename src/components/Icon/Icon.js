@@ -1,4 +1,4 @@
-/* eslint-disable max-len */
+/* eslint-disable max-len, react/no-unescaped-entities */
 import React, { PureComponent } from 'react';
 
 const iconList = [

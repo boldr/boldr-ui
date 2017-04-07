@@ -14,7 +14,6 @@ html {
   font-size: $font-size-base;
   box-sizing: border-box;
   color: $text-color;
-  -webkit-font-smoothing: antialiased;
 }
 
 #app {
@@ -37,6 +36,8 @@ body {
   line-height: $line-height-base;
   background-color: $body-background;
   font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 

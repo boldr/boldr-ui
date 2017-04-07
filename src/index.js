@@ -30,6 +30,11 @@ import {
   StatLabel,
   Media,
   MediaOverlay,
+  DashboardFooter,
+  Sidebar,
+  SidebarLink,
+  SidebarTitle,
+  Topbar,
 } from './components';
 
 export {
@@ -64,4 +69,9 @@ export {
   StatLabel,
   Media,
   MediaOverlay,
+  DashboardFooter,
+  Sidebar,
+  SidebarLink,
+  SidebarTitle,
+  Topbar,
 };
