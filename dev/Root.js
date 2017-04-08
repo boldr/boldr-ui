@@ -7,12 +7,6 @@ import Sink from './Sink';
 const Root = () => (
   <Router>
     <div>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-      </ul>
-
-      <hr />
-
       <Route exact path="/" component={ Sink } />
     </div>
   </Router>

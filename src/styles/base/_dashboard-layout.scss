@@ -1,0 +1,27 @@
+
+.#{$boldr-ns}dashboard-body {
+  display: flex;
+  flex-grow:1;
+  flex-direction: row;
+  overflow-x: hidden;
+
+  .main {
+    padding-top: 30px;
+    flex: 1;
+  }
+
+  .#{$boldr-ns}dash-nav {
+    // $sidebar-width is the width of the columns
+    flex: 0 0 $sidebar-width;
+    // put the nav on the left
+    order: -1;
+  }
+}
+.#{$boldr-ns}dashboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.#{$boldr-ns}topbar {
+  flex: 0 0 $topbar-height;
+}

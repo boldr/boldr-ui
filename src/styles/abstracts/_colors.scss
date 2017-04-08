@@ -3,9 +3,9 @@
 ////
 
 /// @type Color
-$black: #000;
+$black: rgba(0, 0, 0, 1);
 /// @type Color
-$white: #fff;
+$white: rgba(255, 255, 255, 1);
 /// @type Color
 $snow: #f3f3f3;
 /// @type Color
@@ -31,6 +31,8 @@ $water: #03a9f4;
 $lapiz: #14ADC4;
 /// @type Color
 $navy: #01579b; // $md-light-blue-900
+/// @type Color
+$gunmetal: #2D343C;
 
 ////
 /// @group social-colors

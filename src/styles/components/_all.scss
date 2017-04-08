@@ -1,3 +1,7 @@
+@import 'blog/all';
+@import 'profile/all';
+@import 'dashboard/all';
+
 @import 'grid';
 @import 'hero';
 @import 'loader';
@@ -5,12 +9,8 @@
 @import 'drawer';
 @import 'forms';
 @import 'footer';
-@import 'blog/all';
-@import 'profile/all';
-@import 'primary-header';
 @import 'card';
 @import 'divider';
-@import 'sidebar';
 @import 'notification';
 @import 'widgets';
 @import 'filecard';
@@ -19,4 +19,6 @@
 @import 'texteditor';
 @import 'dropzone';
 @import 'dialog';
-@import 'dashboard/all';
+@import 'popover';
+@import 'switch';
+@import 'tooltip';

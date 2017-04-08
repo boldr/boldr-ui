@@ -1,25 +1,6 @@
-@import 'vendor/reactmd/all';
-@import 'vendor/normalize';
-@import 'abstracts/md-colors';
-@import 'abstracts/colors';
-@import 'vendor/bootstrap/variables';
-@import 'abstracts/variables';
-@import 'vendor/bootstrap/mixins';
-@import 'abstracts/mixins';
-
-@import 'vendor/bootstrap/reboot';
-@import 'vendor/bootstrap/transitions';
-@import 'vendor/bootstrap/nav';
-@import 'vendor/bootstrap/close';
-@import 'vendor/bootstrap/navbar';
-@import 'vendor/bootstrap/utilities';
-
-@import 'base/global';
-@import 'base/typography';
-
-@import 'core/animate';
-@import 'core/layout';
-@import 'core/aside';
+@import 'vendor/all';
+@import 'abstracts/all';
+@import 'base/all';
 @import 'components/all';
 
 @include react-md-everything;

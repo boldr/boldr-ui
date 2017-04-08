@@ -1,0 +1,204 @@
+.boldrui-popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1030;
+  cursor: auto;
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text;
+  white-space: normal;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: normal;
+  text-align: left;
+}
+.boldrui-popover:after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.01);
+}
+.boldrui-popover-hidden {
+  display: none;
+}
+.boldrui-popover-placement-top,
+.boldrui-popover-placement-topLeft,
+.boldrui-popover-placement-topRight {
+  padding-bottom: 4px;
+}
+.boldrui-popover-placement-right,
+.boldrui-popover-placement-rightTop,
+.boldrui-popover-placement-rightBottom {
+  padding-left: 4px;
+}
+.boldrui-popover-placement-bottom,
+.boldrui-popover-placement-bottomLeft,
+.boldrui-popover-placement-bottomRight {
+  padding-top: 4px;
+}
+.boldrui-popover-placement-left,
+.boldrui-popover-placement-leftTop,
+.boldrui-popover-placement-leftBottom {
+  padding-right: 4px;
+}
+.boldrui-popover-inner {
+  background-color: #fff;
+  background-clip: padding-box;
+  border-radius: 4px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+}
+.boldrui-popover-title {
+  min-width: 177px;
+  margin: 0;
+  padding: 0 16px;
+  line-height: 32px;
+  height: 32px;
+  border-bottom: 1px solid #e9e9e9;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+}
+.boldrui-popover-inner-content {
+  padding: 8px 16px;
+  color: rgba(0, 0, 0, 0.65);
+}
+.boldrui-popover-message {
+  padding: 8px 0 16px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+.boldrui-popover-message > .anticon {
+  color: #ffbf00;
+  line-height: 17px;
+  position: absolute;
+}
+.boldrui-popover-message-title {
+  padding-left: 20px;
+}
+.boldrui-popover-buttons {
+  text-align: right;
+  margin-bottom: 8px;
+}
+.boldrui-popover-buttons button {
+  margin-left: 8px;
+}
+.boldrui-popover-arrow,
+.boldrui-popover-arrow:after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.boldrui-popover-arrow {
+  border-width: 5px;
+}
+.boldrui-popover-arrow:after {
+  border-width: 4px;
+  content: "";
+}
+.boldrui-popover-placement-top > .boldrui-popover-content > .boldrui-popover-arrow,
+.boldrui-popover-placement-topLeft > .boldrui-popover-content > .boldrui-popover-arrow,
+.boldrui-popover-placement-topRight > .boldrui-popover-content > .boldrui-popover-arrow {
+  border-bottom-width: 0;
+  border-top-color: rgba(217, 217, 217, 0.7);
+  bottom: -1px;
+}
+.boldrui-popover-placement-top > .boldrui-popover-content > .boldrui-popover-arrow:after,
+.boldrui-popover-placement-topLeft > .boldrui-popover-content > .boldrui-popover-arrow:after,
+.boldrui-popover-placement-topRight > .boldrui-popover-content > .boldrui-popover-arrow:after {
+  content: " ";
+  bottom: 1px;
+  margin-left: -4px;
+  border-bottom-width: 0;
+  border-top-color: #fff;
+}
+.boldrui-popover-placement-top > .boldrui-popover-content > .boldrui-popover-arrow {
+  left: 50%;
+  margin-left: -5px;
+}
+.boldrui-popover-placement-topLeft > .boldrui-popover-content > .boldrui-popover-arrow {
+  left: 16px;
+}
+.boldrui-popover-placement-topRight > .boldrui-popover-content > .boldrui-popover-arrow {
+  right: 16px;
+}
+.boldrui-popover-placement-right > .boldrui-popover-content > .boldrui-popover-arrow,
+.boldrui-popover-placement-rightTop > .boldrui-popover-content > .boldrui-popover-arrow,
+.boldrui-popover-placement-rightBottom > .boldrui-popover-content > .boldrui-popover-arrow {
+  left: -1px;
+  border-left-width: 0;
+  border-right-color: rgba(217, 217, 217, 0.7);
+}
+.boldrui-popover-placement-right > .boldrui-popover-content > .boldrui-popover-arrow:after,
+.boldrui-popover-placement-rightTop > .boldrui-popover-content > .boldrui-popover-arrow:after,
+.boldrui-popover-placement-rightBottom > .boldrui-popover-content > .boldrui-popover-arrow:after {
+  content: " ";
+  left: 1px;
+  bottom: -4px;
+  border-left-width: 0;
+  border-right-color: #fff;
+}
+.boldrui-popover-placement-right > .boldrui-popover-content > .boldrui-popover-arrow {
+  top: 50%;
+  margin-top: -5px;
+}
+.boldrui-popover-placement-rightTop > .boldrui-popover-content > .boldrui-popover-arrow {
+  top: 12px;
+}
+.boldrui-popover-placement-rightBottom > .boldrui-popover-content > .boldrui-popover-arrow {
+  bottom: 12px;
+}
+.boldrui-popover-placement-bottom > .boldrui-popover-content > .boldrui-popover-arrow,
+.boldrui-popover-placement-bottomLeft > .boldrui-popover-content > .boldrui-popover-arrow,
+.boldrui-popover-placement-bottomRight > .boldrui-popover-content > .boldrui-popover-arrow {
+  border-top-width: 0;
+  border-bottom-color: rgba(217, 217, 217, 0.7);
+  top: -1px;
+}
+.boldrui-popover-placement-bottom > .boldrui-popover-content > .boldrui-popover-arrow:after,
+.boldrui-popover-placement-bottomLeft > .boldrui-popover-content > .boldrui-popover-arrow:after,
+.boldrui-popover-placement-bottomRight > .boldrui-popover-content > .boldrui-popover-arrow:after {
+  content: " ";
+  top: 1px;
+  margin-left: -4px;
+  border-top-width: 0;
+  border-bottom-color: #fff;
+}
+.boldrui-popover-placement-bottom > .boldrui-popover-content > .boldrui-popover-arrow {
+  left: 50%;
+  margin-left: -5px;
+}
+.boldrui-popover-placement-bottomLeft > .boldrui-popover-content > .boldrui-popover-arrow {
+  left: 16px;
+}
+.boldrui-popover-placement-bottomRight > .boldrui-popover-content > .boldrui-popover-arrow {
+  right: 16px;
+}
+.boldrui-popover-placement-left > .boldrui-popover-content > .boldrui-popover-arrow,
+.boldrui-popover-placement-leftTop > .boldrui-popover-content > .boldrui-popover-arrow,
+.boldrui-popover-placement-leftBottom > .boldrui-popover-content > .boldrui-popover-arrow {
+  right: -1px;
+  border-right-width: 0;
+  border-left-color: rgba(217, 217, 217, 0.7);
+}
+.boldrui-popover-placement-left > .boldrui-popover-content > .boldrui-popover-arrow:after,
+.boldrui-popover-placement-leftTop > .boldrui-popover-content > .boldrui-popover-arrow:after,
+.boldrui-popover-placement-leftBottom > .boldrui-popover-content > .boldrui-popover-arrow:after {
+  content: " ";
+  right: 1px;
+  border-right-width: 0;
+  border-left-color: #fff;
+  bottom: -4px;
+}
+.boldrui-popover-placement-left > .boldrui-popover-content > .boldrui-popover-arrow {
+  top: 50%;
+  margin-top: -5px;
+}
+.boldrui-popover-placement-leftTop > .boldrui-popover-content > .boldrui-popover-arrow {
+  top: 12px;
+}
+.boldrui-popover-placement-leftBottom > .boldrui-popover-content > .boldrui-popover-arrow {
+  bottom: 12px;
+}
