@@ -1,12 +1,12 @@
 /* @flow */
-import React from 'react';
+import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import classnames from 'classnames';
 import Icon from '../Icon';
 import { StyleClasses } from '../../theme/styleClasses';
 
 type Props = {
-  className: ?string,
+  className: string,
   links: Array<Object>,
   key: string,
   onClick: () => void,
@@ -32,7 +32,7 @@ const height = 48;
 
 const BASE_ELEMENT = StyleClasses.SIDEBAR_ITEM;
 
-class SidebarItem extends React.Component {
+class SidebarItem extends Component {
   static defaultProps = {
     chevronColor: '#333',
   };
@@ -114,6 +114,7 @@ class SidebarItem extends React.Component {
               <SidebarItem
                 index={ index }
                 subIndex={ j }
+                className={ this.props.className }
                 key={ subItem.key }
                 onClick={ subItem.links ? this.onClick : onClick }
                 text={ subItem.text }

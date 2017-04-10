@@ -10,6 +10,7 @@ import SidebarItem from '../SidebarItem';
 type Props = {
   className: ?string,
   links: Array<Object>,
+  itemClassname: string,
   key: string,
   onChange: () => void,
   logoClassName: ?string,
@@ -84,6 +85,7 @@ class Sidebar extends React.Component {
               <SidebarItem
                 index={ index }
                 key={ item.key }
+                className={ this.props.itemClassname }
                 onClick={ this.onClick }
                 text={ item.text }
                 link={ item.link }
