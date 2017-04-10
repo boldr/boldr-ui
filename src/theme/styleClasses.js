@@ -20,6 +20,7 @@ export const StyleClasses = {
   PROFILE_DETAIL: `${BOLDR_NS}profile-detail`,
   PROFILE: `${BOLDR_NS}profile`,
   SIDEBAR: `${BOLDR_NS}sidebar`,
+  SIDEBAR_ITEM: `${BOLDR_NS}sidebar-item`,
   SIDEBAR_TITLE: `${BOLDR_NS}sidebar-title`,
   SIDEBAR_LINK: `${BOLDR_NS}sidebar-link`,
   SIDEBAR_LINK_ACT: `${BOLDR_NS}sidebar-link__active`,

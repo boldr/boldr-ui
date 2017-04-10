@@ -14,12 +14,9 @@ import StatsWidget, { StatValue, StatLabel } from './StatsWidget';
 import Social, { Github, Facebook, Twitter, Google, LinkedIn } from './Social';
 import Paragraph from './Paragraph';
 import Media, { MediaOverlay } from './Media';
-import Topbar from './Topbar';
 import DashboardFooter from './DashboardFooter';
-import DashNav from './DashNav/DashNav';
-import Switch from './Switch';
-import Tooltip from './Tooltip';
-import Popover from './Popover';
+import Sidebar from './Sidebar';
+import SidebarItem from './SidebarItem';
 
 export {
   Col,
@@ -51,9 +48,6 @@ export {
   StatLabel,
   Media,
   MediaOverlay,
-  Topbar,
-  DashNav,
-  Switch,
-  Tooltip,
-  Popover,
+  Sidebar,
+  SidebarItem,
 };

@@ -63,15 +63,9 @@ import {
   Media,
   MediaOverlay,
   DashboardFooter,
-  DashNav,
-  Tooltip,
-  Popover,
-  Topbar,
+  Sidebar,
+  SidebarItem,
 } from './components';
-
-import { getPlacements } from './util/tooltipPlacements';
-import getRequestAnimationFrame, { cancelRequestAnimationFrame } from './util/getRequestAnimationFrame';
-import animation from './util/animation';
 
 export {
   Col,
@@ -106,12 +100,8 @@ export {
   Media,
   MediaOverlay,
   DashboardFooter,
-  getPlacements,
-  getRequestAnimationFrame,
-  cancelRequestAnimationFrame,
-  Topbar,
-  animation,
-  DashNav,
+  Sidebar,
+  SidebarItem,
 
   Card,
   CardTitle,

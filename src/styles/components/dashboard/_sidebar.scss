@@ -1,0 +1,166 @@
+$window-medium: 768px;
+$window-large: 992px;
+$window-xlarge: 1200px;
+@mixin medium {
+  @media (min-width: #{$window-medium}) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: #{$window-large}) {
+    @content;
+  }
+}
+
+@mixin xlarge {
+  @media (min-width: #{$window-xlarge}) {
+    @content;
+  }
+}
+$navigation-width: 240px;
+
+.boldrui-dashboard-body {
+  nav.#{$boldr-ns}sidebar {
+    border-right: 1px solid rgba(0, 0, 0, 0.14);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: $navigation-width;
+    background: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    visibility: hidden;
+    transform: translateX(-$navigation-width);
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 104;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    @include xlarge {
+      visibility: visible;
+      transform: translateX(0);
+    }
+  }
+
+  nav.#{$boldr-ns}sidebar.is-visible {
+    visibility: visible;
+    transform: translateX(0);
+
+    /**
+    * Show overlay first and then slide in navigation
+    */
+    transition-delay: 0.1s;
+  }
+
+  .#{$boldr-ns}sidebar-logo {
+    height: 48px;
+    padding: 12px 24px 10px 2px;
+    border-bottom: 1px solid #e0e0e0;
+
+    @include medium {
+      height: 64px;
+      padding-left: 11px;
+    }
+  }
+
+  .#{$boldr-ns}sidebar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 12px 0 10px;
+  }
+
+  .#{$boldr-ns}sidebar-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    padding-left: 22px;
+    padding-right: 16px;
+    color: #333;
+  }
+
+  .#{$boldr-ns}sidebar-link.active {
+    color: $primary-color;
+  }
+
+  .#{$boldr-ns}sidebar-link:focus {
+    background-color: #eee;
+    outline: 0;
+  }
+
+  .#{$boldr-ns}sidebar-chevron {
+    // point down \/
+    transform: rotate(90deg);
+    transition: transform 0.15s ease-in-out;
+  }
+
+  .#{$boldr-ns}sidebar-chevron.is-open {
+    // point up /\
+    // transition from down, right, up. NOT down, LEFT, up
+    transform: rotate(-90deg);
+  }
+
+  .#{$boldr-ns}sidebar-menu {
+    fill: #fff;
+    position: fixed;
+    z-index: 102;
+    top: 0;
+    left: 4px;
+
+    @include medium {
+      top: 8px;
+    }
+
+    @include xlarge {
+      display: none;
+    }
+  }
+
+  .#{$boldr-ns}sidebar-nav__overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 103;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .#{$boldr-ns}sidebar-nav__overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .#{$boldr-ns}sidebar-item {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+  }
+  // make children in submenu grey
+  .#{$boldr-ns}sidebar-item .#{$boldr-ns}sidebar-item > .#{$boldr-ns}sidebar-link {
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  // add frame (border-top and border-bottom) to those navigation items that have sub menus
+  .#{$boldr-ns}sidebar-item.has-children {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+  }
+
+  // revert grey color for those children that have children themselves
+  .#{$boldr-ns}sidebar-item.has-children > .#{$boldr-ns}sidebar-link {
+    color: #333;
+  }
+
+  /**
+  * Nested navigation
+  */
+  .#{$boldr-ns}sidebar .#{$boldr-ns}sidebar {
+    padding: 0;
+  }
+}
