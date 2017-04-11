@@ -4,8 +4,10 @@
 
 .#{$dash-ns}sidebar {
   padding: $sidebar-padding;
+  padding-top: $sidebar-top-space;
   color: $sidebar-color;
   background: $sidebar-bg;
+  @include md-box-shadow(2);
   @include borders($sidebar-borders);
 
   .#{$dash-ns}sidebar-close {
@@ -56,8 +58,8 @@
     }
   }
 .boldrui-sidebar-link-txt {
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 32px;
+  padding-right: 15px;
 }
   .nav {
     @include sidebar-width($sidebar-borders, $sidebar-width);
@@ -94,11 +96,12 @@
       }
 
       .nav-link {
-        display: block;
         padding: $sidebar-nav-link-padding-y $sidebar-nav-link-padding-x;
         color: $sidebar-nav-link-color;
         text-decoration: none;
         background: $sidebar-nav-link-bg;
+        display: flex;
+        align-items: center;
         @include borders($sidebar-nav-link-borders);
 
         &:hover {
@@ -120,7 +123,14 @@
             color: $sidebar-nav-link-active-icon-color;
           }
         }
-
+        .boldrui-sidebar-chevron {
+          transition: transform 0.3s;
+        }
+        .boldrui-sidebar-chevron.open {
+          transform: rotate(90deg);
+          transition-delay: 0;
+          transition: all 0.3s;
+        }
         .badge {
           float: right;
           margin-top: 2px;
@@ -155,7 +165,7 @@
             max-height: 1000px;
           }
           li {
-            background: $sidebar-nav-dropdown-color;
+            background: $sidebar-nav-dropdown-bg;
           }
 
           a.nav-link {
