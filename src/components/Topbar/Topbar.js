@@ -11,18 +11,16 @@ type Props = {
   userLinks: Array<Object>,
   // Links to the left of the user avatar on the righthand side of bar.
   rightLinks: Array<Object>,
-  // User object expecting at minimum, user.avatarUrl and user.username
-  user: Object,
+  avatarUrl: string,
+  username: string,
   // Where should the logo link to? Default is /
   logoLink: string,
 };
 
 class Topbar extends Component {
   static defaultProps = {
-    user: {
-      avatarUrl: 'https://boldr.io/images/unknown-avatar.png',
-      username: 'blank',
-    },
+    avatarUrl: 'https://boldr.io/images/unknown-avatar.png',
+    username: 'blank',
     logoLink: '/',
   };
 
@@ -52,7 +50,7 @@ class Topbar extends Component {
   }
   props: Props;
   render() {
-    const { links, rightLinks, user, userLinks } = this.props;
+    const { links, rightLinks, avatarUrl, username, userLinks } = this.props;
     return (
       <header className="boldrui-dash-topbar navbar">
         <button
@@ -98,32 +96,15 @@ class Topbar extends Component {
             ))
           }
           <li className="nav-item">
-            <Dropdown isOpen={ this.state.dropdownOpen } toggle={ this.toggle }>
-              <a
-                onClick={ this.toggle }
-                className="nav-link dropdown-toggle nav-link"
-                data-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-haspopup="true"
-                aria-expanded={ this.state.dropdownOpen }
-              >
-                <img src={ user.avatarUrl } className="img-avatar" alt="admin user ava" />
-                <span className="hidden-md-down">{ user.username }</span>
-              </a>
-
-              <DropdownMenu className="dropdown-menu-right">
-                {
-                  userLinks &&
-                  userLinks.map(ulink => (
-                    <DropdownItem key={ ulink.key }>
-                      <Icon kind={ ulink.icon } color={ ulink.iconColor } />
-                      <Link to={ ulink.link }>{ ulink.text }</Link>
-                    </DropdownItem>
-                  ))
-                }
-              </DropdownMenu>
-            </Dropdown>
+            <Link
+              onClick={ this.toggle }
+              className="nav-link"
+              role="button"
+              to={ `/profiles/${username}` }
+            >
+              <img src={ avatarUrl } className="img-avatar" alt="admin user ava" />
+              <span className="hidden-md-down">{ username }</span>
+            </Link>
           </li>
         </ul>
       </header>

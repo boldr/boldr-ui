@@ -36,11 +36,7 @@ $enable-transitions: true !default;
 /// @group options
 $enable-rounded: false !default;
 /// @group options
-$enable-sidebar-nav-rounded: false !default;
 $border-width: 1px;
-$window-medium: 768 !default;
-$window-large: 992 !default;
-$window-xlarge: 1200 !default;
 
 /// The default padding used for most material design components.
 /// @type Number
@@ -56,18 +52,11 @@ $btn-line-height: 1.25 !default;
 $input-btn-border-width: $border-width !default;
 $btn-padding-x: 1rem !default;
 $btn-padding-y: 0.5rem !default;
-$padding: 4 !default;
-
-/// Transitions
-/// @group transitions
-$transition-function: cubic-bezier(0.25, 0.8, 0.25, 1) !default;
 
 /// The default transition time to use on most animations/transitions.
 /// @type Number
 /// @group transitions
 $transition-length: 0.25s !default;
-$toolbar-height: 64 !default;
-$toolbar-z-index: 6 !default;
 $grid-columns: 12 !default;
 $grid-gutter: 30px !default;
 $grid-breakpoints: ( xs: 0, sm: 768px, md: 992px, lg: 1200px) !default;
@@ -115,21 +104,12 @@ $md-secondary-background-text-color: $md-white-base !default;
 /// @group themes
 $boldrui-light-theme: true !default;
 $shadow-color: rgba(0, 0, 0, 0.2) !default;
-$box-shadow: 0 0 5 $shadow-color !default;
 $body-background: #e5eaed !default;
-$primary-button-bg: $primary-color !default;
-$primary-button-bg-hover: darken($primary-color, 5%) !default;
-$selection-color: darken($snow, 3%) !default;
 $link-color: $accent-color !default;
 $error-color: $md-red-700 !default;
 $text-color: $near-black !default;
 $header-font-color: $navy !default;
 $border-color: $cloud !default;
-$primary-header-link-color: $near-black !default;
-$primary-header-link-hover-color: $accent-color !default;
-$primary-header-border: 1 solid $cloud !default;
-$primary-header-bg: $white !default;
-$primary-header-link: $ocean !default;
 
 /// Borders
 /// @group borders
@@ -196,8 +176,6 @@ $sidebar-compact-width: 50px;
 $sidebar-compact-height: $sidebar-compact-width;
 $sidebar-color: #fff;
 $sidebar-bg: #2d343c;
-$sidebar-header-bg: rgba(0, 0, 0, 0.2);
-$sidebar-footer-bg: rgba(0, 0, 0, 0.2);
 $sidebar-borders: none;
 $mobile-sidebar-width: 220px;
 
@@ -210,9 +188,6 @@ $breadcrumb-borders: (
     color:                          $border-color
   )
 );
-
-// Sidebar Navigation
-$sidebar-nav-color: #fff;
 $sidebar-nav-title-padding-y: 0.75rem;
 $sidebar-nav-title-padding-x: 1rem;
 $sidebar-nav-title-color: $cloud;
@@ -220,7 +195,6 @@ $sidebar-nav-link-padding-y: 0.75rem;
 $sidebar-nav-link-padding-x: 1rem;
 $sidebar-nav-link-color: #fff;
 $sidebar-nav-link-bg: transparent;
-$sidebar-nav-link-icon-color: $text-color;
 $sidebar-nav-link-borders: 0;
 $sidebar-nav-link-hover-color: #fff;
 $sidebar-nav-link-hover-bg: $primary-color;
@@ -237,6 +211,8 @@ $sidebar-nav-dropdown-borders: 0;
 /// Dashboard Topbar
 /// @group topbar
 $navbar-height: 55px;
+/// @group topbar
+$zindex-navbar: 1000;
 $navbar-bg: #fff;
 $navbar-border: (
   bottom: (
@@ -247,7 +223,7 @@ $navbar-border: (
 );
 $navbar-brand-width: 155px;
 $navbar-brand-bg: #fff;
-$navbar-brand-logo: url('https://boldr.io/logo.png');
+$navbar-brand-logo: url('https://boldr.io/logo.png') !default;
 $navbar-brand-logo-size: 70px auto;
 $navbar-brand-border: (
   bottom: (
@@ -259,19 +235,6 @@ $navbar-brand-border: (
 $navbar-color: rgba(0, 0, 0, 0.3);
 $navbar-hover-color: rgba(0, 0, 0, 0.6);
 $navbar-active-color: rgba(0, 0, 0, 0.8);
-$navbar-disabled-color: rgba(0, 0, 0, 0.15);
-
-/// @group topbar
-$topbar-nav-bg: #fff !default;
-$topbar-nav-color: $text-color !default;
-$topbar-nav-borders: ( bottom: ( size: 1px, style: solid, color: $border-color)) !default;
-$topbar-nav-ul-borders: ( all: ( size: 1px, style: solid, color: $border-color)) !default;
-$topbar-nav-hover-color: #fff !default;
-$topbar-nav-hover-bg: $primary-color !default;
-$topbar-nav-active-color: #fff !default;
-$topbar-nav-active-bg: $primary-color !default;
-$topbar-nav-height: $topbar-height - 15px !default;
-$zindex-navbar: 1000;
 
 /// Dashboard Footer
 /// @group dashboard

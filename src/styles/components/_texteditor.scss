@@ -170,8 +170,7 @@
 }
 
 .rdw-fontfamily-placeholder {
-  $white-space: nowrap;
-
+  white-space: nowrap;
   max-width: 90px;
   overflow: hidden;
   text-overflow: ellipsis;

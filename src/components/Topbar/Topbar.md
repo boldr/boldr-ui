@@ -9,8 +9,10 @@ type Props = {
   userLinks: Array<Object>,
   // Links to the left of the user avatar on the righthand side of bar.
   rightLinks: Array<Object>,
-  // User object expecting at minimum, user.avatarUrl and user.username
-  user: Object,
+  // location of the user's avatar
+  avatarUrl: string,
+  // user's username
+  username: string,
   // Where should the logo link to? Default is /
   logoLink: string,
 };
