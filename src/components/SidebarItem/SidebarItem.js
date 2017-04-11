@@ -1,24 +1,27 @@
+/* @flow */
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import classnames from 'classnames';
 import Icon from '../Icon';
 import { StyleClasses } from '../../theme/styleClasses';
+import type { SidebarLinks } from '../Sidebar';
 
 type Props = {
   className: string,
-  links: Array<Object>,
+  links: SidebarLinks,
   key: string,
   onClick: () => void,
+  handleExpandClick: () => void,
   match: Object,
   logo: ?any,
   index: number,
   iconType: string,
   iconColor: string,
-  chevronColor: string,
   subItem: Object,
   item: Object,
   link: string,
   text: string,
+  expanded: ?boolean,
 };
 
 const height = 48;
@@ -28,10 +31,16 @@ const BASE_ELEMENT = StyleClasses.SIDEBAR_ITEM;
 class SidebarItem extends Component {
   static defaultProps = {
     iconColor: '#fff',
+    handleExpandClick: () => {},
   };
   state = {
-    isOpen: false,
+    isOpen: null,
   };
+  componentWillMount() {
+    this.setState({
+      isOpen: this.props.expanded !== null ? this.props.expanded : false,
+    });
+  }
 
   /**
    * Update parent component and open submenu on initial render
@@ -41,26 +50,36 @@ class SidebarItem extends Component {
       this.onClick(this.props.item, this.props.subItem);
     }
   }
+  componentWillReceiveProps(nextProps: Object) {
+    // If controlled then the open prop takes precedence.
+    if (nextProps.expanded !== null) {
+      this.setState({
+        isOpen: nextProps.expanded,
+      });
+    }
+  }
 
-  handleClick = e => {
-    e.preventDefault();
-    e.target.parentElement.classList.toggle('open');
-  };
   props: Props;
 
   onClick = (item, subItem, e) => {
-    this.setState({
-      isOpen: !this.state.isOpen,
-    });
     if ((item.links && !subItem) || (subItem && subItem.links)) {
+      if (this.props.handleExpandClick) {
+        this.props.handleExpandClick(false);
+      }
+
+      if (typeof this.props.expanded === 'undefined') {
+        this.setState({ isOpen: false });
+      }
       // simply open submenu without notifying parent or changing url
       if (e) {
         e.preventDefault();
       }
       return;
     }
+
     this.props.onClick(item, subItem, e);
   };
+
   render() {
     const {
       index,
@@ -69,6 +88,8 @@ class SidebarItem extends Component {
       iconType,
       onClick,
       links,
+      expanded,
+      handleExpandClick,
       iconColor,
       item,
       subItem,
@@ -85,7 +106,7 @@ class SidebarItem extends Component {
         <NavLink
           to={ link }
           className="nav-link"
-          activeClassName="active"
+          activeClassName={ links ? null : 'active' }
           title={ text }
           style={ { height } }
           onClick={ e => this.onClick(item, subItem, e) }

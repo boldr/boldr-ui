@@ -9,6 +9,7 @@ type Props = {
   userLinks: Array<Object>,
   rightLinks: Array<Object>,
   user: Object,
+  logoLink: string,
 };
 
 class Topbar extends Component {
@@ -17,6 +18,7 @@ class Topbar extends Component {
       avatarUrl: 'https://boldr.io/images/unknown-avatar.png',
       username: 'blank',
     },
+    logoLink: '/',
   };
 
   constructor(props) {
@@ -55,7 +57,7 @@ class Topbar extends Component {
         >
           ☰
         </button>
-        <a className="navbar-brand" href="#" />
+        <Link className="navbar-brand" to={ this.props.logoLink } />
         {
           !links &&
           <a className="boldrui-sidebar-toggler__alone navbar-toggler sidebar-toggler" onClick={ this.sidebarToggle } href="#">

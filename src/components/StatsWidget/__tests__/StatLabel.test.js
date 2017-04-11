@@ -1,5 +1,4 @@
 import React from 'react';
-import shallow from 'react-test-renderer/shallow';
 import StatLabel from '../StatLabel';
 
 const mockName = 'abc';

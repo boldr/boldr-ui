@@ -2,10 +2,10 @@
 
 exports[`<DashboardFooter /> renders snapshot 1`] = `
 <footer
-  className="boldrui-dashboard-footer"
+  className="boldrui-dash-footer"
 >
   <span
-    className="boldrui-dashboard-footer-copyright"
+    className="boldrui-dash-footer-copyright"
   >
     widget
   </span>
