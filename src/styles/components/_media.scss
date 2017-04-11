@@ -21,7 +21,7 @@ $media-embedded-selectors: ('img' 'iframe' 'svg') !default;
 
 /// The color to use for the media overlay's background color.
 /// @type Color
-$media-overlay-color: rgba($md-black-base, .54) !default;
+$media-overlay-color: rgba($md-black-base, 0.54) !default;
 
 /// A placeholder for making a class or html element use the embedded styles. This class or
 /// element will need to be contained in a class containing `.boldrui-media` to get the correct
@@ -132,18 +132,16 @@ $media-overlay-color: rgba($md-black-base, .54) !default;
 @function to-number($string) {
   $strings: ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
   $numbers: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
-
   $result: 0;
 
-  @for $i from 1 through str-length($string) {
+  @for $i from 1 through str-length ($string) {
     $character: str-slice($string, $i, $i);
     $index: index($strings, $character);
 
     @if not $index {
-      @warn "Unknown character '#{$character}'";
+      @warn "Unknown character"#{$character}"";
       $index: 1;
     }
-
     $number: nth($numbers, $index);
     $result: $result * 10 + $number;
   }

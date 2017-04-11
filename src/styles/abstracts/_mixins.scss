@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
 }
+
 @mixin hide() {
   display: none;
   visibility: hidden;
@@ -13,6 +14,7 @@
   @if $breakpoint == xs {
     @content;
   }
+
   @else {
     @media only screen and (min-width: $breakpoint-size) {
       // Static grid
@@ -26,28 +28,35 @@
 }
 
 @mixin md-box-shadow($elevation) {
-   @if $elevation < 0 or $elevation > 5{
-    @warn 'The elevation must be a number from 0 - 5. elevation given was `#{$elevation}`';
+  @if $elevation < 0 or $elevation > 5 {
+    @warn "The elevation must be a number from 0 - 5. elevation given was `#{$elevation}`";
   }
+
   @else {
-    $top-shadow-color: rgba($black, .14);
-    $middle-shadow-color: rgba($black, .12);
-    $bottom-shadow-color: rgba($black, if($elevation == 1, .2, .4));
+    $top-shadow-color: rgba($black, 0.14);
+    $middle-shadow-color: rgba($black, 0.12);
+    $bottom-shadow-color: rgba($black, if($elevation == 1, 0.2, 0.4));
+
     @if $elevation == 0 {
       box-shadow: none;
     }
+
     @else if $elevation == 1 {
       box-shadow: 0 2px 2px 0 $top-shadow-color, 0 1px 5px 0 $middle-shadow-color, 0 3px 1px -2px $bottom-shadow-color;
     }
+
     @else if $elevation == 2 {
       box-shadow: 0 4px 5px 0 $top-shadow-color, 0 1px 10px 0 $middle-shadow-color, 0 2px 4px -1px $bottom-shadow-color;
     }
+
     @else if $elevation == 3 {
       box-shadow: 0 6px 10px 0 $top-shadow-color, 0 1px 18px 0 $middle-shadow-color, 0 3px 5px -1px $bottom-shadow-color;
     }
+
     @else if $elevation == 4 {
       box-shadow: 0 8px 10px 1px $top-shadow-color, 0 3px 14px 2px $middle-shadow-color, 0 5px 5px -3px $bottom-shadow-color;
     }
+
     @else if $elevation == 5 {
       box-shadow: 0 16px 24px 2px $top-shadow-color, 0 6px 30px 5px $middle-shadow-color, 0 8px 10px -5px $bottom-shadow-color;
     }
@@ -74,6 +83,7 @@
   font-size: $font-size;
   line-height: $line-height;
   border: 0;
+
   @include border-radius($border-radius);
 
   &::before {
@@ -82,6 +92,7 @@
     padding: $padding-y 0;
     font-size: $font-size;
     line-height: $line-height;
+
     @include border-radius($border-radius);
   }
 
@@ -122,65 +133,93 @@
 
   @each $border in $borders {
     $direction: nth($border, 1);
+
     @if $direction == 'all' {
       $size: map-get(map-get($borders, $direction), size);
-      $sidebar-width: ( $sidebar-width - ( 2 * $size ));
-    } @else if $direction == 'right' {
-      $size: map-get(map-get($borders, $direction), size);
-      $sidebar-width: $sidebar-width - $size;
-    } @else if $direction == 'left' {
+      $sidebar-width: ($sidebar-width - (2 * $size));
+    }
+
+    @else if $direction == 'right' {
       $size: map-get(map-get($borders, $direction), size);
       $sidebar-width: $sidebar-width - $size;
     }
+
+    @else if $direction == 'left' {
+      $size: map-get(map-get($borders, $direction), size);
+      $sidebar-width: $sidebar-width - $size;
+    }
+
     width: $sidebar-width;
   }
 }
+
 @mixin borders($borders) {
   @each $border in $borders {
     $direction: nth($border, 1);
+
     @if $direction == 'all' {
       $size: map-get(map-get($borders, $direction), size);
       $style: map-get(map-get($borders, $direction), style);
       $color: map-get(map-get($borders, $direction), color);
+
       border: $size $style $color;
-    } @else if $direction == 'top' {
+    }
+
+    @else if $direction == 'top' {
       $size: map-get(map-get($borders, $direction), size);
       $style: map-get(map-get($borders, $direction), style);
       $color: map-get(map-get($borders, $direction), color);
+
       border-top: $size $style $color;
-    } @else if $direction == 'right' {
+    }
+
+    @else if $direction == 'right' {
       $size: map-get(map-get($borders, $direction), size);
       $style: map-get(map-get($borders, $direction), style);
       $color: map-get(map-get($borders, $direction), color);
+
       border-right: $size $style $color;
-    } @else if $direction == 'bottom' {
+    }
+
+    @else if $direction == 'bottom' {
       $size: map-get(map-get($borders, $direction), size);
       $style: map-get(map-get($borders, $direction), style);
       $color: map-get(map-get($borders, $direction), color);
+
       border-bottom: $size $style $color;
-    } @else if $direction == 'left' {
+    }
+
+    @else if $direction == 'left' {
       $size: map-get(map-get($borders, $direction), size);
       $style: map-get(map-get($borders, $direction), style);
       $color: map-get(map-get($borders, $direction), color);
+
       border-left: $size $style $color;
     }
   }
 }
+
 @mixin sidebar-width($borders, $width) {
   $sidebar-width: $width;
 
   @each $border in $borders {
     $direction: nth($border, 1);
+
     @if $direction == 'all' {
       $size: map-get(map-get($borders, $direction), size);
-      $sidebar-width: ( $sidebar-width - ( 2 * $size ));
-    } @else if $direction == 'right' {
-      $size: map-get(map-get($borders, $direction), size);
-      $sidebar-width: $sidebar-width - $size;
-    } @else if $direction == 'left' {
+      $sidebar-width: ($sidebar-width - (2 * $size));
+    }
+
+    @else if $direction == 'right' {
       $size: map-get(map-get($borders, $direction), size);
       $sidebar-width: $sidebar-width - $size;
     }
+
+    @else if $direction == 'left' {
+      $size: map-get(map-get($borders, $direction), size);
+      $sidebar-width: $sidebar-width - $size;
+    }
+
     width: $sidebar-width;
   }
 }
@@ -188,9 +227,11 @@
 @mixin bg-variant($parent, $color) {
   #{$parent} {
     @include border-radius($card-border-radius-inner $card-border-radius-inner $card-border-radius-inner $card-border-radius-inner);
+
     color: #fff !important;
     background-color: $color !important;
   }
+
   a#{$parent} {
     @include hover-focus {
       background-color: darken($color, 10%);

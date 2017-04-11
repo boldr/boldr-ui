@@ -4,5 +4,6 @@
   line-height: $dash-footer-height;
   color: $dash-footer-color;
   background: $dash-footer-bg;
+
   @include borders($dash-footer-borders);
 }

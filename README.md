@@ -5,3 +5,30 @@
 
 
 Have questions or want to help with development? Join us on <a href="https://slack.boldr.io" target="blank"><img src="/docs/assets/slack-logo.png" height="25" /></a>
+
+
+## Components
+- DashboardFooter
+- Divider
+- Footer
+- FormCard
+- FormGroup
+- InputField
+- Heading
+- Hero
+- Icon
+- Image
+- Layout (Col, Row, Grid)
+- Loader
+- Media
+- Paper
+- Paragraph
+- Sidebar
+- SidebarItem
+- SocialGroup 
+  - Facebook
+  - Twitter
+  - Google
+  - Github
+- StatsWidget
+- Topbar

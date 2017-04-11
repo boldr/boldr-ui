@@ -3,7 +3,7 @@
 ////
 
 /// IE10&11 Flexbox fix
-@media all and (-ms-high-contrast:none) {
+@media all and (-ms-high-contrast: none) {
   html {
     display: flex;
     flex-direction: column;
@@ -26,7 +26,7 @@
 
 .#{$dash-ns}body {
   display: flex;
-  flex-grow:1;
+  flex-grow: 1;
   flex-direction: row;
   overflow-x: hidden;
 
@@ -42,13 +42,13 @@
   }
 }
 
-
 .#{$dash-ns}topbar__fixed {
-  .#{$dash-ns}topbar{
+  .#{$dash-ns}topbar {
     position: fixed;
     z-index: $zindex-navbar;
     width: 100%;
   }
+
   .#{$dash-ns}body {
     margin-top: $navbar-height;
   }
@@ -58,14 +58,12 @@
 // Sidebar
 //
 .#{$dash-ns}sidebar-hidden {
-
   .#{$dash-ns}sidebar {
     margin-left: - $sidebar-width;
   }
 }
 
 .#{$dash-ns}sidebar-fixed {
-
   .#{$dash-ns}sidebar {
     position: fixed;
     height: 100%;
@@ -75,13 +73,14 @@
     }
   }
 
-  .#{$dash-ns}main, .#{$dash-ns}footer {
+  .#{$dash-ns}main,
+  .#{$dash-ns}footer {
     margin-left: $sidebar-width;
   }
 
   &.#{$dash-ns}sidebar-hidden {
-
-    .#{$dash-ns}main, .#{$dash-ns}footer {
+    .#{$dash-ns}main,
+    .#{$dash-ns}footer {
       margin-left: 0;
     }
   }
@@ -92,7 +91,6 @@
     position: fixed;
     z-index: $zindex-navbar - 1;
     height: 100%;
-
 
     .#{$dash-ns}sidebar-nav {
       height: calc(100vh - #{$navbar-height});
@@ -106,21 +104,20 @@
   }
 
   &.#{$dash-ns}sidebar-hidden {
-
     .#{$dash-ns}sidebar {
       margin-left: - $sidebar-compact-width;
     }
   }
 
   &.#{$dash-ns}sidebar-fixed {
-
-    .#{$dash-ns}main, .#{$dash-ns}footer {
+    .#{$dash-ns}main,
+    .#{$dash-ns}footer {
       margin-left: $sidebar-compact-width;
     }
 
     &.#{$dash-ns}sidebar-hidden {
-
-      .#{$dash-ns}main, .#{$dash-ns}footer {
+      .#{$dash-ns}main,
+      .#{$dash-ns}footer {
         margin-left: 0;
       }
     }
@@ -129,7 +126,6 @@
 // Footer
 //
 .footer-fixed {
-
   .#{$dash-ns}footer {
     position: fixed;
     bottom: 0;
@@ -151,8 +147,7 @@
 }
 
 @include media-breakpoint-down(md) {
-
-  .#{$dash-ns}topbar{
+  .#{$dash-ns}topbar {
     position: fixed !important;
     z-index: $zindex-navbar;
     width: 100%;
@@ -166,9 +161,11 @@
     }
 
     .navbar-toggler {
-      @if (lightness( $navbar-brand-bg ) > 40) {
+      @if (lightness( $navbar-brand-bg) > 40) {
         color: $navbar-color;
-      } @else {
+      }
+
+      @else {
         color: #fff;
       }
     }
@@ -202,12 +199,12 @@
     }
   }
 
-  .#{$dash-ns}main, .#{$dash-ns}footer {
+  .#{$dash-ns}main,
+  .#{$dash-ns}footer {
     margin-left: 0 !important;
   }
 
   .#{$dash-ns}sidebar-mobile-show {
-
     .#{$dash-ns}sidebar {
       width: $mobile-sidebar-width;
       margin-left: 0;

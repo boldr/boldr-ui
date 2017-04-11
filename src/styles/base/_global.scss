@@ -35,7 +35,6 @@ body {
   font-size: $font-size-base;
   line-height: $line-height-base;
   background-color: $body-background;
-  font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -44,7 +43,7 @@ body {
 a {
   color: $primary-color;
   text-decoration: none;
-  transition: color .3s;
+  transition: color 0.3s;
 
   &:hover,
   &:active,
@@ -61,6 +60,7 @@ a {
 .boldr-paperoverride {
   background-color: $white;
 }
+
 .boldrui-dash-main .container-fluid {
   padding: 0 30px;
 }

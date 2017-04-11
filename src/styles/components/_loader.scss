@@ -35,7 +35,7 @@
   height: 200px;
   margin-right: auto;
   margin-left: auto;
-  transform: scale(.25);
+  transform: scale(0.25);
 }
 
 .#{$boldr-ns}loader__item > div {
@@ -46,7 +46,7 @@
   height: 120px;
   background: #207cca;
   opacity: 0.6;
-  animation: boldr_uil 0.8s cubic-bezier(.01, .73, .28, .93) infinite;
+  animation: boldr_uil 0.8s cubic-bezier(0.01, 0.73, 0.28, 0.93) infinite;
 }
 
 .#{$boldr-ns}loader__item > div:nth-of-type(2) {
