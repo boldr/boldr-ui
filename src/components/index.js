@@ -17,8 +17,10 @@ import Media, { MediaOverlay } from './Media';
 import DashboardFooter from './DashboardFooter';
 import Sidebar from './Sidebar';
 import SidebarItem from './SidebarItem';
+import Topbar from './Topbar';
 
 export {
+  Topbar,
   Col,
   Footer,
   FormCard,

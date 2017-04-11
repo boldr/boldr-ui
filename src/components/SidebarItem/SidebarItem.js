@@ -1,4 +1,3 @@
-/* @flow */
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import classnames from 'classnames';
@@ -11,10 +10,10 @@ type Props = {
   key: string,
   onClick: () => void,
   match: Object,
-  menuColor: ?string,
   logo: ?any,
   index: number,
   iconType: string,
+  iconColor: string,
   chevronColor: string,
   subItem: Object,
   item: Object,
@@ -22,19 +21,13 @@ type Props = {
   text: string,
 };
 
-// height is menu item height.
-// we need it in JS instead CSS to calculate overall height of submenu.
-// e.g. 10 items in submenu => height = 10 * 48 = 480px.
-// we have to know the overall height to animate between height 0 and height 480.
-// unfortunately we cannot animate between height 0 and height: auto.
-// that's why we cannot set the height in css.
 const height = 48;
 
 const BASE_ELEMENT = StyleClasses.SIDEBAR_ITEM;
 
 class SidebarItem extends Component {
   static defaultProps = {
-    chevronColor: '#333',
+    iconColor: '#fff',
   };
   state = {
     isOpen: false,
@@ -48,7 +41,13 @@ class SidebarItem extends Component {
       this.onClick(this.props.item, this.props.subItem);
     }
   }
+
+  handleClick = e => {
+    e.preventDefault();
+    e.target.parentElement.classList.toggle('open');
+  };
   props: Props;
+
   onClick = (item, subItem, e) => {
     this.setState({
       isOpen: !this.state.isOpen,
@@ -67,11 +66,10 @@ class SidebarItem extends Component {
       index,
       link,
       text,
-      key,
       iconType,
       onClick,
       links,
-      chevronColor,
+      iconColor,
       item,
       subItem,
       match,
@@ -79,41 +77,38 @@ class SidebarItem extends Component {
     const { isOpen } = this.state;
     return (
       <li
-        className={ classnames(BASE_ELEMENT, {
-          'has-children': links && links.length,
+        className={ classnames(BASE_ELEMENT, 'nav-item', {
+          'nav-dropdown': links && links.length,
+          open: links && this.state.isOpen,
         }) }
       >
-        <span className="boldrui-sidebar-icon"><Icon kind={ iconType } color="#222" /></span>
         <NavLink
-          activeClassName="active"
           to={ link }
-          className="boldrui-sidebar-link"
+          className="nav-link"
+          activeClassName="active"
           title={ text }
           style={ { height } }
           onClick={ e => this.onClick(item, subItem, e) }
         >
-          <span>{text}</span>
+          <Icon className="boldrui-sidebar-icon" kind={ iconType } color={ iconColor } />
+          <span className="boldrui-sidebar-link-txt">{text}</span>
           {links
             ? <Icon
               kind="chevron-right"
-              color={ chevronColor }
+              color={ iconColor }
               className={ classnames('boldrui-sidebar-chevron', {
-                'is-open': isOpen,
+                open: isOpen,
               }) }
             />
             : null}
         </NavLink>
+
         {links &&
-          <ul
-            className="boldrui-sidebar"
-            style={ {
-              display: isOpen ? null : 'none',
-            } }
-          >
-            {links.map((subItem, j) => (
+          <ul className="nav-dropdown-items">
+            {links.map(subItem => (
               <SidebarItem
                 index={ index }
-                subIndex={ j }
+                subIndex={ subItem.id }
                 className={ this.props.className }
                 key={ subItem.key }
                 onClick={ subItem.links ? this.onClick : onClick }

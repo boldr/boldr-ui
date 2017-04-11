@@ -7,42 +7,12 @@
   display: none;
   visibility: hidden;
 }
-@mixin show($display: block) {
-  display: $display;
-  visibility: visible;
-}
-@mixin mq($point) {
-   @if $point == lg{
-    @media (min-width: 60em) {
-       @content;
-    }
-  }
-  @else if $point == md {
-     @media (min-width: 48em){
-      @content;
-    }
-  }
-  @else if $point == sm {
-     @media (min-width: 30em){
-      @content;
-    }
-  }
-}
-@mixin clearfix() {
-  &::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-}
-// Mixins
+
 @mixin breakpoint($breakpoint, $breakpoint-size) {
   // The grid is mobile first so xs is the default, hence no breakpoint
   @if $breakpoint == xs {
     @content;
   }
-
-  // Add breakpoints for larger screens
   @else {
     @media only screen and (min-width: $breakpoint-size) {
       // Static grid
@@ -54,6 +24,7 @@
     }
   }
 }
+
 @mixin md-box-shadow($elevation) {
    @if $elevation < 0 or $elevation > 5{
     @warn 'The elevation must be a number from 0 - 5. elevation given was `#{$elevation}`';
@@ -82,135 +53,22 @@
     }
   }
 }
+
 @mixin box-shadow($shadow...) {
   box-shadow: $shadow;
 }
+
 @mixin transition($transition...) {
   transition: $transition;
 }
-@mixin button-variant($color, $background, $border) {
-  $active-background: darken($background, 10%);
-  $active-border: darken($border, 12%);
-  color: $color;
-  background-color: $background;
-  border-color: $border;
-  @include box-shadow($btn-box-shadow);
-  @include hover {
-    color: $color;
-    background-color: $active-background;
-    border-color: $active-border;
-  }
 
-  &.focus,
-  &:focus {
-    color: $color;
-    background-color: $active-background;
-    border-color: $active-border;
-  }
-
-  &.active,
-  &:active,
-  .open > &.dropdown-toggle {
-    color: $color;
-    background-color: $active-background;
-    border-color: $active-border;
-    // Remove the gradient for the pressed/active state
-    background-image: none;
-    @include box-shadow($btn-active-box-shadow);
-
-    &.focus,
-    &:focus,
-    &:hover {
-      color: $color;
-      background-color: darken($background, 17%);
-      border-color: darken($border, 25%);
-    }
-  }
-
-  &.disabled,
-  &:disabled {
-    &.focus,
-    &:focus {
-      background-color: $background;
-      border-color: $border;
-    }
-    @include hover {
-      background-color: $background;
-      border-color: $border;
-    }
-  }
-}
-@mixin button-outline-variant($color, $color-hover: #fff) {
-  color: $color;
-  background-image: none;
-  background-color: transparent;
-  border-color: $color;
-  @include hover {
-    color: $color-hover;
-    background-color: $color;
-    border-color: $color;
-  }
-
-  &.focus,
-  &:focus {
-    color: $color-hover;
-    background-color: $color;
-    border-color: $color;
-  }
-
-  &.active,
-  &:active,
-  .open > &.dropdown-toggle {
-    color: $color-hover;
-    background-color: $color;
-    border-color: $color;
-
-    &.focus,
-    &:focus,
-    &:hover {
-      color: $color-hover;
-      background-color: darken($color, 17%);
-      border-color: darken($color, 25%);
-    }
-  }
-
-  &.disabled,
-  &:disabled {
-    &.focus,
-    &:focus {
-      border-color: lighten($color, 20%);
-    }
-    @include hover {
-      border-color: lighten($color, 20%);
-    }
-  }
-}
-// Button sizes
-@mixin button-size($padding-y, $padding-x, $font-size, $border-radius) {
-  padding: $padding-y $padding-x;
-  font-size: $font-size;
-  @include border-radius($border-radius);
-}
-@mixin border-radius($radius: $border-radius) {
-  border-radius: $radius;
-}
-@mixin border-top-radius($radius) {
-  border-top-right-radius: $radius;
-  border-top-left-radius: $radius;
-}
-@mixin border-right-radius($radius) {
-  border-bottom-right-radius: $radius;
-  border-top-right-radius: $radius;
-}
-@mixin border-bottom-radius($radius) {
-  border-bottom-right-radius: $radius;
-  border-bottom-left-radius: $radius;
-}
-@mixin border-left-radius($radius) {
-  border-bottom-left-radius: $radius;
-  border-top-left-radius: $radius;
-}
-
+/// Create a social media icon button
+///
+/// @param {Number} padding-y - the amount of y axis padding
+/// @param {Number} padding-x - the amount of x axis padding
+/// @param {Number} font-size - The size of the font
+/// @param {Number} line-height  - Line height of the text
+/// @param {Number} border-radius - Pixel amount of border radius.
 @mixin button-social-size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
   padding: $padding-y $padding-x;
   font-size: $font-size;
@@ -259,6 +117,24 @@
   }
 }
 
+@mixin sidebar-width($borders, $width) {
+  $sidebar-width: $width;
+
+  @each $border in $borders {
+    $direction: nth($border, 1);
+    @if $direction == 'all' {
+      $size: map-get(map-get($borders, $direction), size);
+      $sidebar-width: ( $sidebar-width - ( 2 * $size ));
+    } @else if $direction == 'right' {
+      $size: map-get(map-get($borders, $direction), size);
+      $sidebar-width: $sidebar-width - $size;
+    } @else if $direction == 'left' {
+      $size: map-get(map-get($borders, $direction), size);
+      $sidebar-width: $sidebar-width - $size;
+    }
+    width: $sidebar-width;
+  }
+}
 @mixin borders($borders) {
   @each $border in $borders {
     $direction: nth($border, 1);
@@ -289,4 +165,40 @@
       border-left: $size $style $color;
     }
   }
+}
+@mixin sidebar-width($borders, $width) {
+  $sidebar-width: $width;
+
+  @each $border in $borders {
+    $direction: nth($border, 1);
+    @if $direction == 'all' {
+      $size: map-get(map-get($borders, $direction), size);
+      $sidebar-width: ( $sidebar-width - ( 2 * $size ));
+    } @else if $direction == 'right' {
+      $size: map-get(map-get($borders, $direction), size);
+      $sidebar-width: $sidebar-width - $size;
+    } @else if $direction == 'left' {
+      $size: map-get(map-get($borders, $direction), size);
+      $sidebar-width: $sidebar-width - $size;
+    }
+    width: $sidebar-width;
+  }
+}
+
+@mixin bg-variant($parent, $color) {
+  #{$parent} {
+    @include border-radius($card-border-radius-inner $card-border-radius-inner $card-border-radius-inner $card-border-radius-inner);
+    color: #fff !important;
+    background-color: $color !important;
+  }
+  a#{$parent} {
+    @include hover-focus {
+      background-color: darken($color, 10%);
+    }
+  }
+}
+
+@mixin card-accent-variant($color) {
+  border-top-width: 2px;
+  border-top-color: $color;
 }

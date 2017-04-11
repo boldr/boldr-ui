@@ -1,5 +1,7 @@
 /* eslint-disable max-len, react/no-unescaped-entities */
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 const iconList = [
   'menu',
@@ -28,13 +30,14 @@ const iconList = [
 
 export default class Icon extends PureComponent {
   static propTypes = {
-    color: React.PropTypes.string,
-    height: React.PropTypes.number,
-    kind: React.PropTypes.oneOf(iconList).isRequired,
-    preview: React.PropTypes.bool,
-    onClick: React.PropTypes.func,
-    size: React.PropTypes.number,
-    width: React.PropTypes.number,
+    color: PropTypes.string,
+    className: PropTypes.string,
+    height: PropTypes.number,
+    kind: PropTypes.oneOf(iconList).isRequired,
+    preview: PropTypes.bool,
+    onClick: PropTypes.func,
+    size: PropTypes.number,
+    width: PropTypes.number,
   };
 
   static defaultProps = {
@@ -241,17 +244,17 @@ export default class Icon extends PureComponent {
         );
       case 'chevron-right':
         return (
-          <svg width="24" height="24" viewBox="0 0 24 24" { ...props }>
+          <svg fill={ color } height={ height || size } width={ width || size } viewBox="0 0 24 24">
             <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
           </svg>
         );
     }
   }
   render() {
-    const { kind, preview, onClick } = this.props;
-
+    const { className, kind, preview, onClick } = this.props;
+    const classes = classnames('boldr-icon', this.props.className);
     return (
-      <div className="boldr-icon" onClick={ onClick }>
+      <div className={ classes } onClick={ onClick }>
         {preview ? this.renderPreview() : this.renderIcon(kind)}
       </div>
     );

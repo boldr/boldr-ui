@@ -3,7 +3,7 @@ export const BOLDR_NS = 'boldrui-';
 export const StyleClasses = {
   APP: `${BOLDR_NS}app`,
   CARD: `${BOLDR_NS}card`,
-  DASHBOARD_FOOTER: `${BOLDR_NS}dashboard-footer`,
+  DASHBOARD_FOOTER: `${BOLDR_NS}dash-footer`,
   DIVIDER: `${BOLDR_NS}divider`,
   FOOTER: `${BOLDR_NS}footer`,
   HEADER: `${BOLDR_NS}header`,
@@ -19,7 +19,7 @@ export const StyleClasses = {
   POST_SIDEBAR_AUTHOR: `${BOLDR_NS}sidebar-author`,
   PROFILE_DETAIL: `${BOLDR_NS}profile-detail`,
   PROFILE: `${BOLDR_NS}profile`,
-  SIDEBAR: `${BOLDR_NS}sidebar`,
+  SIDEBAR: `${BOLDR_NS}dash-sidebar`,
   SIDEBAR_ITEM: `${BOLDR_NS}sidebar-item`,
   SIDEBAR_TITLE: `${BOLDR_NS}sidebar-title`,
   SIDEBAR_LINK: `${BOLDR_NS}sidebar-link`,

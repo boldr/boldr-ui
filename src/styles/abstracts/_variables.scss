@@ -1,6 +1,3 @@
-/// Namespace
-$boldr-ns: 'boldrui-' !default;
-
 /// Typography
 /// @group typography
 $font-name: 'Roboto' !default;
@@ -224,6 +221,82 @@ $topbar-disabled-color: rgba(0, 0, 0, .15) !default;
 
 $sidebar-width: 240px !default;
 
+$sidebar-width:                     200px;
+$sidebar-padding:                   0;
+$sidebar-compact-width:             50px;
+$sidebar-compact-height:            $sidebar-compact-width;
+$sidebar-color:                     #fff;
+$sidebar-bg:                        #2D343C;
+$sidebar-header-bg:                 rgba(0,0,0,.2);
+$sidebar-footer-bg:                 rgba(0,0,0,.2);
+$sidebar-borders:                   none;
+$mobile-sidebar-width:              220px;
+
+// Breadcrumb
+
+$breadcrumb-borders: (
+  bottom: (
+    size:                           1px,
+    style:                          solid,
+    color:                          $border-color
+  )
+);
+
+// Sidebar Navigation
+
+$sidebar-nav-color:                 #fff;
+$sidebar-nav-title-padding-y:       .75rem;
+$sidebar-nav-title-padding-x:       1rem;
+$sidebar-nav-title-color:           $cloud;
+$sidebar-nav-link-padding-y:        .75rem;
+$sidebar-nav-link-padding-x:        1rem;
+$sidebar-nav-link-color:            #fff;
+$sidebar-nav-link-bg:               transparent;
+$sidebar-nav-link-icon-color:       $text-color;
+
+$sidebar-nav-link-borders:          0;
+$sidebar-nav-link-hover-color:      #fff;
+$sidebar-nav-link-hover-bg:         $primary-color;
+$sidebar-nav-link-hover-icon-color: #fff !important;
+
+$sidebar-nav-link-hover-borders:    0;
+$sidebar-nav-link-active-color:     #fff;
+$sidebar-nav-link-active-bg:        lighten($sidebar-bg, 5%);
+$sidebar-nav-link-active-icon-color: $primary-color;
+
+$sidebar-nav-link-active-borders:   0;
+
+$sidebar-nav-dropdown-color:        #fff;
+$sidebar-nav-dropdown-bg:           rgba(0,0,0,.2);
+$sidebar-nav-dropdown-borders:      0;
+
+$navbar-height:                     55px;
+$navbar-bg:                         #fff;
+$navbar-border: (
+  bottom: (
+    size:                       1px,
+    style:                      solid,
+    color:                      $border-color
+  )
+);
+$navbar-brand-width:                155px;
+$navbar-brand-bg:                   #fff;
+$navbar-brand-logo:                 url('https://boldr.io/logo.png');
+$navbar-brand-logo-size:            70px auto;
+$navbar-brand-border: (
+  bottom: (
+    size:                       1px,
+    style:                      solid,
+    color:                      $border-color
+  )
+);
+
+$navbar-color:                      rgba(0,0,0,.3);
+$navbar-hover-color:                rgba(0,0,0,.6);
+$navbar-active-color:               rgba(0,0,0,.8);
+$navbar-disabled-color:             rgba(0,0,0,.15);
+
+
 /// @group topbar
 $topbar-nav-bg: #fff !default;
 $topbar-nav-color: $text-color !default;
@@ -238,7 +311,10 @@ $zindex-navbar: 1000;
 
 /// Dashboard Footer
 /// @group dashboard
-$dashboard-footer-height: 50px !default;
-$dashboard-footer-bg: $snow !default;
-$dashboard-footer-color: $text-color !default;
-$dashboard-footer-borders: ( top: ( size: 1px, style: solid, color: $border-color)) !default;
+$dash-footer-height: 50px !default;
+$dash-footer-bg: $snow !default;
+$dash-footer-color: $text-color !default;
+$dash-footer-borders: ( top: ( size: 1px, style: solid, color: $border-color)) !default;
+
+$card-icon-bg:                      transparent;
+$card-icon-color:                   $body-color;

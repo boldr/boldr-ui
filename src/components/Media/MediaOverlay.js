@@ -1,5 +1,5 @@
 /* @flow */
-import React, { PureComponent, PropTypes } from 'react';
+import React, { PureComponent } from 'react';
 import cn from 'classnames';
 import { StyleClasses, BOLDR_NS } from '../../theme/styleClasses';
 import type { ReactChildren } from '../../types/react.js.flow';
