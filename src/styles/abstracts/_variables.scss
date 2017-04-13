@@ -168,18 +168,6 @@ $media-included: true !default;
 /// @type Number
 /// @group defaults
 $md-height: 48px !default;
-$layout-transition-speed: 0.25s !default;
-$sidebar-width: 200px !default;
-$sidebar-padding: 0;
-$sidebar-top-space: 1rem;
-$sidebar-compact-width: 50px;
-$sidebar-compact-height: $sidebar-compact-width;
-$sidebar-color: #fff;
-$sidebar-bg: #2d343c;
-$sidebar-borders: none;
-$mobile-sidebar-width: 220px;
-
-// Breadcrumb
 
 $breadcrumb-borders: (
   bottom: (
@@ -188,6 +176,18 @@ $breadcrumb-borders: (
     color:                          $border-color
   )
 );
+
+$layout-transition-speed: 0.25s !default;
+$sidebar-width: 200px !default;
+$sidebar-padding: 0;
+$sidebar-top-space: 1rem;
+$sidebar-compact-width: 50px;
+$sidebar-compact-height: $sidebar-compact-width;
+$sidebar-color: #fff;
+$sidebar-bg: #333c44;
+$sidebar-borders: none;
+$mobile-sidebar-width: 220px;
+
 $sidebar-nav-title-padding-y: 0.75rem;
 $sidebar-nav-title-padding-x: 1rem;
 $sidebar-nav-title-color: $cloud;
@@ -197,10 +197,10 @@ $sidebar-nav-link-color: #fff;
 $sidebar-nav-link-bg: transparent;
 $sidebar-nav-link-borders: 0;
 $sidebar-nav-link-hover-color: #fff;
-$sidebar-nav-link-hover-bg: $primary-color;
+$sidebar-nav-link-hover-bg: $primary-color !default;
 $sidebar-nav-link-hover-icon-color: #fff !important;
 $sidebar-nav-link-hover-borders: 0;
-$sidebar-nav-link-active-color: #fff;
+$sidebar-nav-link-active-color: #fafafa;
 $sidebar-nav-link-active-bg: lighten($sidebar-bg, 5%);
 $sidebar-nav-link-active-icon-color: $primary-color;
 $sidebar-nav-link-active-borders: 0;
@@ -221,7 +221,7 @@ $navbar-border: (
     color:                      $border-color
   )
 );
-$navbar-brand-width: 155px;
+$navbar-brand-width: 200px;
 $navbar-brand-bg: #fff;
 $navbar-brand-logo: url('https://boldr.io/logo.png') !default;
 $navbar-brand-logo-size: 70px auto;
@@ -242,5 +242,6 @@ $dash-footer-height: 50px !default;
 $dash-footer-bg: $snow !default;
 $dash-footer-color: $text-color !default;
 $dash-footer-borders: ( top: ( size: 1px, style: solid, color: $border-color)) !default;
+$dash-footer-line-height: 17px !default;
 $card-icon-bg: transparent;
 $card-icon-color: $body-color;

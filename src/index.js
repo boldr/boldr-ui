@@ -20,6 +20,7 @@ import Switch from 'react-md/lib/SelectionControls/Switch';
 import List from 'react-md/lib/Lists/List';
 import ListItem from 'react-md/lib/Lists/ListItem';
 import ExpansionList from 'react-md/lib/ExpansionPanels/ExpansionList';
+import ExpansionPanel from 'react-md/lib/ExpansionPanels/ExpansionPanel';
 import TextField from 'react-md/lib/TextFields';
 import DataTable from 'react-md/lib/DataTables/DataTable';
 import TableHeader from 'react-md/lib/DataTables/TableHeader';
@@ -127,6 +128,7 @@ export {
   List,
   ListItem,
   ExpansionList,
+  ExpansionPanel,
   TextField,
   DataTable,
   TableHeader,

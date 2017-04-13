@@ -17,16 +17,7 @@ import {
   DashboardFooter,
   Topbar,
 } from '../src/components';
-
-class Sales extends React.Component {
-  componentWillUnmount() {
-    console.log('Sales Will Unmount');
-  }
-
-  render() {
-    return <div>Sales</div>;
-  }
-}
+import Posts from './Posts';
 
 const Title = styled.div`
     padding: 12px;
@@ -47,8 +38,8 @@ class Root extends Component {
     return <div>Dashboard</div>;
   };
 
-  renderSales = () => {
-    return <Sales />;
+  renderPosts = () => {
+    return <Posts />;
   };
 
   renderProducts = () => {
@@ -154,8 +145,8 @@ class Root extends Component {
             <main className="boldrui-dash-main">
               <Grid fluid>
                 <Route exact path="/" render={ this.renderDashboad } />
-                <Route path="/sales" render={ this.renderSales } />
-                <Route path="/sales/products" render={ this.renderDashboad } />
+                <Route path="/posts" render={ this.renderPosts } />
+                <Route path="/posts/products" render={ this.renderDashboad } />
                 <Route path="/products" render={ this.renderProducts } />
               </Grid>
             </main>

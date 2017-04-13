@@ -2,6 +2,8 @@ export const BOLDR_NS = 'boldrui-';
 
 export const StyleClasses = {
   APP: `${BOLDR_NS}app`,
+  BREADCRUMB: `${BOLDR_NS}breadcrumb`,
+  BREADCRUMB_ITEM: `${BOLDR_NS}breadcrumb-item`,
   CARD: `${BOLDR_NS}card`,
   DASHBOARD_FOOTER: `${BOLDR_NS}dash-footer`,
   DIVIDER: `${BOLDR_NS}divider`,

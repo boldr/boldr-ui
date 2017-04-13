@@ -4,11 +4,12 @@
 $boldr-ns: 'boldrui-' !default;
 $dash-ns: 'boldrui-dash-'; // .#{$dash-ns}
 
+@import 'abstracts/colors/all';
 // Overrides of Bootstrap variables
 @import 'abstracts/bs-overrides';
 // Actual Bootstrap variables file
 @import 'vendor/bootstrap/variables';
-@import 'abstracts/colors/all';
+
 // Our variables
 @import 'abstracts/variables';
 // Bootstrap mixins
