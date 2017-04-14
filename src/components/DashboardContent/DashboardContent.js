@@ -7,11 +7,8 @@ type Props = {
 };
 
 const ContentCont = styled.div`
-height: 100vh;
-width:  100%;
-flex-grow: 1;
-display: flex;
-flex-direction: column;
+  height: 100vh;
+  width:  100%;
 `;
 
 const DashboardContent = (props: Props) => {

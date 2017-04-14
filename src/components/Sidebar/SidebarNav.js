@@ -10,17 +10,15 @@ import type { SidebarLink, SidebarLinks } from './Sidebar';
 
 const BASE_ELEMENT = StyleClasses.SIDEBAR_NAV;
 type Props = {
-  className: ?string,
+  navClassName: ?string,
   items: SidebarLinks,
-  logoClassName: ?string,
-  match: Object,
-  iconColor: ?string,
-  logo: ?any,
+  isPrimaryColor: ?boolean,
+  match: ?Object,
   activeItem: ?string,
   location: Object,
-  linkComponent: ReactElement,
-  chevronComponent: ReactElement,
-  iconComponent: ReactElement,
+  isHidden: boolean,
+  expanded: boolean,
+  onExpandCollapse: () => void,
 };
 
 class SidebarNav extends Component {
@@ -32,16 +30,21 @@ class SidebarNav extends Component {
   // Create Item tree with additional properties
   componentWillMount() {
     const items = this.props.items ? createItemTree(this.props.items) : [];
-    this.setState({ items });
+    this.setState({ items,
+      activeItemLink: this.props.location });
   }
 
   componentWillReceiveProps(newProps: Object) {
     if (newProps && newProps.activeItem) {
+      console.log('sidebarnav', newProps);
       const items = activateItemWithLink(newProps.activeItem, this.state.items);
-      this.setState({ activeItemLink: newProps.activeItem,
-        items });
+      this.setState({
+        activeItemLink: newProps.activeItem,
+        items,
+      });
     }
   }
+
   props: Props;
   onItemClick = id =>
     e => {
@@ -52,26 +55,37 @@ class SidebarNav extends Component {
     };
 
   toggleItem = id => {
-    const items = toggleExpandedItemWithId(id, this.state.items);
+    // console.log('toggleItem', expanded);
+    if (this.props.onExpandCollapse) {
+      this.props.onExpandCollapse();
+    }
+
+    //(activate, items, id, link = null, switchParentFn = null)
+    const items = toggleExpandedItemWithId(id, this.props.items);
+    // if (this.props.handleToggle) {
+    //   this.props.handleToggle();
+    // }
     this.setState({ items });
   };
 
   renderItems = () =>
-    this.state.items.map(item => (
+    this.props.items.map(item => (
       <SidebarNavItem
         key={ item.id }
         level={ 0 }
-        linkComponent={ this.props.linkComponent }
-        chevronComponent={ this.props.chevronComponent }
-        iconComponent={ this.props.iconComponent }
+        expanded={ this.props.expanded }
+        onExpandCollapse={ this.props.onExpandCollapse }
+        activeItem={ this.props.activeItem }
         onItemClick={ this.onItemClick }
+        location={ this.props.location }
+        match={ this.props.match }
         { ...item }
       />
     ));
 
   render() {
-    const { className } = this.props;
-    const classes = classnames(BASE_ELEMENT, { 'boldr-theme': !this.props.className });
+    const { navClassName } = this.props;
+    const classes = classnames(BASE_ELEMENT, { 'boldr-theme': !this.props.navClassName });
     return (
       <div className={ classes }>
         {this.renderItems()}

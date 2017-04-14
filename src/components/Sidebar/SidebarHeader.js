@@ -47,7 +47,7 @@ const SidebarHeader = (props: Props) => {
 
 SidebarHeader.defaultProps = {
   logoImg: 'https://boldr.io/logo.png',
-  primary: true,
+  isPrimaryColor: true,
 };
 
 export default SidebarHeader;

@@ -36,23 +36,31 @@ export const createItemTree = (input, level = 0) =>
   input.map(
     item =>
       item.items
-        ? { expanded: false,
+        ? {
+          expanded: false,
           active: false,
           level,
           ...item,
-          items: createItemTree(item.items, level + 1) }
-        : { expanded: false,
+          items: createItemTree(item.items, level + 1),
+        }
+        : {
+          expanded: false,
           active: false,
           level,
-          ...item },
+          ...item,
+        },
   );
 
 export const collapseTree = items =>
   items.map(
-    item => item.items ? { ...item,
+    item => item.items
+    ? {
+      ...item,
       expanded: false,
-      items: collapseTree(item.items) } : { ...item,
-        expanded: false },
+      items: collapseTree(item.items) } : {
+        ...item,
+        expanded: false,
+      },
   );
 
 export const deactivateTree = items =>
@@ -76,7 +84,7 @@ const activateParent = parentItem =>
 const switchItem = (activate, items, id, link = null, switchParentFn = null) =>
   items.map(item => {
     const newItem = { ...item };
-
+    console.log('newItem', newItem);
     if ((id && newItem.id === id) || (!id && newItem.link && newItem.link === link)) {
       // This item is to be toggled or activated
       if (!activate) newItem.expanded = !newItem.expanded;
@@ -107,7 +115,6 @@ const switchItem = (activate, items, id, link = null, switchParentFn = null) =>
   });
 
 export const toggleExpandedItemWithId = (id, items) => switchItem(false, items, id);
-
 export const toggleExpandedItemWithLink = (link, items) => switchItem(false, items, null, link);
 
 export const activateItemWithId = (id, items) => switchItem(true, items, id);
