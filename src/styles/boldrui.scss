@@ -5,15 +5,9 @@ $boldr-ns: 'boldrui-' !default;
 $dash-ns: 'boldrui-dash-'; // .#{$dash-ns}
 
 @import 'abstracts/colors/all';
-// Overrides of Bootstrap variables
-@import 'abstracts/bs-overrides';
-// Actual Bootstrap variables file
-@import 'vendor/bootstrap/variables';
 
 // Our variables
 @import 'abstracts/variables';
-// Bootstrap mixins
-@import 'vendor/bootstrap/mixins';
 // Our mixins
 @import 'abstracts/mixins';
 // Bootstrap components and custom bootstrap component variations
@@ -21,7 +15,6 @@ $dash-ns: 'boldrui-dash-'; // .#{$dash-ns}
 // Base (typography, grid, animation)
 @import 'base/all';
 @import 'components/all';
-@import 'util/all';
 
 @include react-md-everything;
 @include boldrui-paper;

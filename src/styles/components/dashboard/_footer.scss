@@ -1,10 +1,18 @@
 .#{$dash-ns}footer {
   min-height: $dash-footer-height;
-  padding: 1rem $spacer-x;
   line-height: $dash-footer-line-height;
-  font-size: 11px;
   color: $dash-footer-color;
   background: $dash-footer-bg;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   transition: left 0.3s cubic-bezier(0, 0, 0.2, 1);
+  padding: 13px 0;
 }
+
+.#{$dash-ns}footer-copyright {
+  padding-left: 25px;
+}
+
+.#{$dash-ns}footer-powered {
+  float: right;
+  padding-right: 15px;
+};

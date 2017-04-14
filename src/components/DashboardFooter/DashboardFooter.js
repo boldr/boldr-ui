@@ -16,7 +16,7 @@ const DashboardFooter = (props: Props) => {
   return (
     <footer className={ classes }>
       <span className={ `${BASE_ELEMENT}-copyright` }>{ props.copyright }</span>
-      <span className="float-right">Powered by <a href="https://boldr.io">Boldr</a></span>
+      <span className={ `${BASE_ELEMENT}-powered` }>Powered by <a href="https://boldr.io">Boldr</a></span>
     </footer>
   );
 };

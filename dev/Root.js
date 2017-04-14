@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import styled from 'styled-components';
-
+import { SlideLeft, SlideRight } from 'animate-components';
 import '../src/styles/boldrui.scss';
 import {
   Grid,
@@ -17,6 +17,9 @@ import {
   DashboardFooter,
   Topbar,
 } from '../src/components';
+import DashboardContent from '../src/components/DashboardContent';
+import DashboardWrapper from '../src/components/DashboardWrapper';
+
 import Posts from './Posts';
 
 const Title = styled.div`
@@ -34,8 +37,18 @@ const SeparatorTitleContainer = styled.div`
 `;
 
 class Root extends Component {
+  state = {
+    hidden: false,
+  };
+
   renderDashboad = () => {
-    return <div>Dashboard</div>;
+    return (
+      <div>
+        Today, April 7th 2017, WikiLeaks releases Vault 7 "Grasshopper" -- 27 documents from the CIA's Grasshopper framework, a platform used to build customized malware payloads for Microsoft Windows operating systems.
+
+        Grasshopper is provided with a variety of modules that can be used by a CIA operator as blocks to construct a customized implant that will behave differently, for example maintaining persistence on the computer differently, depending on what particular features or capabilities are selected in the process of building the bundle. Additionally, Grasshopper provides a very flexible language to define rules that are used to "perform a pre-installation survey of the target device, assuring that the payload will only [be] installed if the target has the right configuration". Through this grammar CIA operators are able to build from very simple to very complex logic used to determine, for example, if the target device is running a specific version of Microsoft Windows, or if a particular Antivirus product is running or not.
+      </div>
+    );
   };
 
   renderPosts = () => {
@@ -45,7 +58,11 @@ class Root extends Component {
   renderProducts = () => {
     return <div>Products</div>;
   };
-
+  toggleSidebar = e => {
+    this.setState({
+      hidden: !this.state.hidden,
+    });
+  };
   render() {
     const testStats = {
       posts: 3,
@@ -60,100 +77,24 @@ class Root extends Component {
       username: 'someone',
     };
     return (
-      <Router>
-        <div className="boldrui-dash-wrapper boldrui-dash-topbar__fixed boldrui-dash-sidebar-fixed">
-          <Topbar />
-          <div className="boldrui-dash-body">
-            <Sidebar
-              links={ [
-                {
-                  text: 'New Post',
-                  iconType: 'new-post',
-                  key: 0,
-                  id: 1,
-                  exact: true,
-                  link: '/sales',
-                },
-                {
-                  text: 'Post Listing',
-                  iconType: 'posts',
-                  key: 1,
-                  id: 2,
-                  exact: true,
-                  link: '/sales',
-                  links: [
-                    {
-                      text: 'Post Listing',
-                      iconType: 'posts',
-                      key: 1.1,
-                      id: 3,
-                      exact: true,
-                      link: '/products',
-                    },
-                    {
-                      text: 'Post Listing',
-                      iconType: 'posts',
-                      key: 1.2,
-                      id: 4,
-                      exact: true,
-                      link: '/products',
-                    },
-                  ],
-                },
-                {
-                  text: 'Tags',
-                  iconType: 'tags',
-                  key: 2,
-                  id: 5,
-                  exact: true,
-                  link: '/admin/tags',
-                },
-                {
-                  text: 'File Manager',
-                  iconType: 'folder-upload',
-                  key: 3,
-                  id: 6,
-                  exact: true,
-                  link: '/admin/filemanger',
-                },
-                {
-                  text: 'Navigation Editor',
-                  iconType: 'routes',
-                  key: 4,
-                  id: 7,
-                  exact: true,
-                  link: '/admin/navigation',
-                },
-                {
-                  text: 'Members List',
-                  iconType: 'account-card',
-                  key: 5,
-                  id: 8,
-                  exact: true,
-                  link: '/admin/members',
-                },
-                {
-                  text: 'Site Settings',
-                  iconType: 'settings',
-                  key: 6,
-                  id: 9,
-                  exact: true,
-                  link: '/admin/settings',
-                },
-              ] }
-            />
-            <main className="boldrui-dash-main">
-              <Grid fluid>
-                <Route exact path="/" render={ this.renderDashboad } />
-                <Route path="/posts" render={ this.renderPosts } />
-                <Route path="/posts/products" render={ this.renderDashboad } />
-                <Route path="/products" render={ this.renderProducts } />
-              </Grid>
-            </main>
-          </div>
-          <DashboardFooter />
-        </div>
-      </Router>
+      <div
+        style={ {
+          display: 'flex',
+          height: '100%',
+        } }
+      >
+        {!this.state.hidden ? <Sidebar /> : null}
+        <DashboardWrapper>
+          <Topbar toggleSidebar={ this.toggleSidebar } />
+          <DashboardContent>
+            <Grid fluid>
+              <Route exact path="/" render={ this.renderDashboad } />
+
+            </Grid>
+          </DashboardContent>
+          <DashboardFooter copyright="© 2017 Steven Truesdell" />
+        </DashboardWrapper>
+      </div>
     );
   }
 }

@@ -104,12 +104,12 @@ $md-secondary-background-text-color: $md-white-base !default;
 /// @group themes
 $boldrui-light-theme: true !default;
 $shadow-color: rgba(0, 0, 0, 0.2) !default;
-$body-background: #e5eaed !default;
+$body-background: $cloud !default;
 $link-color: $accent-color !default;
 $error-color: $md-red-700 !default;
 $text-color: $near-black !default;
 $header-font-color: $navy !default;
-$border-color: $cloud !default;
+$border-color: darken($cloud, 3%) !default;
 
 /// Borders
 /// @group borders
@@ -240,8 +240,5 @@ $navbar-active-color: rgba(0, 0, 0, 0.8);
 /// @group dashboard
 $dash-footer-height: 50px !default;
 $dash-footer-bg: $snow !default;
-$dash-footer-color: $text-color !default;
-$dash-footer-borders: ( top: ( size: 1px, style: solid, color: $border-color)) !default;
+$dash-footer-color: #636c72;
 $dash-footer-line-height: 17px !default;
-$card-icon-bg: transparent;
-$card-icon-color: $body-color;

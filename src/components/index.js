@@ -15,11 +15,14 @@ import Social, { Github, Facebook, Twitter, Google, LinkedIn } from './Social';
 import Paragraph from './Paragraph';
 import Media, { MediaOverlay } from './Media';
 import DashboardFooter from './DashboardFooter';
-import Sidebar from './Sidebar';
-import SidebarItem from './SidebarItem';
+import { Sidebar, SidebarNav, SidebarNavItem, Chevron, FaIcon, SidebarWrapper, SidebarHeader } from './Sidebar';
 import Topbar from './Topbar';
+import DashboardWrapper from './DashboardWrapper';
+import DashboardContent from './DashboardContent';
+import Anchor from './Anchor';
 
 export {
+  Anchor,
   Topbar,
   Col,
   Footer,
@@ -51,5 +54,12 @@ export {
   Media,
   MediaOverlay,
   Sidebar,
-  SidebarItem,
+  SidebarNav,
+  SidebarNavItem,
+  Chevron,
+  FaIcon,
+  SidebarWrapper,
+  SidebarHeader,
+  DashboardWrapper,
+  DashboardContent,
 };
