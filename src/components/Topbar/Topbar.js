@@ -51,9 +51,8 @@ class Topbar extends Component {
           className="boldrui-toggler"
           onClick={ this.toggle }
           kind="menu"
-        >
-          ☰
-        </Icon>
+          color="#222"
+        />
         <div className="boldrui-topbar-right">
           <div className="boldrui-topbar-user">
             <img className="boldrui-topbar-user-avatar" src="https://boldr.io/images/unknown-avatar.png" height="24" />

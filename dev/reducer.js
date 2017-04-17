@@ -5,7 +5,7 @@ const INITIAL_STATE = {
   expanded: true,
   visible: true,
 };
-function toggleCollapse(state) {
+function toggleExpandCollapse(state) {
   const newState = Object.assign({}, state);
   newState.expanded = !newState.expanded;
   return newState;
@@ -18,15 +18,14 @@ function toggleSidebar(state) {
 function ui(state = INITIAL_STATE, action) {
   switch (action.type) {
     case 'TOGGLE_SB_MENU':
-      return toggleCollapse(state)
-      case 'TOGGLE_SIDEBAR':
+      return toggleExpandCollapse(state);
+    case 'TOGGLE_SIDEBAR':
       return toggleSidebar(state);
 
     default:
       return state;
   }
 }
-
 
 const rootReducer = combineReducers({
   ui,

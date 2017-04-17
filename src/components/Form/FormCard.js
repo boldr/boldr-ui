@@ -30,7 +30,7 @@ const FormCard = (props: Props) => {
     <div>
       <Row>
         <Col xs={ 12 }>
-          <Row xsCenter>
+          <Row center="xs">
             <Col xs={ 6 }>
               <Card
                 style={ {

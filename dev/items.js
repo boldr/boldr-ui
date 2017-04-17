@@ -7,11 +7,13 @@ const menuItems = [
         label: 'View Posts',
         icon: 'fa-car',
         link: '/admin/posts',
+        exact: true,
       },
       { id: 12,
         label: 'New Post',
         icon: 'fa-bullhorn',
         link: '/admin/new-post',
+        exact: true,
       },
       {
         label: 'Tags',

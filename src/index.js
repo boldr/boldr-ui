@@ -32,7 +32,8 @@ import MenuButton from 'react-md/lib/Menus/MenuButton';
 import Menu from 'react-md/lib/Menus/Menu';
 
 import { BOLDR_NS, StyleClasses } from './theme/styleClasses';
-import { mediaQuery } from './theme/theme';
+import theme, { mediaQuery } from './theme/theme';
+import { colors, gridsys, borders, fonts } from './theme';
 
 import {
   Col,
@@ -75,6 +76,14 @@ import {
   SidebarHeader,
   DashboardWrapper,
   DashboardContent,
+  Link,
+  Block,
+  Caption,
+  Label,
+  HorizontalRule,
+  BASE_CONF,
+  Photo,
+  Dimmer,
 } from './components';
 
 export {
@@ -121,7 +130,19 @@ export {
   SidebarHeader,
   DashboardWrapper,
   DashboardContent,
-
+  Link,
+  Block,
+  Caption,
+  Label,
+  HorizontalRule,
+  BASE_CONF,
+  Photo,
+  Dimmer,
+  colors,
+  gridsys,
+  borders,
+  fonts,
+  theme,
   Card,
   CardTitle,
   CardActions,

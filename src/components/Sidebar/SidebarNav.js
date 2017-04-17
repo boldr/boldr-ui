@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import { StyleClasses, BOLDR_NS } from '../../theme/styleClasses';
 import type { ReactChildren, ReactElement } from '../../types/react.js.flow';
 import SidebarNavItem from './SidebarNavItem';
-import { createItemTree, toggleExpandedItemWithId, activateItemWithLink } from './SidebarUtils';
+import { createItemTree, toggleExpandedItemWithId, expandParent, activateItemWithLink } from './SidebarUtils';
 import type { SidebarLink, SidebarLinks } from './Sidebar';
 
 const BASE_ELEMENT = StyleClasses.SIDEBAR_NAV;
@@ -18,6 +18,7 @@ type Props = {
   location: Object,
   isHidden: boolean,
   expanded: boolean,
+  expandParent: () => void,
   onExpandCollapse: () => void,
 };
 
@@ -45,24 +46,18 @@ class SidebarNav extends Component {
   }
 
   props: Props;
-  onItemClick = id =>
+  onItemClick = (id, items) =>
     e => {
       e.stopPropagation();
       e.nativeEvent.stopImmediatePropagation();
       e.preventDefault();
-      this.toggleItem(id);
+      this.toggleItem(id, items);
     };
-
-  toggleItem = id => {
+  toggleItem = (id, items) => {
     if (this.props.onExpandCollapse) {
       this.props.onExpandCollapse();
     }
-
-    const items = toggleExpandedItemWithId(id, this.props.items);
-    // if (this.props.handleToggle) {
-    //   this.props.handleToggle();
-    // }
-    this.setState({ items });
+    toggleExpandedItemWithId(id, items);
   };
 
   renderItems = () =>

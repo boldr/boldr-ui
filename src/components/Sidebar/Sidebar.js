@@ -30,7 +30,9 @@ type Props = {
   iconComponent: ReactElement,
   isPrimaryColor: ?boolean,
   activeItem: string,
+  // sidebar is hidden or visible? default visible
   visible: boolean,
+  // expand or collapse menu item?
   expanded: boolean,
   onVisibilityChange: () => void,
   onExpandCollapse: () => void,
@@ -38,6 +40,7 @@ type Props = {
   logoImg: string,
   // Where should the logo link to? Default is /
   logoLink: string,
+  // light or dark themed sidebar
   sidebarDark: boolean,
 };
 

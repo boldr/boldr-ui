@@ -1,5 +1,5 @@
 /* @flow */
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import classnames from 'classnames';
 import NavLink from 'react-router-dom/NavLink';
 
@@ -13,10 +13,17 @@ type Props = {
 };
 
 const Anchor = (props: Props) => {
-  const { href, className, label, onClick, icon } = props;
+  const {href, className, label, onClick, icon} = props;
   return (
-    <NavLink to={ href } className="boldrui-link" onClick={ onClick } title={ label } { ...props }>
-      <i className={ classnames('fa', props.icon) } />{label}
+    <NavLink
+      to={href}
+      className="boldrui-link"
+      onClick={onClick}
+      title={label}
+      {...props}
+    >
+      {props.icon ? <i className={classnames('fa', props.icon)} /> : null}
+      {label}
     </NavLink>
   );
 };

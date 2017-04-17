@@ -7,7 +7,7 @@ type Props = {
 };
 
 const ContentCont = styled.div`
-  height: 100vh;
+  height: 100%;
   width:  100%;
 `;
 

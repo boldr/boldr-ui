@@ -15,6 +15,7 @@ type SidebarNavItemProps = {
   label: string,
   id: string | number,
   onItemClick: () => void,
+  onSubItemClick: () => void,
   level: number,
   link: string,
   icon: string,
@@ -43,7 +44,7 @@ const SidebarNavItem = (props: SidebarNavItemProps) =>
           expanded: props.expanded,
           active: props.active,
         }) }
-        onClick={ props.onItemClick(props.id) }
+        onClick={ props.onItemClick(props.id, props.items) }
       >
         <div className={ classnames(`${BASE_ELEMENT}-title`) }>
           {/* if theres an icon we're going to render it */}
@@ -63,6 +64,7 @@ const SidebarNavItem = (props: SidebarNavItemProps) =>
                 key={ item.id }
                 level={ props.level + 1 }
                 onItemClick={ props.onItemClick }
+                expanded={ props.expanded }
                 { ...item }
               />
               ))
