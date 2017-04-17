@@ -10,7 +10,7 @@ exports[`<DashboardFooter /> renders snapshot 1`] = `
     widget
   </span>
   <span
-    className="float-right"
+    className="boldrui-dash-footer-powered"
   >
     Powered by 
     <a
