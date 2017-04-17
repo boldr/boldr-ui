@@ -44,37 +44,12 @@ type Props = {
 const BASE_ELEMENT = StyleClasses.SIDEBAR;
 class Sidebar extends Component {
   static defaultProps = {
-    expanded: true,
     isPrimaryColor: true,
+    sidebarDark: true,
     logoImg: 'https://boldr.io/logo.png',
   };
   state = {
     activate: null,
-  };
-  componentWillMount() {
-    this.setState({
-      expanded: this.props.expanded !== null ? this.props.expanded : true,
-    });
-  }
-  componentWillReceiveProps(nextProps) {
-    console.log('componentWillReceiveProps', nextProps);
-    // If controlled then the open prop takes precedence.
-    if (nextProps.expanded !== null) {
-      this.setState({
-        expanded: nextProps.expanded,
-      });
-    }
-  }
-  collapse = (reason) => {
-    if (this.props.expanded === null) this.setState({ expanded: false });
-    if (this.props.onExpandCollapse) this.props.onExpandCollapse(false, reason);
-    return this;
-  };
-
-  expand = (reason) => {
-    if (this.props.expanded === null) this.setState({ expanded: true });
-    if (this.props.onExpandCollapse) this.props.onExpandCollapse(true, reason);
-    return this;
   };
 
   props: Props;

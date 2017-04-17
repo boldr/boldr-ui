@@ -84,7 +84,7 @@ const activateParent = parentItem =>
 const switchItem = (activate, items, id, link = null, switchParentFn = null) =>
   items.map(item => {
     const newItem = { ...item };
-    console.log('newItem', newItem);
+
     if ((id && newItem.id === id) || (!id && newItem.link && newItem.link === link)) {
       // This item is to be toggled or activated
       if (!activate) newItem.expanded = !newItem.expanded;

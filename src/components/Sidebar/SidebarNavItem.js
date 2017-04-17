@@ -44,7 +44,7 @@ const SidebarNavItem = (props: SidebarNavItemProps) =>
           active: props.active,
         }) }
         onClick={ props.onItemClick(props.id) }
-      >{ console.log('sidebarnavitem', props.expanded)}
+      >
         <div className={ classnames(`${BASE_ELEMENT}-title`) }>
           {/* if theres an icon we're going to render it */}
           {props.icon ? <FaIcon className={ classnames(`${PARENT_ELEMENT}-icon`, props.icon) } /> : null}

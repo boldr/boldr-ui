@@ -36,8 +36,7 @@ class SidebarNav extends Component {
 
   componentWillReceiveProps(newProps: Object) {
     if (newProps && newProps.activeItem) {
-      console.log('sidebarnav', newProps);
-      const items = activateItemWithLink(newProps.activeItem, this.state.items);
+      const items = activateItemWithLink(newProps.activeItem, this.props.items);
       this.setState({
         activeItemLink: newProps.activeItem,
         items,
@@ -55,12 +54,10 @@ class SidebarNav extends Component {
     };
 
   toggleItem = id => {
-    // console.log('toggleItem', expanded);
     if (this.props.onExpandCollapse) {
       this.props.onExpandCollapse();
     }
 
-    //(activate, items, id, link = null, switchParentFn = null)
     const items = toggleExpandedItemWithId(id, this.props.items);
     // if (this.props.handleToggle) {
     //   this.props.handleToggle();
