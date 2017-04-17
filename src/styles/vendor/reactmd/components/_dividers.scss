@@ -5,11 +5,11 @@
 
 /// Boolean if the base classes for divider borders should be included.
 /// @type Boolean
-$md-divider-include-borders: true !default;
+$divider-inc-borders: true !default;
 
 /// The height for a Divider
 /// @type Number
-$md-divider-height: 1px;
+$divider-height: 1px;
 
 /// Includes the Divider styles
 ///
@@ -17,27 +17,27 @@ $md-divider-height: 1px;
 ///   @include react-md-dividers;
 ///
 /// @param {Boolean} light-theme [$md-light-theme] - Boolean if using the light theme.
-@mixin react-md-dividers($light-theme: $md-light-theme, $include-borders: $md-divider-include-borders) {
+@mixin react-md-dividers($light-theme: $md-light-theme, $include-borders: $divider-inc-borders) {
   .md-divider {
     background: get-color('divider', $light-theme);
     border: 0;
     content: '';
     display: block;
-    height: $md-divider-height;
+    height: $divider-height;
     margin: 0;
   }
 
   .md-divider--vertical {
     height: 100%;
-    width: $md-divider-height;
+    width: $divider-height;
   }
 
   .md-divider--inset {
-    margin-left: $md-list-left-padding;
+    margin-left: $list-pad-left;
   }
 
   @if $include-borders {
-    @include react-md-divider-borders($light-theme);
+    @include boldrui-divider-borders($light-theme);
   }
 }
 
@@ -56,12 +56,12 @@ $md-divider-height: 1px;
 ///   - only includes a border to the left of the element.
 ///
 /// @example scss - Example Usage SCSS
-///   @include react-md-divider-borders;
+///   @include boldrui-divider-borders;
 ///
 /// @param {Boolean} light-theme [$md-light-theme] - Boolean if the borders should
 ///     be styled for the light theme.
 /// @see {Mixin} react-md-theme-divider-borders
-@mixin react-md-divider-borders($light-theme: $md-light-theme) {
+@mixin boldrui-divider-borders($light-theme: $md-light-theme) {
   .md-divider-border {
     border-color: get-color('divider', $light-theme);
     border-style: solid;
@@ -93,7 +93,7 @@ $md-divider-height: 1px;
 ///
 /// @param {Boolean} light-theme [$md-light-theme] - Boolean if using the light theme.
 /// @group dividers, themes
-@mixin react-md-theme-dividers($light-theme: $md-light-theme, $include-borders: $md-divider-include-borders) {
+@mixin react-md-theme-dividers($light-theme: $md-light-theme, $include-borders: $divider-inc-borders) {
   @if $light-theme != $md-light-theme {
     .md-divider {
       background: get-color('divider', $light-theme);

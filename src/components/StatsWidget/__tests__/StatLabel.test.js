@@ -1,5 +1,4 @@
 import React from 'react';
-
 import StatLabel from '../StatLabel';
 
 const mockName = 'abc';

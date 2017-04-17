@@ -12,7 +12,7 @@ $md-font-icon-separator-padding: $md-default-padding !default;
 
 /// The light theme's disabled color for icons.
 /// @type Color
-$md-font-icon-light-theme-disabled-color: rgba($md-black-base, .26);
+$md-font-icon-light-theme-disabled-color: rgba($black-base, .26);
 
 /// The dark theme's disabled color for icons.
 /// @type Color
@@ -28,7 +28,7 @@ $md-font-icon-dark-theme-disabled-color: rgba($md-white-base, .3);
     color: $md-icon-color;
     font-size: $md-font-icon-size;
     text-align: center;
-    transition-duration: $md-transition-time;
+    transition-duration: $transition-length;
     transition-property: color;
     user-select: none;
 

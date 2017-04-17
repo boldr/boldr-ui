@@ -110,7 +110,7 @@ $md-btn-dark-theme-pressed-color: rgba($md-btn-dark-theme-base-color, .25);
 ///     the buttons with.
 /// @param {Boolean} light-theme [$md-light-theme] - Boolean if the buttons should be styled
 ///     for the light theme.
-/// @param {Boolean} include-media [$md-media-included] - Boolean if the media queries should
+/// @param {Boolean} include-media [$media-included] - Boolean if the media queries should
 ///     also be included in this mixin.
 /// @param {Boolean} include-flat [$md-btn-include-flat] - Boolean if the flat styles for
 ///     buttons should be included.
@@ -124,7 +124,7 @@ $md-btn-dark-theme-pressed-color: rgba($md-btn-dark-theme-base-color, .25);
   $primary-color: $md-primary-color,
   $secondary-color: $md-secondary-color,
   $light-theme: $md-light-theme,
-  $include-media: $md-media-included,
+  $include-media: $media-included,
   $include-flat: $md-btn-include-flat,
   $include-raised: $md-btn-include-raised,
   $include-icon: $md-btn-include-icon,
@@ -144,7 +144,7 @@ $md-btn-dark-theme-pressed-color: rgba($md-btn-dark-theme-base-color, .25);
     border: 0;
     border-radius: 2px;
     position: relative;
-    transition-duration: $md-transition-time;
+    transition-duration: $transition-length;
     transition-property: background, color;
 
     // Prevents click event from firing when clicking a child
@@ -187,7 +187,7 @@ $md-btn-dark-theme-pressed-color: rgba($md-btn-dark-theme-base-color, .25);
       min-width: $md-btn-min-width;
       padding: 8px $md-btn-lr-padding;
       text-transform: uppercase;
-      transition-duration: $md-transition-time;
+      transition-duration: $transition-length;
     }
   }
 
@@ -195,7 +195,7 @@ $md-btn-dark-theme-pressed-color: rgba($md-btn-dark-theme-base-color, .25);
     .md-btn--raised {
       @include md-box-shadow(1);
 
-      transition: background $md-transition-time, box-shadow $md-transition-time * 2, color $md-transition-time;
+      transition: background $transition-length, box-shadow $transition-length * 2, color $transition-length;
     }
 
     .md-btn--raised-disabled {
@@ -375,7 +375,7 @@ $md-btn-dark-theme-pressed-color: rgba($md-btn-dark-theme-base-color, .25);
 /// Creates the styes for buttons on desktop screens.
 ///
 /// @example scss - Example Usage SCSS
-///   @media #{$md-desktop-media} {
+///   @media #{$desktop-media} {
 ///     @include react-md-buttons-desktop;
 ///   }
 ///
@@ -450,7 +450,7 @@ $md-btn-dark-theme-pressed-color: rgba($md-btn-dark-theme-base-color, .25);
     @include react-md-buttons-mobile($include-flat, $include-raised, $include-floating);
   }
 
-  @media #{$md-desktop-media} {
+  @media #{$desktop-media} {
     @include react-md-buttons-desktop($include-flat, $include-raised, $include-floating);
   }
 }

@@ -29,21 +29,21 @@ const FormCard = (props: Props) => {
   return (
     <div>
       <Row>
-        <Col xs={12}>
-          <Row xsCenter>
-            <Col xs={6}>
+        <Col xs={ 12 }>
+          <Row center="xs">
+            <Col xs={ 6 }>
               <Card
-                style={{
+                style={ {
                   maxWidth: props.width || 600,
                   marginTop: '100px',
-                }}
+                } }
                 className="md-block-centered"
               >
-                <CardTitle className="boldr-form__title" title={props.title} expander />
+                <CardTitle className="boldr-form__title" title={ props.title } expander />
                 <CardText>
                   {props.form}
                 </CardText>
-                <CardActions style={{ justifyContent: 'center' }} expandable>
+                <CardActions style={ { justifyContent: 'center' } } expandable>
                   <FormFooter>
                     <FormFooterItem>{props.extra1}</FormFooterItem>
                     <FormFooterItem>{props.extra2}</FormFooterItem>

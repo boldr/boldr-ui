@@ -19,7 +19,7 @@ $md-inline-autocomplete: true !default;
 /// @param {Boolean} light-theme [$md-light-theme] - Boolean if using the light theme.
 /// @param {Boolean} include-inline [$md-inline-autocomplete] - Boolean if the inline styles
 ///     for autocompletes should be included.
-@mixin react-md-autocompletes($light-theme: $md-light-theme, $include-media: $md-media-included, $include-inline: $md-inline-autocomplete) {
+@mixin react-md-autocompletes($light-theme: $md-light-theme, $include-media: $media-included, $include-inline: $md-inline-autocomplete) {
   @if $include-inline {
     .md-autocomplete-suggestion {
       color: get-color('secondary', $light-theme);
@@ -81,7 +81,7 @@ $md-inline-autocomplete: true !default;
 /// This should normally be used within a media query.
 ///
 /// @example scss - Example Usage SCSS
-///   @media #{$md-desktop-media} {
+///   @media #{$desktop-media} {
 ///     @include react-md-autocompletes-desktop;
 ///   }
 ///
@@ -118,7 +118,7 @@ $md-inline-autocomplete: true !default;
       @include react-md-autocompletes-mobile($include-inline);
     }
 
-    @media #{$md-desktop-media} {
+    @media #{$desktop-media} {
       @include react-md-autocompletes-desktop($include-inline);
     }
   }

@@ -5,19 +5,19 @@
 
 /// The defualt transition time for the paper to raise from 0 to 3
 /// @type Number
-$md-paper-transition-time: $md-transition-time * 2 !default;
+$paper-transition-time: $transition-length * 2 !default;
 
 /// Creates the styles for paper.
-@mixin react-md-papers($include-media: $md-media-included) {
+@mixin react-md-papers($include-media: $media-included) {
   @for $i from 0 through 5 {
     .md-paper--#{$i} {
       @include md-box-shadow($i);
     }
 
     @if $i == 0 and $include-media {
-      @media #{$md-desktop-media} {
+      @media #{$desktop-media} {
         .md-paper--#{$i}-hover {
-          transition-duration: $md-paper-transition-time;
+          transition-duration: $paper-transition-time;
           transition-property: box-shadow;
 
           &:hover {
@@ -56,9 +56,9 @@ $md-paper-transition-time: $md-transition-time * 2 !default;
   @if $elevation < 0 or $elevation > 5 {
     @warn 'The elevation must be a number from 0 - 5. elevation given was `#{$elevation}`';
   } @else {
-    $top-shadow-color: rgba($md-black-base, .14);
-    $middle-shadow-color: rgba($md-black-base, .12);
-    $bottom-shadow-color: rgba($md-black-base, if($elevation == 1, .2, .4));
+    $top-shadow-color: rgba($black-base, .14);
+    $middle-shadow-color: rgba($black-base, .12);
+    $bottom-shadow-color: rgba($black-base, if($elevation == 1, .2, .4));
 
     @if $elevation == 0 {
       box-shadow: none;

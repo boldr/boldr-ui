@@ -1,17 +1,21 @@
 .boldr-notification__transition-enter {
-  opacity: .01;
-  transition: opacity .5s ease-in;
+  opacity: 0.01;
+  transition: opacity 0.5s ease-in;
 }
+
 .boldr-notification__transition-enter-active {
   opacity: 1;
 }
+
 .boldr-notification__transition-leave {
   opacity: 1;
-  transition: opacity .5s ease-in;
+  transition: opacity 0.5s ease-in;
 }
+
 .boldr-notification__transition-leave-active {
-  opacity: .01;
+  opacity: 0.01;
 }
+
 .boldr-notification {
   position: relative;
   font: 1rem normal Helvetica, sans-serif;
@@ -20,22 +24,27 @@
   margin-bottom: 2px;
   max-height: 400px;
   box-sizing: border-box;
-  box-shadow: 0 0 1px 1px rgba(10, 10, 11, .125);
-  padding: .5rem;
+  box-shadow: 0 0 1px 1px rgba(10, 10, 11, 0.125);
+  padding: 0.5rem;
   color: #fff;
 }
+
 .boldr-notification__success {
   background-color: #64ce83;
 }
+
 .boldr-notification__info {
   background-color: #3ea2ff;
 }
+
 .boldr-notification__warning {
   background-color: #ff7f48;
 }
+
 .boldr-notification__danger {
   background-color: #e74c3c;
 }
+
 .boldr-notification__container {
   bottom: 24px;
   left: 24px;
@@ -43,5 +52,5 @@
   z-index: 9999;
   align-items: flex-start;
   flex-direction: column;
-  display: flex
+  display: flex;
 }

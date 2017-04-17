@@ -90,7 +90,7 @@ $md-year-active-font-size: 24px !default;
 /// The transition time to use for the date picker's active date background circle
 /// to appear.
 /// @type Number
-$md-date-picker-transition-time: $md-transition-time * 2 !default;
+$md-date-picker-transition-time: $transition-length * 2 !default;
 
 /// The size for a date in the date picker's calendar while portrait.
 /// @type Number
@@ -147,7 +147,7 @@ $md-clock-padding: 4px;
 ///
 /// @param {Color} primary-color [$md-primary-color] - The primary color to style with.
 /// @param {Boolean} light-theme [$md-light-theme] - Boolean if styling with the light theme.
-/// @param {Boolean} include-media [$md-media-included] - Boolean if the media queries should be included.
+/// @param {Boolean} include-media [$media-included] - Boolean if the media queries should be included.
 /// @param {Boolean} include-date [$md-picker-include-date] - Boolean if the date picker styles should be included.
 /// @param {Boolean} include-time [$md-picker-include-time] - Boolean if the time picker styles should be included.
 /// @param {Boolean} include-forceful-classes [$md-picker-include-forceful-classes] - Boolean if the
@@ -155,7 +155,7 @@ $md-clock-padding: 4px;
 @mixin react-md-pickers(
   $primary-color: $md-primary-color,
   $light-theme: $md-light-theme,
-  $include-media: $md-media-included,
+  $include-media: $media-included,
   $include-date: $md-picker-include-date,
   $include-time: $md-picker-include-time,
   $include-forceful-classes: $md-picker-include-forceful-classes
@@ -290,7 +290,7 @@ $md-clock-padding: 4px;
     > * {
       font-weight: inherit;
       margin: 0;
-      transition-duration: $md-transition-time;
+      transition-duration: $transition-length;
       transition-property: color, font;
     }
   }
@@ -338,7 +338,7 @@ $md-clock-padding: 4px;
 ///   @include react-md-pickers;
 ///
 /// @example scss - Example Usage SCSS - Pickers Param
-///   @include react-md-pickers($md-primary-color, $md-light-theme, $md-media-included, $md-pickers-include-date, $md-pickers-include-time, true);
+///   @include react-md-pickers($md-primary-color, $md-light-theme, $media-included, $md-pickers-include-date, $md-pickers-include-time, true);
 ///
 /// @example scss - Example Usage SCSS - Standalone
 ///   @include react-md-pickers-force-orientation;
@@ -434,7 +434,7 @@ $md-clock-padding: 4px;
   .md-year {
     font-size: $md-year-font-size;
     padding: 12px;
-    transition-duration: $md-transition-time;
+    transition-duration: $transition-length;
     transition-property: color, font-size;
 
     &:focus:not(.md-year--active) {
@@ -458,7 +458,7 @@ $md-clock-padding: 4px;
       position: absolute;
       top: 50%;
       transform: translateX(-50%) translateY(-50%) scale(0);
-      transition-duration: $md-transition-time;
+      transition-duration: $transition-length;
       transition-property: transform;
       z-index: 0;
     }
@@ -519,7 +519,7 @@ $md-clock-padding: 4px;
     height: 2px;
     position: absolute;
     transform-origin: 0 0;
-    transition-duration: $md-transition-time;
+    transition-duration: $transition-length;
     transition-property: width;
     z-index: 1;
 
@@ -547,7 +547,7 @@ $md-clock-padding: 4px;
       height: $md-clock-time-size;
       right: -$md-clock-time-size / 2 + $md-clock-padding / 2;
       top: -$md-clock-time-size / 2;
-      transition-duration: $md-transition-time;
+      transition-duration: $transition-length;
       transition-property: background, border, transform;
       width: $md-clock-time-size;
     }

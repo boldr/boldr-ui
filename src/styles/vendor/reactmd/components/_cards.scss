@@ -46,7 +46,7 @@ $md-card-padding-extra: 24px;
 ///   $md-card-include-title-avatar: false;
 ///   @include react-md-everything;
 ///
-/// @param {Boolean} include-media [$md-media-included] - Boolean if the media queries should
+/// @param {Boolean} include-media [$media-included] - Boolean if the media queries should
 ///     also be included.
 /// @param {Boolean} include-text [$md-card-include-text] - Boolean if the `CardText` component styles
 ///     should be included.
@@ -58,7 +58,7 @@ $md-card-padding-extra: 24px;
 /// @param {Boolean} include-actions [$md-card-include-actions] - Boolean if the `CardActions` component
 ///     styles should be included.
 @mixin react-md-cards(
-  $include-media: $md-media-included,
+  $include-media: $media-included,
   $include-text: $md-card-include-text,
   $include-title: $md-card-include-title,
   $include-title-avatar: $md-card-include-title-avatar,
@@ -69,7 +69,7 @@ $md-card-padding-extra: 24px;
     display: block;
 
     &--raise {
-      transition-duration: $md-transition-time * 2;
+      transition-duration: $transition-length * 2;
       transition-property: box-shadow;
     }
   }
@@ -77,7 +77,7 @@ $md-card-padding-extra: 24px;
   .md-collapser--card {
     @extend %md-cell--right;
 
-    transition-duration: $md-transition-time * 2;
+    transition-duration: $transition-length * 2;
     transition-property: background, transform;
   }
 

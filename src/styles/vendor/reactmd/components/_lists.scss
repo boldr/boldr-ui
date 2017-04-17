@@ -38,7 +38,7 @@ $md-list-include-unstyled-class-name: true !default;
 /// This is really the keyline to use for lists. When a list item is inset, this will
 /// be applied to the tile.
 /// @type Number
-$md-list-left-padding: 72px;
+$list-pad-left: 72px;
 
 /// The top and bottom padding to apply to a list on mobile devices.
 /// @type Number
@@ -110,7 +110,7 @@ $md-list-desktop-three-lines-height: 76px;
 ///     nested items.
 /// @param {Number} nested-items-increment [$md-list-nested-items-increment] - The amount the
 ///     nested item's padding should be incremented by.
-/// @param {Boolean} include-media [$md-media-included] - Boolean if the media queries should
+/// @param {Boolean} include-media [$media-included] - Boolean if the media queries should
 ///     be included.
 /// @param {Boolean} include-icon [$md-list-include-icon] - Boolean if the styles for lists with
 ///     icons should be included.
@@ -126,7 +126,7 @@ $md-list-desktop-three-lines-height: 76px;
   $light-theme: $md-light-theme,
   $nested-items-depth: $md-list-nested-items-depth,
   $nested-items-increment: $md-list-nested-items-increment,
-  $include-media: $md-media-included,
+  $include-media: $media-included,
   $include-icon: $md-list-include-icon,
   $include-avatar: $md-list-include-avatar,
   $include-two-lines: $md-list-include-two-lines,
@@ -171,7 +171,7 @@ $md-list-desktop-three-lines-height: 76px;
     padding-left: $md-default-padding;
     padding-right: $md-default-padding;
     text-decoration: none;
-    transition-duration: $md-transition-time;
+    transition-duration: $transition-length;
     transition-property: background;
 
     &--active {
@@ -180,7 +180,7 @@ $md-list-desktop-three-lines-height: 76px;
   }
 
   .md-list-item--inset {
-    padding-left: $md-list-left-padding;
+    padding-left: $list-pad-left;
   }
 
   .md-tile-content {
@@ -189,13 +189,13 @@ $md-list-desktop-three-lines-height: 76px;
 
     @if $include-icon {
       &--left-icon {
-        padding-left: $md-list-left-padding - $md-font-icon-size - $md-default-padding;
+        padding-left: $list-pad-left - $md-font-icon-size - $md-default-padding;
       }
     }
 
     @if $include-avatar {
       &--left-avatar {
-        padding-left: $md-list-left-padding - $md-avatar-size - $md-default-padding;
+        padding-left: $list-pad-left - $md-avatar-size - $md-default-padding;
       }
     }
 
@@ -271,7 +271,7 @@ $md-list-desktop-three-lines-height: 76px;
     }
 
     .md-tile-content--left-button {
-      padding-left: $md-list-left-padding - $md-font-icon-size * 2;
+      padding-left: $list-pad-left - $md-font-icon-size * 2;
     }
 
     .md-list-control--right {
@@ -384,7 +384,7 @@ $md-list-desktop-three-lines-height: 76px;
 /// query.
 ///
 /// @example scss - Example Usage SCSS
-///   @media #{$md-desktop-media} {
+///   @media #{$desktop-media} {
 ///     @include react-md-lists-moble;
 ///   }
 ///
@@ -479,14 +479,14 @@ $md-list-desktop-three-lines-height: 76px;
     @include react-md-lists-mobile($include-icon, $include-avatar, $include-two-lines, $include-three-lines);
   }
 
-  @media #{$md-desktop-media} {
+  @media #{$desktop-media} {
     @include react-md-lists-desktop($include-icon, $include-avatar, $include-two-lines, $include-three-lines);
   }
 }
 
 /// Creates the styles for nested lists. It basically loops over the `$nested-items-depth` param
 /// and adds `padding-left` to each nested list equal to the
-/// `$md-list-left-padding * (1 + $depth * $nested-items-increment)`.
+/// `$list-pad-left * (1 + $depth * $nested-items-increment)`.
 ///
 /// @example scss - Example Usage SCSS
 ///   @include react-md-lists-nested;
@@ -500,7 +500,7 @@ $md-list-desktop-three-lines-height: 76px;
 
     @for $i from 1 through $nested-items-depth {
       .md-list--nested-#{$i} .md-list-tile {
-        padding-left: $md-list-left-padding * $multiplier;
+        padding-left: $list-pad-left * $multiplier;
       }
 
       $multiplier: $multiplier + $nested-items-increment;

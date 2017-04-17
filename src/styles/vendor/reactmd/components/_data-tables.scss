@@ -124,7 +124,7 @@ $md-data-table-contextual-fallback-color: null !default;
 ///     the table card headers with.
 /// @param {Boolean} light-theme [$md-light-theme] - Boolean if the tables should be styled
 ///     for the light theme.
-/// @param {Boolean} include-media [$md-media-included] - Boolean if the media queries should also be included.
+/// @param {Boolean} include-media [$media-included] - Boolean if the media queries should also be included.
 /// @param {Boolean} include-plain [$md-data-table-include-plain] - Boolean if the plain data
 ///     table styles should be included.
 /// @param {Boolean} include-checkboes [$md-data-table-include-checkboxes] - Boolean if the checkbox
@@ -138,7 +138,7 @@ $md-data-table-contextual-fallback-color: null !default;
 @mixin react-md-data-tables(
   $secondary-color: $md-secondary-color,
   $light-theme: $md-light-theme,
-  $include-media: $md-media-included,
+  $include-media: $media-included,
   $include-plain: $md-data-table-include-plain,
   $include-checkboxes: $md-data-table-include-checkboxes,
   $include-edit-dialog: $md-data-table-include-edit-dialog,
@@ -279,7 +279,7 @@ $md-data-table-contextual-fallback-color: null !default;
   }
 
   tbody .md-table-row {
-    transition-duration: $md-transition-time;
+    transition-duration: $transition-length;
     transition-property: background;
 
     &--active {
@@ -488,7 +488,7 @@ $md-data-table-contextual-fallback-color: null !default;
       @extend %md-transition--decceleration;
 
       transform: translate3d(0, 0, 0);
-      transition-duration: $md-transition-time;
+      transition-duration: $transition-length;
       transition-property: transform;
     }
   }
@@ -500,7 +500,7 @@ $md-data-table-contextual-fallback-color: null !default;
       @extend %md-transition--acceleration;
 
       transform: translate3d(0, -100%, 0);
-      transition-duration: $md-transition-time;
+      transition-duration: $transition-length;
       transition-property: transform;
     }
   }

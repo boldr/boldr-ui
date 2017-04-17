@@ -8,7 +8,7 @@ $md-select-field-drop-distance: 6px !default;
 
 /// The transition time that a new value in a select field should drop.
 /// @type Number
-$md-select-field-drop-transition-time: $md-transition-time * 2 !default;
+$md-select-field-drop-transition-time: $transition-length * 2 !default;
 
 /// The left padding for a select field that has a postition of `SelectField.Positions.BELOW`
 /// @type Number
@@ -25,9 +25,9 @@ $md-select-field-right-padding: 16px;
 ///   @include react-md-select-fields;
 ///
 /// @see react-md-text-fields
-/// @param {Boolean} include-media [$md-media-included] - Boolean if the media queries for select fields
+/// @param {Boolean} include-media [$media-included] - Boolean if the media queries for select fields
 ///     should also be included.
-@mixin react-md-select-fields($include-media: $md-media-included) {
+@mixin react-md-select-fields($include-media: $media-included) {
   .md-select-field {
     cursor: inherit;
     display: flex;
@@ -81,7 +81,7 @@ $md-select-field-right-padding: 16px;
 /// _normally_ be used within a media query.
 ///
 /// @example scss - Example Usage SCSS
-///   @media #{$md-desktop-media} {
+///   @media #{$desktop-media} {
 ///     @include react-md-select-fields-desktop;
 ///   }
 ///
@@ -107,7 +107,7 @@ $md-select-field-right-padding: 16px;
     @include react-md-select-fields-mobile;
   }
 
-  @media #{$md-desktop-media} {
+  @media #{$desktop-media} {
     @include react-md-select-fields-desktop;
   }
 }

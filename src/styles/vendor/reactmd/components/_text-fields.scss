@@ -221,7 +221,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
 /// > share styles.
 ///
 /// @example scss - Example Usage SCSS
-///   @media #{$md-desktop-media} {
+///   @media #{$desktop-media} {
 ///     @include react-md-text-fields-desktop;
 ///   }
 ///
@@ -310,7 +310,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
     @include react-md-text-fields-mobile($include-floating-label, $include-block, $include-icon, $include-password, $custom-sizes);
   }
 
-  @media #{$md-desktop-media} {
+  @media #{$desktop-media} {
     @include react-md-text-fields-desktop($include-floating-label, $include-block, $include-icon, $include-password, $custom-sizes);
   }
 }
@@ -338,7 +338,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
 /// @param {Boolean} light-theme [$md-light-theme] - Boolean if the text fields should be styled for
 ///     the light or dark theme.
 /// @param {Color} error-color [$md-red-500] - The error color to use with text fields.
-/// @param {Boolean} include-media [$md-media-included] - Boolean if the media queries should be included.
+/// @param {Boolean} include-media [$media-included] - Boolean if the media queries should be included.
 /// @param {Boolean} include-multiline [$md-text-field-include-multiline] - Boolean if the multiline
 ///     styling of text fields should be included.
 /// @param {Boolean} include-floating-label [$md-text-field-include-floating-label] - Boolean if the
@@ -360,7 +360,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
   $primary-color: $md-primary-color,
   $light-theme: $md-light-theme,
   $error-color: $md-text-field-error-color,
-  $include-media: $md-media-included,
+  $include-media: $media-included,
   $include-multiline: $md-text-field-include-multiline,
   $include-floating-label: $md-text-field-include-floating-label,
   $include-block: $md-text-field-include-block,
@@ -498,7 +498,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
 /// should normally be used within the `react-md-text-fields-desktop` mixin.
 ///
 /// @example scss - Example Usage SCSS
-///   @media #{$md-desktop-media} {
+///   @media #{$desktop-media} {
 ///     @import react-md-text-field-container-desktop;
 ///   }
 ///
@@ -539,7 +539,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
       @include react-md-text-field-container-mobile($include-block);
     }
 
-    @media #{$md-desktop-media} {
+    @media #{$desktop-media} {
       @include react-md-text-field-container-desktop($include-block);
     }
   }
@@ -614,7 +614,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
   @if $include-multiline {
     .md-text-field-multiline-container,
     .md-text-field-container--multiline {
-      transition-duration: $md-transition-time;
+      transition-duration: $transition-length;
       transition-property: height;
     }
 
@@ -704,7 +704,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
 /// be used within media queries.
 ///
 /// @example scss - Example Usage SCSS
-///   @media #{$md-desktop-media} {
+///   @media #{$desktop-media} {
 ///     @include react-md-text-field-desktop;
 ///   }
 ///
@@ -737,7 +737,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
     @include react-md-text-field-mobile($include-floating-label);
   }
 
-  @media #{$md-desktop-media} {
+  @media #{$desktop-media} {
     @include react-md-text-field-desktop($include-floating-label);
   }
 }
@@ -761,7 +761,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
     pointer-events: none;
     position: absolute;
     top: 0;
-    transition-duration: $md-transition-time;
+    transition-duration: $transition-length;
     transition-property: transform, font-size, color;
     white-space: nowrap;
   }
@@ -858,7 +858,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
 /// This should be used within a media query.
 ///
 /// @example scss - Example Usage SCSS
-///   @media #{$md-desktop-media} {
+///   @media #{$desktop-media} {
 ///     @include react-md-text-field-floating-label-desktop;
 ///   }
 /// @group text-fields, media-queries
@@ -889,7 +889,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
     @include react-md-text-field-floating-label-mobile;
   }
 
-  @media #{$md-desktop-media} {
+  @media #{$desktop-media} {
     @include react-md-text-field-floating-label-desktop;
   }
 }
@@ -914,7 +914,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
       content: '';
       display: block;
       height: $md-text-field-divider-active-height;
-      transition-duration: $md-transition-time;
+      transition-duration: $transition-length;
       transition-property: width;
       width: 0;
     }
@@ -992,7 +992,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
 /// This should be used within a media query.
 ///
 /// @example scss - Example Usage SCSS
-///   @media #{$md-desktop-media} {
+///   @media #{$desktop-media} {
 ///     @include react-md-text-field-divider-desktop;
 ///   }
 /// @group text-fields, media-queries
@@ -1012,7 +1012,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
     @include react-md-text-field-divider-mobile;
   }
 
-  @media #{$md-desktop-media} {
+  @media #{$desktop-media} {
     @include react-md-text-field-divider-desktop;
   }
 }
@@ -1055,7 +1055,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
 
   .md-text-field-message {
     flex-grow: 1;
-    transition-duration: $md-transition-time;
+    transition-duration: $transition-length;
     transition-property: opacity;
   }
 
@@ -1213,7 +1213,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
 /// a media query.
 ///
 /// @example scss - Example Usage SCSS
-///   @media #{$md-desktop-media} {
+///   @media #{$desktop-media} {
 ///     @include react-md-text-field-icon-desktop;
 ///   }
 /// @group text-fields, media-queries
@@ -1235,7 +1235,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
     @include react-md-text-field-icon-mobile;
   }
 
-  @media #{$md-desktop-media} {
+  @media #{$desktop-media} {
     @include react-md-text-field-icon-desktop;
   }
 }
@@ -1381,7 +1381,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
 /// be used within a media query.
 ///
 /// @example scss - Example Usage SCSS
-///   @media #{$md-desktop-media} {
+///   @media #{$desktop-media} {
 ///     @include react-md-text-field-inline-indicator-desktop;
 ///   }
 ///
@@ -1423,7 +1423,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
     @include react-md-text-field-inline-indicator-mobile($include-floating-label, $include-block);
   }
 
-  @media #{$md-desktop-media} {
+  @media #{$desktop-media} {
     @include react-md-text-field-inline-indicator-desktop($include-floating-label, $include-block);
   }
 }
@@ -1458,7 +1458,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
 /// mixin.
 ///
 /// @example scss - Example usage SCSS
-///   @media #{$md-desktop-media} {
+///   @media #{$desktop-media} {
 ///     @include react-md-text-field-custom-size-desktop('title', (34px, .25s, 46px, 34px));
 ///
 /// @see {mixin} react-md-text-field-custom-sizes-desktop
@@ -1505,7 +1505,7 @@ $md-text-field-desktop-floating-label-margin: 33px;
 /// should normally be used in a media query or the `react-md-text-fields` mixin.
 ///
 /// @example scss - Example Usage SCSS
-///   @media #{$md-desktop-media} {
+///   @media #{$desktop-media} {
 ///     @include react-md-text-field-custom-sizes-desktop($md-text-field-custom-sizes);
 ///   }
 ///

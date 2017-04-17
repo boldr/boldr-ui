@@ -93,7 +93,7 @@ $md-tab-desktop-padding: 24px;
 ///
 /// @param {Color} secondary-color [$md-secondary-color] - The app's secondary color. This is used
 ///   to style the active tab indicator.
-/// @param {Boolean} include-media [$md-media-included] - Boolean if the media queries should be included
+/// @param {Boolean} include-media [$media-included] - Boolean if the media queries should be included
 ///   with this mixin.
 /// @param {Boolean} include-icons [$md-tab-include-icons] - Boolean if the styles for a tab with a label
 ///   and an icon should be included.
@@ -109,7 +109,7 @@ $md-tab-desktop-padding: 24px;
 ///   content on mobile devices should be included.
 @mixin react-md-tabs(
   $secondary-color: $md-secondary-color,
-  $include-media: $md-media-included,
+  $include-media: $media-included,
   $include-icons: $md-tab-include-icons,
   $include-toolbars: $md-tab-include-toolbars,
   $include-prominent-toolbars: $md-tab-include-prominent-toolbars,
@@ -516,7 +516,7 @@ $md-tab-desktop-padding: 24px;
     }
   }
 
-  @media #{$md-desktop-media} {
+  @media #{$desktop-media} {
     @include react-md-tabs-desktop;
   }
 }

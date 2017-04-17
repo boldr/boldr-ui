@@ -87,7 +87,7 @@ $md-linear-progress-fallback-color: null !default;
 /// @param {Color} secondary-color [$md-secondary-color] - The secondary color to theme with.
 @mixin react-md-progress-circular($secondary-color: $md-secondary-color) {
   .md-progress--circular-determinate {
-    transition-duration: $md-transition-time;
+    transition-duration: $transition-length;
     transition-property: transform;
   }
 

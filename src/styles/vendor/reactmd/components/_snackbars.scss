@@ -16,7 +16,7 @@
 $md-snackbar-z-index: 10 !default;
 
 /// The default transiiton time for the snackbar to appear and disappear
-$md-snackbar-transition-time: $md-transition-time * 2 !default;
+$md-snackbar-transition-time: $transition-length * 2 !default;
 
 /// The background color for the snackbar.
 /// @type Color
@@ -65,9 +65,9 @@ $md-snackbar-desktop-max-width: 568px;
 
 /// Creates the styles for snackbars
 ///
-/// @param {Boolean} include-media [$md-media-included] - BOolean if the media queries should
+/// @param {Boolean} include-media [$media-included] - BOolean if the media queries should
 ///   be included by default.
-@mixin react-md-snackbars($include-media: $md-media-included) {
+@mixin react-md-snackbars($include-media: $media-included) {
   .md-snackbar-container {
     position: absolute;
   }
@@ -168,7 +168,7 @@ $md-snackbar-desktop-max-width: 568px;
   }
 
   .md-btn--snackbar-floating {
-    transition: bottom $md-snackbar-transition-time, background $md-transition-time, box-shadow $md-transition-time, color $md-transition-time;
+    transition: bottom $md-snackbar-transition-time, background $transition-length, box-shadow $transition-length, color $transition-length;
     will-change: bottom;
   }
 
@@ -185,7 +185,7 @@ $md-snackbar-desktop-max-width: 568px;
 /// in a media query.
 ///
 /// @example scss - Example Usage SCSS
-///   @media #{$md-desktop-media} {
+///   @media #{$desktop-media} {
 ///     @include react-md-snackbars-desktop;
 ///   }
 ///

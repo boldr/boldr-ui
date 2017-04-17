@@ -135,9 +135,9 @@ $md-grid-max-columns: $md-grid-desktop-columns !default;
 /// @example scss - Example Usage SCSS
 ///   @include react-md-grid;
 ///
-/// @param {Boolean} include-media [$md-media-included] - Boolean if the media queries should be included as well.
+/// @param {Boolean} include-media [$media-included] - Boolean if the media queries should be included as well.
 ///     If this is false, you will manually need to call the media mixins to get any useful grid.
-@mixin react-md-grid($include-media: $md-media-included) {
+@mixin react-md-grid($include-media: $media-included) {
   .md-grid {
     align-items: stretch;
     display: flex;

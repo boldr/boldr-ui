@@ -4,4 +4,31 @@
 [![Build Status](https://travis-ci.org/boldr/boldr-ui.svg?branch=master)](https://travis-ci.org/boldr/boldr-ui) |  [![codecov](https://codecov.io/gh/boldr/boldr-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/boldr/boldr-ui) |  [![Code Climate](https://codeclimate.com/github/boldr/boldr-ui/badges/gpa.svg)](https://codeclimate.com/github/boldr/boldr-ui)
 
 
-Have questions or want to help with development? Join us on <a href="https://slack.boldr.io" target="blank"><img src="/docs/assets/slack-logo.png" height="25" /></a>.
+Have questions or want to help with development? Join us on <a href="https://slack.boldr.io" target="blank"><img src="/docs/assets/slack-logo.png" height="25" /></a>
+
+
+## Components
+- DashboardFooter
+- Divider
+- Footer
+- FormCard
+- FormGroup
+- InputField
+- Heading
+- Hero
+- Icon
+- Image
+- Layout (Col, Row, Grid)
+- Loader
+- Media
+- Paper
+- Paragraph
+- Sidebar
+- SidebarItem
+- SocialGroup 
+  - Facebook
+  - Twitter
+  - Google
+  - Github
+- StatsWidget
+- Topbar

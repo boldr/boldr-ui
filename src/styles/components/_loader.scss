@@ -1,3 +1,7 @@
+////
+/// @group loader
+////
+
 @keyframes boldr_uil {
   0% {
     transform: scale(2);
@@ -12,29 +16,29 @@
   }
 }
 
-.boldr-loader {
+.#{$boldr-ns}loader {
   text-align: center;
 }
 
-.boldr-loader-inner {
+.#{$boldr-ns}loader__inner {
   display: inline-block;
 }
 
-.boldr-loader svg {
+.#{$boldr-ns}loader svg {
   width: 100px;
 }
 
-.boldr-loader__item {
+.#{$boldr-ns}loader__item {
   background: none;
   position: relative;
   width: 200px;
   height: 200px;
   margin-right: auto;
   margin-left: auto;
-  transform: scale(.25);
+  transform: scale(0.25);
 }
 
-.boldr-loader__item > div {
+.#{$boldr-ns}loader__item > div {
   position: absolute;
   top: 40px;
   left: 20px;
@@ -42,16 +46,16 @@
   height: 120px;
   background: #207cca;
   opacity: 0.6;
-  animation: boldr_uil 0.8s cubic-bezier(.01, .73, .28, .93) infinite;
+  animation: boldr_uil 0.8s cubic-bezier(0.01, 0.73, 0.28, 0.93) infinite;
 }
 
-.boldr-loader__item > div:nth-of-type(2) {
+.#{$boldr-ns}loader__item > div:nth-of-type(2) {
   left: 80px;
   opacity: 0.8;
   animation-delay: 0.08s;
 }
 
-.boldr-loader__item > div:nth-of-type(3) {
+.#{$boldr-ns}loader__item > div:nth-of-type(3) {
   left: 140px;
   opacity: 0.9;
   animation-delay: 0.16s;

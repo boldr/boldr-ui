@@ -17,7 +17,7 @@ $md-drawer-z-index: 17 !default;
 
 /// The transiiton time for the drawer to enter or leave the view.
 /// @type Number
-$md-drawer-transition-time: $md-transition-time * 2 !default;
+$md-drawer-transition-time: $transition-length * 2 !default;
 
 /// The drawer's max width on mobile devices when positioned to the left of the screen.
 /// @type Number
@@ -52,9 +52,9 @@ $md-drawer-desktop-mini-width: $md-font-icon-size + (24px * 2) !default;
 /// @example scss - Example Usage SCSS
 ///   @include react-md-drawers;
 ///
-/// @param {Boolean} include-media [$md-media-included] - Boolean if the media queries should
+/// @param {Boolean} include-media [$media-included] - Boolean if the media queries should
 ///   be included.
-@mixin react-md-drawers($include-media: $md-media-included) {
+@mixin react-md-drawers($include-media: $media-included) {
   @if $include-media {
     @include react-md-drawers-media;
   }
@@ -207,7 +207,7 @@ $md-drawer-desktop-mini-width: $md-font-icon-size + (24px * 2) !default;
 /// Includes the styles for drawers on desktop screens.
 ///
 /// @example scss - Example Usage SCSS
-///   @media #{$md-desktop-media} {
+///   @media #{$desktop-media} {
 ///     @include react-md-drawers-desktop;
 ///   }
 ///
@@ -247,7 +247,7 @@ $md-drawer-desktop-mini-width: $md-font-icon-size + (24px * 2) !default;
     @include react-md-drawers-tablet;
   }
 
-  @media #{$md-desktop-media} {
+  @media #{$desktop-media} {
     @include react-md-drawers-desktop;
   }
 }

@@ -15,11 +15,11 @@ const Modal = (props: Props) => {
   return (
     <Dialog
       id="adminModal"
-      title={props.title}
-      actions={<Button label="Close" flat primary onClick={props.onClose} />}
+      title={ props.title }
+      actions={ <Button label="Close" flat primary onClick={ props.onClose } /> }
       aria-labelledby="contentModal"
-      visible={props.visible}
-      onHide={props.onClose}
+      visible={ props.visible }
+      onHide={ props.onClose }
       modal
     >
       {props.children}

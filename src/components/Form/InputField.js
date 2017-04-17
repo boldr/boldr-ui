@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import TextField from 'react-md/lib/TextFields';
 
 const propTypes = {
@@ -22,14 +23,14 @@ const InputField = (
 ) => {
   return (
     <TextField
-      {...input}
-      id={input.name}
-      label={label}
-      placeholder={input.placeholder}
-      type={type}
-      errorText={error}
-      rows={rows}
-      maxRows={maxRows}
+      { ...input }
+      id={ input.name }
+      label={ label }
+      placeholder={ input.placeholder }
+      type={ type }
+      errorText={ error }
+      rows={ rows }
+      maxRows={ maxRows }
     />
   );
 };

@@ -1,45 +1,33 @@
-/* @flow */
-import React, { PropTypes } from 'react';
-import classnames from 'classnames';
-import { StyleClasses } from '../../theme/styleClasses';
-import type { ReactChildren } from '../../types/react.js.flow';
+import React, {PropTypes} from 'react';
+import styled, {css} from 'styled-components';
+import {font, palette} from 'styled-theme';
 
-type Props = {
-  size: number,
-  color: ?string,
-  align: ?string,
-  fweight: ?number,
-  classname: ?string,
-  children: ReactChildren,
-  top: ?string,
-  bottom: ?string,
-  fsize: ?string,
-  textDeco: ?string,
+export const fontSize = ({size}) => `${0.75 + 1 * (1 / size)}rem`;
+
+const styles = css`
+  font-family: ${font('primary')};
+  font-weight: 500;
+  font-size: ${fontSize};
+  margin: 0;
+  margin-top: 0.85714em;
+  margin-bottom: 0.57142em;
+  color: ${palette({grayscale: 0}, 1)};
+`;
+
+const Heading = styled(({size, children, reverse, palette, theme, ...props}) =>
+  React.createElement(`h${size}`, props, children),
+)`${styles}`;
+
+Heading.propTypes = {
+  size: PropTypes.number,
+  children: PropTypes.node,
+  palette: PropTypes.string,
+  reverse: PropTypes.bool,
 };
 
-const BASE_ELEMENT = StyleClasses.HEADING;
-
-const Heading = (props: Props) => {
-  const className = classnames(BASE_ELEMENT, `${BASE_ELEMENT}__${props.size}`, props.classname);
-  const tagName = `h${props.size}`;
-
-  const style = {
-    color: props.color,
-    textAlign: props.align,
-    paddingTop: props.top,
-    paddingBottom: props.bottom,
-    fontSize: props.fsize,
-    fontWeight: props.fweight,
-    textDecoration: props.textDeco,
-  };
-  return React.createElement(
-    tagName,
-    {
-      className,
-      style,
-    },
-    props.children,
-  );
+Heading.defaultProps = {
+  size: 1,
+  palette: 'grayscale',
 };
 
 export default Heading;
