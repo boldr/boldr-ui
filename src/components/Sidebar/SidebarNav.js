@@ -21,9 +21,7 @@ type Props = {
   match: ?Object,
   activeItem: ?string,
   location: Object,
-  isHidden: boolean,
   expanded: boolean,
-  expandParent: () => void,
   onExpandCollapse: () => void,
 };
 
