@@ -1,11 +1,13 @@
 .#{$dash-ns}footer {
-  min-height: $dash-footer-height;
+  height: $dash-footer-height;
   line-height: $dash-footer-line-height;
   color: $dash-footer-color;
   background: $dash-footer-bg;
+  width: 100%;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   transition: left 0.3s cubic-bezier(0, 0, 0.2, 1);
   padding: 13px 0;
+  position: absolute;
 }
 
 .#{$dash-ns}footer-copyright {

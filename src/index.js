@@ -21,6 +21,9 @@ import List from 'react-md/lib/Lists/List';
 import ListItem from 'react-md/lib/Lists/ListItem';
 import ExpansionList from 'react-md/lib/ExpansionPanels/ExpansionList';
 import ExpansionPanel from 'react-md/lib/ExpansionPanels/ExpansionPanel';
+import SelectionControl from 'react-md/lib/SelectionControls/SelectionControl';
+import SelectionControlGroup from 'react-md/lib/SelectionControls/SelectionControlGroup';
+import injectInk from 'react-md/lib/Inks';
 import TextField from 'react-md/lib/TextFields';
 import DataTable from 'react-md/lib/DataTables/DataTable';
 import TableHeader from 'react-md/lib/DataTables/TableHeader';
@@ -29,6 +32,7 @@ import TableRow from 'react-md/lib/DataTables/TableRow';
 import TableColumn from 'react-md/lib/DataTables/TableColumn';
 import TablePagination from 'react-md/lib/DataTables/TablePagination';
 import MenuButton from 'react-md/lib/Menus/MenuButton';
+import injectTooltip from 'react-md/lib/Tooltips';
 import Menu from 'react-md/lib/Menus/Menu';
 
 import { BOLDR_NS, StyleClasses } from './theme/styleClasses';
@@ -46,6 +50,9 @@ import {
   Icon,
   Image,
   Topbar,
+  TopbarLink,
+  TopbarPlainLink,
+  TopbarSearch,
   InputField,
   Loader,
   Modal,
@@ -83,6 +90,8 @@ import {
   HorizontalRule,
   Photo,
   Dimmer,
+  MenuIcon,
+  BaseIcon,
 } from './components';
 
 export {
@@ -116,6 +125,9 @@ export {
   StatsWidget,
   StatValue,
   Topbar,
+  TopbarLink,
+  TopbarPlainLink,
+  TopbarSearch,
   StatLabel,
   Media,
   MediaOverlay,
@@ -123,6 +135,8 @@ export {
   Sidebar,
   SidebarNav,
   SidebarNavItem,
+  MenuIcon,
+  BaseIcon,
   Chevron,
   FaIcon,
   SidebarWrapper,
@@ -172,4 +186,7 @@ export {
   TablePagination,
   Menu,
   MenuButton,
+  SelectionControl,
+  SelectionControlGroup,
+  injectTooltip,
 };

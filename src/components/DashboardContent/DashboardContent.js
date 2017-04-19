@@ -7,8 +7,8 @@ type Props = {
 };
 
 const ContentCont = styled.div`
-  height: 100%;
   width:  100%;
+      padding-bottom: 50px;
 `;
 
 const DashboardContent = (props: Props) => {

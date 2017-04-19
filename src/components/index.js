@@ -25,7 +25,11 @@ import {
   SidebarHeader,
 } from './Sidebar';
 import Link from './Link';
-import Topbar from './Topbar';
+import Topbar, {
+  TopbarLink,
+  TopbarPlainLink,
+  TopbarSearch,
+} from './Topbar';
 import DashboardWrapper from './DashboardWrapper';
 import DashboardContent from './DashboardContent';
 import Anchor from './Anchor';
@@ -35,10 +39,12 @@ import HorizontalRule from './HorizontalRule';
 import Label from './Label';
 import Photo from './Photo';
 import Dimmer from './Dimmer';
+import Toggler from './Toggler';
+import MenuIcon from './Icon/MenuIcon';
+import BaseIcon from './Icon/BaseIcon';
 
 export {
   Anchor,
-  Topbar,
   Col,
   Footer,
   FormCard,
@@ -84,4 +90,10 @@ export {
   HorizontalRule,
   Photo,
   Dimmer,
+  Topbar,
+  TopbarLink,
+  TopbarPlainLink,
+  TopbarSearch,
+  MenuIcon,
+  BaseIcon,
 };

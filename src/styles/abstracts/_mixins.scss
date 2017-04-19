@@ -70,3 +70,11 @@
 @mixin transition($transition...) {
   transition: $transition;
 }
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

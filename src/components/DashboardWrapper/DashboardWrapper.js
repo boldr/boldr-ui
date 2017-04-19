@@ -7,10 +7,9 @@ type Props = {
 };
 
 const Dash = styled.section`
-  display: flex;
-  flex-direction: column;
   height: 100%;
   width: 100%;
+  min-height: 100%;
   position: relative;
 `;
 

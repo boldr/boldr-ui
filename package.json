@@ -1,6 +1,6 @@
 {
   "name": "boldr-ui",
-  "version": "0.2.9",
+  "version": "0.2.14",
   "description": "UI components for BoldrCMS",
   "main": "lib/index.js",
   "repository": {
@@ -35,7 +35,7 @@
   "author": "Steven Truesdell <steven@strues.io>",
   "license": "MIT",
   "dependencies": {
-    "animate-components": "^0.6.1",
+    "animate-components": "^0.6.2",
     "classnames": "^2.2.5",
     "coolors-to-hex": "^1.0.3",
     "prop-types": "^15.5.8",
@@ -78,7 +78,7 @@
     "eslint-config-boldr": "^0.9.1",
     "express": "^4.15.2",
     "extract-text-webpack-plugin": "^2.1.0",
-    "flow-bin": "0.44.0",
+    "flow-bin": "0.44.2",
     "history": "^4.6.1",
     "html-webpack-plugin": "^2.28.0",
     "identity-obj-proxy": "^3.0.0",
