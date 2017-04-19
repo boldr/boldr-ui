@@ -29,12 +29,10 @@ $header-font-weight: $font-weight-thin !default;
 $btn-font-weight: $font-weight-base !default;
 /// @group typography
 $header-font-case: none !default;
+$md-badge-include-default: true;
+$md-list-include-inline: true;
 
 /// Options
-// Quickly modify global styling by enabling or disabling optional features.
-$enable-transitions: true !default;
-/// @group options
-$enable-rounded: false !default;
 /// @group options
 $border-width: 1px;
 

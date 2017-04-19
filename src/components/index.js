@@ -1,6 +1,6 @@
 import Heading from './Heading';
 import Footer from './Footer';
-import {Grid, Row, Col, BASE_CONF} from './Layout';
+import {Grid, Row, Col } from './Layout';
 import Modal from './Modal';
 import Hero from './Hero';
 import Widget from './Widget';
@@ -44,7 +44,6 @@ export {
   FormCard,
   FormGroup,
   Grid,
-  BASE_CONF,
   Heading,
   Hero,
   DashboardFooter,
