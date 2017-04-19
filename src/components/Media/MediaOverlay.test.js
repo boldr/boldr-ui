@@ -12,7 +12,7 @@ describe('MediaOverlay', () => {
       className: 'test',
     };
 
-    const mediaOverlay = renderIntoDocument(<MediaOverlay { ...props } />);
+    const mediaOverlay = renderIntoDocument(<MediaOverlay {...props} />);
 
     const mediaOverlayNode = findDOMNode(mediaOverlay);
     expect(mediaOverlayNode.style.background).toBe(props.style.background);

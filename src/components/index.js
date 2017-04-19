@@ -1,19 +1,19 @@
 import Heading from './Heading';
 import Footer from './Footer';
-import {Grid, Row, Col } from './Layout';
+import { Grid, Row, Col } from './Layout';
 import Modal from './Modal';
 import Hero from './Hero';
 import Widget from './Widget';
 import Paper from './Paper';
 import Divider from './Divider';
 import Image from './Image';
-import Icon from './Icon';
+import { Icon, BaseIcon, MenuIcon, SearchIcon, CloseIcon } from './Icons';
 import Loader from './Loader';
-import {FormCard, FormGroup, InputField} from './Form';
-import StatsWidget, {StatValue, StatLabel} from './StatsWidget';
-import Social, {Github, Facebook, Twitter, Google, LinkedIn} from './Social';
+import { FormCard, FormGroup, InputField } from './Form';
+import StatsWidget, { StatValue, StatLabel } from './StatsWidget';
+import Social, { Github, Facebook, Twitter, Google, LinkedIn } from './Social';
 import Paragraph from './Paragraph';
-import Media, {MediaOverlay} from './Media';
+import Media, { MediaOverlay } from './Media';
 import DashboardFooter from './DashboardFooter';
 import {
   Sidebar,
@@ -25,11 +25,7 @@ import {
   SidebarHeader,
 } from './Sidebar';
 import Link from './Link';
-import Topbar, {
-  TopbarLink,
-  TopbarPlainLink,
-  TopbarSearch,
-} from './Topbar';
+import Topbar, { TopbarLink, TopbarPlainLink, TopbarSearch } from './Topbar';
 import DashboardWrapper from './DashboardWrapper';
 import DashboardContent from './DashboardContent';
 import Anchor from './Anchor';
@@ -40,9 +36,6 @@ import Label from './Label';
 import Photo from './Photo';
 import Dimmer from './Dimmer';
 import Toggler from './Toggler';
-import MenuIcon from './Icon/MenuIcon';
-import BaseIcon from './Icon/BaseIcon';
-
 export {
   Anchor,
   Col,
@@ -95,5 +88,7 @@ export {
   TopbarPlainLink,
   TopbarSearch,
   MenuIcon,
+  SearchIcon,
+  CloseIcon,
   BaseIcon,
 };

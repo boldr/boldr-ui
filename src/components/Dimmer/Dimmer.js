@@ -1,7 +1,7 @@
 /* @flow */
 import React from 'react';
 import styled from 'styled-components';
-import {font, palette} from 'styled-theme';
+import { font, palette } from 'styled-theme';
 import { borders, colors } from '../../theme';
 
 const Dimmer = styled.div`

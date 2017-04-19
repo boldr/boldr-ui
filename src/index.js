@@ -22,7 +22,8 @@ import ListItem from 'react-md/lib/Lists/ListItem';
 import ExpansionList from 'react-md/lib/ExpansionPanels/ExpansionList';
 import ExpansionPanel from 'react-md/lib/ExpansionPanels/ExpansionPanel';
 import SelectionControl from 'react-md/lib/SelectionControls/SelectionControl';
-import SelectionControlGroup from 'react-md/lib/SelectionControls/SelectionControlGroup';
+import SelectionControlGroup
+  from 'react-md/lib/SelectionControls/SelectionControlGroup';
 import injectInk from 'react-md/lib/Inks';
 import TextField from 'react-md/lib/TextFields';
 import DataTable from 'react-md/lib/DataTables/DataTable';
@@ -91,6 +92,8 @@ import {
   Photo,
   Dimmer,
   MenuIcon,
+  SearchIcon,
+  CloseIcon,
   BaseIcon,
 } from './components';
 
@@ -149,6 +152,8 @@ export {
   Label,
   HorizontalRule,
   Photo,
+  SearchIcon,
+  CloseIcon,
   Dimmer,
   colors,
   borders,

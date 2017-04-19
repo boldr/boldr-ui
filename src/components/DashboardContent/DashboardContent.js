@@ -13,7 +13,7 @@ const ContentCont = styled.div`
 
 const DashboardContent = (props: Props) => {
   return (
-    <ContentCont { ...props }>
+    <ContentCont {...props}>
       {props.children}
     </ContentCont>
   );

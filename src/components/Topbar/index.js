@@ -5,9 +5,4 @@ import TopbarSearch from './TopbarSearch';
 
 export default Topbar;
 
-export {
-  Topbar,
-  TopbarLink,
-  TopbarPlainLink,
-  TopbarSearch,
-};
+export { Topbar, TopbarLink, TopbarPlainLink, TopbarSearch };

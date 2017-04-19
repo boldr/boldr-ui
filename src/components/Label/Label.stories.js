@@ -1,11 +1,7 @@
-import React from 'react'
-import { storiesOf } from '@kadira/storybook'
-import Label from './Label'
+import React from 'react';
+import { storiesOf } from '@kadira/storybook';
+import Label from './Label';
 
 storiesOf('Label', module)
-  .add('default', () => (
-    <Label>Hello</Label>
-  ))
-  .add('reverse', () => (
-    <Label reverse>Hello</Label>
-  ))
+  .add('default', () => <Label>Hello</Label>)
+  .add('reverse', () => <Label reverse>Hello</Label>);

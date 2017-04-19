@@ -16,7 +16,8 @@
     "clean": "rimraf dist && rimraf lib",
     "sass": "node-sass --output-style compressed src/styles/boldrui.scss -o dist",
     "build:test": "echo \"nothing\" && exit 0",
-    "format": "prettier-eslint --write \"src/**/*.js\"",
+    "format": "prettier --single-quote=true --jsx-bracket-same-line=false --trailing-comma=all --write \"src/**/*.js\"",
+    "precommit": "lint-staged",
     "start": "cross-env NODE_ENV=development UV_THREADPOOL_SIZE=100 node ./server",
     "test": "NODE_ENV=test jest -w 4 -u --config=internal/jest/jest.json",
     "test:ci": "NODE_ENV=test jest -w 4 -u --config=internal/jest/jest.json --forceExit"
@@ -34,6 +35,12 @@
   ],
   "author": "Steven Truesdell <steven@strues.io>",
   "license": "MIT",
+  "lint-staged": {
+    "src/**/*.js": [
+      "prettier --single-quote=true --jsx-bracket-same-line=false --trailing-comma=all --write \"src/**/*.js\"",
+      "git add"
+    ]
+  },
   "dependencies": {
     "animate-components": "^0.6.2",
     "classnames": "^2.2.5",
@@ -81,9 +88,11 @@
     "flow-bin": "0.44.2",
     "history": "^4.6.1",
     "html-webpack-plugin": "^2.28.0",
+    "husky": "^0.13.3",
     "identity-obj-proxy": "^3.0.0",
     "immutable": "^3.8.1",
     "jest": "^19.0.2",
+    "lint-staged": "^3.4.0",
     "node-sass": "^4.5.2",
     "postcss-cssnext": "^2.10.0",
     "postcss-import": "^9.1.0",

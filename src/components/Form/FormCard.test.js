@@ -6,7 +6,14 @@ describe('<FormCard />', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<FormCard width={ 400 } title="Fcard" extra1="abcd" form={ <form><input type="text" /></form> } />);
+    wrapper = shallow(
+      <FormCard
+        width={400}
+        title="Fcard"
+        extra1="abcd"
+        form={<form><input type="text" /></form>}
+      />,
+    );
   });
 
   test('+++ <FormCard />, should render', () => {

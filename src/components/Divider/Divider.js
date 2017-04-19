@@ -29,15 +29,15 @@ class Divider extends PureComponent {
 
     return (
       <Component
-        { ...props }
-        className={ cn(
+        {...props}
+        className={cn(
           BASE_ELEMENT,
           {
             'boldrui-divider__vertical': vertical,
             'boldrui-divider__inset': inset,
           },
           className,
-        ) }
+        )}
       />
     );
   }

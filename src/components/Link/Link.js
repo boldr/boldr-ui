@@ -1,26 +1,26 @@
 import React from 'react';
-import styled, {css} from 'styled-components';
-import {font, palette} from 'styled-theme';
+import styled, { css } from 'styled-components';
+import { font, palette } from 'styled-theme';
 import PropTypes from 'prop-types';
-import {Link as RouterLink} from 'react-router-dom/Link';
+import { Link as RouterLink } from 'react-router-dom/Link';
 
 const styles = css`
   font-family: ${font('primary')};
   text-decoration: none;
   font-weight: 500;
-  color: ${palette({grayscale: 0}, 1)};
+  color: ${palette({ grayscale: 0 }, 1)};
 
   &:hover {
     text-decoration: underline;
   }
 `;
 
-const StyledLink = styled(({theme, reverse, palette, ...props}) => (
+const StyledLink = styled(({ theme, reverse, palette, ...props }) => (
   <RouterLink {...props} />
 ))`${styles}`;
 const Anchor = styled.a`${styles}`;
 
-const Link = ({...props}) => {
+const Link = ({ ...props }) => {
   if (props.to) {
     return <StyledLink {...props} />;
   }

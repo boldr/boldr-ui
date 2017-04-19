@@ -18,16 +18,11 @@ const defaultProps = {
   tag: 'span',
 };
 const StatLabel = (props: Props) => {
-  const {
-    name,
-    className,
-    tag: Tag,
-    ...attributes
-  } = props;
+  const { name, className, tag: Tag, ...attributes } = props;
 
   const classes = classnames(BASE_ELEMENT, className);
 
-  return <Tag { ...attributes } className={ classes }>{name}</Tag>;
+  return <Tag {...attributes} className={classes}>{name}</Tag>;
 };
 
 StatLabel.defaultProps = defaultProps;

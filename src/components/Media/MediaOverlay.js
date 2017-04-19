@@ -30,7 +30,7 @@ class MediaOverlay extends PureComponent {
 
   render() {
     const { className, component: Component, ...props } = this.props;
-    return <Component className={ cn(BASE_ELEMENT, className) } { ...props } />;
+    return <Component className={cn(BASE_ELEMENT, className)} {...props} />;
   }
 }
 

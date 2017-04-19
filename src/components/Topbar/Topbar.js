@@ -123,11 +123,9 @@ class Topbar extends Component {
 
       return (
         <Link
-          className={
-            `${BASE_ELEMENT}__link ${activeLinkModifier} ${offsetModifer}`
-          }
+          className={`${BASE_ELEMENT}__link ${activeLinkModifier} ${offsetModifer}`}
           key={`${BASE_ELEMENT}__link-${link.title}`}
-          to={ link.url }
+          to={link.url}
           {...link}
         >
           {link.title}

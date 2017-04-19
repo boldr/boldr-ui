@@ -40,8 +40,7 @@ const SidebarNavItem = (props: SidebarNavItemProps) =>
           className={`${BASE_ELEMENT}-link`}
         />
       </div>
-    :
-      <div
+    : <div
         className={classnames(BASE_ELEMENT, `level-${props.level}`, {
           collapsed: !props.expanded,
           expanded: props.expanded,

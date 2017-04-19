@@ -12,8 +12,8 @@ const BASE_ELEMENT = StyleClasses.LOADER;
 function Loader(props: Props) {
   const classes = classnames(BASE_ELEMENT, props.className);
   return (
-    <div className={ classes }>
-      <div className={ `${BASE_ELEMENT}__item` }>
+    <div className={classes}>
+      <div className={`${BASE_ELEMENT}__item`}>
         <div />
         <div />
         <div />

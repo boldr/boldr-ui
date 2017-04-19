@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { ifProp, get } from 'styled-tools';
 import { mediaQuery } from '../../theme/theme';
-import MenuIcon from '../Icon/MenuIcon';
+import MenuIcon from '../Icons/MenuIcon';
 
 const ToggleButton = styled.button`
   ${mediaQuery.large`display: ${ifProp('sidebarToggleable', 'block !important')};`}
@@ -25,7 +25,7 @@ const Toggler = ({ children, ...props }) => {
   const { sidebarToggleable, iconColor } = props;
   return (
     <ToggleButton sidebarToggleable={sidebarToggleable} {...props}>
-      <MenuIcon color={ iconColor }/>
+      <MenuIcon color={iconColor} />
     </ToggleButton>
   );
 };

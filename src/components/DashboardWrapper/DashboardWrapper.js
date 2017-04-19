@@ -15,7 +15,7 @@ const Dash = styled.section`
 
 const DashboardWrapper = (props: Props) => {
   return (
-    <Dash { ...props }>
+    <Dash {...props}>
       {props.children}
     </Dash>
   );

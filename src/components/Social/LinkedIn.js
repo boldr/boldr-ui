@@ -1,6 +1,6 @@
 /* @flow */
 import React from 'react';
-import Icon from '../Icon';
+import Icon from '../Icons';
 
 type Props = {
   href: ?String,
@@ -10,12 +10,12 @@ type Props = {
 const LinkedIn = (props: Props) => {
   if (props.href) {
     return (
-      <a href={ props.href } target="_blank">
-        <Icon kind="linkedin" color="#1c3050" size={ props.size } />
+      <a href={props.href} target="_blank">
+        <Icon kind="linkedin" color="#1c3050" size={props.size} />
       </a>
     );
   } else {
-    return <Icon kind="linkedin" color="#1c3050" size={ props.size } />;
+    return <Icon kind="linkedin" color="#1c3050" size={props.size} />;
   }
 };
 

@@ -6,4 +6,12 @@ import SidebarWrapper from './SidebarWrapper';
 import SidebarHeader from './SidebarHeader';
 
 export default Sidebar;
-export { Sidebar, SidebarNav, SidebarNavItem, Chevron, FaIcon, SidebarWrapper, SidebarHeader };
+export {
+  Sidebar,
+  SidebarNav,
+  SidebarNavItem,
+  Chevron,
+  FaIcon,
+  SidebarWrapper,
+  SidebarHeader,
+};

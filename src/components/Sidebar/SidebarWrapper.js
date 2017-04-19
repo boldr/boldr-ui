@@ -11,7 +11,7 @@ const SidebarWrapper = (props: Props) => {
   const SidebarWrap = styled.aside`
   display: inline-block;
   width: 240px;
-  background: ${props => props.sidebarDark ? '#333c44' : '#fff'};
+  background: ${props => (props.sidebarDark ? '#333c44' : '#fff')};
   box-shadow: 1px 0 2px rgba(0,0,0,.15);
   color: #a8acb1;
   flex-direction: column;
@@ -23,7 +23,7 @@ const SidebarWrapper = (props: Props) => {
   white-space: nowrap;
   `;
   return (
-    <SidebarWrap { ...props }>
+    <SidebarWrap {...props}>
       {props.children}
     </SidebarWrap>
   );

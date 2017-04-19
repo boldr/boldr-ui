@@ -17,15 +17,10 @@ const defaultProps = {
   tag: 'span',
 };
 const StatValue = (props: Props) => {
-  const {
-    total,
-    className,
-    tag: Tag,
-    ...attributes
-  } = props;
+  const { total, className, tag: Tag, ...attributes } = props;
 
   const classes = classnames(BASE_ELEMENT, className);
-  return <Tag { ...attributes } className={ classes }>{total}</Tag>;
+  return <Tag {...attributes} className={classes}>{total}</Tag>;
 };
 
 StatValue.defaultProps = defaultProps;

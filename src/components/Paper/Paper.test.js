@@ -11,7 +11,7 @@ test('<Paper /> merges className and style', () => {
     className: 'test',
   };
 
-  const paper = renderIntoDocument(<Paper { ...props } />);
+  const paper = renderIntoDocument(<Paper {...props} />);
 
   const paperNode = findDOMNode(paper);
   expect(paperNode.style.background).toBe(props.style.background);

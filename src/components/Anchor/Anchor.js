@@ -1,5 +1,5 @@
 /* @flow */
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import classnames from 'classnames';
 import NavLink from 'react-router-dom/NavLink';
 
@@ -13,7 +13,7 @@ type Props = {
 };
 
 const Anchor = (props: Props) => {
-  const {href, className, label, onClick, icon} = props;
+  const { href, className, label, onClick, icon } = props;
   return (
     <NavLink
       to={href}

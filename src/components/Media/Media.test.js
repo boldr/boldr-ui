@@ -12,7 +12,7 @@ describe('Media', () => {
       className: 'test',
     };
 
-    const media = renderIntoDocument(<Media { ...props } />);
+    const media = renderIntoDocument(<Media {...props} />);
 
     const mediaNode = findDOMNode(media);
     expect(mediaNode.style.background).toBe(props.style.background);
@@ -24,12 +24,12 @@ describe('Media', () => {
       aspectRatio: '16-9',
       forceAspect: false,
     };
-    let media = renderIntoDocument(<Media { ...props } />);
+    let media = renderIntoDocument(<Media {...props} />);
     let mediaNode = findDOMNode(media);
     expect(mediaNode.className).not.toContain(props.aspectRatio);
 
     props.forceAspect = true;
-    media = renderIntoDocument(<Media { ...props } />);
+    media = renderIntoDocument(<Media {...props} />);
     mediaNode = findDOMNode(media);
     expect(mediaNode.className).toContain(props.aspectRatio);
   });

@@ -29,7 +29,15 @@ const StatsListItem = styled.li`
   padding-bottom: 2px;
 `;
 const StatsWidget = (props: Props) => {
-  const { stats, title, titleSize, labelClassName, valueClassName, labelTag, valueTag } = props;
+  const {
+    stats,
+    title,
+    titleSize,
+    labelClassName,
+    valueClassName,
+    labelTag,
+    valueTag,
+  } = props;
 
   const statistics = [];
   for (const key of Object.keys(stats)) {
@@ -42,15 +50,23 @@ const StatsWidget = (props: Props) => {
   }
   const classes = classnames(BASE_ELEMENT, props.className);
   return (
-    <div className={ classes }>
-      <Heading align="left" size={ titleSize }>
+    <div className={classes}>
+      <Heading align="left" size={titleSize}>
         <FontIcon>assessment</FontIcon> {title}
       </Heading>
       <StatsList>
         {statistics.map(s => (
-          <StatsListItem key={ Math.random() }>
-            <StatLabel name={ s.name } tag={ labelTag } className={ labelClassName } />
-            <StatValue total={ s.total } tag={ valueTag } className={ valueClassName } />
+          <StatsListItem key={Math.random()}>
+            <StatLabel
+              name={s.name}
+              tag={labelTag}
+              className={labelClassName}
+            />
+            <StatValue
+              total={s.total}
+              tag={valueTag}
+              className={valueClassName}
+            />
           </StatsListItem>
         ))}
       </StatsList>

@@ -3,8 +3,8 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import { StyleClasses } from '../../theme/styleClasses';
-import SearchIcon from '../Icon/SearchIcon';
-import CloseIcon from '../Icon/CloseIcon';
+import SearchIcon from '../Icons/SearchIcon';
+import CloseIcon from '../Icons/CloseIcon';
 
 const BASE_ELEMENT = StyleClasses.TOPBAR_SEARCH;
 
@@ -25,14 +25,11 @@ class TopbarSearch extends PureComponent {
   }
   render() {
     const { active, placeholder } = this.props;
-    const classes = cn(
-      BASE_ELEMENT,
-      {
-        [`${BASE_ELEMENT}--active`]: active,
-      },
-    );
+    const classes = cn(BASE_ELEMENT, {
+      [`${BASE_ELEMENT}--active`]: active,
+    });
     return (
-      <div className={ classes }>
+      <div className={classes}>
         <input
           ref={ref => this._input = ref}
           className={`${BASE_ELEMENT}__input`}
@@ -52,7 +49,7 @@ class TopbarSearch extends PureComponent {
           onClick={this.props.onToggle}
         >
           <SearchIcon color="rgba(0, 0, 0, 0.87)" />
-          { /* eslint-enable */}
+          {/* eslint-enable */}
         </button>
       </div>
     );

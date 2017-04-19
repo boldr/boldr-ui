@@ -48,17 +48,17 @@ describe('Divider', () => {
 
     const divider = renderIntoDocument(
       <Divider
-        style={ style }
-        onClick={ onClick }
-        onFocus={ onFocus }
-        onBlur={ onBlur }
-        onMouseDown={ onMouseDown }
-        onMouseUp={ onMouseUp }
-        onMouseOver={ onMouseOver }
-        onMouseLeave={ onMouseLeave }
-        onTouchStart={ onTouchStart }
-        onTouchEnd={ onTouchEnd }
-        onTouchCancel={ onTouchCancel }
+        style={style}
+        onClick={onClick}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        onMouseDown={onMouseDown}
+        onMouseUp={onMouseUp}
+        onMouseOver={onMouseOver}
+        onMouseLeave={onMouseLeave}
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+        onTouchCancel={onTouchCancel}
       />,
     );
 

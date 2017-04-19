@@ -9,7 +9,6 @@ import {
 import Button from 'react-md/lib/Buttons';
 import Photo from './Photo';
 
-
 const stories = storiesOf('Photo', module);
 
 stories.addDecorator(withKnobs);

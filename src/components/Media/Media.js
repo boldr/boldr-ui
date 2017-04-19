@@ -54,14 +54,14 @@ class Media extends PureComponent {
 
     return (
       <Component
-        { ...props }
-        className={ cn(
+        {...props}
+        className={cn(
           BASE_ELEMENT,
           {
             [`${BASE_ELEMENT}__${aspectRatio}`]: forceAspect,
           },
           className,
-        ) }
+        )}
       >
         {children}
       </Component>

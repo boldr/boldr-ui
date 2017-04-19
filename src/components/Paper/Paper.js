@@ -25,18 +25,24 @@ class Paper extends PureComponent {
   };
   props: Props;
   render() {
-    const { component: Component, zDepth, className, raiseOnHover, ...props } = this.props;
+    const {
+      component: Component,
+      zDepth,
+      className,
+      raiseOnHover,
+      ...props
+    } = this.props;
 
     return (
       <Component
-        { ...props }
-        className={ cn(
+        {...props}
+        className={cn(
           `boldrui-paper boldrui-paper__${zDepth}`,
           {
             'boldrui-paper__0-hover': zDepth === 0 && raiseOnHover,
           },
           className,
-        ) }
+        )}
       />
     );
   }

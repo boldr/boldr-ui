@@ -11,26 +11,24 @@ const propTypes = {
   maxRows: PropTypes.number,
 };
 
-const InputField = (
-  {
-    input,
-    label,
-    type,
-    rows,
-    maxRows,
-    meta: { touched, error },
-  },
-) => {
+const InputField = ({
+  input,
+  label,
+  type,
+  rows,
+  maxRows,
+  meta: { touched, error },
+}) => {
   return (
     <TextField
-      { ...input }
-      id={ input.name }
-      label={ label }
-      placeholder={ input.placeholder }
-      type={ type }
-      errorText={ error }
-      rows={ rows }
-      maxRows={ maxRows }
+      {...input}
+      id={input.name}
+      label={label}
+      placeholder={input.placeholder}
+      type={type}
+      errorText={error}
+      rows={rows}
+      maxRows={maxRows}
     />
   );
 };

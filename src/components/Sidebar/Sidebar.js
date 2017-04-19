@@ -63,23 +63,23 @@ class Sidebar extends Component {
     const classes = classnames(BASE_ELEMENT, this.props.className);
 
     return (
-        <SidebarWrapper {...this.props}>
-          <SidebarHeader
-            isPrimaryColor={this.props.isPrimaryColor}
-            logoImg={this.props.logoImg}
-            logoLink={this.props.logoLink}
-          />
-          <SidebarNav
-            items={this.props.items}
-            isPrimaryColor={this.props.isPrimaryColor}
-            activeItem={this.props.activeItem}
-            navClassName={this.props.navClassName}
-            location={this.props.location}
-            match={this.props.match}
-            expanded={this.props.expanded}
-            onExpandCollapse={this.props.onExpandCollapse}
-          />
-        </SidebarWrapper>
+      <SidebarWrapper {...this.props}>
+        <SidebarHeader
+          isPrimaryColor={this.props.isPrimaryColor}
+          logoImg={this.props.logoImg}
+          logoLink={this.props.logoLink}
+        />
+        <SidebarNav
+          items={this.props.items}
+          isPrimaryColor={this.props.isPrimaryColor}
+          activeItem={this.props.activeItem}
+          navClassName={this.props.navClassName}
+          location={this.props.location}
+          match={this.props.match}
+          expanded={this.props.expanded}
+          onExpandCollapse={this.props.onExpandCollapse}
+        />
+      </SidebarWrapper>
     );
   }
 }
