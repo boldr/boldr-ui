@@ -25,52 +25,59 @@ type SidebarNavItemProps = {
 };
 
 const SidebarNavItem = (props: SidebarNavItemProps) =>
-  props.link
-    ?
-    // if item has a link as its direct props it must be a link. We render and move on. Imagine that.
-      <div className={ classnames(BASE_ELEMENT, `level-${props.level}`, { active: props.active }) }>
+  // if item has a link as its direct props it must be a link. We render
+  // and move on. Imagine that.
+  (props.link
+    ? <div
+        className={classnames(BASE_ELEMENT, `level-${props.level}`, {
+          active: props.active,
+        })}
+      >
         <Anchor
-          to={ props.link }
-          label={ props.label }
-          icon={ props.icon ? `${props.icon} ${PARENT_ELEMENT}-icon` : null }
-          className={ `${BASE_ELEMENT}-link` }
+          to={props.link}
+          label={props.label}
+          icon={props.icon ? `${props.icon} ${PARENT_ELEMENT}-icon` : null}
+          className={`${BASE_ELEMENT}-link`}
         />
       </div>
     :
-    // if item does NOT have a link it must be a title / collapsable element
       <div
-        className={ classnames(BASE_ELEMENT, `level-${props.level}`, {
+        className={classnames(BASE_ELEMENT, `level-${props.level}`, {
           collapsed: !props.expanded,
           expanded: props.expanded,
           active: props.active,
-        }) }
-        onClick={ props.onItemClick(props.id, props.items) }
+        })}
+        onClick={props.onItemClick(props.id, props.items)}
       >
-        <div className={ classnames(`${BASE_ELEMENT}-title`) }>
+        <div className={classnames(`${BASE_ELEMENT}-title`)}>
           {/* if theres an icon we're going to render it */}
-          {props.icon ? <FaIcon className={ classnames(`${PARENT_ELEMENT}-icon`, props.icon) } /> : null}
+          {props.icon
+            ? <FaIcon
+                className={classnames(`${PARENT_ELEMENT}-icon`, props.icon)}
+              />
+            : null}
           {props.label}
           {/* if theres a chevron we're going to render it */}
           <Chevron
-            expanded={ props.expanded || props.active }
-            className={ classnames(`${PARENT_ELEMENT}-chevron`) }
+            expanded={props.expanded || props.active}
+            className={classnames(`${PARENT_ELEMENT}-chevron`)}
           />
         </div>
         {/* since we are down here, we have nested links within item.items[] */}
-        <div className={ classnames(`${BASE_ELEMENT}-children`) }>
+        <div className={classnames(`${BASE_ELEMENT}-children`)}>
           {props.items && Array.isArray(props.items)
             ? props.items.map(item => (
-              <SidebarNavItem
-                key={ item.id }
-                level={ props.level + 1 }
-                onItemClick={ props.onItemClick }
-                expanded={ props.expanded }
-                { ...item }
-              />
+                <SidebarNavItem
+                  key={item.id}
+                  level={props.level + 1}
+                  onItemClick={props.onItemClick}
+                  expanded={props.expanded}
+                  {...item}
+                />
               ))
             : null}
         </div>
-      </div>;
+      </div>);
 
 SidebarNavItem.defaultProps = {
   link: null,

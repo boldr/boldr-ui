@@ -6,7 +6,6 @@ import {font, palette} from 'styled-theme';
 import colors from './colors';
 import borders from './borders';
 import fonts from './fonts';
-import gridsys from './gridsys';
 
 const SIZES = {
   large: 1200,
@@ -42,21 +41,6 @@ const theme = {
     medium: '2px',
     thick: '3px',
     radius: '3px',
-  },
-  gridsys: {
-    gutterWidth: 1,
-    outerMargin: 2,
-    container: {
-      sm: 46,
-      md: 61,
-      lg: 76,
-    },
-    breakpoints: {
-      xs: 0,
-      sm: 48,
-      md: 64,
-      lg: 75,
-    },
   },
 };
 

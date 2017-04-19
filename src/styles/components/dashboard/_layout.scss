@@ -3,23 +3,11 @@
 ////
 
 /// IE10&11 Flexbox fix
-@media all and (-ms-high-contrast: none) {
-  html {
-    display: flex;
-    flex-direction: column;
-  }
-}
 
 .#{$dash-ns}wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-.#{$dash-ns}topbar {
-  flex: 0 0 $navbar-height;
-
-  @include md-box-shadow(1);
 }
 
 .#{$dash-ns}footer {

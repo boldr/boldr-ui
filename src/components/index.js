@@ -1,6 +1,6 @@
 import Heading from './Heading';
 import Footer from './Footer';
-import {Grid, Row, Col, BASE_CONF} from './Layout';
+import {Grid, Row, Col } from './Layout';
 import Modal from './Modal';
 import Hero from './Hero';
 import Widget from './Widget';
@@ -25,7 +25,11 @@ import {
   SidebarHeader,
 } from './Sidebar';
 import Link from './Link';
-import Topbar from './Topbar';
+import Topbar, {
+  TopbarLink,
+  TopbarPlainLink,
+  TopbarSearch,
+} from './Topbar';
 import DashboardWrapper from './DashboardWrapper';
 import DashboardContent from './DashboardContent';
 import Anchor from './Anchor';
@@ -35,16 +39,17 @@ import HorizontalRule from './HorizontalRule';
 import Label from './Label';
 import Photo from './Photo';
 import Dimmer from './Dimmer';
+import Toggler from './Toggler';
+import MenuIcon from './Icon/MenuIcon';
+import BaseIcon from './Icon/BaseIcon';
 
 export {
   Anchor,
-  Topbar,
   Col,
   Footer,
   FormCard,
   FormGroup,
   Grid,
-  BASE_CONF,
   Heading,
   Hero,
   DashboardFooter,
@@ -85,4 +90,10 @@ export {
   HorizontalRule,
   Photo,
   Dimmer,
+  Topbar,
+  TopbarLink,
+  TopbarPlainLink,
+  TopbarSearch,
+  MenuIcon,
+  BaseIcon,
 };

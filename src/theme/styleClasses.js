@@ -35,5 +35,7 @@ export const StyleClasses = {
   TAG_BLOCK: `${BOLDR_NS}tagblock`,
   TEXT: `${BOLDR_NS}text`,
   TOPBAR: `${BOLDR_NS}topbar`,
+  TOPBAR_CHILD: `${BOLDR_NS}topbar-child`,
+  TOPBAR_SEARCH: `${BOLDR_NS}topbar-search`,
   WIDGET: `${BOLDR_NS}widget`,
 };
