@@ -7,12 +7,12 @@ type Props = {
 };
 
 const Dash = styled.section`
-  display: flex;
-  min-height: 100vh;
+  width: 100%;
+  flex: 1;
   height: 100%
 `;
 
-const DashboardWrapper = (props: Props) => {
+const DashboardMain = (props: Props) => {
   return (
     <Dash {...props}>
       {props.children}
@@ -20,4 +20,4 @@ const DashboardWrapper = (props: Props) => {
   );
 };
 
-export default DashboardWrapper;
+export default DashboardMain;

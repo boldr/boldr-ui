@@ -1,13 +1,9 @@
-// ////////////////////////////////////////////////////// //
-// BEM Sass port of Flexbox Grid - http://flexboxgrid.com //
-// ////////////////////////////////////////////////////// //
-
 .grid,
-.grid__fluid {
+.grid--fluid {
   margin: 0 auto;
 }
 
-.grid__fluid {
+.grid--fluid {
   padding-right: $grid-gutter;
   padding-left: $grid-gutter;
 }

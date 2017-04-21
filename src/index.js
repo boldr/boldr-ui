@@ -6,7 +6,6 @@ import Avatar from 'react-md/lib/Avatars';
 import Button from 'react-md/lib/Buttons';
 import SelectField from 'react-md/lib/SelectFields';
 import Chip from 'react-md/lib/Chips';
-import Dialog from 'react-md/lib/Dialogs';
 import Drawer from 'react-md/lib/Drawers';
 import Toolbar from 'react-md/lib/Toolbars';
 import Collapse from 'react-md/lib/Helpers/Collapse';
@@ -51,6 +50,7 @@ import {
   Icon,
   Image,
   Topbar,
+  Form,
   TopbarLink,
   TopbarPlainLink,
   TopbarSearch,
@@ -58,6 +58,7 @@ import {
   Loader,
   Modal,
   Divider,
+  Dialog,
   Paper,
   Row,
   Widget,
@@ -84,6 +85,7 @@ import {
   SidebarHeader,
   DashboardWrapper,
   DashboardContent,
+  DashboardMain,
   Link,
   Block,
   Caption,
@@ -154,6 +156,9 @@ export {
   Photo,
   SearchIcon,
   CloseIcon,
+  Dialog,
+  Form,
+  DashboardMain,
   Dimmer,
   colors,
   borders,
@@ -168,7 +173,6 @@ export {
   Button,
   SelectField,
   Chip,
-  Dialog,
   Drawer,
   Toolbar,
   Collapse,

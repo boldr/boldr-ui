@@ -9,7 +9,7 @@ import Divider from './Divider';
 import Image from './Image';
 import { Icon, BaseIcon, MenuIcon, SearchIcon, CloseIcon } from './Icons';
 import Loader from './Loader';
-import { FormCard, FormGroup, InputField } from './Form';
+import { Form, FormCard, FormGroup, InputField } from './Form';
 import StatsWidget, { StatValue, StatLabel } from './StatsWidget';
 import Social, { Github, Facebook, Twitter, Google, LinkedIn } from './Social';
 import Paragraph from './Paragraph';
@@ -28,6 +28,7 @@ import Link from './Link';
 import Topbar, { TopbarLink, TopbarPlainLink, TopbarSearch } from './Topbar';
 import DashboardWrapper from './DashboardWrapper';
 import DashboardContent from './DashboardContent';
+import DashboardMain from './DashboardMain';
 import Anchor from './Anchor';
 import Block from './Block';
 import Caption from './Caption';
@@ -36,6 +37,8 @@ import Label from './Label';
 import Photo from './Photo';
 import Dimmer from './Dimmer';
 import Toggler from './Toggler';
+import Dialog from './Dialog';
+
 export {
   Anchor,
   Col,
@@ -76,6 +79,7 @@ export {
   SidebarHeader,
   DashboardWrapper,
   DashboardContent,
+  DashboardMain,
   Link,
   Block,
   Caption,
@@ -91,4 +95,6 @@ export {
   SearchIcon,
   CloseIcon,
   BaseIcon,
+  Form,
+  Dialog,
 };

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types, react/no-unescaped-entities */
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { injectGlobal, ThemeProvider } from 'styled-components';
 
@@ -9,7 +9,8 @@ import theme from '../src/theme/theme';
 import Photo from '../src/components/Photo';
 import Heading from '../src/components/Heading';
 import { Grid, Col, Row } from '../src/components/Layout';
-
+import Form from '../src/components/Form/Form';
+import DashboardMain from '../src/components/DashboardMain';
 import {
   Sidebar,
   Anchor,
@@ -19,6 +20,7 @@ import {
   DashboardContent,
   Link,
   Topbar,
+  Modal,
 } from '../src/components';
 import TopbarLink from '../src/components/Topbar/TopbarLink';
 import menuItems from './items';
@@ -34,12 +36,19 @@ class App extends Component {
   state = {
     hidden: false,
     activate: null,
+    modalIsOpen: false,
   };
 
   handleSidebarClick = e => {
     this.props.dispatch({ type: 'TOGGLE_SIDEBAR' });
   };
+  openModal = () => {
+    this.setState({ modalIsOpen: true });
+  };
 
+  closeModal = () => {
+    this.setState({ modalIsOpen: false });
+  };
   onExpandCollapse = () => {
     this.props.dispatch({ type: 'TOGGLE_SB_MENU' });
   };
@@ -57,13 +66,7 @@ class App extends Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <div
-          style={{
-            display: 'flex',
-            height: '100%',
-            minHeight: '100%',
-          }}
-        >
+        <DashboardWrapper>
           {this.props.ui.visible
             ? <Sidebar
                 items={menuItems}
@@ -78,11 +81,11 @@ class App extends Component {
                 isPrimaryColor
               />
             : null}
-          <DashboardWrapper>
+          <DashboardMain>
             <Topbar
-               url={ window.location.pathname }
+              url={window.location.pathname}
               onMenuClick={this.handleSidebarClick}
-              link={ TopbarLink }
+              link={TopbarLink}
               links={[
                 { title: 'Example Link', url: '/example' },
                 { title: 'Another', url: '/another' },
@@ -92,38 +95,81 @@ class App extends Component {
                 },
               ]}
             />
-            <DashboardContent>
+            <DashboardContent padLeft padRight>
+              <Form inline>
+                <input type="text" />
+                <input type="text" />
+              </Form>
+               <button onClick={this.openModal}>Open Modal</button>
+              <Modal
+                overlay
+                onAfterOpen={this.afterOpenModal}
+                onClose={this.closeModal}
+                visible={ this.state.modalIsOpen}
+              >
+                <Heading size={1}> HEY</Heading>
+                <Button secondary raised label="button" />
+                <Button primary raised label="button" />
+                <Row>
+                  <Col xs={12} md={6}>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={12} md={6}>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                  </Col>
+                </Row>
+              </Modal>
               <Grid fluid>
                 <Row>
-                  <Col xs={6} md={3}>Hello, world!</Col>
+                  <Col xs={12}>Hello, world!</Col>
                 </Row>
-                <Heading size={1}> HEY</Heading>
-                <Button secondary raised label="button" /><Button primary raised label="button" />
+
                 <Row>
-                  <Col xs={6} md={3}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</Col>
-                </Row>
-                <Row>
-                  <Col xs={6} md={3}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</Col>
+                  <Col xs={12} md={6}>Hello, world!</Col>
                 </Row>
                 <Row>
                   <Col xs={6} md={3}>Hello, world!</Col>
-                </Row>
-                <Row>
+                  <Col xs={6} md={3}>Hello, world!</Col>
+                  <Col xs={6} md={3}>Hello, world!</Col>
                   <Col xs={6} md={3}>Hello, world!</Col>
                 </Row>
                 <Row>
                   <Col xs={6} md={3}>Hello, world!</Col>
                   <Photo src="https://boldr.io/logo.png" cta="phtoo" />
                 </Row>
-
-                <Route exact path="/" render={this.renderMain} />
-                <Route path="/posts" render={this.renderPosts} />
+                <Heading size={1}> HEY</Heading>
+                <Button secondary raised label="button" />
+                <Button primary raised label="button" />
+                <Row>
+                  <Col xs={12} md={6}>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={12} md={6}>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={12} md={6}>Hello, world!</Col>
+                </Row>
+                <Row>
+                  <Col xs={6} md={3}>Hello, world!</Col>
+                  <Col xs={6} md={3}>Hello, world!</Col>
+                  <Col xs={6} md={3}>Hello, world!</Col>
+                  <Col xs={6} md={3}>Hello, world!</Col>
+                </Row>
+                <Row>
+                  <Col xs={6} md={3}>Hello, world!</Col>
+                  <Photo src="https://boldr.io/logo.png" cta="phtoo" />
+                </Row>
               </Grid>
             </DashboardContent>
-  <DashboardFooter copyright="© 2017 Steven Truesdell" />
-          </DashboardWrapper>
-
-        </div>
+            <DashboardFooter copyright="© 2017 Steven Truesdell" />
+          </DashboardMain>
+        </DashboardWrapper>
       </ThemeProvider>
     );
   }
