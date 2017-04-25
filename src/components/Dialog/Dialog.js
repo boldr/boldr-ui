@@ -1,171 +1,121 @@
 /* @flow */
-/* eslint-disable react/no-find-dom-node */
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import classnames from 'classnames';
+/* eslint-disable react/no-find-dom-node, react/prop-types */
+import React, { PropTypes } from 'react';
+import styled, { css, injectGlobal } from 'styled-components';
 import ReactModal from 'react-modal';
+import { font, palette } from 'styled-theme';
+import Button from 'react-md/lib/Buttons';
+import Heading from '../Heading';
+import CloseIcon from '../Icons/CloseIcon';
 import type { ReactChildren } from '../../types/react.js.flow';
-import Paper from '../Paper';
 
 type Props = {
-  dataHook: () => void,
-  onClose: () => void,
   children: ReactChildren,
-  horizontalPosition: string,
-  verticalPosition: string,
-  e: Object,
-  elem: any,
-  zIndex: number,
-  scrollable: boolean,
-  isOpen: boolean,
-  contentLabel: string,
-  shouldCloseOnOverlayClick: boolean,
-  onRequestClose: () => void,
-  onAfterOpen: () => void,
-  overlay: boolean,
-  closeTimeoutMS: number,
-};
-export const positions = {
-  start: 'flex-start',
-  center: 'center',
-  end: 'flex-end',
+  title: string,
+  closeable: boolean,
+  reverse: boolean,
+  onClose: () => void,
 };
 
-export const colors = {
-  blue: 'blue',
-  red: 'red',
-  green: 'green',
+const overlayStyles = css`
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 9999;
+  transition: opacity 250ms ease-in-out;
+  opacity: 0;
+  &[class*="after-open"] {
+    opacity: 1;
+  }
+  &[class*="before-close"] {
+    opacity: 0;
+  }
+`;
+
+const ModalBox = styled(ReactModal)`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  font-family: ${font('primary')};
+  font-size: 1rem;
+  background-color: ${palette('grayscale', 0, true)};
+  border-radius: 0.125em;
+  color: ${palette('grayscale', 0)};
+  top: calc(50% - 1rem);
+  left: calc(50% - 1rem);
+  right: auto;
+  bottom: auto;
+  margin: 1rem calc(-50% + 1rem) 1rem 1rem;
+  transform: translate(-50%, 100%);
+  transition: transform 250ms ease-in-out;
+  outline: none;
+  box-sizing: border-box;
+  min-width: 320px;
+  max-width: calc(640px - 1rem);
+  max-height: calc(100% - 1rem);
+  padding-top: ${({ hasHeader }) => (hasHeader ? 0 : '1rem')};
+  @media screen and (max-width: 640px) {
+    width: calc(100% - 1rem);
+    min-width: 0;
+  }
+  &[class*="after-open"] {
+    transform: translate(-50%, -50%);
+  }
+  &[class*="before-close"] {
+    transform: translate(-50%, 100%);
+  }
+`;
+
+const Header = styled.header`
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  > *:first-child {
+    flex: 1;
+  }
+`;
+
+const StyledHeading = styled(Heading)`
+  margin: 0 1rem 0 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+`;
+
+const Content = styled.div`
+  overflow: auto;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+`;
+
+const StyledReactModal = styled(({ className, ...props }) => (
+  <ModalBox overlayClassName={className} closeTimeoutMS={250} {...props} />
+))`${overlayStyles}`;
+// $FlowIssue
+const Dialog = ({ children, title, closeable, onClose, ...props }) => {
+  const hasHeader = title || closeable;
+  return (
+    <StyledReactModal
+      contentLabel={title || 'Modal'}
+      onRequestClose={onClose}
+      hasHeader={hasHeader}
+      {...props}
+    >
+      {hasHeader &&
+        <Header>
+          <StyledHeading level={2} reverse={props.reverse}>
+            {title}
+          </StyledHeading>
+          {closeable && <Button icon onClick={onClose}>close</Button>}
+        </Header>}
+      <Content>
+        {children}
+      </Content>
+    </StyledReactModal>
+  );
 };
-
-const MOUSE_EVENTS_SUPPORTED = ['click'];
-class Dialog extends Component {
-  static defaultProps = {
-    onOk: () => {},
-    shouldCloseOnOverlayClick: false,
-    horizontalPosition: 'center',
-    verticalPosition: 'center',
-    closeTimeoutMS: 500,
-    scrollable: true,
-  };
-  componentDidMount() {
-    const { dataHook } = this.props;
-    if (dataHook) {
-      this._addDataHook(dataHook);
-    }
-
-    if (typeof this.onClickOutside === 'function') {
-      this._supportOnClickOutside();
-    }
-  }
-  componentWillUnmount() {
-    if ((this: any)._boundEvents) {
-      (this: any)._boundEvents.forEach(eventName => {
-        document.removeEventListener(
-          eventName,
-          this._onMouseEventsHandler,
-          true,
-        );
-      });
-    }
-  }
-
-  props: Props;
-  checkIfEventOnElements(e: Object, elem: any) {
-    let current = e.target;
-    while (current.parentNode) {
-      if (elem.indexOf(current) > -1) {
-        return true;
-      }
-      current = current.parentNode;
-    }
-
-    return current !== document;
-  }
-
-  componentElements() {
-    return [ReactDOM.findDOMNode(this)];
-  }
-
-  _onMouseEventsHandler = e => {
-    if (!this.checkIfEventOnElements(e, this.componentElements())) {
-      this.onClickOutside(e);
-    }
-  };
-
-  _addDataHook = dataHook => {
-    const domNode = ReactDOM.findDOMNode(this);
-    if (domNode) {
-      domNode.setAttribute('data-hook', dataHook);
-    }
-  };
-
-  _supportOnClickOutside = () => {
-    MOUSE_EVENTS_SUPPORTED.forEach(eventName => {
-      document.addEventListener(eventName, this._onMouseEventsHandler, true);
-    });
-
-    this._boundEvents = MOUSE_EVENTS_SUPPORTED;
-  };
-
-  render() {
-    const justifyContent = positions[this.props.horizontalPosition];
-    const alignItems = positions[this.props.verticalPosition];
-
-    const modalStyles = {
-      overlay: {
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        zIndex: 11 + (this.props.zIndex || 0),
-        backgroundColor: this.props.overlay
-          ? 'rgba(0, 0, 0, 0.65)'
-          : 'transparent',
-        display: 'flex',
-        justifyContent,
-        alignItems,
-        overflowY: this.props.scrollable ? 'auto' : 'hidden',
-      },
-      content: {
-        // Overriding defaults
-        border: 'none',
-        overflow: 'initial',
-        WebkitOverflowScrolling: 'touch',
-        outline: 'none',
-        minWidth: '400px',
-        minHeight: '225px',
-        borderRadius: '0px',
-        padding: '0px',
-        boxShadow: '0 0 14px 0 rgba(22, 45, 60, 0.3)',
-        // Overriding defaults - END
-        backgroundColor: 'transparent',
-        marginBottom: '0px',
-      },
-    };
-
-    const portalClassName = classnames('boldrui-modal__portal', {
-      'boldrui-modal__portal-non-scrollable': !this.props.scrollable,
-    });
-
-    return (
-      <ReactModal
-        portalClassName="boldrui-modal__portal"
-        overlayClassName="boldrui-modal__overlay"
-        isOpen={this.props.isOpen}
-        shouldCloseOnOverlayClick={this.props.shouldCloseOnOverlayClick}
-        onRequestClose={this.props.onRequestClose}
-        onAfterOpen={this.props.onAfterOpen}
-        style={modalStyles}
-        className="boldrui-modal__content"
-        contentLabel={this.props.contentLabel}
-        closeTimeoutMS={this.props.closeTimeoutMS}
-      >
-
-        {this.props.children}
-      </ReactModal>
-    );
-  }
-}
 
 export default Dialog;

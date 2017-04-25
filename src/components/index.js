@@ -38,8 +38,14 @@ import Photo from './Photo';
 import Dimmer from './Dimmer';
 import Toggler from './Toggler';
 import Dialog from './Dialog';
+import Btn from './Btn';
+import FormField from './FormField';
+import Input from './Input';
+import InputTags from './InputTags';
 
 export {
+  FormField,
+  Input,
   Anchor,
   Col,
   Footer,
@@ -47,6 +53,7 @@ export {
   FormGroup,
   Grid,
   Heading,
+  InputTags,
   Hero,
   DashboardFooter,
   Icon,
@@ -97,4 +104,5 @@ export {
   BaseIcon,
   Form,
   Dialog,
+  Btn,
 };

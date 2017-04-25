@@ -12,6 +12,7 @@ import Collapse from 'react-md/lib/Helpers/Collapse';
 import FontIcon from 'react-md/lib/FontIcons';
 import Tabs from 'react-md/lib/Tabs/Tabs';
 import Tab from 'react-md/lib/Tabs/Tab';
+import LinearProgress from 'react-md/lib/Progress/LinearProgress';
 import CircularProgress from 'react-md/lib/Progress/CircularProgress';
 import TabsContainer from 'react-md/lib/Tabs/TabsContainer';
 import Slider from 'react-md/lib/Sliders';
@@ -34,6 +35,7 @@ import TablePagination from 'react-md/lib/DataTables/TablePagination';
 import MenuButton from 'react-md/lib/Menus/MenuButton';
 import injectTooltip from 'react-md/lib/Tooltips';
 import Menu from 'react-md/lib/Menus/Menu';
+import NavigationDrawer from 'react-md/lib/NavigationDrawers';
 
 import { BOLDR_NS, StyleClasses } from './theme/styleClasses';
 import theme, { mediaQuery } from './theme/theme';
@@ -44,6 +46,7 @@ import {
   Footer,
   FormCard,
   FormGroup,
+  InputTags,
   Grid,
   Heading,
   Hero,
@@ -65,9 +68,12 @@ import {
   Github,
   Facebook,
   Twitter,
+  FormField,
+  Input,
   Google,
   LinkedIn,
   Social,
+  Btn,
   Anchor,
   Paragraph,
   StatsWidget,
@@ -117,6 +123,7 @@ export {
   Row,
   Widget,
   Github,
+  InputTags,
   Facebook,
   Twitter,
   Divider,
@@ -126,6 +133,8 @@ export {
   Paragraph,
   BOLDR_NS,
   StyleClasses,
+  FormField,
+  Input,
   mediaQuery,
   StatsWidget,
   StatValue,
@@ -137,6 +146,7 @@ export {
   Media,
   MediaOverlay,
   DashboardFooter,
+  Btn,
   Sidebar,
   SidebarNav,
   SidebarNavItem,
@@ -198,4 +208,6 @@ export {
   SelectionControl,
   SelectionControlGroup,
   injectTooltip,
+  LinearProgress,
+  NavigationDrawer,
 };

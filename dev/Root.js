@@ -23,7 +23,7 @@ import {
 import TopbarLink from '../src/components/Topbar/TopbarLink';
 import menuItems from './items';
 import Posts from './Posts';
-
+import NewPost from './NewPost';
 import App from './App';
 
 injectGlobal`
@@ -36,13 +36,14 @@ class Root extends Component {
     return <App />;
   };
   renderPosts = () => <Posts />;
-
+renderNewPost = () => <NewPost />;
   render() {
     return (
       <ThemeProvider theme={theme}>
         <Switch>
           <Route exact path="/" render={this.renderMain} />
           <Route exact path="/admin/posts" render={this.renderPosts} />
+              <Route exact path="/admin/new-post" render={this.renderNewPost} />
         </Switch>
       </ThemeProvider>
     );

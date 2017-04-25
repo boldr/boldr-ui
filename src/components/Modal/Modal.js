@@ -10,31 +10,20 @@ type Props = {
   onAfterOpen: () => void,
   children: ReactChildren,
   visible: boolean,
-  overlay: boolean,
+  closeable: boolean,
 };
 const Modal = (props: Props) => {
   return (
     <Dialog
-      overlay={props.overlay}
       aria-labelledby="contentModal"
       contentLabel="contentModal"
       isOpen={props.visible}
-      onRequestClose={props.onClose}
+      closeable={props.closeable}
+      onClose={props.onClose}
       onAfterOpen={props.onAfterOpen}
-      modal
     >
-      <Paper zDepth={0}>
-        <Button
-          icon
-          style={{ float: 'right', marginTop: '10px', marginRight: '10px' }}
-          onClick={props.onClose}
-        >
-          close
-        </Button>
+      {props.children}
 
-        {props.children}
-
-      </Paper>
     </Dialog>
   );
 };

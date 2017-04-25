@@ -145,17 +145,12 @@ class Topbar extends Component {
     );
     return (
       <header className={classes}>
-        <section className={`${BASE_ELEMENT}__inner`}>
+        <div className={`${BASE_ELEMENT}__inner`}>
           <Toggler
             sidebarToggleable
             iconColor="#rgba(0, 0, 0, 0.87)"
             onClick={this.props.onMenuClick}
           />
-
-          <Link className={`${BASE_ELEMENT}__logo`} url="/">
-            {this.props.logo}
-          </Link>
-
           <nav className={`${BASE_ELEMENT}__links`}>
             {this._links}
           </nav>
@@ -184,7 +179,7 @@ class Topbar extends Component {
               </div>
             : null}
 
-        </section>
+        </div>
       </header>
     );
   }
