@@ -7,7 +7,6 @@
     "color-hex-case": "lower",
     "color-hex-length": "short",
     "color-named": "never",
-    "selector-no-attribute": true,
     "declaration-block-trailing-semicolon": "always",
     "declaration-colon-space-before": "never",
     "declaration-colon-space-after": "always",

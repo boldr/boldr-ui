@@ -14,14 +14,10 @@ const styles = css`
   color: ${palette({ grayscale: 0 }, 1)};
 `;
 
-const Heading = styled(({
-  size,
-  children,
-  reverse,
-  palette,
-  theme,
-  ...props
-}) => React.createElement(`h${size}`, props, children))`${styles}`;
+const Heading = styled(
+  ({ size, children, reverse, palette, theme, ...props }) =>
+    React.createElement(`h${size}`, props, children),
+)`${styles}`;
 
 Heading.propTypes = {
   size: PropTypes.number,

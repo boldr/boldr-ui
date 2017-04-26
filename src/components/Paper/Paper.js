@@ -14,14 +14,18 @@ type Props = {
   zDepth: number,
   // Any children to display in the paper.
   children: ReactChildren,
-  //  Boolean if the paper should raise to the `zDepth` of `3` on hover when the initial
+  //  Boolean if the paper should raise to the `zDepth` of `3`
+  //  on hover when the initial
   raiseOnHover: boolean,
+  // whether we apply a border raidus or not.
+  rounded: boolean,
 };
 
 class Paper extends PureComponent {
   static defaultProps = {
     zDepth: 1,
     component: 'div',
+    rounded: false,
   };
   props: Props;
   render() {
@@ -30,6 +34,7 @@ class Paper extends PureComponent {
       zDepth,
       className,
       raiseOnHover,
+      rounded,
       ...props
     } = this.props;
 
@@ -40,6 +45,7 @@ class Paper extends PureComponent {
           `boldrui-paper boldrui-paper__${zDepth}`,
           {
             'boldrui-paper__0-hover': zDepth === 0 && raiseOnHover,
+            'boldrui-paper__round': rounded,
           },
           className,
         )}

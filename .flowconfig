@@ -1,8 +1,10 @@
 [ignore]
 
-.*/node_modules/fbjs.*
+.*/node_modules/fbjs/.*
 .*/node_modules/react-swipeable-views/.*
+.*/node_modules/react-event-listener/.*
 .*/node_modules/draft-js/.*
+.*/node_modules/styled-components/.*
 .*/node_modules/stylelint/.*
 .*/node_modules/flow-remove-types/.*
 .*/node_modules/flow-coverage-report/.*

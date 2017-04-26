@@ -1,6 +1,6 @@
 {
   "name": "boldr-ui",
-  "version": "0.3.0",
+  "version": "0.3.9",
   "description": "UI components for BoldrCMS",
   "main": "lib/index.js",
   "repository": {
@@ -43,14 +43,14 @@
   },
   "dependencies": {
     "animate-components": "^0.7.2",
+    "boldr-utils": "0.2.2",
     "classnames": "^2.2.5",
-    "coolors-to-hex": "^1.0.3",
     "prop-types": "^15.5.8",
     "ramda": "^0.23.0",
     "react-md": "^1.0.12",
     "react-modal": "^1.7.7",
-    "slate": "^0.19.20",
-    "styled-components": "^1.4.5",
+    "react-tagsinput": "^3.16.1",
+    "react-transition-group": "^1.1.2",
     "styled-theme": "^0.3.3",
     "styled-tools": "^0.1.4"
   },
@@ -60,7 +60,8 @@
     "react-addons-transition-group": "^15.5.2",
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.1.1",
-    "react-transition-group": "^1.1.1"
+    "react-transition-group": "^1.1.1",
+    "styled-components": "^1.4.5"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -77,10 +78,6 @@
     "cross-env": "^4.0.0",
     "css-loader": "^0.28.0",
     "cz-conventional-changelog-emoji": "^0.1.0",
-    "cz-conventional-kawaii": "^0.1.4",
-    "draft-js": "^0.10.0",
-    "draft-js-import-html": "^0.3.2",
-    "draftjs-to-html": "^0.7.1",
     "enzyme": "^2.8.2",
     "enzyme-to-json": "^1.5.1",
     "eslint": "^3.19.0",
@@ -115,6 +112,8 @@
     "redux-form": "^6.6.3",
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.3",
+    "slate": "^0.19.20",
+        "styled-components": "^1.4.5",
     "style-loader": "^0.16.1",
     "stylelint": "^7.10.1",
     "stylelint-config-standard": "^16.0.0",

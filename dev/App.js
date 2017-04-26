@@ -6,22 +6,25 @@ import { injectGlobal, ThemeProvider } from 'styled-components';
 
 import '../src/styles/boldrui.scss';
 import theme from '../src/theme/theme';
-import Photo from '../src/components/Photo';
-import Heading from '../src/components/Heading';
-import { Grid, Col, Row } from '../src/components/Layout';
-import Form from '../src/components/Form/Form';
-import DashboardMain from '../src/components/DashboardMain';
 import {
   Sidebar,
   Anchor,
   SidebarNav,
+  DashboardMain,
   DashboardWrapper,
   DashboardFooter,
   DashboardContent,
+  Paper,
+  Photo,
   Paragraph,
   Link,
   Topbar,
+  Heading,
   Modal,
+  FormField,
+  Form,
+  Input,
+  Grid, Col, Row,
 } from '../src/components';
 import TopbarLink from '../src/components/Topbar/TopbarLink';
 import menuItems from './items';

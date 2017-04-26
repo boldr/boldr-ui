@@ -4,34 +4,37 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import styled, { injectGlobal, ThemeProvider } from 'styled-components';
 import { Editor, Raw } from 'slate';
-import { Field, reduxForm, FieldArray } from 'redux-form';
 import '../src/styles/boldrui.scss';
 import theme from '../src/theme/theme';
-import Photo from '../src/components/Photo';
-import Heading from '../src/components/Heading';
-import { Grid, Col, Row } from '../src/components/Layout';
-import Form from '../src/components/Form/Form';
-import DashboardMain from '../src/components/DashboardMain';
+
 import {
   Sidebar,
   Anchor,
   SidebarNav,
+  DashboardMain,
   DashboardWrapper,
   DashboardFooter,
   DashboardContent,
   Paper,
+  Photo,
   Paragraph,
   Link,
   Topbar,
+  Heading,
   Modal,
   FormField,
+  Form,
+  Input,
+  Grid, Col, Row,
 } from '../src/components';
-import RenderTags from './RenderTags';
+
 import InputTags from '../src/components/InputTags/InputTags';
 import TopbarLink from '../src/components/Topbar/TopbarLink';
 import menuItems from './items';
 import initialState from './state.json';
+import NewPostForm from './NewPostForm';
 
+const { Field, createForm, InputField, SubmissionError } = Form;
 const Inner = styled.div`
   padding: 2rem;
 `;
@@ -135,7 +138,13 @@ class NewPost extends Component {
     this.props.dispatch({ type: 'TOGGLE_SB_MENU' });
   };
 
+  handleSubmit = (values, tagsSubmit) => {
+    console.log('tags', tagsSubmit);
+  console.log('handlee', values, tagsSubmit);
+}
+
   render() {
+    const isSubmitting = this.props.boldrForm.isSubmitting();
     return (
       <ThemeProvider theme={theme}>
         <DashboardWrapper>
@@ -174,30 +183,13 @@ class NewPost extends Component {
                     <Paper zDepth={1}>
                       <Toolbar>Content</Toolbar>
                       <Inner>
-                        <Field
-                          name="title"
-                          label="Title"
-                          component={FormField}
-                        />
-                        <InputTags
-                          tags={this.state.tags}
-                          onAdded={this.onTagAdded}
-                          onRemoved={this.onTagRemoved}
-                        />
-                        <FieldArray
-                          name="tags"
-                          type="text"
-                          id="post-tags"
-                          component={RenderTags}
-                          label="Tags"
-                          tabIndex={-1}
-                        />
+
                       </Inner>
                     </Paper>
                   </Col>
                   <Col xs={12} md={4}>
                     <Paper zDepth={1}>
-                      <FormField label="Title" />
+                      <NewPostForm onSubmit={ this.handleSubmit } onSubmitSuccess={ this.onSubmitSuccess} />
                     </Paper>
                   </Col>
                 </Row>
@@ -216,7 +208,5 @@ const mapStateToProps = state => {
     routing: state.routing,
   };
 };
-NewPost = connect(mapStateToProps)(NewPost);
-export default reduxForm({
-  form: 'newPostForm',
-})(NewPost);
+NewPost = createForm()(NewPost);
+export default connect(mapStateToProps)(NewPost);
