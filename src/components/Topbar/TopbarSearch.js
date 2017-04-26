@@ -31,7 +31,7 @@ class TopbarSearch extends PureComponent {
     return (
       <div className={classes}>
         <input
-          ref={ref => this._input = ref}
+          ref={ref => (this._input = ref)}
           className={`${BASE_ELEMENT}__input`}
           type="text"
           placeholder={placeholder}

@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import { routerReducer as routing } from 'react-router-redux';
+import { reducer as formReducer } from 'redux-form';
 
 const INITIAL_STATE = {
   expanded: true,
@@ -30,6 +31,7 @@ function ui(state = INITIAL_STATE, action) {
 const rootReducer = combineReducers({
   ui,
   routing,
+  form: formReducer,
 });
 
 export default rootReducer;

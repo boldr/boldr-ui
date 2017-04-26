@@ -7,7 +7,7 @@ import { ThemeProvider } from 'styled-components';
 import { AppContainer } from 'react-hot-loader';
 import theme from '../src/theme/theme';
 // import Root from './Root';
-import App from './App';
+import Root from './Root';
 import configureStore from './store';
 
 const history = createHistory();
@@ -18,7 +18,7 @@ ReactDOM.render(
     <Provider store={ store }>
       <ConnectedRouter history={ history }>
         <ThemeProvider theme={ theme }>
-        <App theme={ theme }/>
+        <Root theme={ theme }/>
       </ThemeProvider>
       </ConnectedRouter>
     </Provider>

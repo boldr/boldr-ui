@@ -1,29 +1,35 @@
 /* eslint-disable react/prop-types, react/no-unescaped-entities */
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { injectGlobal, ThemeProvider } from 'styled-components';
 
 import '../src/styles/boldrui.scss';
 import theme from '../src/theme/theme';
-import Photo from '../src/components/Photo';
-import Heading from '../src/components/Heading';
-import { Grid, Col, Row } from '../src/components/Layout';
-
 import {
   Sidebar,
   Anchor,
   SidebarNav,
+  DashboardMain,
   DashboardWrapper,
   DashboardFooter,
   DashboardContent,
+  Paper,
+  Photo,
+  Paragraph,
   Link,
   Topbar,
+  Heading,
+  Modal,
+  FormField,
+  Form,
+  Input,
+  Grid, Col, Row,
 } from '../src/components';
 import TopbarLink from '../src/components/Topbar/TopbarLink';
 import menuItems from './items';
 import Posts from './Posts';
-import Button from 'react-md/lib/Buttons';
+import NewPost from './NewPost';
 
 injectGlobal`
   body {
@@ -34,36 +40,28 @@ class App extends Component {
   state = {
     hidden: false,
     activate: null,
+    modalIsOpen: false,
   };
 
   handleSidebarClick = e => {
     this.props.dispatch({ type: 'TOGGLE_SIDEBAR' });
   };
+  openModal = () => {
+    this.setState({ modalIsOpen: true });
+  };
 
+  closeModal = () => {
+    this.setState({ modalIsOpen: false });
+  };
   onExpandCollapse = () => {
     this.props.dispatch({ type: 'TOGGLE_SB_MENU' });
   };
 
-  clickActivate = () => {
-    const activate = '/admin/posts';
-
-    this.setState({ activate });
-  };
-  renderMain = () => {
-    return <div>renderMain</div>;
-  };
-  renderPosts = () => <Posts />;
 
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <div
-          style={{
-            display: 'flex',
-            height: '100%',
-            minHeight: '100%',
-          }}
-        >
+        <DashboardWrapper>
           {this.props.ui.visible
             ? <Sidebar
                 items={menuItems}
@@ -78,11 +76,11 @@ class App extends Component {
                 isPrimaryColor
               />
             : null}
-          <DashboardWrapper>
+          <DashboardMain>
             <Topbar
-               url={ window.location.pathname }
+              url={window.location.pathname}
               onMenuClick={this.handleSidebarClick}
-              link={ TopbarLink }
+              link={TopbarLink}
               links={[
                 { title: 'Example Link', url: '/example' },
                 { title: 'Another', url: '/another' },
@@ -92,38 +90,57 @@ class App extends Component {
                 },
               ]}
             />
-            <DashboardContent>
-              <Grid fluid>
-                <Row>
-                  <Col xs={6} md={3}>Hello, world!</Col>
-                </Row>
-                <Heading size={1}> HEY</Heading>
-                <Button secondary raised label="button" /><Button primary raised label="button" />
-                <Row>
-                  <Col xs={6} md={3}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</Col>
-                </Row>
-                <Row>
-                  <Col xs={6} md={3}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</Col>
-                </Row>
-                <Row>
-                  <Col xs={6} md={3}>Hello, world!</Col>
-                </Row>
-                <Row>
-                  <Col xs={6} md={3}>Hello, world!</Col>
-                </Row>
-                <Row>
-                  <Col xs={6} md={3}>Hello, world!</Col>
-                  <Photo src="https://boldr.io/logo.png" cta="phtoo" />
-                </Row>
+            <DashboardContent padLeft padRight>
+              <Heading size={1}>Hive</Heading>
+              <Paragraph> Hello</Paragraph>
+              <Paragraph>
+                Today, April 14th 2017, WikiLeaks publishes six documents from
+                 the
+                CIA's HIVE project created by its "Embedded Development Branch"
+                (EDB).
+              </Paragraph>
+              <Paragraph>
+                HIVE is a back-end infrastructure malware with a public-facing
+                HTTPS interface which is used by CIA implants to transfer
+                exfiltrated information from target machines to the CIA and
+                to receive commands from its operators to execute specific
+                tasks on the targets. HIVE is used across multiple malware
+                implants and CIA operations. The public HTTPS interface utilizes
+                 unsuspicious-looking cover domains to hide its presence.
 
-                <Route exact path="/" render={this.renderMain} />
-                <Route path="/posts" render={this.renderPosts} />
-              </Grid>
+              </Paragraph>
+              <Paragraph>
+                Anti-Virus companies and forensic experts have noticed that some
+                possible state-actor malware used such kind of back-end
+                infrastructure by analyzing the communication behaviour of
+                these specific implants, but were unable to attribute the
+                back-end (and therefore the implant itself) to operations
+                run by the CIA. In a recent blog post by Symantec, that was
+                able to attribute the "Longhorn" activities to the CIA based
+                 on the Vault 7, such back-end infrastructure is described:
+
+              </Paragraph>
+              <Paragraph>
+                For C&C servers, Longhorn typically configures a specific
+                domain and IP address combination per target. The domains
+                appear to be registered by the attackers; however they use
+                privacy services to hide their real identity. The IP addresses
+                 are typically owned by legitimate companies offering virtual
+                 private server (VPS) or webhosting services. The malware
+                  communicates with C&C servers over HTTPS using a custom
+                   underlying cryptographic protocol to protect communications
+                   from identification.
+
+                The documents from this publication might further enable
+                anti-malware researchers and forensic experts to analyse
+                this kind of communication between malware implants and
+                back-end servers used in previous illegal activities.
+
+              </Paragraph>
             </DashboardContent>
-  <DashboardFooter copyright="© 2017 Steven Truesdell" />
-          </DashboardWrapper>
-
-        </div>
+            <DashboardFooter copyright="© 2017 Steven Truesdell" />
+          </DashboardMain>
+        </DashboardWrapper>
       </ThemeProvider>
     );
   }

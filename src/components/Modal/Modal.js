@@ -1,28 +1,29 @@
 /* @flow */
 import React from 'react';
-import Dialog from 'react-md/lib/Dialogs';
-import Button from 'react-md/lib/Buttons/Button';
+import Button from 'react-md/lib/Buttons';
+import Dialog from '../Dialog';
 import type { ReactChildren } from '../../types/react.js.flow';
+import Paper from '../Paper';
 
 type Props = {
   onClose: () => void,
+  onAfterOpen: () => void,
   children: ReactChildren,
-  title: String,
-  visible: Boolean,
+  visible: boolean,
+  closeable: boolean,
 };
-
 const Modal = (props: Props) => {
   return (
     <Dialog
-      id="adminModal"
-      title={props.title}
-      actions={<Button label="Close" flat primary onClick={props.onClose} />}
       aria-labelledby="contentModal"
-      visible={props.visible}
-      onHide={props.onClose}
-      modal
+      contentLabel="contentModal"
+      isOpen={props.visible}
+      closeable={props.closeable}
+      onClose={props.onClose}
+      onAfterOpen={props.onAfterOpen}
     >
       {props.children}
+
     </Dialog>
   );
 };

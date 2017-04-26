@@ -1,0 +1,122 @@
+{
+  "atom": "1.16.0",
+  "pigments": "0.39.1",
+  "platform": "darwin",
+  "config": {
+    "traverseIntoSymlinkDirectories": false,
+    "sourceNames": [
+      "**/*.css",
+      "**/*.styl",
+      "**/*.stylus",
+      "**/*.less",
+      "**/*.sass",
+      "**/*.scss"
+    ],
+    "ignoredNames": [
+      "vendor/*",
+      "node_modules/*",
+      "spec/*",
+      "test/*"
+    ],
+    "ignoredBufferNames": [],
+    "extendedSearchNames": [
+      "**/*.css"
+    ],
+    "supportedFiletypes": [
+      "*"
+    ],
+    "filetypesForColorWords": [
+      "css",
+      "less",
+      "styl",
+      "stylus",
+      "sass",
+      "scss"
+    ],
+    "ignoredScopes": [],
+    "autocompleteScopes": [
+      ".source.css",
+      ".source.css.less",
+      ".source.sass",
+      ".source.css.scss",
+      ".source.stylus"
+    ],
+    "extendAutocompleteToVariables": false,
+    "extendAutocompleteToColorValue": false,
+    "autocompleteSuggestionsFromValue": false,
+    "maxDecorationsInGutter": 100,
+    "markerType": "native-background",
+    "sassShadeAndTintImplementation": "compass",
+    "sortPaletteColors": "none",
+    "groupPaletteColors": "none",
+    "mergeColorDuplicates": false,
+    "delayBeforeScan": 500,
+    "ignoreVcsIgnoredPaths": true,
+    "notifyReloads": true,
+    "dismissableReloadNotifications": true
+  },
+  "project": {
+    "config": {
+      "sourceNames": [
+        "src/styles/**/*.scss"
+      ],
+      "searchNames": [],
+      "ignoredNames": [
+        "node_modules/*",
+        "lib/*",
+        "dist/*",
+        "src/styles/abstracts/colors/_md-colors.scss",
+        "src/styles/abstracts/colors/social-colors.scss",
+        "src/styles/vendor/*"
+      ],
+      "ignoredScopes": []
+    },
+    "paths": [
+      "<root>/src/styles/boldrui.scss",
+      "<root>/src/styles/abstracts/_all.scss",
+      "<root>/src/styles/abstracts/_mixins.scss",
+      "<root>/src/styles/abstracts/_variables.scss",
+      "<root>/src/styles/base/_all.scss",
+      "<root>/src/styles/base/_animate.scss",
+      "<root>/src/styles/base/_global.scss",
+      "<root>/src/styles/base/_grid.scss",
+      "<root>/src/styles/base/_typography.scss",
+      "<root>/src/styles/components/_all.scss",
+      "<root>/src/styles/components/_card.scss",
+      "<root>/src/styles/components/_dialog.scss",
+      "<root>/src/styles/components/_divider.scss",
+      "<root>/src/styles/components/_dropzone.scss",
+      "<root>/src/styles/components/_filecard.scss",
+      "<root>/src/styles/components/_footer.scss",
+      "<root>/src/styles/components/_forms.scss",
+      "<root>/src/styles/components/_hero.scss",
+      "<root>/src/styles/components/_image.scss",
+      "<root>/src/styles/components/_loader.scss",
+      "<root>/src/styles/components/_media.scss",
+      "<root>/src/styles/components/_menu.scss",
+      "<root>/src/styles/components/_notification.scss",
+      "<root>/src/styles/components/_paper.scss",
+      "<root>/src/styles/components/_texteditor.scss",
+      "<root>/src/styles/components/_widgets.scss",
+      "<root>/src/styles/abstracts/colors/_all.scss",
+      "<root>/src/styles/abstracts/colors/_colors.scss",
+      "<root>/src/styles/abstracts/colors/_social-colors.scss",
+      "<root>/src/styles/components/blog/_all.scss",
+      "<root>/src/styles/components/blog/_post-sidebar.scss",
+      "<root>/src/styles/components/blog/_post.scss",
+      "<root>/src/styles/components/blog/_tags.scss",
+      "<root>/src/styles/components/dashboard/_all.scss",
+      "<root>/src/styles/components/dashboard/_footer.scss",
+      "<root>/src/styles/components/dashboard/_layout.scss",
+      "<root>/src/styles/components/dashboard/_sidebar.scss",
+      "<root>/src/styles/components/dashboard/_topbar.scss",
+      "<root>/src/styles/components/profile/_all.scss",
+      "<root>/src/styles/components/profile/_profile-detail.scss",
+      "<root>/src/styles/components/profile/_profile.scss"
+    ],
+    "variables": {
+      "colors": 135,
+      "total": 331
+    }
+  }
+}

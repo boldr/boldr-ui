@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { css, ThemeProvider } from 'styled-components';
-import coolorsToHex from 'coolors-to-hex';
 import { reversePalette } from 'styled-theme/composer';
 import { font, palette } from 'styled-theme';
 import colors from './colors';
