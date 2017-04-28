@@ -1,3 +1,9 @@
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemBody,
+  AccordionItemTitle,
+} from './Accordion';
 import Anchor from './Anchor';
 import Block from './Block';
 import Caption from './Caption';
@@ -60,6 +66,10 @@ import {
 } from './Sidebar';
 
 export {
+  Accordion,
+  AccordionItem,
+  AccordionItemBody,
+  AccordionItemTitle,
   Anchor,
   BaseIcon,
   Block,

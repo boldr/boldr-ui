@@ -6,6 +6,11 @@ const BaseIcon = (
   { reactIconBase = {} },
 ) => {
   const computedSize = size || reactIconBase.size || '1em';
+  function onClick(e: Event) {
+    if (props.onClick) {
+      props.onClick(e);
+    }
+  }
   return (
     <svg
       children={children}
@@ -13,6 +18,7 @@ const BaseIcon = (
       preserveAspectRatio="xMidYMid meet"
       height={computedSize}
       width={computedSize}
+      onClick={onClick}
       {...reactIconBase}
       {...props}
       style={{
@@ -29,6 +35,7 @@ BaseIcon.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   style: PropTypes.object,
+  onClick: PropTypes.func,
 };
 BaseIcon.defaultProps = {
   color: '#fff',

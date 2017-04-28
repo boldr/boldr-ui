@@ -3,8 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 type Props = {
-  warning: string,
-  error: string,
+  meta: Object,
 };
 
 const Feedback = (props: Props) => {

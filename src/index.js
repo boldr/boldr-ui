@@ -41,6 +41,10 @@ import { BOLDR_NS, StyleClasses } from './theme/styleClasses';
 import theme, { mediaQuery } from './theme/theme';
 
 import {
+  Accordion,
+  AccordionItem,
+  AccordionItemBody,
+  AccordionItemTitle,
   Anchor,
   BaseIcon,
   Block,
@@ -108,6 +112,10 @@ import {
 } from './components';
 
 export {
+  Accordion,
+  AccordionItem,
+  AccordionItemBody,
+  AccordionItemTitle,
   Anchor,
   BaseIcon,
   Block,
@@ -115,7 +123,6 @@ export {
   Checkbox,
   Chevron,
   ContentPromo,
-  CloseIcon,
   Col,
   DashboardContent,
   DashboardFooter,
@@ -150,7 +157,6 @@ export {
   Loader,
   Media,
   MediaOverlay,
-  MenuIcon,
   Modal,
   Paper,
   Paragraph,
@@ -158,7 +164,6 @@ export {
   RadioField,
   Row,
   SelectField,
-  SearchIcon,
   Sidebar,
   SidebarHeader,
   SidebarNav,

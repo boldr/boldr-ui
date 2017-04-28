@@ -15,7 +15,13 @@ const handlePropsError = options => {
   }
 };
 
-const SelectField = props => {
+type Props = {
+  meta: Object,
+  input: Object,
+  options: Array<any>,
+};
+
+const SelectField = (props: Props) => {
   const { meta } = props;
   const showError = meta.touched && meta.error && meta.invalid;
 

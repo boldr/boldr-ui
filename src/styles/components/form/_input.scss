@@ -17,9 +17,9 @@ $borderRadius: 3px;
 .boldrui-input__wrapper {
   display: flex;
   position: relative;
-  height: 30px;
-  max-height: 36px;
-  line-height: 28px;
+  height: 40px;
+  max-height: 40px;
+  line-height: 40px;
   margin-bottom: 2em;
 }
 
@@ -95,7 +95,12 @@ $borderRadius: 3px;
   border-top-left-radius: $borderRadius;
   border-bottom-left-radius: $borderRadius;
   border-right: none;
-  padding-top: 8px;
+  padding-top: 5px;
+
+  svg {
+    display: inline-block;
+    vertical-align: middle;
+  }
 }
 
 .boldrui-input__addon-after {

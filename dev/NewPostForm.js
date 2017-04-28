@@ -77,7 +77,7 @@ const Toolbar = styled.div`
 
 
 const remoteOptions = [
-  { text: 'Yes', value: 'Yes' },
+  { text: 'Yes I like', value: 'Yes' },
   { text: 'No', value: 'No' },
 ];
 
@@ -89,7 +89,7 @@ const NewPostForm = props => {
           <Field
             name="firstName"
             component={InputField}
-            addonBefore={ <Icon kind="edit" />}
+            addonBefore={ <Icon kind="edit" size={ 24 } color="#222" />}
             type="text"
             label="First Name"
             placeholder="First Name"

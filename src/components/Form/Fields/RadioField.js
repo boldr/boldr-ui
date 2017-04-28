@@ -11,6 +11,9 @@ const RadioField = props => {
       <RadioContainer>
         {props.options.map(option => (
           <RadioInputContainer key={option.value}>
+            <RadioText showError={showError}>
+              {option.text}
+            </RadioText>
             <RadioInput
               {...props.input}
               type="radio"
@@ -21,9 +24,6 @@ const RadioField = props => {
               showError={showError}
               checked={option.text === props.input.value}
             />
-            <RadioText showError={showError}>
-              {option.text}
-            </RadioText>
           </RadioInputContainer>
         ))}
       </RadioContainer>
@@ -32,23 +32,22 @@ const RadioField = props => {
 };
 const RadioContainer = styled.div`
   display: flex;
+  width: 100%;
 `;
 
 const RadioInputContainer = styled.div`
   position: relative;
-  margin: 2rem 1.8rem;
+  margin: 0 1.8rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   &:last-child {
-    margin-left: 2rem;
+    margin-left: 1rem;
   }
   input[type=radio]:checked {
     background: #00bcd4;
-    border-color: #00bcd4;
-  }
-  input[type=radio]:checked ~ div {
-    color: white;
+    border-color: #00b4d0;
+    transform: scale(1);
   }
 `;
 
@@ -59,25 +58,33 @@ const RadioInput = styled.input`
   padding: 18px;
   font-size: 16px;
   width: 100%;
-  margin: 0 auto 1rem;
-
-  &:active,
-  &:focus {
-    border-color: ${props => (props.showError ? '#d32f2f' : '#484848')};
-    outline: none;
-  }
-  position: absolute;
+  margin: 10px 1.2rem 1rem;
+  position: relative;
   -webkit-appearance: none;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
+  transition: all 300ms ease-in-out;
   cursor: pointer;
+    &:hover,
+    &:active,
+    &:focus {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      border-color: ${props => (props.showError ? '#d32f2f' : '#00b4d0')};
+      outline: none;
+    }
 `;
 
 const RadioText = styled.div`
   position: relative;
-  top: 2px;
   pointer-events: none;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.23;
+  letter-spacing: 0.3px;
+
   color: ${props => (props.showError ? '#d32f2f' : 'rgba(0, 0, 0, 0.87)')};
 `;
 

@@ -37,8 +37,8 @@ $tag-input-border-focus-color: darken($light-gray, 15%) !default;
   $height: $tag-base-height - 2;
 
   transition: border-color 0.3s ease;
-  background: $tag-input-bg-color;
-  border: $tag-input-border;
+  background: none;
+  border: 0;
   height: $height;
   margin-top: $tag-base-margin;
 
