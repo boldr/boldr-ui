@@ -25,6 +25,7 @@ import {
   Image,
   FormField,
   Form,
+  Icon,
   Input,
   Grid,
   Col,
@@ -61,7 +62,6 @@ class App extends Component {
   onExpandCollapse = () => {
     this.props.dispatch({ type: 'TOGGLE_SB_MENU' });
   };
-
   render() {
     return (
       <ThemeProvider theme={theme}>
@@ -98,13 +98,22 @@ class App extends Component {
               <Heading size={1}>Hive</Heading>
               <Paragraph> Hello</Paragraph>
               <Paragraph>
-                <Button>Push Me</Button>
-                <Button theme="secondary">Push Me</Button>
+                <Button icon><Icon kind="calendar" /></Button>
+                <Button theme="secondary" onClick={this.openModal}>
+                  Push Me
+                </Button>
                 Today, April 14th 2017, WikiLeaks publishes six documents from
                 the
                 CIA's HIVE project created by its "Embedded Development Branch"
                 (EDB).
               </Paragraph>
+              <Modal
+                closeable
+                visible={this.state.modalIsOpen}
+                onClose={this.closeModal}
+              >
+                asdfasdfasf
+              </Modal>
               <Image
                 src="http://i.magaimg.net/img/frh.jpg"
                 alt="A beautiful image of a tourist attraction in Rome"

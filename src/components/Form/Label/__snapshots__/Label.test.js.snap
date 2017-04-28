@@ -3,7 +3,7 @@
 exports[`renders snapshot 1`] = `
 <label
   className="boldrui-form__label"
-  htmlForm="test"
+  htmlFor="test"
 >
   test
 </label>

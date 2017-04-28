@@ -29,7 +29,7 @@ import Heading from './Heading';
 import Headline from './Headline';
 import Hero from './Hero';
 import HorizontalRule from './HorizontalRule';
-import { Icon, BaseIcon, MenuIcon, SearchIcon, CloseIcon } from './Icons';
+import { Icon, BaseIcon } from './Icons';
 import Image from './Image';
 import Input from './Input';
 import { Grid, Row, Col } from './Layout';
@@ -67,7 +67,6 @@ export {
   Checkbox,
   Chevron,
   ContentPromo,
-  CloseIcon,
   Col,
   DashboardContent,
   DashboardFooter,
@@ -102,7 +101,6 @@ export {
   Loader,
   Media,
   MediaOverlay,
-  MenuIcon,
   Modal,
   Paper,
   Paragraph,
@@ -110,7 +108,6 @@ export {
   RadioField,
   Row,
   SelectField,
-  SearchIcon,
   Sidebar,
   SidebarHeader,
   SidebarNav,

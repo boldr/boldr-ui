@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 
 export type Props = {
@@ -40,66 +40,100 @@ export type Props = {
   lgBetween?: boolean,
 };
 
-class Row extends PureComponent {
-  props: Props;
-  render() {
-    const ComponentClass = this.props.componentClass;
+const Row = (props: Props) => {
+  const ComponentClass = props.componentClass;
+  const {
+    style,
+    className,
+    children,
+    reverse,
+    xsStart,
+    smStart,
+    mdStart,
+    lgStart,
+    xsCenter,
+    smCenter,
+    mdCenter,
+    lgCenter,
+    xsEnd,
+    smEnd,
+    mdEnd,
+    lgEnd,
+    xsTop,
+    smTop,
+    mdTop,
+    lgTop,
+    xsMiddle,
+    smMiddle,
+    mdMiddle,
+    lgMiddle,
+    xsBottom,
+    smBottom,
+    mdBottom,
+    lgBottom,
+    xsAround,
+    smAround,
+    mdAround,
+    lgAround,
+    xsBetween,
+    smBetween,
+    mdBetween,
+    lgBetween,
+  } = props;
+  const classes = classNames(
+    {
+      grid__row: true,
+      'grid__row--reverse': reverse,
 
-    const classes = classNames(
-      {
-        grid__row: true,
-        'grid__row--reverse': this.props.reverse,
+      'grid__row--xs-start': xsStart,
+      'grid__row--sm-start': smStart,
+      'grid__row--md-start': mdStart,
+      'grid__row--lg-start': lgStart,
 
-        'grid__row--xs-start': this.props.xsStart,
-        'grid__row--sm-start': this.props.smStart,
-        'grid__row--md-start': this.props.mdStart,
-        'grid__row--lg-start': this.props.lgStart,
+      'grid__row--xs-center': xsCenter,
+      'grid__row--sm-center': smCenter,
+      'grid__row--md-center': mdCenter,
+      'grid__row--lg-center': lgCenter,
 
-        'grid__row--xs-center': this.props.xsCenter,
-        'grid__row--sm-center': this.props.smCenter,
-        'grid__row--md-center': this.props.mdCenter,
-        'grid__row--lg-center': this.props.lgCenter,
+      'grid__row--xs-end': xsEnd,
+      'grid__row--sm-end': smEnd,
+      'grid__row--md-end': mdEnd,
+      'grid__row--lg-end': lgEnd,
 
-        'grid__row--xs-end': this.props.xsEnd,
-        'grid__row--sm-end': this.props.smEnd,
-        'grid__row--md-end': this.props.mdEnd,
-        'grid__row--lg-end': this.props.lgEnd,
+      'grid__row--xs-top': xsTop,
+      'grid__row--sm-top': smTop,
+      'grid__row--md-top': mdTop,
+      'grid__row--lg-top': lgTop,
 
-        'grid__row--xs-top': this.props.xsTop,
-        'grid__row--sm-top': this.props.smTop,
-        'grid__row--md-top': this.props.mdTop,
-        'grid__row--lg-top': this.props.lgTop,
+      'grid__row--xs-middle': xsMiddle,
+      'grid__row--sm-middle': smMiddle,
+      'grid__row--md-middle': mdMiddle,
+      'grid__row--lg-middle': lgMiddle,
 
-        'grid__row--xs-middle': this.props.xsMiddle,
-        'grid__row--sm-middle': this.props.smMiddle,
-        'grid__row--md-middle': this.props.mdMiddle,
-        'grid__row--lg-middle': this.props.lgMiddle,
+      'grid__row--xs-bottom': xsBottom,
+      'grid__row--sm-bottom': smBottom,
+      'grid__row--md-bottom': mdBottom,
+      'grid__row--lg-bottom': lgBottom,
 
-        'grid__row--xs-bottom': this.props.xsBottom,
-        'grid__row--sm-bottom': this.props.smBottom,
-        'grid__row--md-bottom': this.props.mdBottom,
-        'grid__row--lg-bottom': this.props.lgBottom,
+      'grid__row--xs-around': xsAround,
+      'grid__row--sm-around': smAround,
+      'grid__row--md-around': mdAround,
+      'grid__row--lg-around': lgAround,
 
-        'grid__row--xs-around': this.props.xsAround,
-        'grid__row--sm-around': this.props.smAround,
-        'grid__row--md-around': this.props.mdAround,
-        'grid__row--lg-around': this.props.lgAround,
+      'grid__row--xs-between': xsBetween,
+      'grid__row--sm-between': smBetween,
+      'grid__row--md-between': mdBetween,
+      'grid__row--lg-between': lgBetween,
+    },
+    className,
+  );
 
-        'grid__row--xs-between': this.props.xsBetween,
-        'grid__row--sm-between': this.props.smBetween,
-        'grid__row--md-between': this.props.mdBetween,
-        'grid__row--lg-between': this.props.lgBetween,
-      },
-      this.props.className,
-    );
-
-    return (
-      <ComponentClass className={classes} style={this.props.style}>
-        {this.props.children}
-      </ComponentClass>
-    );
-  }
-}
+  return (
+    <ComponentClass className={classes} style={style}>
+      {children}
+    </ComponentClass>
+  );
+};
 
 Row.defaultProps = {
   componentClass: 'div',

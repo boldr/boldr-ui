@@ -30,7 +30,10 @@ BaseIcon.propTypes = {
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   style: PropTypes.object,
 };
-
+BaseIcon.defaultProps = {
+  color: '#fff',
+  size: '24',
+};
 BaseIcon.contextTypes = {
   iconBase: PropTypes.shape(BaseIcon.propTypes),
 };

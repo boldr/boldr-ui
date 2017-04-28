@@ -18,7 +18,8 @@ const loaderThemeByBtnThemeIdentifier = {
 };
 
 /**
-* A button clearly communicates that an action will occur when the user touches it.
+* A button clearly communicates that an action will occur when
+* the user touches it.
 */
 const Button = props => {
   const {
@@ -31,6 +32,7 @@ const Button = props => {
     isSmall,
     children,
     disabled,
+    icon,
     to,
     ...rest
   } = props;
@@ -40,6 +42,7 @@ const Button = props => {
     ['boldrui-btn__isTiny']: isTiny,
     ['boldrui-btn__isSmall']: isSmall,
     ['boldrui-btn__isPending']: isPending,
+    ['boldrui-btn__icon']: icon,
     [className]: className && className.length,
   });
   const loader = (
@@ -78,6 +81,15 @@ const Button = props => {
     );
   }
 
+  if (icon) {
+    return (
+      <button {...rest} className={finalClassName}>
+        {loader}
+        {children}
+      </button>
+    );
+  }
+
   if (disabled) {
     rest.disabled = disabled;
   }
@@ -102,7 +114,7 @@ Button.propTypes = {
     'brightSecondary',
     'grey',
   ]),
-
+  icon: PropTypes.bool,
   /**
    * If `true`, sets the width of the node to 100% of it's parent.
    */
@@ -148,6 +160,7 @@ Button.propTypes = {
 Button.defaultProps = {
   theme: 'primary',
   isFullWidth: false,
+  icon: false,
   isPending: false,
   isAnchor: false,
   isSmall: false,

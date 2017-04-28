@@ -4,9 +4,8 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import ReactModal from 'react-modal';
 import { font, palette } from 'styled-theme';
-import Button from 'react-md/lib/Buttons';
 import Heading from '../Heading';
-import CloseIcon from '../Icons/CloseIcon';
+import Icon from '../Icons';
 import type { ReactChildren } from '../../types/react.js.flow';
 
 type Props = {
@@ -90,7 +89,7 @@ const Content = styled.div`
   padding: 0 1rem;
   margin-bottom: 1rem;
 `;
-
+// $FlowIssue
 const StyledReactModal = styled(({ className, ...props }) => (
   <ModalBox overlayClassName={className} closeTimeoutMS={250} {...props} />
 ))`${overlayStyles}`;
@@ -109,7 +108,7 @@ const Dialog = ({ children, title, closeable, onClose, ...props }) => {
           <StyledHeading level={2} reverse={props.reverse}>
             {title}
           </StyledHeading>
-          {closeable && <Button icon onClick={onClose}>close</Button>}
+          {closeable && <Icon kind="close" color="#222" onClick={onClose} />}
         </Header>}
       <Content>
         {children}
