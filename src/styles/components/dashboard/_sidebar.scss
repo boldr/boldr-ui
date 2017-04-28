@@ -1,6 +1,7 @@
 ////
 /// @group sidebar
 ////
+
 .#{$boldr-ns}sidebar-nav {
   height: 100%;
   min-height: 100%;
@@ -22,6 +23,7 @@
     }
 
     &.collapsed {
+
       .#{$boldr-ns}sidebar-nav-item-children {
         max-height: 0;
         transition: max-height 0.3s cubic-bezier(0, 1, 0, 1) -0.15s;
@@ -30,6 +32,7 @@
     }
 
     &.active {
+
       .#{$boldr-ns}sidebar-nav-item-children {
         max-height: 9999px;
         transition: none;
@@ -39,6 +42,7 @@
 }
 
 .#{$boldr-ns}sidebar-nav.boldr-theme {
+
   .active.#{$boldr-ns}sidebar-nav-item-link {
     color: #fff;
   }
@@ -79,6 +83,7 @@
       &.level-0,
       &.level-1,
       &.level-2 {
+
         > .#{$boldr-ns}sidebar-nav-item-title,
         > .#{$boldr-ns}sidebar-nav-item-link {
           color: $sidebar-nav-link-hover-color;
@@ -88,6 +93,7 @@
   }
 
   .#{$boldr-ns}sidebar-nav-item.level-0 {
+
     .#{$boldr-ns}sidebar-nav-item-title,
     .#{$boldr-ns}sidebar-nav-item-link {
       padding: 0.9375rem 1.25rem 0.9375rem 1.5625rem;
@@ -95,6 +101,7 @@
   }
 
   .#{$boldr-ns}sidebar-nav-item.level-1 {
+
     .#{$boldr-ns}sidebar-nav-item-title,
     .#{$boldr-ns}sidebar-nav-item-link {
       padding: 0.4375rem 0.625rem 0.4375rem 3.125rem;
@@ -102,6 +109,7 @@
   }
 
   .#{$boldr-ns}sidebar-nav-item.level-2 {
+
     .#{$boldr-ns}sidebar-nav-item-title,
     .#{$boldr-ns}sidebar-nav-item-link {
       padding: 0.4375rem 0.625rem 0.4375rem 4.6875rem;
