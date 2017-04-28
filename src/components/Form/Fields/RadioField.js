@@ -44,8 +44,8 @@ const RadioInputContainer = styled.div`
     margin-left: 2rem;
   }
   input[type=radio]:checked {
-    background: ${props => props.theme.colors.blue};
-    border-color: ${props => props.theme.colors.blue};
+    background: #00bcd4;
+    border-color: #00bcd4;
   }
   input[type=radio]:checked ~ div {
     color: white;
@@ -53,18 +53,17 @@ const RadioInputContainer = styled.div`
 `;
 
 const RadioInput = styled.input`
-  border-radius: ${props => props.theme.input.borderRadius};
-  border: ${props => props.theme.input.border};
-  border-color: ${props => (props.showError ? props.theme.error.color : '')};
-  padding: ${props => props.theme.input.padding};
-  font-size: ${props => props.theme.input.fontSize};
-  width: ${props => props.theme.input.width};
-  margin: ${props => props.theme.input.margin};
-  max-width: ${props => props.theme.input.maxWidth};
+  border-radius: 3px;
+  border: solid 1px #babbbb;
+  border-color: ${props => (props.showError ? '#d32f2f' : '')};
+  padding: 18px;
+  font-size: 16px;
+  width: 100%;
+  margin: 0 auto 1rem;
 
   &:active,
   &:focus {
-    border-color: ${props => (props.showError ? props.theme.error.color : props.theme.input.activeBorderColor)};
+    border-color: ${props => (props.showError ? '#d32f2f' : '#484848')};
     outline: none;
   }
   position: absolute;
@@ -79,7 +78,7 @@ const RadioText = styled.div`
   position: relative;
   top: 2px;
   pointer-events: none;
-  color: ${props => (props.showError ? props.theme.error.color : props.theme.text)};
+  color: ${props => (props.showError ? '#d32f2f' : 'rgba(0, 0, 0, 0.87)')};
 `;
 
 export default RadioField;

@@ -12,14 +12,14 @@ const Label = props => {
   });
 
   return (
-    <label {...rest} htmlForm={label} className={finalClassName}>
+    <label {...rest} htmlFor={label} className={finalClassName}>
       {label}
       {required ? <span className="boldrui-form__required"> *</span> : null}
     </label>
   );
 };
 Label.propTypes = {
-  htmlFor: PropTypes.string.isRequired,
+  htmlFor: PropTypes.string,
   label: PropTypes.any,
 
   /**

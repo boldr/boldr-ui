@@ -1,8 +1,7 @@
 /* @flow */
 import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 import type { ReactElement } from '../../types/react.js.flow';
-import theme from '../../theme/theme';
 
 type Props = {
   children: ReactElement,
@@ -23,11 +22,9 @@ const Form = (props: Props) => {
   const { handleSubmit } = props;
 
   return (
-    <ThemeProvider theme={theme}>
-      <CustomForm className="boldrui-form" onSubmit={handleSubmit} {...props}>
-        {props.children}
-      </CustomForm>
-    </ThemeProvider>
+    <CustomForm className="boldrui-form" onSubmit={handleSubmit} {...props}>
+      {props.children}
+    </CustomForm>
   );
 };
 

@@ -1,5 +1,5 @@
 {
-  "presets": ["./internal/babelrc", "stage-2", "react"],
+  "presets": ["es2015", "stage-2", "react"],
   "plugins": [
     "syntax-flow",
     "transform-decorators-legacy",
