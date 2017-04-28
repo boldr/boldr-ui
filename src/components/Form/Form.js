@@ -1,12 +1,19 @@
 /* @flow */
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import type { ReactElement } from '../../types/react.js.flow';
+import theme from '../../theme/theme';
 
 type Props = {
   children: ReactElement,
   inline: boolean,
   handleSubmit: () => void,
+};
+
+export type MetaProps = {
+  error: string,
+  warning: string,
+  touched: boolean,
 };
 
 const CustomForm = styled.form`
@@ -16,9 +23,11 @@ const Form = (props: Props) => {
   const { handleSubmit } = props;
 
   return (
-    <CustomForm className="boldrui-form" onSubmit={handleSubmit} {...props}>
-      {props.children}
-    </CustomForm>
+    <ThemeProvider theme={theme}>
+      <CustomForm className="boldrui-form" onSubmit={handleSubmit} {...props}>
+        {props.children}
+      </CustomForm>
+    </ThemeProvider>
   );
 };
 

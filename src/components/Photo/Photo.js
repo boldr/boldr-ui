@@ -4,7 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { font, palette } from 'styled-theme';
 import Dimmer from '../Dimmer';
-import { borders, colors } from '../../theme';
+import { theme } from '../../theme';
 
 type Props = {
   overlay?: string | React$Element<*>,
@@ -18,7 +18,7 @@ const Wrapper = styled.div`
   display: inline-block;
   overflow: hidden;
   background-color: transparent;
-  border-radius: ${borders.radius};
+  border-radius: ${theme.borders.radius};
 `;
 
 const Image = styled.img`

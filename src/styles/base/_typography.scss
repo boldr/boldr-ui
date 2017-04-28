@@ -7,8 +7,44 @@ h5 {
   color: $text-color;
   line-height: 1.2857em;
   margin: calc(2rem - 0.14285em) 0 1rem;
-  font-weight: bold;
+  font-weight: 600;
   padding: 0;
+}
+
+.h1 {
+  font-size: 2rem;
+}
+
+.h2 {
+  font-size: 2rem;
+}
+
+.h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.h4 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.h6 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.boldrui-h {
+  font-weight: 100;
+  margin: 0;
+  text-rendering: optimizeLegibility;
 }
 
 h1 {

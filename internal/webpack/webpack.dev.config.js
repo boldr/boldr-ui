@@ -25,6 +25,14 @@ module.exports = {
         loader: 'babel-loader',
         include: [path.join(__dirname, '../../src'), path.join(__dirname, '../../dev')],
       },
+              {
+          loader: 'url-loader',
+          test: /\.jpg$/,
+          query: {
+            limit: 10000,
+            name: 'static/media/[name].[hash:8].[ext]'
+          }
+        },
       {
         test: /(\.scss|\.css)$/,
         include: /node_modules/,

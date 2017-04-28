@@ -1,7 +1,7 @@
 /* @flow */
 /* eslint-disable react/no-find-dom-node, react/prop-types */
-import React, { PropTypes } from 'react';
-import styled, { css, injectGlobal } from 'styled-components';
+import React from 'react';
+import styled, { css } from 'styled-components';
 import ReactModal from 'react-modal';
 import { font, palette } from 'styled-theme';
 import Button from 'react-md/lib/Buttons';

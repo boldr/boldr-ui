@@ -54,9 +54,9 @@ export default class Input extends Component {
 
     const wrapClass = classNames(
       {
-        [`${prefix}-input-wrapper`]: true,
-        [`${prefix}-textarea-wrapper`]: isTextarea,
-        [`${prefix}-input-addons`]: !isTextarea && (addonAfter || addonBefore),
+        [`${prefix}-input__wrapper`]: true,
+        [`${prefix}-textarea__wrapper`]: isTextarea,
+        [`${prefix}-input__addons`]: !isTextarea && (addonAfter || addonBefore),
       },
       className,
     );
@@ -88,7 +88,9 @@ export default class Input extends Component {
     return (
       <div className={wrapClass}>
         {addonBefore &&
-          <span className={`${prefix}-input-addon-before`}>{addonBefore}</span>}
+          <span className={`${prefix}-input__addon-before`}>
+            {addonBefore}
+          </span>}
         <input
           ref={input => {
             this.input = input;
@@ -98,7 +100,7 @@ export default class Input extends Component {
           onKeyDown={this.handleKeyDown}
         />
         {addonAfter &&
-          <span className={`${prefix}-input-addon-after`}>{addonAfter}</span>}
+          <span className={`${prefix}-input__addon-after`}>{addonAfter}</span>}
       </div>
     );
   }

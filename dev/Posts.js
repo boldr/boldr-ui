@@ -16,7 +16,6 @@ const Box = styled.div`
       overflow: hidden;
       text-align:center;
       color: #fff;
-
 `;
 const DEFAULT_NODE = 'paragraph';
 

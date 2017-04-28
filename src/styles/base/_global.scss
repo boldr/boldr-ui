@@ -58,3 +58,10 @@ a {
 .boldrui-dash-main .container-fluid {
   padding: 0 30px;
 }
+
+:root {
+
+  :focus {
+    outline: none !important;
+  }
+}

@@ -6,6 +6,7 @@ import { injectGlobal, ThemeProvider } from 'styled-components';
 
 import '../src/styles/boldrui.scss';
 import theme from '../src/theme/theme';
+
 import {
   Sidebar,
   Anchor,
@@ -21,11 +22,13 @@ import {
   Topbar,
   Heading,
   Modal,
+  Image,
   FormField,
   Form,
   Input,
   Grid, Col, Row,
 } from '../src/components';
+import Button from '../src/components/Button/Button';
 import TopbarLink from '../src/components/Topbar/TopbarLink';
 import menuItems from './items';
 import Posts from './Posts';
@@ -94,11 +97,26 @@ class App extends Component {
               <Heading size={1}>Hive</Heading>
               <Paragraph> Hello</Paragraph>
               <Paragraph>
+              <Button>Push Me</Button>
+              <Button theme="secondary">Push Me</Button>
                 Today, April 14th 2017, WikiLeaks publishes six documents from
                  the
                 CIA's HIVE project created by its "Embedded Development Branch"
                 (EDB).
               </Paragraph>
+              <Image
+        src="http://i.magaimg.net/img/frh.jpg"
+        alt="A beautiful image of a tourist attraction in Rome"
+        width={900}
+        height={600}
+        queries={[
+            {minWidth: 300,width: 300,height: 250,quality: 60},
+            {minWidth: 600,width: 600,height: 350,quality: 60},
+            {minWidth: 900,width: 900,height: 600,quality: 60},
+            {minWidth: 1200,width: 1200,height: 800,quality: 60}
+        ]}
+        />
+
               <Paragraph>
                 HIVE is a back-end infrastructure malware with a public-facing
                 HTTPS interface which is used by CIA implants to transfer

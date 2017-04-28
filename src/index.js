@@ -4,7 +4,6 @@ import CardActions from 'react-md/lib/Cards/CardActions';
 import CardText from 'react-md/lib/Cards/CardText';
 import Avatar from 'react-md/lib/Avatars';
 import Button from 'react-md/lib/Buttons';
-import SelectField from 'react-md/lib/SelectFields';
 import Chip from 'react-md/lib/Chips';
 import Drawer from 'react-md/lib/Drawers';
 import Toolbar from 'react-md/lib/Toolbars';
@@ -40,7 +39,6 @@ import TagsInput from 'react-tagsinput';
 
 import { BOLDR_NS, StyleClasses } from './theme/styleClasses';
 import theme, { mediaQuery } from './theme/theme';
-import { colors, borders, fonts } from './theme';
 
 import {
   Anchor,
@@ -49,6 +47,7 @@ import {
   Caption,
   Checkbox,
   Chevron,
+  ContentPromo,
   CloseIcon,
   Col,
   DashboardContent,
@@ -60,6 +59,8 @@ import {
   Divider,
   Facebook,
   FaIcon,
+  Feedback,
+  Flag,
   Footer,
   Form,
   FormCard,
@@ -68,12 +69,14 @@ import {
   Google,
   Grid,
   Heading,
+  Headline,
   Hero,
   HorizontalRule,
   Icon,
   Image,
   Input,
   InputField,
+  InputWrapper,
   Label,
   Link,
   LinkedIn,
@@ -85,9 +88,9 @@ import {
   Paper,
   Paragraph,
   Photo,
-  Radio,
+  RadioField,
   Row,
-  Select,
+  SelectField,
   SearchIcon,
   Sidebar,
   SidebarHeader,
@@ -114,6 +117,7 @@ export {
   Caption,
   Checkbox,
   Chevron,
+  ContentPromo,
   CloseIcon,
   Col,
   DashboardContent,
@@ -125,6 +129,8 @@ export {
   Divider,
   Facebook,
   FaIcon,
+  Feedback,
+  Flag,
   Footer,
   Form,
   FormCard,
@@ -133,11 +139,13 @@ export {
   Google,
   Grid,
   Heading,
+  Headline,
   Hero,
   HorizontalRule,
   Icon,
   Image,
   Input,
+  InputWrapper,
   InputField,
   Label,
   Link,
@@ -150,9 +158,9 @@ export {
   Paper,
   Paragraph,
   Photo,
-  Radio,
+  RadioField,
   Row,
-  Select,
+  SelectField,
   SearchIcon,
   Sidebar,
   SidebarHeader,
@@ -170,9 +178,6 @@ export {
   Tree,
   Twitter,
   Widget,
-  colors,
-  borders,
-  fonts,
   theme,
   BOLDR_NS,
   StyleClasses,
@@ -186,7 +191,6 @@ export {
   Switch,
   Avatar,
   Button,
-  SelectField,
   Chip,
   Drawer,
   Toolbar,

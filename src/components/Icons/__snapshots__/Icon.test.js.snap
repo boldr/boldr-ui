@@ -4,15 +4,19 @@ exports[`renders snapshot 1`] = `
 <div
   className="boldr-icon"
 >
-  <svg
-    fill="#222"
-    height={20}
+  <BaseIcon
+    color="#222"
+    kind="menu"
+    size={20}
     viewBox="0 0 48 48"
-    width={20}
   >
-    <path
-      d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z"
-    />
-  </svg>
+    <g
+      transform="translate(0,-952.36218)"
+    >
+      <path
+        d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z"
+      />
+    </g>
+  </BaseIcon>
 </div>
 `;

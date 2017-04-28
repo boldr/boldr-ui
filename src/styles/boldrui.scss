@@ -4,6 +4,7 @@
 $boldr-ns: 'boldrui-' !default;
 $dash-ns: 'boldrui-dash-'; // .#{$dash-ns}
 
+@import 'vendor/normalize';
 @import 'abstracts/colors/all';
 
 // Our variables
@@ -17,8 +18,6 @@ $dash-ns: 'boldrui-dash-'; // .#{$dash-ns}
 @import 'components/all';
 
 @include react-md-everything;
-@include react-md-make-custom-grid('24-40', 24px, 40px, 0);
-@include react-md-make-custom-grid('40-16', 40px, 16px, 0);
 @include boldrui-paper;
 @include boldrui-media;
 @include boldrui-divider;

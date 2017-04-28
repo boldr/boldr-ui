@@ -12,7 +12,10 @@ import configureStore from './store';
 
 const history = createHistory();
 const store = configureStore(history);
-
+if (process.env.NODE_ENV !== 'production') {
+  const {whyDidYouUpdate} = require('why-did-you-update')
+  whyDidYouUpdate(React)
+}
 ReactDOM.render(
   <AppContainer>
     <Provider store={ store }>

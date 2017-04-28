@@ -2,14 +2,24 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Block from './Block';
 
-const wrap = (props = {}) => shallow(<Block {...props} />);
+describe('(React Component) Block', () => {
+  it('should render all children.', () => {
+    const wrapper = shallow(
+      <Block>
+        foo
+      </Block>,
+    );
 
-it('renders children when passed in', () => {
-  const wrapper = wrap({ children: 'test' });
-  expect(wrapper.contains('test')).toBe(true);
-});
+    expect(wrapper.html()).toContain('foo');
+  });
 
-it('renders props when passed in', () => {
-  const wrapper = wrap({ id: 'foo' });
-  expect(wrapper.find({ id: 'foo' })).toHaveLength(1);
+  it('should set the "className" prop to the wrapper if provided.', () => {
+    const wrapper = shallow(
+      <Block className="foobarClassName">
+        foo
+      </Block>,
+    );
+
+    expect(wrapper.html()).toContain('foobarClassName');
+  });
 });
