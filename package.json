@@ -1,7 +1,7 @@
 {
   "name": "boldr-ui",
   "description": "UI components for BoldrCMS",
-  "version": "0.3.13",
+  "version": "0.3.14",
   "author": "Steven Truesdell <steven@strues.io>",
   "config": {
     "commitizen": {

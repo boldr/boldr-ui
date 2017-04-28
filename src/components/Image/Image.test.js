@@ -2,7 +2,7 @@ import React from 'react';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
 import VisibilitySensor from 'react-visibility-sensor';
-import Image from './Index';
+import Image from './Image';
 
 describe('(React Component) Image', () => {
   it('should initialize with a state of isInViewport: false.', () => {
