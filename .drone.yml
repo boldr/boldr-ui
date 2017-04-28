@@ -1,6 +1,5 @@
-debug: true
 pipeline:
-  test:
+  build:
     image: strues/node:7.9-alpine
     commands:
       - yarn install --pure-lockfile
