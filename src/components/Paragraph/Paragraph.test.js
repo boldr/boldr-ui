@@ -1,15 +1,33 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import sinon from 'sinon';
+import { shallow, mount } from 'enzyme';
 import Paragraph from './Paragraph';
 
-const wrap = (props = {}) => shallow(<Paragraph {...props} />);
+describe('(React Component) Paragraph', () => {
+  it('should add the passed "className" prop to the rendered node if passed.', () => {
+    const wrapper = shallow(
+      <Paragraph className="test">My contents</Paragraph>,
+    );
+    expect(wrapper.is('.test')).toBe(true);
+  });
 
-it('renders children when passed in', () => {
-  const wrapper = wrap({ children: 'test' });
-  expect(wrapper.contains('test')).toBe(true);
-});
+  it('should render the children.', () => {
+    const wrapper = shallow(<Paragraph>My contents</Paragraph>);
 
-it('renders props when passed in', () => {
-  const wrapper = wrap({ id: 'foo' });
-  expect(wrapper.find({ id: 'foo' })).toHaveLength(1);
+    expect(wrapper.html()).toContain('My contents');
+  });
+
+  it('should add the "lead" className if the "isLead" prop is truthy.', () => {
+    const wrapper = shallow(<Paragraph isLead>My contents</Paragraph>);
+    expect(wrapper.is('.boldrui-paragraph__lead')).toBe(true);
+  });
+
+  it('should propagate props to the wrapper element.', () => {
+    const handler = sinon.spy();
+    const wrapper = mount(<Paragraph onClick={handler}>My contents</Paragraph>);
+
+    wrapper.simulate('click');
+
+    expect(handler.calledOnce).toEqual(true);
+  });
 });

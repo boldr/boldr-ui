@@ -7,7 +7,7 @@ describe('Input', () => {
   it('will render div wrapper contains an input without any props', () => {
     const wrapper = shallow(<Input />);
     expect(wrapper.type()).toBe('div');
-    expect(wrapper.hasClass('boldrui-input-wrapper')).toBe(true);
+    expect(wrapper.hasClass('boldrui-input__wrapper')).toBe(true);
     expect(wrapper.find('div > input').length).toBe(1);
     expect(wrapper.find('span').exists()).toBe(false);
   });
@@ -15,7 +15,7 @@ describe('Input', () => {
   it('can have custom wrapper classNames', () => {
     const wrapper = shallow(<Input className="foo" addonAfter="bar" />);
     expect(wrapper.hasClass('foo')).toBe(true);
-    expect(wrapper.hasClass('boldrui-input-addons')).toBe(true);
+    expect(wrapper.hasClass('boldrui-input__addons')).toBe(true);
     expect(wrapper.find('input').hasClass('foo')).toBe(false);
   });
 
@@ -23,13 +23,13 @@ describe('Input', () => {
     const wrapper = shallow(
       <Input prefix="foo" addonAfter="bar" addonBefore="rab" />,
     );
-    expect(wrapper.hasClass('foo-input-wrapper')).toBe(true);
-    expect(wrapper.hasClass('foo-input-addons')).toBe(true);
-    expect(wrapper.find('span').at(0).hasClass('foo-input-addon-before')).toBe(
+    expect(wrapper.hasClass('foo-input__wrapper')).toBe(true);
+    expect(wrapper.hasClass('foo-input__addons')).toBe(true);
+    expect(wrapper.find('span').at(0).hasClass('foo-input__addon-before')).toBe(
       true,
     );
     expect(wrapper.find('input').hasClass('foo-input')).toBe(true);
-    expect(wrapper.find('span').at(1).hasClass('foo-input-addon-after')).toBe(
+    expect(wrapper.find('span').at(1).hasClass('foo-input__addon-after')).toBe(
       true,
     );
   });

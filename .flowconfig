@@ -44,4 +44,4 @@ suppress_type=$FlowIssue
 suppress_comment=\\(.\\|\n\\)*\\$FlowIssue
 
 [version]
-^0.44.1
+^0.45.0

@@ -1,18 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders snapshot 1`] = `
-<div
-  className="boldr-icon"
+<BaseIcon
+  color="#fff"
+  kind="menu"
+  size={24}
+  viewBox="0 0 48 48"
 >
-  <svg
-    fill="#222"
-    height={20}
-    viewBox="0 0 48 48"
-    width={20}
-  >
-    <path
-      d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z"
-    />
-  </svg>
-</div>
+  <path
+    d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z"
+  />
+</BaseIcon>
 `;

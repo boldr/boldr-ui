@@ -1,18 +1,6 @@
-debug: true
 pipeline:
-  test:
-    image: node:7.9-alpine
+  build:
+    image: node:7.9
     commands:
       - yarn install --pure-lockfile
       - yarn test:ci
-
-  # publish:
-  #   docker:
-  #     registry: registry.boldr.io
-  #     username: strues
-  #     password: $$PASSWORD
-  #     email: steven@strues.io
-  #     repo: boldr/cms
-  #     tag: $$BRANCH
-  #     file: Dockerfile
-  #     insecure: false

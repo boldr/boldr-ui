@@ -1,22 +1,34 @@
+import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { font, palette } from 'styled-theme';
-import { ifProp } from 'styled-tools';
+import mergeClassNames from 'classnames';
 
-const Block = styled.div`
-  font-family: ${font('primary')};
-  background-color: ${ifProp('opaque', palette(0, true), 'transparent')};
-  color: ${palette({ grayscale: 0 }, 1)};
-`;
+/**
+* A Box can display more important content in a simple manner.
+*/
+const Block = ({ className, dark, children, ...rest }) => {
+  const finalClassName = mergeClassNames({
+    'boldrui-block': true,
+    'boldrui-block__dark': dark,
+    [className]: className && className.length,
+  });
 
-Block.propTypes = {
-  palette: PropTypes.string,
-  reverse: PropTypes.bool,
-  opaque: PropTypes.bool,
+  return (
+    <div {...rest} className={finalClassName}>
+      {children}
+    </div>
+  );
 };
+Block.propTypes = {
+  /**
+   * The children to render within the Box.
+   */
+  children: PropTypes.node.isRequired,
 
-Block.defaultProps = {
-  palette: 'grayscale',
+  /**
+   * An optional className of the Box.
+   */
+  className: PropTypes.string,
+  dark: PropTypes.boolean,
 };
 
 export default Block;

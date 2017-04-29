@@ -2,14 +2,11 @@ import Card from 'react-md/lib/Cards/Card';
 import CardTitle from 'react-md/lib/Cards/CardTitle';
 import CardActions from 'react-md/lib/Cards/CardActions';
 import CardText from 'react-md/lib/Cards/CardText';
-import Avatar from 'react-md/lib/Avatars';
 import Button from 'react-md/lib/Buttons';
-import SelectField from 'react-md/lib/SelectFields';
 import Chip from 'react-md/lib/Chips';
 import Drawer from 'react-md/lib/Drawers';
 import Toolbar from 'react-md/lib/Toolbars';
 import Collapse from 'react-md/lib/Helpers/Collapse';
-import FontIcon from 'react-md/lib/FontIcons';
 import Tabs from 'react-md/lib/Tabs/Tabs';
 import Tab from 'react-md/lib/Tabs/Tab';
 import LinearProgress from 'react-md/lib/Progress/LinearProgress';
@@ -33,23 +30,26 @@ import TableRow from 'react-md/lib/DataTables/TableRow';
 import TableColumn from 'react-md/lib/DataTables/TableColumn';
 import TablePagination from 'react-md/lib/DataTables/TablePagination';
 import MenuButton from 'react-md/lib/Menus/MenuButton';
-import injectTooltip from 'react-md/lib/Tooltips';
 import Menu from 'react-md/lib/Menus/Menu';
 import NavigationDrawer from 'react-md/lib/NavigationDrawers';
 import TagsInput from 'react-tagsinput';
 
 import { BOLDR_NS, StyleClasses } from './theme/styleClasses';
 import theme, { mediaQuery } from './theme/theme';
-import { colors, borders, fonts } from './theme';
 
 import {
+  Accordion,
+  AccordionItem,
+  AccordionItemBody,
+  AccordionItemTitle,
   Anchor,
+  Avatar,
   BaseIcon,
   Block,
   Caption,
   Checkbox,
   Chevron,
-  CloseIcon,
+  ContentPromo,
   Col,
   DashboardContent,
   DashboardFooter,
@@ -60,6 +60,9 @@ import {
   Divider,
   Facebook,
   FaIcon,
+  FontIcon,
+  Feedback,
+  Flag,
   Footer,
   Form,
   FormCard,
@@ -68,27 +71,27 @@ import {
   Google,
   Grid,
   Heading,
+  Headline,
   Hero,
   HorizontalRule,
   Icon,
   Image,
   Input,
   InputField,
+  InputWrapper,
   Label,
   Link,
   LinkedIn,
   Loader,
   Media,
   MediaOverlay,
-  MenuIcon,
   Modal,
   Paper,
   Paragraph,
   Photo,
-  Radio,
+  RadioField,
   Row,
-  Select,
-  SearchIcon,
+  SelectField,
   Sidebar,
   SidebarHeader,
   SidebarNav,
@@ -105,16 +108,22 @@ import {
   Tree,
   Twitter,
   Widget,
+  withRipple,
 } from './components';
 
 export {
+  Accordion,
+  AccordionItem,
+  AccordionItemBody,
+  AccordionItemTitle,
   Anchor,
+  Avatar,
   BaseIcon,
   Block,
   Caption,
   Checkbox,
   Chevron,
-  CloseIcon,
+  ContentPromo,
   Col,
   DashboardContent,
   DashboardFooter,
@@ -125,6 +134,9 @@ export {
   Divider,
   Facebook,
   FaIcon,
+  FontIcon,
+  Feedback,
+  Flag,
   Footer,
   Form,
   FormCard,
@@ -133,11 +145,13 @@ export {
   Google,
   Grid,
   Heading,
+  Headline,
   Hero,
   HorizontalRule,
   Icon,
   Image,
   Input,
+  InputWrapper,
   InputField,
   Label,
   Link,
@@ -145,15 +159,13 @@ export {
   Loader,
   Media,
   MediaOverlay,
-  MenuIcon,
   Modal,
   Paper,
   Paragraph,
   Photo,
-  Radio,
+  RadioField,
   Row,
-  Select,
-  SearchIcon,
+  SelectField,
   Sidebar,
   SidebarHeader,
   SidebarNav,
@@ -170,28 +182,24 @@ export {
   Tree,
   Twitter,
   Widget,
-  colors,
-  borders,
-  fonts,
+  withRipple,
   theme,
   BOLDR_NS,
   StyleClasses,
   mediaQuery,
   // EXTERNALS
   TagsInput,
+  // MD
   Card,
   CardTitle,
   CardActions,
   CardText,
   Switch,
-  Avatar,
   Button,
-  SelectField,
   Chip,
   Drawer,
   Toolbar,
   Collapse,
-  FontIcon,
   Tabs,
   Tab,
   CircularProgress,
@@ -212,7 +220,6 @@ export {
   MenuButton,
   SelectionControl,
   SelectionControlGroup,
-  injectTooltip,
   LinearProgress,
   NavigationDrawer,
 };

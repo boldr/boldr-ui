@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types, react/no-unescaped-entities */
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { injectGlobal, ThemeProvider } from 'styled-components';
@@ -22,7 +22,6 @@ import {
 } from '../src/components';
 import TopbarLink from '../src/components/Topbar/TopbarLink';
 import menuItems from './items';
-import Posts from './Posts';
 import NewPost from './NewPost';
 import App from './App';
 
@@ -31,21 +30,18 @@ injectGlobal`
     margin: 0;
   }
 `;
-class Root extends Component {
+class Root extends PureComponent {
   renderMain = () => {
     return <App />;
   };
-  renderPosts = () => <Posts />;
 renderNewPost = () => <NewPost />;
   render() {
     return (
-      <ThemeProvider theme={theme}>
         <Switch>
           <Route exact path="/" render={this.renderMain} />
-          <Route exact path="/admin/posts" render={this.renderPosts} />
+          <Route exact path="/admin/posts" render={this.renderNewPost} />
               <Route exact path="/admin/new-post" render={this.renderNewPost} />
         </Switch>
-      </ThemeProvider>
     );
   }
 }

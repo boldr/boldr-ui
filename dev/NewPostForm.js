@@ -1,142 +1,164 @@
 /* eslint-disable react/prop-types, react/no-unescaped-entities */
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { Field, reduxForm } from 'redux-form';
+import styled, { injectGlobal, ThemeProvider } from 'styled-components';
+
 import {
   Sidebar,
   Anchor,
   SidebarNav,
+  DashboardMain,
   DashboardWrapper,
   DashboardFooter,
   DashboardContent,
   Paper,
+  Photo,
+  FormGroup,
   Paragraph,
   Link,
+  Label,
+  RadioField,
+  SelectField,
   Topbar,
+  Icon,
+  InputField,
+  Heading,
   Modal,
   FormField,
   Form,
   Input,
+  Grid,
+  Col,
+  Row,
 } from '../src/components';
-import Checkbox from '../src/components/Checkbox';
-import Radio from '../src/components/Radio';
-import Option from '../src/components/Select';
-import InputTags from '../src/components/InputTags/InputTags';
+// import NewPostForm from './NewPostForm';
+const required = value => (value ? undefined : 'Required');
+const maxLength = max => value =>
+  (value && value.length > max
+    ? `Must be ${max} characters or less`
+    : undefined);
+const maxLength15 = maxLength(15);
+const number = value =>
+  (value && isNaN(Number(value)) ? 'Must be a number' : undefined);
+const minValue = min => value =>
+  (value && value < min ? `Must be at least ${min}` : undefined);
+const minValue18 = minValue(18);
+const email = value =>
+  (value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
+    ? 'Invalid email address'
+    : undefined);
+const tooOld = value =>
+  (value && value > 65 ? 'You might be too old for this' : undefined);
+const aol = value =>
+  (value && /.+@aol\.com/.test(value)
+    ? 'Really? You still use AOL for your email?'
+    : undefined);
+const Inner = styled.div`
+  padding: 2rem;
+`;
 
-const isAgree = true;
-const {
-  Field,
-  createForm,
-  InputField,
-  SubmissionError,
-  CheckboxField,
-  CheckboxGroupField,
-  RadioGroupField,
-  SelectField,
-  TagInputField,
-} = Form;
+const selectopts = [
+  { key: 'aba', value: 'abc'},
+  { key: 'bab', value: 'cdb'}
+]
+const Toolbar = styled.div`
+  width: 100%;
+  height: 50px;
+  background-color: #66bb6a;
+  color: #fff;
+  line-height: 24px;
+  vertical-align: middle;
+  font-size: 18px;
+  font-weight: 600;
+  padding-left: 1rem;
+  display: flex;
+  align-items: center;
+`;
 
-class NewPostForm extends Component {
-  state = {
-    hidden: false,
-    activate: null,
-    modalIsOpen: false,
-    tags: [],
-    initialTags: ['foo', 'bar'],
-  };
-  onTagAdded = tag => {
-    this.setState({
-      tags: [...this.state.tags, tag],
-    });
-  };
 
-  onTagRemoved = (tag, index) => {
-    this.setState({
-      tags: this.state.tags.filter((tag, i) => i !== index),
-    });
-  };
+const remoteOptions = [
+  { text: 'Yes I like', value: 'Yes' },
+  { text: 'No', value: 'No' },
+];
 
-  render() {
-    const { handleSubmit, boldrForm } = this.props;
-    const isSubmitting = boldrForm.isSubmitting();
-    const submit = (values) => {
-      this.props.onSubmit(values);
-    };
-    return (
-      <Form onSubmit={handleSubmit(submit)}>
-
-        <Field
-          name="excerpt"
-          type="text"
-          label="Excerpt"
-          value=""
-          component={InputField}
+const NewPostForm = props => {
+  const { handleSubmit, pristine, reset, submitting } = props;
+  return (
+    <Form onSubmit={handleSubmit}>
+        <FormGroup>
+          <Field
+            name="firstName"
+            component={InputField}
+            addonBefore={ <Icon kind="edit" size={ 24 } color="#222" />}
+            type="text"
+            label="First Name"
+            placeholder="First Name"
+            validate={[required]}
+          />
+        </FormGroup>
+        <FormGroup>
+          <Field
+            name="lastName"
+            label="Last Name"
+            component={InputField}
+            type="text"
+            placeholder="Last Name"
+            validate={[required]}
+          />
+        </FormGroup>
+        <FormGroup>
+          <Field
+            name="email"
+            component={InputField}
+            type="email"
+            placeholder="Email"
+            label="Email"
+            validate={email}
+            warn={aol}
+          />
+        </FormGroup>
+      <div>
+              <Field
+          name="remote"
+          label="Is this good?"
+          validate={[required]}
+          options={remoteOptions}
+          component={RadioField}
         />
-        <Field
-          name="sex"
-          label="Sex"
-          value="female"
-          component={RadioGroupField}
-        >
-          <Radio value="male">male</Radio>
-          <Radio value="female">female</Radio>
-        </Field>
-        <Field name="tags" value={ this.state.tags } component={ TagInputField } tags={ this.state.tags } onAdded={ this.onTagAdded } onRemoved={ this.onTagRemoved } />
-        <Field
-          name="interest"
-          label="Do what"
-          value={['eat', 'sleep']}
-          component={CheckboxGroupField}
-          validations={{
-            validInterest(values, value) {
-              const len = value.length;
-              if (len === 3) {
-                return true;
-              } else if (len === 2) {
-                return 'a';
-              } else if (len === 1) {
-                return 'b';
-              }
-            },
-          }}
-          validationErrors={{
-            validInterest: 'eat',
-          }}
-        >
-          <Checkbox value="eat">eat</Checkbox>
-          <Checkbox value="sleep">sleep</Checkbox>
-          <Checkbox value="repeat">repeat</Checkbox>
-        </Field>
-        <Field
-          name="custom-select"
-          label="Choose"
-          className="custom-select"
-          placeholder="select"
-          component={SelectField}
-        >
-          <Option className="boldrui-select-option" value="1">ab</Option>
-          <Option className="boldrui-select-option" value="2">cd</Option>
-          <Option className="boldrui-select-option" value="3">ef</Option>
-        </Field>
-        <Field
-          name="featured"
-          label="Featured Post："
-          value={isAgree}
-          component={CheckboxField}
-        >
-          Yes
-        </Field>
-        <button type="submit">submit</button>
-      </Form>
-    );
-  }
-}
-const mapStateToProps = state => {
-  return {
-    ui: state.ui,
-    routing: state.routing,
-  };
+      </div>
+      <div>
+        <label>Favorite Color</label>
+        <div>
+          <Field name="favoriteColor" component={ SelectField } options={ selectopts } />
+        </div>
+      </div>
+      <div>
+        <label htmlFor="employed">Employed</label>
+        <div>
+          <Field
+            name="employed"
+            id="employed"
+            component="input"
+            type="checkbox"
+          />
+        </div>
+      </div>
+      <div>
+        <label>Notes</label>
+        <div>
+          <Field name="notes" component="textarea" />
+        </div>
+      </div>
+      <div>
+        <button type="submit" disabled={pristine || submitting}>Submit</button>
+        <button type="button" disabled={pristine || submitting} onClick={reset}>
+          Clear Values
+        </button>
+      </div>
+    </Form>
+  );
 };
-NewPostForm = createForm()(NewPostForm);
 
-export default connect(mapStateToProps)(NewPostForm);
+export default reduxForm({
+  form: 'newPost',
+})(NewPostForm);

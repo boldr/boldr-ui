@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { css, ThemeProvider } from 'styled-components';
 import { reversePalette } from 'styled-theme/composer';
 import { font, palette } from 'styled-theme';
-import colors from './colors';
-import borders from './borders';
-import fonts from './fonts';
 
 const SIZES = {
   large: 1200,
@@ -30,6 +27,9 @@ const theme = {
     ],
     white: ['#fff', '#fff', '#eee'],
   },
+  colors: {
+    blue: '#00bcd4',
+  },
   fonts: {
     primary: 'Roboto, Helvetica, Roboto, sans-serif',
     pre: 'Consolas, Liberation Mono, Menlo, Courier, monospace',
@@ -40,6 +40,18 @@ const theme = {
     medium: '2px',
     thick: '3px',
     radius: '3px',
+  },
+  input: {
+    padding: '18px',
+    fontSize: '16px',
+    borderRadius: '3px',
+    width: '100%',
+    border: 'solid 1px #babbbb',
+    margin: '0 auto 1rem',
+    activeBorderColor: '#484848',
+  },
+  inputWrapper: {
+    marginBottom: '1rem',
   },
 };
 

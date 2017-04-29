@@ -6,6 +6,7 @@ import { injectGlobal, ThemeProvider } from 'styled-components';
 
 import '../src/styles/boldrui.scss';
 import theme from '../src/theme/theme';
+
 import {
   Sidebar,
   Anchor,
@@ -21,14 +22,18 @@ import {
   Topbar,
   Heading,
   Modal,
+  Image,
   FormField,
   Form,
+  Icon,
   Input,
-  Grid, Col, Row,
+  Grid,
+  Col,
+  Row,
 } from '../src/components';
+import Button from '../src/components/Button/Button';
 import TopbarLink from '../src/components/Topbar/TopbarLink';
 import menuItems from './items';
-import Posts from './Posts';
 import NewPost from './NewPost';
 
 injectGlobal`
@@ -56,8 +61,6 @@ class App extends Component {
   onExpandCollapse = () => {
     this.props.dispatch({ type: 'TOGGLE_SB_MENU' });
   };
-
-
   render() {
     return (
       <ThemeProvider theme={theme}>
@@ -94,11 +97,35 @@ class App extends Component {
               <Heading size={1}>Hive</Heading>
               <Paragraph> Hello</Paragraph>
               <Paragraph>
+                <Button icon><Icon kind="calendar" /></Button>
+                <Button theme="secondary" onClick={this.openModal}>
+                  Push Me
+                </Button>
                 Today, April 14th 2017, WikiLeaks publishes six documents from
-                 the
+                the
                 CIA's HIVE project created by its "Embedded Development Branch"
                 (EDB).
               </Paragraph>
+              <Modal
+                closeable
+                visible={this.state.modalIsOpen}
+                onClose={this.closeModal}
+              >
+                asdfasdfasf
+              </Modal>
+              <Image
+                src="http://i.magaimg.net/img/frh.jpg"
+                alt="A beautiful image of a tourist attraction in Rome"
+                width={900}
+                height={600}
+                queries={[
+                  { minWidth: 300, width: 300, height: 250, quality: 60 },
+                  { minWidth: 600, width: 600, height: 350, quality: 60 },
+                  { minWidth: 900, width: 900, height: 600, quality: 60 },
+                  { minWidth: 1200, width: 1200, height: 800, quality: 60 },
+                ]}
+              />
+
               <Paragraph>
                 HIVE is a back-end infrastructure malware with a public-facing
                 HTTPS interface which is used by CIA implants to transfer
@@ -106,7 +133,7 @@ class App extends Component {
                 to receive commands from its operators to execute specific
                 tasks on the targets. HIVE is used across multiple malware
                 implants and CIA operations. The public HTTPS interface utilizes
-                 unsuspicious-looking cover domains to hide its presence.
+                unsuspicious-looking cover domains to hide its presence.
 
               </Paragraph>
               <Paragraph>
@@ -117,7 +144,7 @@ class App extends Component {
                 back-end (and therefore the implant itself) to operations
                 run by the CIA. In a recent blog post by Symantec, that was
                 able to attribute the "Longhorn" activities to the CIA based
-                 on the Vault 7, such back-end infrastructure is described:
+                on the Vault 7, such back-end infrastructure is described:
 
               </Paragraph>
               <Paragraph>
@@ -125,11 +152,11 @@ class App extends Component {
                 domain and IP address combination per target. The domains
                 appear to be registered by the attackers; however they use
                 privacy services to hide their real identity. The IP addresses
-                 are typically owned by legitimate companies offering virtual
-                 private server (VPS) or webhosting services. The malware
-                  communicates with C&C servers over HTTPS using a custom
-                   underlying cryptographic protocol to protect communications
-                   from identification.
+                are typically owned by legitimate companies offering virtual
+                private server (VPS) or webhosting services. The malware
+                communicates with C&C servers over HTTPS using a custom
+                underlying cryptographic protocol to protect communications
+                from identification.
 
                 The documents from this publication might further enable
                 anti-malware researchers and forensic experts to analyse

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 
 export type Props = {
@@ -6,28 +6,26 @@ export type Props = {
   className?: string,
   style?: Object,
   children?: number | string | React.Element | Array<any>,
+  componentClass: ?string,
 };
 
-class Grid extends PureComponent {
-  props: Props;
-  render() {
-    const ComponentClass = this.props.componentClass;
+const Grid = ({ fluid, className, style, children, componentClass }: Props) => {
+  const ComponentClass = componentClass;
 
-    const classes = classNames(
-      {
-        grid: !this.props.fluid,
-        grid__fluid: this.props.fluid,
-      },
-      this.props.className,
-    );
+  const classes = classNames(
+    {
+      grid: !fluid,
+      grid__fluid: fluid,
+    },
+    className,
+  );
 
-    return (
-      <ComponentClass className={classes} style={this.props.style}>
-        {this.props.children}
-      </ComponentClass>
-    );
-  }
-}
+  return (
+    <ComponentClass className={classes} style={style}>
+      {children}
+    </ComponentClass>
+  );
+};
 
 Grid.defaultProps = {
   componentClass: 'div',

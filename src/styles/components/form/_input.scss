@@ -1,16 +1,29 @@
 $defaultBorderColor: #bbb;
 $errorBorderColor: #f44;
-$borderRadius: 2px;
+$borderRadius: 3px;
 
-.boldrui-input-wrapper {
-  display: flex;
-  position: relative;
-  height: 30px;
-  max-height: 36px;
-  line-height: 28px;
+.boldrui-form__error {
+  color: $error-color;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
 }
 
-.boldrui-textarea-wrapper {
+.boldrui-form__warning {
+  color: $warning-color;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.boldrui-input__wrapper {
+  display: flex;
+  position: relative;
+  height: 40px;
+  max-height: 40px;
+  line-height: 40px;
+  margin-bottom: 2em;
+}
+
+.boldrui-textarea__wrapper {
   height: auto;
   max-height: none;
 }
@@ -33,12 +46,12 @@ $borderRadius: 2px;
   display: inline-block;
   flex: 1;
   min-width: 80px;
-  height: 100%;
+  height: 40px;
   box-sizing: border-box;
-  padding: 0 10px;
-  margin: 0;
+  padding: 1rem;
+  margin: 0 auto 0.5rem;
   border: 1px solid $defaultBorderColor;
-  color: #333;
+  color: $text-color;
   font-size: 12px;
   border-radius: $borderRadius;
   box-shadow: none;
@@ -47,7 +60,7 @@ $borderRadius: 2px;
 
   &:focus {
     outline: none;
-    border: 1px solid #38f;
+    border: 1px solid $primary-color;
     box-shadow: 0 0 5px #bdf;
   }
 }
@@ -66,10 +79,10 @@ $borderRadius: 2px;
   }
 }
 
-.boldrui-input-addon-before,
-.boldrui-input-addon-after {
+.boldrui-input__addon-before,
+.boldrui-input__addon-after {
   display: inline-block;
-  height: 100%;
+  height: 40px;
   padding: 0 5px;
   border: 1px solid $defaultBorderColor;
   box-sizing: border-box;
@@ -78,19 +91,25 @@ $borderRadius: 2px;
   font-size: 12px;
 }
 
-.boldrui-input-addon-before {
+.boldrui-input__addon-before {
   border-top-left-radius: $borderRadius;
   border-bottom-left-radius: $borderRadius;
   border-right: none;
+  padding-top: 5px;
+
+  svg {
+    display: inline-block;
+    vertical-align: middle;
+  }
 }
 
-.boldrui-input-addon-after {
+.boldrui-input__addon-after {
   border-top-right-radius: $borderRadius;
   border-bottom-right-radius: $borderRadius;
   border-left: none;
 }
 
-.boldrui-input-addons {
+.boldrui-input__addons {
 
   & > .boldrui-input {
     border-radius: 0;

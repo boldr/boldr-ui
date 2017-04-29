@@ -1,11 +1,16 @@
 /* eslint-disable max-len */
+/* @flow */
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { ifProp, get } from 'styled-tools';
 import { mediaQuery } from '../../theme/theme';
-import MenuIcon from '../Icons/MenuIcon';
+import Icon from '../Icons';
 
+type Props = {
+  sidebarToggleable: boolean,
+  iconColor: string,
+  iconSize: number,
+};
 const ToggleButton = styled.button`
   ${mediaQuery.large`display: ${ifProp('sidebarToggleable', 'block !important')};`}
   ${mediaQuery.large`display: none;`}
@@ -21,22 +26,22 @@ const ToggleButton = styled.button`
   transition: color 250ms ease-in-out;
   margin-right: 10px;
 `;
-const Toggler = ({ children, ...props }) => {
-  const { sidebarToggleable, iconColor } = props;
+const Toggler = ({
+  sidebarToggleable,
+  iconColor,
+  iconSize,
+  ...props
+}: Props) => {
   return (
     <ToggleButton sidebarToggleable={sidebarToggleable} {...props}>
-      <MenuIcon color={iconColor} />
+      <Icon kind="menu" color={iconColor} size={iconSize} />
     </ToggleButton>
   );
 };
 
-Toggler.propTypes = {
-  sidebarToggleable: PropTypes.bool,
-  children: PropTypes.node,
-  iconColor: PropTypes.string,
-};
 Toggler.defaultProps = {
   iconColor: '#fff',
+  iconSize: 20,
 };
 
 export default Toggler;

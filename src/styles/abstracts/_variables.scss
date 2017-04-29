@@ -71,6 +71,9 @@ $grid-containers: (
   lg: 71rem,
 ) !default;
 
+$small-viewport: 48em;
+$medium-viewport: 62em;
+$large-viewport: 75em;
 /// The primary color to use throughout the app. This should be a color
 /// with a `-500` suffix.
 /// @type Color
@@ -79,7 +82,9 @@ $primary-color: $iris-blue !default;
 
 /// @type Color
 $md-primary-color: $primary-color;
-
+$md-icon-color: rgba(0, 0, 0, 0.54);
+$secondary-color: $turtle;
+$teritary-color: $navy;
 /// The opacity to apply to the primary color with the `md-background--primary` class name.
 /// @type Number
 /// @group themes
@@ -116,6 +121,7 @@ $shadow-color: rgba(0, 0, 0, 0.2) !default;
 $body-background: $cloud !default;
 $link-color: $accent-color !default;
 $error-color: $carmine-pink !default;
+$warning-color: $golden !default;
 $text-color: $black-transparent !default;
 $header-font-color: $navy !default;
 $border-color: rgba(0, 0, 0, 0.1) !default;
@@ -244,3 +250,24 @@ $dash-footer-height: 50px !default;
 $dash-footer-bg: $snow !default;
 $dash-footer-color: #636c72;
 $dash-footer-line-height: 17px !default;
+
+
+////
+/// @group icons
+////
+
+/// Boolean if the icon separator styles should be included by default.
+/// @type Boolean
+$md-font-icon-include-separators: true !default;
+
+/// The amount of padding to put between an icon and any text.
+/// @type Number
+$md-font-icon-separator-padding: $md-default-padding !default;
+
+/// The light theme's disabled color for icons.
+/// @type Color
+$md-font-icon-light-theme-disabled-color: rgba($black-base, .26);
+
+/// The dark theme's disabled color for icons.
+/// @type Color
+$md-font-icon-dark-theme-disabled-color: rgba($md-white-base, .3);

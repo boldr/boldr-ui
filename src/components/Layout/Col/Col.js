@@ -1,11 +1,13 @@
-import React, { PureComponent } from 'react';
+// @flow
+import React from 'react';
 import classNames from 'classnames';
 import isNumber from 'lodash/isNumber';
+import type { ReactChildren } from '../../../types/react.js.flow';
 
 export type Props = {
   className?: string,
   style?: Object,
-  children?: number | string | React.Element | Array<any>,
+  children: ReactChildren,
   xs?: number | boolean,
   sm?: number | boolean,
   md?: number | boolean,
@@ -23,55 +25,66 @@ export type Props = {
   smLast?: boolean,
   mdLast?: boolean,
   lgLast?: boolean,
+  componentClass: string,
 };
 
-class Col extends PureComponent {
-  props: Props;
-  render() {
-    const ComponentClass = this.props.componentClass;
+const Col = (props: Props) => {
+  const ComponentClass = props.componentClass;
+  const {
+    className,
+    style,
+    children,
+    reverse,
+    xs,
+    sm,
+    md,
+    lg,
+    xsOffset,
+    smOffset,
+    mdOffset,
+    lgOffset,
+    xsFirst,
+    smFirst,
+    mdFirst,
+    lgFirst,
+    xsLast,
+    smLast,
+    mdLast,
+    lgLast,
+  } = props;
+  const classes = classNames(
+    {
+      [`grid__col--xs${isNumber(xs) ? `-${xs}` : ''}`]: xs >= 0,
+      [`grid__col--sm${isNumber(sm) ? `-${sm}` : ''}`]: sm >= 0,
+      [`grid__col--md${isNumber(md) ? `-${md}` : ''}`]: md >= 0,
+      [`grid__col--lg${isNumber(lg) ? `-${lg}` : ''}`]: lg >= 0,
 
-    const classes = classNames(
-      {
-        [`grid__col--xs${isNumber(this.props.xs) ? `-${this.props.xs}` : ''}`]: this
-          .props.xs >= 0,
-        [`grid__col--sm${isNumber(this.props.sm) ? `-${this.props.sm}` : ''}`]: this
-          .props.sm >= 0,
-        [`grid__col--md${isNumber(this.props.md) ? `-${this.props.md}` : ''}`]: this
-          .props.md >= 0,
-        [`grid__col--lg${isNumber(this.props.lg) ? `-${this.props.lg}` : ''}`]: this
-          .props.lg >= 0,
+      [`grid__col--xs-offset-${xsOffset}`]: xsOffset >= 0,
+      [`grid__col--sm-offset-${smOffset}`]: smOffset >= 0,
+      [`grid__col--md-offset-${mdOffset}`]: mdOffset >= 0,
+      [`grid__col--lg-offset-${lgOffset}`]: lgOffset >= 0,
 
-        [`grid__col--xs-offset-${this.props.xsOffset}`]: this.props.xsOffset >=
-          0,
-        [`grid__col--sm-offset-${this.props.smOffset}`]: this.props.smOffset >=
-          0,
-        [`grid__col--md-offset-${this.props.mdOffset}`]: this.props.mdOffset >=
-          0,
-        [`grid__col--lg-offset-${this.props.lgOffset}`]: this.props.lgOffset >=
-          0,
+      'grid__col--reverse': reverse,
 
-        'grid__col--reverse': this.props.reverse,
+      'grid__col--xs-first': xsFirst,
+      'grid__col--sm-first': smFirst,
+      'grid__col--md-first': mdFirst,
+      'grid__col--lg-first': lgFirst,
 
-        'grid__col--xs-first': this.props.xsFirst,
-        'grid__col--sm-first': this.props.smFirst,
-        'grid__col--md-first': this.props.mdFirst,
-        'grid__col--lg-first': this.props.lgFirst,
+      'grid__col--xs-last': xsLast,
+      'grid__col--sm-last': smLast,
+      'grid__col--md-last': mdLast,
+      'grid__col--lg-last': lgLast,
+    },
+    className,
+  );
 
-        'grid__col--xs-last': this.props.xsLast,
-        'grid__col--sm-last': this.props.smLast,
-        'grid__col--md-last': this.props.mdLast,
-        'grid__col--lg-last': this.props.lgLast,
-      },
-      this.props.className,
-    );
-
-    return (
-      <ComponentClass className={classes} style={this.props.style}>
-        {this.props.children}
-      </ComponentClass>
-    );
-  }
-}
+  return (
+    <ComponentClass className={classes} style={style}>
+      {children}
+    </ComponentClass>
+  );
+};
 
 Col.defaultProps = {
   componentClass: 'div',

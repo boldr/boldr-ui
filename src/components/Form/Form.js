@@ -9,6 +9,12 @@ type Props = {
   handleSubmit: () => void,
 };
 
+export type MetaProps = {
+  error: string,
+  warning: string,
+  touched: boolean,
+};
+
 const CustomForm = styled.form`
   display: {props => props.inline ? 'inline' : 'block'};
 `;
