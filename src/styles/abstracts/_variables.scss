@@ -82,7 +82,7 @@ $primary-color: $iris-blue !default;
 
 /// @type Color
 $md-primary-color: $primary-color;
-
+$md-icon-color: rgba(0, 0, 0, 0.54);
 $secondary-color: $turtle;
 $teritary-color: $navy;
 /// The opacity to apply to the primary color with the `md-background--primary` class name.
@@ -250,3 +250,24 @@ $dash-footer-height: 50px !default;
 $dash-footer-bg: $snow !default;
 $dash-footer-color: #636c72;
 $dash-footer-line-height: 17px !default;
+
+
+////
+/// @group icons
+////
+
+/// Boolean if the icon separator styles should be included by default.
+/// @type Boolean
+$md-font-icon-include-separators: true !default;
+
+/// The amount of padding to put between an icon and any text.
+/// @type Number
+$md-font-icon-separator-padding: $md-default-padding !default;
+
+/// The light theme's disabled color for icons.
+/// @type Color
+$md-font-icon-light-theme-disabled-color: rgba($black-base, .26);
+
+/// The dark theme's disabled color for icons.
+/// @type Color
+$md-font-icon-dark-theme-disabled-color: rgba($md-white-base, .3);

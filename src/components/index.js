@@ -5,6 +5,7 @@ import {
   AccordionItemTitle,
 } from './Accordion';
 import Anchor from './Anchor';
+import Avatar from './Avatar';
 import Block from './Block';
 import Caption from './Caption';
 import Checkbox from './Checkbox';
@@ -19,6 +20,7 @@ import Dialog from './Dialog';
 import Dimmer from './Dimmer';
 import Divider from './Divider';
 import Flag from './Flag';
+import FontIcon from './FontIcon';
 import Footer from './Footer';
 import {
   Form,
@@ -55,6 +57,7 @@ import TopbarPlainLink from './Topbar/TopbarPlainLink';
 import TopbarSearch from './Topbar/TopbarSearch';
 import Tree from './Tree';
 import Widget from './Widget';
+import withRipple from './withRipple';
 import {
   Chevron,
   FaIcon,
@@ -71,6 +74,7 @@ export {
   AccordionItemBody,
   AccordionItemTitle,
   Anchor,
+  Avatar,
   BaseIcon,
   Block,
   Caption,
@@ -89,6 +93,7 @@ export {
   FaIcon,
   Feedback,
   Flag,
+  FontIcon,
   Footer,
   Form,
   FormCard,
@@ -134,4 +139,5 @@ export {
   Tree,
   Twitter,
   Widget,
+  withRipple,
 };

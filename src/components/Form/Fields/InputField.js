@@ -21,7 +21,7 @@ const InputField = ({
   addonAfter,
   label,
   type,
-  meta: { touched, error, warning },
+  meta,
 }: Props) => (
   <div>
     <Label label={label} />
@@ -33,7 +33,7 @@ const InputField = ({
         placeholder={label}
         type={type}
       />
-      {touched && <Feedback error={error} warning={warning} />}
+      {meta.touched && <Feedback meta={meta} />}
     </div>
   </div>
 );

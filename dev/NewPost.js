@@ -23,6 +23,7 @@ import {
   Heading,
   Modal,
   FormField,
+  FormCard,
   Form,
   Input,
   Grid, Col, Row,
@@ -30,7 +31,6 @@ import {
 
 import TopbarLink from '../src/components/Topbar/TopbarLink';
 import menuItems from './items';
-import initialState from './state.json';
 import NewPostForm from './NewPostForm';
 
 const Inner = styled.div`
@@ -114,6 +114,7 @@ class NewPost extends Component {
             />
             <DashboardContent padLeft padRight>
               <Grid fluid>
+                <FormCard title="new post" form={ <NewPostForm onSubmit={ this.handleNewPost } /> } />
                 <Row>
                   <Col xs={12} md={8}>
                     <Paper zDepth={1}>

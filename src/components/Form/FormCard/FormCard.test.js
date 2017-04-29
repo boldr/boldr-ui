@@ -8,9 +8,8 @@ describe('<FormCard />', () => {
   beforeEach(() => {
     wrapper = shallow(
       <FormCard
-        width={400}
+        skinny
         title="Fcard"
-        extra1="abcd"
         form={<form><input type="text" /></form>}
       />,
     );
@@ -22,6 +21,6 @@ describe('<FormCard />', () => {
 
   test('+++ <FormCard />, should render props', () => {
     const inst = wrapper.instance();
-    expect(inst.props.width).toEqual(400);
+    expect(inst.props.skinny).toEqual(true);
   });
 });

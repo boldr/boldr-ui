@@ -46,7 +46,9 @@ h5 {
   margin: 0;
   text-rendering: optimizeLegibility;
 }
-
+.boldrui-h-light {
+  color: #fff;
+}
 h1 {
   min-height: 1rem;
   font-size: 2.5rem;
@@ -138,4 +140,48 @@ p:last-child {
 
 .font-5xl {
   font-size: 2.5rem !important;
+}
+
+.md-icon {
+  color: $md-icon-color;
+  font-size: $md-font-icon-size;
+  text-align: center;
+  transition-duration: $transition-length;
+  transition-property: color;
+  user-select: none;
+
+  &--disabled {
+    color: $md-font-icon-light-theme-disabled-color;
+  }
+
+  &--inherit {
+    color: inherit;
+  }
+
+  .md-icon-separator {
+    align-items: center;
+    display: flex;
+    font-weight: inherit;
+    text-align: left;
+
+    .md-icon {
+      flex-grow: 0;
+      flex-shrink: 0;
+    }
+  }
+
+  .md-icon-text {
+    flex-grow: 1;
+    flex-shrink: 0;
+    font-weight: inherit;
+    line-height: inherit;
+
+    &:first-child {
+      padding-right: $md-font-icon-separator-padding;
+    }
+
+    &:last-child {
+      padding-left: $md-font-icon-separator-padding;
+    }
+  }
 }

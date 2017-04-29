@@ -58,8 +58,8 @@ const Inner = styled.div`
 `;
 
 const selectopts = [
-  { name: 'aba', value: 'abc'},
-  { name: 'bab', value: 'cdb'}
+  { key: 'aba', value: 'abc'},
+  { key: 'bab', value: 'cdb'}
 ]
 const Toolbar = styled.div`
   width: 100%;

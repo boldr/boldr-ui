@@ -7,7 +7,7 @@
   vertical-align: top;
   cursor: pointer;
   font-weight: 400;
-  font-family: 'Roboto',Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-align: center;
   font-size: 1.1rem;
   text-decoration: none;
@@ -33,17 +33,6 @@
 
   span {
     vertical-align: middle;
-  }
-
-  [data-react-toolbox="font-icon"] {
-    vertical-align: middle;
-    font-size: 1.5em;
-    padding-right: 0.5em;
-
-    &:last-child {
-      padding-right: 0;
-      padding-left: 0.5em;
-    }
   }
 
   &[aria-disabled],

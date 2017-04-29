@@ -8,27 +8,62 @@ Have questions or want to help with development? Join us on <a href="https://sla
 
 
 ## Components
-- DashboardFooter
+- Accordion
+- Avatar
+- Block
+- Button
+- Caption
+- Card
+- Checkbox
+- Content Promo
+- Dashboard  (All wrapper layout components)
+  - DashboardWrapper
+  - DashboardMain
+  - DashboardContent
+  - DashboardFooter
+- Dialog
+- Dimmer
 - Divider
+- Flag
+- FontIcon
 - Footer
-- FormCard
-- FormGroup
-- InputField
+- Form
+  - FormGroup
+  - FormCard
+  - Form
+  - InputField
+  - SelectField
+  - RadioField
 - Heading
 - Hero
-- Icon
+- Icons
+- Input
 - Image
-- Layout (Col, Row, Grid)
+- Layout
+  - Col
+  - Row
+  - Grid
 - Loader
 - Media
+- Modal
 - Paper
 - Paragraph
+- Photo
 - Sidebar
-- SidebarItem
-- SocialGroup 
+  - Sidebar
+  - SidebarHeader
+  - SidebarNav
+  - SidebarNavItem
+  - SidebarWrapper
+- Social
   - Facebook
   - Twitter
   - Google
   - Github
 - StatsWidget
 - Topbar
+- Toggler (menu toggle)
+- Tree
+- withRipple (HOC for material ripple)
+
+

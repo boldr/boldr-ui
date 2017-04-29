@@ -12,8 +12,8 @@ const transition = {
 const loaderThemeByBtnThemeIdentifier = {
   primary: 'boldr',
   secondary: 'boldr',
-  boldrPrimary: 'primary',
-  boldrSecondary: 'secondary',
+  whitePrimary: 'primary',
+  whiteSecondary: 'secondary',
   grey: 'primary',
 };
 

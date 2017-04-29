@@ -32,14 +32,14 @@ const SelectField = (props: Props) => {
       <SelectContainer>
         <SelectInput
           {...props.input}
-          id={props.input.name}
-          name={props.input.name}
+          id={props.input.key}
+          name={props.input.key}
           showError={showError}
           visited={meta.visited}
         >
           {props.options.map(option => (
             <OptionInput disabled={option.disabled} key={option.value}>
-              {option.name}
+              {option.key}
             </OptionInput>
           ))}
         </SelectInput>

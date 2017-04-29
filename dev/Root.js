@@ -22,7 +22,6 @@ import {
 } from '../src/components';
 import TopbarLink from '../src/components/Topbar/TopbarLink';
 import menuItems from './items';
-import Posts from './Posts';
 import NewPost from './NewPost';
 import App from './App';
 
@@ -35,13 +34,12 @@ class Root extends PureComponent {
   renderMain = () => {
     return <App />;
   };
-  renderPosts = () => <Posts />;
 renderNewPost = () => <NewPost />;
   render() {
     return (
         <Switch>
           <Route exact path="/" render={this.renderMain} />
-          <Route exact path="/admin/posts" render={this.renderPosts} />
+          <Route exact path="/admin/posts" render={this.renderNewPost} />
               <Route exact path="/admin/new-post" render={this.renderNewPost} />
         </Switch>
     );

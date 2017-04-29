@@ -4,7 +4,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import ReactModal from 'react-modal';
 import { font, palette } from 'styled-theme';
-import Heading from '../Heading';
+import Headline from '../Headline';
 import Icon from '../Icons';
 import type { ReactChildren } from '../../types/react.js.flow';
 
@@ -77,7 +77,7 @@ const Header = styled.header`
   }
 `;
 
-const StyledHeading = styled(Heading)`
+const StyledHeading = styled(Headline)`
   margin: 0 1rem 0 0;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -105,7 +105,7 @@ const Dialog = ({ children, title, closeable, onClose, ...props }) => {
     >
       {hasHeader &&
         <Header>
-          <StyledHeading level={2} reverse={props.reverse}>
+          <StyledHeading type="h2" reverse={props.reverse}>
             {title}
           </StyledHeading>
           {closeable && <Icon kind="close" color="#222" onClick={onClose} />}

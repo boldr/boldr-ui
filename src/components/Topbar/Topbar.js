@@ -46,7 +46,7 @@ class Topbar extends Component {
   };
   componentDidMount() {
     if (this.state.browser) {
-      window.addEventListener('keyup', this._handleKey);
+      window.addEventListener('keyup', this._handleKey, { passive: true });
     }
   }
 

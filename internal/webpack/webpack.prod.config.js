@@ -27,6 +27,8 @@ module.exports = {
       commonjs: 'react-dom',
       amd: 'react-dom',
     },
+    'styled-components': 'var StyledComponents',
+    'react-transition-group': 'var React.TransitionGroup',
     'react-addons-css-transition-group': 'var React.addons.CSSTransitionGroup',
     'react-addons-transition-group': 'var React.addons.TransitionGroup',
   },
@@ -35,9 +37,11 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.js$/,
+      {
+        test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader' },
+        loader: 'babel-loader',
+      },
       {
         test: /\.scss/,
         loader: ExtractTextPlugin.extract({
@@ -58,14 +62,15 @@ module.exports = {
             {
               loader: 'sass-loader',
               options: {
-                outputStyle: 'expanded',
+                outputStyle: 'collapsed',
                 sourceMap: true,
                 sourceMapContents: false,
               },
             },
           ],
         }),
-      }],
+      },
+    ],
   },
   plugins: [
     new ExtractTextPlugin('boldr-ui.[name].min.css'),
@@ -74,10 +79,21 @@ module.exports = {
         NODE_ENV: JSON.stringify('production'),
       },
     }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: false,
+    }),
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: false,
-      compress: { warnings: false },
-      output: { comments: false },
+      beautify: false,
+      mangle: {
+        screw_ie8: true,
+        keep_fnames: true,
+      },
+      compress: {
+        screw_ie8: true,
+      },
+      comments: false,
     }),
   ],
 };

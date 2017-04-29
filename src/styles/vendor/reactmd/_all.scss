@@ -4,12 +4,11 @@
 @import 'helpers';
 @import 'grids';
 
-
+$md-black-base: rgba(0,0,0,.87);
 @import 'components/papers';
-
 @import 'components/accessibility';
 @import 'components/autocompletes';
-@import 'components/avatars';
+// @import 'components/avatars';
 @import 'components/bottom-navigations';
 @import 'components/buttons';
 @import 'components/cards';
@@ -17,14 +16,14 @@
 @import 'components/collapsers';
 @import 'components/data-tables';
 @import 'components/dialogs';
-@import 'components/dividers';
+// @import 'components/dividers';
 @import 'components/drawers';
 @import 'components/expansion-panels';
 @import 'components/file-inputs';
 @import 'components/icons';
 @import 'components/inks';
 @import 'components/lists';
-@import 'components/media';
+// @import 'components/media';
 @import 'components/menus';
 @import 'components/navigation-drawers';
 @import 'components/overlays';
@@ -55,24 +54,23 @@
   @include react-md-accessibility;
   @include react-md-grid;
   @include react-md-transitions;
-
   @include react-md-autocompletes;
-  @include react-md-avatars;
+  // @include react-md-avatars;
   @include react-md-bottom-navigations;
   @include react-md-buttons;
   @include react-md-cards;
   @include react-md-chips;
   @include react-md-collapsers;
   @include react-md-data-tables;
-  @include react-md-dialogs;
-  @include react-md-dividers;
+  // @include react-md-dialogs;
+  // @include react-md-dividers;
   @include react-md-drawers;
   @include react-md-expansion-panels;
   @include react-md-file-inputs;
   @include react-md-inks;
   @include react-md-icons;
   @include react-md-lists;
-  @include react-md-media;
+  // @include react-md-media;
   @include react-md-menus;
   @include react-md-navigation-drawers;
   @include react-md-overlays;

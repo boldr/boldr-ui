@@ -7,10 +7,11 @@ const validTypes = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
 /**
  * A heading should always be the visual and describing start of another content section.
  */
-const Headline = ({ className, type, theme, children, ...rest }) => {
+const Headline = ({ className, type, theme, lightText, children, ...rest }) => {
   const themeClassName = theme || type;
   const finalClassName = mergeClassNames({
     'boldrui-h': true,
+    'boldrui-h-light': lightText,
     [themeClassName]: true,
     [className]: className && className.length,
   });

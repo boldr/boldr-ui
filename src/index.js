@@ -2,13 +2,11 @@ import Card from 'react-md/lib/Cards/Card';
 import CardTitle from 'react-md/lib/Cards/CardTitle';
 import CardActions from 'react-md/lib/Cards/CardActions';
 import CardText from 'react-md/lib/Cards/CardText';
-import Avatar from 'react-md/lib/Avatars';
 import Button from 'react-md/lib/Buttons';
 import Chip from 'react-md/lib/Chips';
 import Drawer from 'react-md/lib/Drawers';
 import Toolbar from 'react-md/lib/Toolbars';
 import Collapse from 'react-md/lib/Helpers/Collapse';
-import FontIcon from 'react-md/lib/FontIcons';
 import Tabs from 'react-md/lib/Tabs/Tabs';
 import Tab from 'react-md/lib/Tabs/Tab';
 import LinearProgress from 'react-md/lib/Progress/LinearProgress';
@@ -32,7 +30,6 @@ import TableRow from 'react-md/lib/DataTables/TableRow';
 import TableColumn from 'react-md/lib/DataTables/TableColumn';
 import TablePagination from 'react-md/lib/DataTables/TablePagination';
 import MenuButton from 'react-md/lib/Menus/MenuButton';
-import injectTooltip from 'react-md/lib/Tooltips';
 import Menu from 'react-md/lib/Menus/Menu';
 import NavigationDrawer from 'react-md/lib/NavigationDrawers';
 import TagsInput from 'react-tagsinput';
@@ -46,6 +43,7 @@ import {
   AccordionItemBody,
   AccordionItemTitle,
   Anchor,
+  Avatar,
   BaseIcon,
   Block,
   Caption,
@@ -62,6 +60,7 @@ import {
   Divider,
   Facebook,
   FaIcon,
+  FontIcon,
   Feedback,
   Flag,
   Footer,
@@ -109,6 +108,7 @@ import {
   Tree,
   Twitter,
   Widget,
+  withRipple,
 } from './components';
 
 export {
@@ -117,6 +117,7 @@ export {
   AccordionItemBody,
   AccordionItemTitle,
   Anchor,
+  Avatar,
   BaseIcon,
   Block,
   Caption,
@@ -133,6 +134,7 @@ export {
   Divider,
   Facebook,
   FaIcon,
+  FontIcon,
   Feedback,
   Flag,
   Footer,
@@ -180,24 +182,24 @@ export {
   Tree,
   Twitter,
   Widget,
+  withRipple,
   theme,
   BOLDR_NS,
   StyleClasses,
   mediaQuery,
   // EXTERNALS
   TagsInput,
+  // MD
   Card,
   CardTitle,
   CardActions,
   CardText,
   Switch,
-  Avatar,
   Button,
   Chip,
   Drawer,
   Toolbar,
   Collapse,
-  FontIcon,
   Tabs,
   Tab,
   CircularProgress,
@@ -218,7 +220,6 @@ export {
   MenuButton,
   SelectionControl,
   SelectionControlGroup,
-  injectTooltip,
   LinearProgress,
   NavigationDrawer,
 };

@@ -34,7 +34,6 @@ import {
 import Button from '../src/components/Button/Button';
 import TopbarLink from '../src/components/Topbar/TopbarLink';
 import menuItems from './items';
-import Posts from './Posts';
 import NewPost from './NewPost';
 
 injectGlobal`
