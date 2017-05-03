@@ -36,80 +36,82 @@ import TagsInput from 'react-tagsinput';
 
 import { BOLDR_NS, StyleClasses } from './theme/styleClasses';
 import theme, { mediaQuery } from './theme/theme';
-
 import {
   Accordion,
   AccordionItem,
   AccordionItemBody,
   AccordionItemTitle,
-  Anchor,
-  Avatar,
-  BaseIcon,
-  Block,
-  Caption,
-  Checkbox,
-  Chevron,
-  ContentPromo,
-  Col,
+} from './components/Accordion';
+import Anchor from './components/Anchor';
+import Avatar from './components/Avatar';
+import Block from './components/Block';
+import Caption from './components/Caption';
+import Checkbox from './components/Checkbox';
+import Collapsible from './components/Collapsible';
+import ContentPromo from './components/ContentPromo';
+import {
   DashboardContent,
   DashboardFooter,
   DashboardMain,
   DashboardWrapper,
-  Dialog,
-  Dimmer,
-  Divider,
-  Facebook,
-  FaIcon,
-  FontIcon,
-  Feedback,
-  Flag,
-  Footer,
+} from './components/Dashboard';
+import Dialog from './components/Dialog';
+import Dimmer from './components/Dimmer';
+import Divider from './components/Divider';
+import Flag from './components/Flag';
+import FontIcon from './components/FontIcon';
+import Footer from './components/Footer';
+import {
   Form,
   FormCard,
   FormGroup,
-  Github,
-  Google,
-  Grid,
-  Heading,
-  Headline,
-  Hero,
-  HorizontalRule,
-  Icon,
-  Image,
-  Input,
   InputField,
-  InputWrapper,
-  Label,
-  Link,
-  LinkedIn,
-  Loader,
-  Media,
-  MediaOverlay,
-  Modal,
-  Paper,
-  Paragraph,
-  Photo,
   RadioField,
-  Row,
   SelectField,
+  Label,
+  Feedback,
+  InputWrapper,
+} from './components/Form';
+import Heading from './components/Heading';
+import Headline from './components/Headline';
+import Hero from './components/Hero';
+import HorizontalRule from './components/HorizontalRule';
+import { Icon, BaseIcon } from './components/Icons';
+import Image from './components/Image';
+import Input from './components/Input';
+import { Grid, Row, Col } from './components/Layout';
+import Link from './components/Link';
+import Loader from './components/Loader';
+import Media, { MediaOverlay } from './components/Media';
+import Modal from './components/Modal';
+import Paper from './components/Paper';
+import Paragraph from './components/Paragraph';
+import Photo from './components/Photo';
+import Social, {
+  Github,
+  Facebook,
+  Twitter,
+  Google,
+  LinkedIn,
+} from './components/Social';
+import StatsWidget, { StatValue, StatLabel } from './components/StatsWidget';
+import Toggler from './components/Toggler';
+import Topbar from './components/Topbar';
+import TopbarLink from './components/Topbar/TopbarLink';
+import TopbarPlainLink from './components/Topbar/TopbarPlainLink';
+import TopbarSearch from './components/Topbar/TopbarSearch';
+import Tree from './components/Tree';
+import Widget from './components/Widget';
+import withRipple from './components/withRipple';
+import {
+  Chevron,
+  FaIcon,
   Sidebar,
   SidebarHeader,
   SidebarNav,
   SidebarNavItem,
   SidebarWrapper,
-  Social,
-  StatLabel,
-  StatsWidget,
-  StatValue,
-  Topbar,
-  TopbarLink,
-  TopbarPlainLink,
-  TopbarSearch,
-  Tree,
-  Twitter,
-  Widget,
-  withRipple,
-} from './components';
+} from './components/Sidebar';
 
 export {
   Accordion,
@@ -123,6 +125,7 @@ export {
   Caption,
   Checkbox,
   Chevron,
+  Collapsible,
   ContentPromo,
   Col,
   DashboardContent,

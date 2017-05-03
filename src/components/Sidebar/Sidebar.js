@@ -50,7 +50,7 @@ class Sidebar extends Component {
   static defaultProps = {
     isPrimaryColor: true,
     sidebarDark: true,
-    logoImg: 'https://boldr.io/logo.png',
+    logoImg: 'https://boldr.io/assets/boldr-logo-white.png',
   };
   state = {
     activate: null,

@@ -10,7 +10,7 @@ Specialized text for below an image.
 
 #### Props:
 
-Name    Type  Defintion
+Name    Type  Definition
 --- | --- | ----
 children | ReactChildren | place your text or element here
 reverse | boolean | reverse the theme colors

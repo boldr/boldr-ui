@@ -1,27 +1,27 @@
 /* eslint-disable no-return-assign */
+// @flow
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import cn from 'classnames';
 import { StyleClasses } from '../../theme/styleClasses';
 import Icon from '../Icons';
 
 const BASE_ELEMENT = StyleClasses.TOPBAR_SEARCH;
 
+type Props = {
+  active: boolean,
+  placeholder: string,
+  onToggle: () => void,
+};
 class TopbarSearch extends PureComponent {
-  static propTypes = {
-    active: PropTypes.bool.isRequired,
-    placeholder: PropTypes.string,
-    onToggle: PropTypes.func.isRequired,
-  };
-
   static defaultProps = {
     placeholder: 'Search this site...',
   };
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps: Object, prevState: ?Object) {
     if (!prevProps.active && this.props.active) {
-      this._input.focus();
+      (this: any)._input.focus();
     }
   }
+  props: Props;
   render() {
     const { active, placeholder } = this.props;
     const classes = cn(BASE_ELEMENT, {
@@ -30,7 +30,7 @@ class TopbarSearch extends PureComponent {
     return (
       <div className={classes}>
         <input
-          ref={ref => (this._input = ref)}
+          ref={ref => ((this: any)._input = ref)}
           className={`${BASE_ELEMENT}__input`}
           type="text"
           placeholder={placeholder}

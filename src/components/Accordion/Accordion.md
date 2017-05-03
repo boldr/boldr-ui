@@ -33,7 +33,7 @@ Accordion component to expand or collapse content
 
 **Accordion**   
 
-Name    Type  Defintion
+Name    Type  Definition
 --- | --- | ----
 accordion | boolean | Should it expand/collapse like an accordion
 children | ReactChildren | nested accordion elements

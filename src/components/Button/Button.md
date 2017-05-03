@@ -17,7 +17,7 @@ Buttons to perform various actions
 
 #### Props:
 
-Name    Type  Defintion
+Name    Type  Definition
 --- | --- | ----
 theme | string | primary (default), secondary, whitePrimary, whiteSecondary, grey
 children | ReactChildren | place your text or element here

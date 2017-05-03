@@ -11,12 +11,9 @@ Converts a font icon, text or image into an avatar (essentially a rounded image)
 
 #### Props
 
-Name    Type  Defintion
+Name    Type  Definition
 --- | --- | ----
 src | string | source for the image
 alt | string | alt text
 icon | ReactElement | if passed, expects an icon component
 className | string | css class name to apply
-
-
-

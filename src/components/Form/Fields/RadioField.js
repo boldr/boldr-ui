@@ -20,9 +20,9 @@ const RadioField = props => {
               key={option.value}
               id={props.input.name}
               name={props.input.name}
-              value={option.text}
+              value={option.value}
               showError={showError}
-              checked={option.text === props.input.value}
+              checked={option.value === props.input.value}
             />
           </RadioInputContainer>
         ))}

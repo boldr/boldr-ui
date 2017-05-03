@@ -13,9 +13,7 @@ Make content stand out from surrounding elements
 
 #### Props:
 
-Name    Type  Defintion
+Name    Type  Definition
 --- | --- | ----
-dark | boolean | toggle light/dark theme
 children | ReactChildren | nested accordion elements
 className | string | custom css class name
-

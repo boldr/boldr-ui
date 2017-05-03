@@ -8,6 +8,7 @@ import type { MetaProps } from '../Form';
 
 type Props = {
   input: any,
+  placeholder: string,
   label: string,
   type: string,
   meta: MetaProps,
@@ -18,6 +19,7 @@ type Props = {
 const InputField = ({
   input,
   addonBefore,
+  placeholder,
   addonAfter,
   label,
   type,
@@ -30,7 +32,7 @@ const InputField = ({
         {...input}
         addonBefore={addonBefore}
         addonAfter={addonAfter}
-        placeholder={label}
+        placeholder={placeholder}
         type={type}
       />
       {meta.touched && <Feedback meta={meta} />}

@@ -15,7 +15,7 @@ shovel, tags, twitter, visible,
 
 #### Props:
 
-Name    Type  Defintion
+Name    Type  Definition
 --- | --- | ----
 kind | string | name of the icon
 color | string | specify a color for the icon

@@ -6,7 +6,6 @@ import { injectGlobal, ThemeProvider } from 'styled-components';
 
 import '../src/styles/boldrui.scss';
 import theme from '../src/theme/theme';
-
 import {
   Sidebar,
   Anchor,
@@ -30,7 +29,7 @@ import {
   Grid,
   Col,
   Row,
-} from '../src/components';
+} from '../src';
 import Button from '../src/components/Button/Button';
 import TopbarLink from '../src/components/Topbar/TopbarLink';
 import menuItems from './items';

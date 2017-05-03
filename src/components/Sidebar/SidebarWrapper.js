@@ -12,7 +12,7 @@ const SidebarWrapper = (props: Props) => {
   const SidebarWrap = styled.aside`
   display: flex;
   flex-direction: column;
-  width: ${props => (props.fullWidth ? '240px' : '60px')};
+  width: ${props => (props.fullWidth ? '200px' : '60px')};
   background: ${props => (props.sidebarDark ? '#333c44' : '#fff')};
   box-shadow: 1px 0 2px rgba(0,0,0,.15);
   flex-direction: column;

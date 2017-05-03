@@ -1,4 +1,12 @@
+/* @flow */
 import React from 'react';
+import type { ReactChildren } from '../../types/react.js.flow';
+
+type Props = {
+  index: string | number,
+  url: string,
+  children: ReactChildren,
+};
 
 /**
  * Standard stateless link component
@@ -6,7 +14,7 @@ import React from 'react';
  * @param {object} props - Link options containing at least a `url`
  * @return {object} - Markup for the link
  */
-export default ({ index, url, ...props }) => (
+export default ({ index, url, ...props }: Props) => (
   <a {...props} href={index || url}>
     {props.children}
   </a>

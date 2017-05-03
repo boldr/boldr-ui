@@ -30,7 +30,7 @@ import {
   Grid,
   Col,
   Row,
-} from '../src/components';
+} from '../src';
 // import NewPostForm from './NewPostForm';
 const required = value => (value ? undefined : 'Required');
 const maxLength = max => value =>

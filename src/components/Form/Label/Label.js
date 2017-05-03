@@ -12,7 +12,7 @@ const Label = props => {
   });
 
   return (
-    <label {...rest} htmlFor={label} className={finalClassName}>
+    <label htmlFor={label} className={finalClassName}>
       {label}
       {required ? <span className="boldrui-form__required"> *</span> : null}
     </label>

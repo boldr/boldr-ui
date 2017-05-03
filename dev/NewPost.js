@@ -27,7 +27,7 @@ import {
   Form,
   Input,
   Grid, Col, Row,
-} from '../src/components';
+} from '../src';
 
 import TopbarLink from '../src/components/Topbar/TopbarLink';
 import menuItems from './items';
