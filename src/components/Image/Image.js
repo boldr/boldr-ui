@@ -95,7 +95,7 @@ export default class Image extends React.Component {
     isImageLoaded: false,
   };
 
-  componentWillUpdate(nextProps) {
+  componentWillUpdate(nextProps: Object) {
     const { isLazy, src, lazySrc } = nextProps;
 
     if (isLazy && lazySrc !== this.props.lazySrc && src !== this.props.src) {
@@ -166,7 +166,7 @@ export default class Image extends React.Component {
     const sensor = isLazy
       ? <VisibilitySensor
           onChange={this.handleViewportVisibilityChange}
-          partialVisibility={true}
+          partialVisibility
         />
       : null;
     const wrapperInlineStyle = isLazy

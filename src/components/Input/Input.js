@@ -13,6 +13,7 @@ export default class Input extends Component {
     readOnly: PropTypes.bool,
     value: PropTypes.any,
     defaultValue: PropTypes.any,
+    onKeyDown: PropTypes.func,
     addonBefore: PropTypes.node,
     addonAfter: PropTypes.node,
     onPressEnter: PropTypes.func,
@@ -45,7 +46,9 @@ export default class Input extends Component {
       onPressEnter(evt);
     }
 
-    if (onKeyDown) onKeyDown(evt);
+    if (onKeyDown) {
+      onKeyDown(evt);
+    }
   };
 
   render() {

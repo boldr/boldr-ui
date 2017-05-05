@@ -33,7 +33,7 @@ const overlayStyles = css`
     opacity: 0;
   }
 `;
-
+// $FlowIssue
 const ModalBox = styled(ReactModal)`
   position: absolute;
   display: flex;

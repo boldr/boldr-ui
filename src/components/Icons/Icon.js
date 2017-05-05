@@ -1,6 +1,7 @@
 /* eslint-disable max-len, react/no-unescaped-entities */
+/* @flow */
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+
 import classnames from 'classnames';
 import BaseIcon from './BaseIcon';
 
@@ -37,23 +38,23 @@ const iconList = [
   'dashboard',
 ];
 
+type Props = {
+  color: string,
+  className: string,
+  height: number,
+  kind: string,
+  preview: boolean,
+  onClick: () => void,
+  size: number,
+  width: number,
+};
 export default class Icon extends PureComponent {
-  static propTypes = {
-    color: PropTypes.string,
-    className: PropTypes.string,
-    height: PropTypes.number,
-    kind: PropTypes.oneOf(iconList).isRequired,
-    preview: PropTypes.bool,
-    onClick: PropTypes.func,
-    size: PropTypes.number,
-    width: PropTypes.number,
-  };
-
   static defaultProps = {
     size: 24,
     color: '#fff',
   };
-  renderIcon(kind) {
+  props: Props;
+  renderIcon(kind: string) {
     const { color, size, height, width, onClick } = this.props;
 
     switch (kind) {

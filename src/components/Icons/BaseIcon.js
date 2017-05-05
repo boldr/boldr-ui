@@ -1,8 +1,18 @@
-import { default as React } from 'react';
-import { PropTypes } from 'prop-types';
+/* @flow */
+import React from 'react';
+import type { Children } from 'react';
+import PropTypes from 'prop-types';
+
+type Props = {
+  children: Children,
+  color: string,
+  size: string,
+  style: Object,
+  onClick: () => void,
+};
 
 const BaseIcon = (
-  { children, color, size, style, ...props },
+  { children, color, size, style, ...props }: Props,
   { reactIconBase = {} },
 ) => {
   const computedSize = size || reactIconBase.size || '1em';
@@ -31,12 +41,6 @@ const BaseIcon = (
   );
 };
 
-BaseIcon.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  style: PropTypes.object,
-  onClick: PropTypes.func,
-};
 BaseIcon.defaultProps = {
   color: '#fff',
   size: '24',

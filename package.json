@@ -1,7 +1,7 @@
 {
   "name": "boldr-ui",
   "description": "UI components for BoldrCMS",
-  "version": "0.4.0-beta.6",
+  "version": "0.4.0-beta.9",
   "author": "Steven Truesdell <steven@strues.io>",
   "config": {
     "commitizen": {
@@ -9,7 +9,7 @@
     }
   },
   "dependencies": {
-    "animate-components": "^0.8.1",
+    "animate-components": "^0.9.0",
     "boldr-utils": "0.2.2",
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
@@ -23,6 +23,8 @@
     "uuid": "^3.0.1"
   },
   "devDependencies": {
+    "@kadira/storybook": "^2.35.3",
+    "@kadira/storybook-addon-knobs": "^1.7.1",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-jest": "^19.0.0",
@@ -59,7 +61,7 @@
     "postcss-cssnext": "^2.10.0",
     "postcss-loader": "^1.3.3",
     "postcss-reporter": "^3.0.0",
-    "prettier": "^1.3.0",
+    "prettier": "^1.3.1",
     "react": "^15.5.4",
     "react-addons-test-utils": "^15.5.1",
     "react-hot-loader": "3.0.0-beta.6",
@@ -78,7 +80,7 @@
     "stylelint": "^7.10.1",
     "stylelint-config-standard": "^16.0.0",
     "url-loader": "^0.5.8",
-    "webpack": "^2.4.1",
+    "webpack": "^2.5.0",
     "webpack-dev-middleware": "^1.10.2",
     "webpack-hot-middleware": "^2.18.0",
     "why-did-you-update": "^0.0.8"
@@ -125,6 +127,7 @@
     "precommit": "lint-staged",
     "sass": "node-sass --output-style compressed src/styles/boldrui.scss -o dist",
     "start": "cross-env NODE_ENV=development BABEL_ENV=es UV_THREADPOOL_SIZE=100 node ./server",
+    "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "NODE_ENV=test jest -u --config=internal/jest/jest.json",
     "test:ci": "NODE_ENV=test jest --config=internal/jest/jest.json --forceExit"
   }

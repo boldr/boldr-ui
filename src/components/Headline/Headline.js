@@ -5,7 +5,8 @@ import mergeClassNames from 'classnames';
 const validTypes = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
 
 /**
- * A heading should always be the visual and describing start of another content section.
+ * A heading should always be the visual and describing start of
+ * another content section.
  */
 const Headline = ({ className, type, theme, lightText, children, ...rest }) => {
   const themeClassName = theme || type;
@@ -37,15 +38,15 @@ Headline.propTypes = {
   children: PropTypes.node.isRequired,
 
   /**
-	 * The semantic type of the heading, default to `h1`.
-	 */
+   * The semantic type of the heading, default to `h1`.
+   */
   type: PropTypes.oneOf(validTypes),
 
   /**
-	 * To separate the semantic meaning and the visual styles,
-	 * you can also set an optional theme, to have the semantic
-	 * meaning of a `h1` but the visual appearance of a `h4`.
-	 */
+   * To separate the semantic meaning and the visual styles,
+   * you can also set an optional theme, to have the semantic
+   * meaning of a `h1` but the visual appearance of a `h4`.
+   */
   theme: PropTypes.oneOf(validTypes),
   className: PropTypes.string,
 };

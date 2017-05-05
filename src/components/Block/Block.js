@@ -5,7 +5,7 @@ import mergeClassNames from 'classnames';
 /**
 * A Box can display more important content in a simple manner.
 */
-const Block = ({ className, isDark, children, ...rest }) => {
+const Block = ({ className, children, ...rest }) => {
   const finalClassName = mergeClassNames({
     'boldrui-block': true,
     [className]: className && className.length,
