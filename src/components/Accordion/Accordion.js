@@ -18,13 +18,14 @@ class Accordion extends Component {
     onChange: () => {},
     className: 'boldrui-accordion',
   };
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     const activeItems = this.preExpandedItems();
     this.state = {
       activeItems,
       accordion: true,
     };
+    this.renderItems = this.renderItems.bind(this);
   }
   state: State;
   props: Props;
@@ -66,7 +67,7 @@ class Accordion extends Component {
     this.props.onChange(this.props.accordion ? activeItems[0] : activeItems);
   }
 
-  renderItems = () => {
+  renderItems() {
     const { accordion, children } = this.props;
 
     return React.Children.map(children, (item, index) => {
@@ -82,10 +83,10 @@ class Accordion extends Component {
         onClick: this.handleClick.bind(this, key),
       });
     });
-  };
+  }
 
   render() {
-    const { className } = this.props;
+    const { className, children } = this.props;
     return (
       <div className={className}>
         {this.renderItems()}
