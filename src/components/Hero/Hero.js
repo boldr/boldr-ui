@@ -2,7 +2,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import type { ReactChildren } from '../../types/react';
-import Heading from '../Heading';
 import { Grid, Col } from '../Layout';
 
 type Props = {

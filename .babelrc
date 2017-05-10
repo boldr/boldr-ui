@@ -1,26 +1,11 @@
 {
   "presets": ["es2015", "stage-2", "react"],
-  "plugins": [
-    "syntax-flow",
-    "transform-class-properties",
-    ["transform-runtime", {
-      "polyfill": false,
-      "regenerator": false
-    }],
-  ],
-  "env": {
-    "production": {
-      "plugins": [
-        "ramda",
-        "transform-class-properties",
-        ["transform-runtime", {
-          "polyfill": false,
-          "regenerator": false
-        }],
-        "transform-flow-strip-types",
-        ["transform-react-remove-prop-types", {"mode": "wrap"}],
-        "add-module-exports"
-      ]
-    }
-  }
+        "plugins": [
+          "syntax-flow",
+          "ramda",
+          "transform-class-properties",
+          "transform-flow-strip-types",
+          ["transform-react-remove-prop-types", {"mode": "wrap"}],
+          "add-module-exports"
+        ]
 }

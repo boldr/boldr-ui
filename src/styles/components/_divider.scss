@@ -33,7 +33,7 @@ $divider-height: 1px !default;
   }
 
   .#{$boldr-ns}divider__inset {
-    margin-left: $list-pad-left;
+    margin-left: 40px;
   }
 
   @if $include-borders {

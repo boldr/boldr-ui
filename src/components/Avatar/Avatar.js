@@ -76,12 +76,12 @@ export default class Avatar extends PureComponent {
 
   _getColor(suffix, suffixes, color) {
     if (suffix) {
-      return `md-avatar--${suffix}`;
+      return `boldrui-avatar--${suffix}`;
     } else if (!!suffixes && !color) {
-      return 'md-avatar--default';
+      return 'boldrui-avatar--default';
     }
 
-    return `md-avatar--${color}`;
+    return `boldrui-avatar--${color}`;
   }
 
   render() {
@@ -103,18 +103,23 @@ export default class Avatar extends PureComponent {
       <div
         {...props}
         className={cn(
-          'md-inline-block md-avatar',
+          'boldrui-inline-block boldrui-avatar',
           this._getColor(suffix, suffixes, this.state.color),
           {
-            'md-avatar--icon-sized': iconSized,
+            'boldrui-avatar__icon-sized': iconSized,
           },
           className,
         )}
       >
         {src &&
-          <img src={src} alt={alt} role={role} className="md-avatar-img" />}
+          <img
+            src={src}
+            alt={alt}
+            role={role}
+            className="boldrui-avatar__img"
+          />}
         {!src &&
-          <div className="md-avatar-content">
+          <div className="boldrui-avatar__content">
             {icon || children}
           </div>}
       </div>

@@ -24,6 +24,7 @@ import TopbarLink from '../src/components/Topbar/TopbarLink';
 import menuItems from './items';
 import NewPost from './NewPost';
 import App from './App';
+import Settings from './Settings';
 
 injectGlobal`
   body {
@@ -34,6 +35,9 @@ class Root extends PureComponent {
   renderMain = () => {
     return <App />;
   };
+    renderSettings = () => {
+      return <Settings />;
+    };
 renderNewPost = () => <NewPost />;
   render() {
     return (
@@ -41,6 +45,7 @@ renderNewPost = () => <NewPost />;
           <Route exact path="/" render={this.renderMain} />
           <Route exact path="/admin/posts" render={this.renderNewPost} />
               <Route exact path="/admin/new-post" render={this.renderNewPost} />
+              <Route exact path="/admin/settings" render={ this.renderSettings} />
         </Switch>
     );
   }

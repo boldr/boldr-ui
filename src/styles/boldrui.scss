@@ -12,12 +12,11 @@ $dash-ns: 'boldrui-dash-'; // .#{$dash-ns}
 // Our mixins
 @import 'abstracts/mixins';
 // Bootstrap components and custom bootstrap component variations
-@import 'vendor/all';
+// @import 'vendor/all';
 // Base (typography, grid, animation)
 @import 'base/all';
 @import 'components/all';
 
-@include react-md-everything;
+// @include react-md-everything;
 @include boldrui-paper;
-@include boldrui-media;
 @include boldrui-divider;

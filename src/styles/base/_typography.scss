@@ -12,11 +12,11 @@ h5 {
 }
 
 .h1 {
-  font-size: 2rem;
+  font-size: 3.5rem;
 }
 
 .h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 .h3 {
@@ -49,27 +49,6 @@ h5 {
 
 .boldrui-h-light {
   color: #fff;
-}
-
-h1 {
-  min-height: 1rem;
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 2.2rem;
-}
-
-h3 {
-  font-size: 1.8rem;
-}
-
-h4 {
-  font-size: 1.4rem;
-}
-
-h5 {
-  font-size: 1rem;
 }
 
 h1:first-child,
@@ -112,48 +91,16 @@ p:last-child {
   margin-bottom: 0;
 }
 
-.font-xs {
-  font-size: 0.75rem !important;
-}
-
-.font-sm {
-  font-size: 0.85rem !important;
-}
-
-.font-lg {
-  font-size: 1rem !important;
-}
-
-.font-xl {
-  font-size: 1.25rem !important;
-}
-
-.font-2xl {
-  font-size: 1.5rem !important;
-}
-
-.font-3xl {
-  font-size: 1.75rem !important;
-}
-
-.font-4xl {
-  font-size: 2rem !important;
-}
-
-.font-5xl {
-  font-size: 2.5rem !important;
-}
-
 .md-icon {
-  color: $md-icon-color;
-  font-size: $md-font-icon-size;
+  color: $icon-color;
+  font-size: $font-icon-size;
   text-align: center;
   transition-duration: $transition-length;
   transition-property: color;
   user-select: none;
 
   &--disabled {
-    color: $md-font-icon-light-theme-disabled-color;
+    color: $font-icon-disabled-color;
   }
 
   &--inherit {
@@ -179,11 +126,11 @@ p:last-child {
     line-height: inherit;
 
     &:first-child {
-      padding-right: $md-font-icon-separator-padding;
+      padding-right: 16px;
     }
 
     &:last-child {
-      padding-left: $md-font-icon-separator-padding;
+      padding-left: 16px;
     }
   }
 }

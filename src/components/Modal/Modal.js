@@ -1,6 +1,5 @@
 /* @flow */
 import React from 'react';
-import Button from 'react-md/lib/Buttons';
 import Dialog from '../Dialog';
 import type { ReactChildren } from '../../types/react.js.flow';
 import Paper from '../Paper';
@@ -11,6 +10,7 @@ type Props = {
   children: ReactChildren,
   visible: boolean,
   closeable: boolean,
+  title: string,
 };
 const Modal = (props: Props) => {
   return (
@@ -21,6 +21,7 @@ const Modal = (props: Props) => {
       closeable={props.closeable}
       onClose={props.onClose}
       onAfterOpen={props.onAfterOpen}
+      title={props.title}
     >
       {props.children}
 

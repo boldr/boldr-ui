@@ -105,7 +105,7 @@ const Dialog = ({ children, title, closeable, onClose, ...props }) => {
     >
       {hasHeader &&
         <Header>
-          <StyledHeading type="h2" reverse={props.reverse}>
+          <StyledHeading type="h2">
             {title}
           </StyledHeading>
           {closeable && <Icon kind="close" color="#222" onClick={onClose} />}

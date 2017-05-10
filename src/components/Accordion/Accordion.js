@@ -18,14 +18,14 @@ class Accordion extends Component {
     onChange: () => {},
     className: 'boldrui-accordion',
   };
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
     const activeItems = this.preExpandedItems();
     this.state = {
       activeItems,
       accordion: true,
     };
-    this.renderItems = this.renderItems.bind(this);
+    (this: any).renderItems = this.renderItems.bind(this);
   }
   state: State;
   props: Props;

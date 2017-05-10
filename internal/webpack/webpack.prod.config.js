@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
+const BabiliPlugin = require('babili-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
@@ -27,10 +28,12 @@ module.exports = {
       commonjs: 'react-dom',
       amd: 'react-dom',
     },
-    'styled-components': 'var StyledComponents',
-    'react-transition-group': 'var React.TransitionGroup',
-    'react-addons-css-transition-group': 'var React.addons.CSSTransitionGroup',
-    'react-addons-transition-group': 'var React.addons.TransitionGroup',
+    'styled-components': 'StyledComponents',
+    'react-transition-group': 'React.TransitionGroup',
+    'react-dom/server': 'ReactDOMServer',
+    'react-router-dom': 'ReactRouterDOM',
+    'material-ui': 'MaterialUi',
+    'prop-types': 'PropTypes',
   },
   resolve: {
     extensions: ['.js', '.scss', '.css'],
@@ -55,7 +58,7 @@ module.exports = {
                 modules: false,
                 context: path.join(process.cwd(), './src'),
                 localIdentName: '[name]__[local].[hash:base64:5]',
-                minimize: false,
+                minimize: true,
               },
             },
             'postcss-loader',

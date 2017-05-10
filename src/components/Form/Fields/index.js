@@ -1,5 +1,5 @@
 import InputField from './InputField';
-import SelectField from './SelectField';
+import SelectInput from './SelectInput';
 import RadioField from './RadioField';
 
-export { InputField, RadioField, SelectField };
+export { InputField, RadioField, SelectInput };

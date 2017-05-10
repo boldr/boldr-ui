@@ -1,9 +1,10 @@
 /* @flow */
 import React from 'react';
-import FontIcon from 'react-md/lib/FontIcons';
+
 import styled from 'styled-components';
 import classnames from 'classnames';
-import Heading from '../Heading';
+import Headline from '../Headline';
+import FontIcon from '../FontIcon';
 import { StyleClasses } from '../../theme/styleClasses';
 import StatLabel from './StatLabel';
 import StatValue from './StatValue';
@@ -51,9 +52,9 @@ const StatsWidget = (props: Props) => {
   const classes = classnames(BASE_ELEMENT, props.className);
   return (
     <div className={classes}>
-      <Heading align="left" size={titleSize}>
+      <Headline type={titleSize}>
         <FontIcon>assessment</FontIcon> {title}
-      </Heading>
+      </Headline>
       <StatsList>
         {statistics.map(s => (
           <StatsListItem key={Math.random()}>
