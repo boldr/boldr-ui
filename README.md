@@ -8,6 +8,8 @@ Have questions or want to help with development? Join us on <a href="https://sla
 
 
 ## Components
+
+[![Join the chat at https://gitter.im/getboldr/boldr-ui](https://badges.gitter.im/getboldr/boldr-ui.svg)](https://gitter.im/getboldr/boldr-ui?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 - Accordion
 - Avatar
 - Block
