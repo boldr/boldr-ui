@@ -1,0 +1,13 @@
+node_modules
+/build/
+/tmp/
+/coverage/
+/docs/build/
+/internal/flow/
+/flow-typed/
+/packages/*/lib/
+/packages/material-ui-icons/build/
+/packages/material-ui-icons/src/
+/packages/material-ui-icons/tpl/
+/test/coverage/
+/test/regressions/site/build/

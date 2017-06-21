@@ -1,30 +1,18 @@
-[*]
-charset=utf-8
-end_of_line=lf
+# EditorConfig is awesome: http://EditorConfig.org
 
-insert_final_newline=true
-indent_style=space
-indent_size=2
-
-[{*.ng,*.sht,*.html,*.shtm,*.shtml,*.htm}]
-indent_style=space
-indent_size=4
-
-[{*.jhm,*.xslt,*.xul,*.rng,*.xsl,*.xsd,*.ant,*.svg,*.tld,*.fxml,*.jrxml,*.xml,*.jnlp,*.wsdl}]
-indent_style=space
-indent_size=4
-
-[{.babelrc,.stylelintrc,.eslintrc,*.json,*.jsb3,*.jsb2,*.bowerrc}]
-indent_style=space
-indent_size=2
-
-[{*.ats,*.ts}]
-indent_style=space
-indent_size=4
-
-[{*.yml,*.yaml}]
-indent_style=space
-indent_size=2
+# top-most EditorConfig file
+root = true
 
 [*.md]
-trim_trailing_whitespace=false
+trim_trailing_whitespace = false
+
+[*.js]
+trim_trailing_whitespace = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+insert_final_newline = true

@@ -2,9 +2,6 @@
 const babelJest = require('babel-jest');
 
 module.exports = babelJest.createTransformer({
-  presets: ['stage-2', 'es2015', 'react'],
-  plugins: [
-    'syntax-flow',
-    'transform-class-properties',
-  ],
+  presets: ['es2015', 'stage-1', 'react'],
+  plugins: ['transform-flow-strip-types', 'transform-class-properties'],
 });

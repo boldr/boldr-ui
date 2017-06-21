@@ -1,16 +1,9 @@
-const postcssCssnext = require("postcss-cssnext");
-const postcssReporter = require("postcss-reporter");
-
-module.exports = {
+module.exports = () => ({
+  // The list of plugins for PostCSS
+  // https://github.com/postcss/postcss
   plugins: [
-    postcssCssnext({
-      overflowWrap: true,
-      rem: false,
-      colorRgba: false,
-      autoprefixer: {
-        browsers: ["> 1%", "last 2 versions"],
-      },
+    require('autoprefixer')({
+      browsers: ['> .5% in US', 'last 1 versions'],
     }),
-    postcssReporter({ clearMessages: true }),
   ],
-};
+});

@@ -1,12 +1,16 @@
+
+/// Namespace
+$boldr-ns: "boldrui-" !default;
+$dash-ns: "boldrui-dash-"; // .#{$dash-ns}
 /// Typography
 /// @group typography
-$font-name: 'Roboto' !default;
+$font-name: "Roboto" !default;
 /// @group typography
-$font-family: $font-name, 'Helvetica Neue', Arial, Helvetica, sans-serif !default;
+$font-family: $font-name, "Helvetica Neue", Arial, Helvetica, sans-serif !default;
 /// @group typography
-$header-font-name: 'Roboto' !default;
+$header-font-name: "Chivo" !default;
 /// @group typography
-$header-font-family: $header-font-name, 'Helvetica Neue', Arial, Helvetica, sans-serif !default;
+$header-font-family: $header-font-name, "Helvetica Neue", Arial, Helvetica, sans-serif !default;
 /// @group typography
 $font-size-base: 1rem !default;
 /// @group typography
@@ -26,7 +30,7 @@ $font-weight-thin: 200 !default;
 /// @group typography
 $font-weight-bold: 600 !default;
 /// @group typography
-$header-font-weight: $font-weight-thin !default;
+$header-font-weight: $font-weight-bold !default;
 /// @group typography
 $btn-font-weight: $font-weight-base !default;
 /// @group typography
@@ -34,6 +38,10 @@ $header-font-case: none !default;
 $md-badge-include-default: true;
 $md-list-include-inline: true;
 
+/// Misc
+/// @group misc
+$speed: 86ms !default;
+$easing: ease-out !default;
 /// Options
 /// @group options
 $border-width: 1px;
@@ -52,7 +60,13 @@ $btn-line-height: 1.25 !default;
 $input-btn-border-width: $border-width !default;
 $btn-padding-x: 1rem !default;
 $btn-padding-y: 0.5rem !default;
-
+// $tablet: 769px !default
+// // 960px container + 40px
+// $desktop: 1000px !default
+// // 1152px container + 40
+// $widescreen: 1192px !default
+// // 1344px container + 40
+// $fullhd: 1384px !default
 /// The default transition time to use on most animations/transitions.
 /// @type Number
 /// @group transitions
@@ -60,17 +74,17 @@ $transition-length: 0.25s !default;
 $grid-columns: 12 !default;
 $grid-gutter: 2rem !default;
 $grid-breakpoints: (
-  xs: false,
-  sm: 48em,
-  md: 62em,
-  lg: 75em
+    xs: false,
+    sm: 48em,
+    md: 62em,
+    lg: 75em
 ) !default;
 
 $grid-containers: (
-  xs: false,
-  sm: 46rem,
-  md: 61rem,
-  lg: 71rem,
+    xs: false,
+    sm: 46rem,
+    md: 61rem,
+    lg: 71rem,
 ) !default;
 
 $small-viewport: 48em;
@@ -96,7 +110,7 @@ $md-primary-hover-opacity: 0.9 !default;
 /// The text color to use for any text that inside the `.md-background--primary` class name.
 /// This should ideally pass the color contrast test when.
 /// @type Color
-$md-primary-background-text-color: $md-white-base !default;
+$md-primary-background-text-color: $white !default;
 
 /// The secondary color to use throughout the app. This should be a color
 /// with a `-a-{NUMBER}` suffix.
@@ -115,18 +129,21 @@ $md-secondary-hover-opacity: 0.9 !default;
 /// This should ideally pass the color contrast test when.
 /// @type Color
 $media-included: true !default;
-$md-secondary-background-text-color: $md-white-base !default;
-$md-transition-deceleration: cubic-bezier(0, 0, .2, 1);
+$md-secondary-background-text-color: $white !default;
+$md-transition-deceleration: cubic-bezier(0, 0, 0.2, 1);
 /// Boolean if the application is to be themed with the light theme.
 /// @type Boolean
 /// @group themes
 $boldrui-light-theme: true !default;
 $shadow-color: rgba(0, 0, 0, 0.2) !default;
 $body-background: $cloud !default;
-$link-color: $accent-color !default;
+$link-color: $primary-color !default;
+$link-hover-color: $carmine-pink;
 $error-color: $carmine-pink !default;
 $warning-color: $golden !default;
 $text-color: $black-transparent !default;
+$text-color-light: #afbbca;
+$text-color-disabled: #577083;
 $header-font-color: $navy !default;
 $border-color: rgba(0, 0, 0, 0.1) !default;
 
@@ -137,13 +154,48 @@ $btn-border-radius: $border-radius !default;
 $border-width: 1 !default;
 
 $breadcrumb-borders: (
-  bottom: (
-    size:                           1px,
-    style:                          solid,
-    color:                          $border-color
-  )
+    bottom: (
+        size:                           1px,
+        style:                          solid,
+        color:                          $border-color
+    )
 );
 $layout-transition-speed: 0.25s !default;
+
+/// Button
+/// @group btn
+$btn-white: #fff;
+$btn-gray: #bbb;
+$btn-light-gray: #e5e5e5;
+
+$btn-primary: $primary-color;
+$btn-primary-hover: darken($primary-color, 5%);
+$btn-primary-active: darken($primary-color, 5%);
+
+$btn-secondary: $secondary-color;
+$btn-secondary-hover: darken($secondary-color, 5%);
+$btn-secondary-active: darken($secondary-color, 5%);
+
+$btn-danger: #f44;
+$btn-danger-hover: #f66;
+$btn-danger-active: #e33;
+
+
+/// Site Header
+/// @group siteheader
+$site-header-bg: $snow;
+$site-header-height: 70px;
+
+/// Paper
+$paper-dark-bg: $big-stone;
+$paper-light-bg: $white;
+
+/// Tag
+$tag-bg: #f3f3f3;
+$tag-font-size: 12px;
+
+/// Dashboard Sidebar
+/// @group sidebar
 $sidebar-width: 200px !default;
 $sidebar-padding: 0;
 $sidebar-top-space: 1rem;
@@ -189,20 +241,12 @@ $topbar-link-transform: uppercase;
 /// @group topbar
 $zindex-topbar: 1000;
 $topbar-border: (
-  bottom: (
-    size:                       1px,
-    style:                      solid,
-    color:                      $border-color
-  )
+    bottom: (
+        size:                       1px,
+        style:                      solid,
+        color:                      $border-color
+    )
 );
-
-/// Dashboard Footer
-/// @group dashboard
-$dash-footer-height: 50px !default;
-$dash-footer-bg: $snow !default;
-$dash-footer-color: #636c72;
-$dash-footer-line-height: 17px !default;
-
 
 /// The default min width for a mobile device.
 /// @type Number
@@ -253,3 +297,10 @@ $md-tablet-landscape-media: 'screen and (min-width: #{$md-tablet-min-width}) and
 /// @type String
 /// @group media-queries
 $desktop-media: 'screen and (min-width: #{$md-desktop-min-width})' !default;
+
+
+
+/// Z-Indexes
+/// @group zindex
+/// Efficient way of keeping track of z-indexes
+$site-header-zindex: 2000;

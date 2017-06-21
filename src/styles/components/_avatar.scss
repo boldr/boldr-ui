@@ -1,31 +1,30 @@
 ////
-/// @group avatars
+/// @group avatar
 ////
-
 
 /// The default size for an avatar
 /// @type Number
 $avatar-size: 40px !default;
 
-.boldrui-avatar {
-  border: 0;
-  border-radius: 50%;
-  height: $avatar-size;
-  overflow: hidden;
-  text-align: center;
-  width: $avatar-size;
+.#{$boldr-ns}avatar {
+    overflow: hidden;
+    width: $avatar-size;
+    height: $avatar-size;
+    border: 0;
+    border-radius: 50%;
+    text-align: center;
 }
 
-.boldrui-avatar__img {
-  height: 100%;
-  width: auto;
+.#{$boldr-ns}avatar__img {
+    width: auto;
+    height: 100%;
 }
 
-.boldrui-avatar__content {
-  align-items: center;
-  display: flex;
-  font-size: 24px;
-  height: 100%;
-  justify-content: center;
-  width: 100%;
+.#{$boldr-ns}avatar__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
 }

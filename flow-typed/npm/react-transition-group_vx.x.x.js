@@ -1,4 +1,4 @@
-// flow-typed signature: 6148bc20011cbe246ec54b9bbdeeb852
+// flow-typed signature: 5b3d7f6af1a705d56105244745ee301b
 // flow-typed version: <<STUB>>/react-transition-group_v^1.1.2/flow_v0.44.2
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 
