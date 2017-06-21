@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 export type Props = {
-  fluid: boolean,
+  fluid: ?boolean,
   className: ?string,
   style: ?Object,
   children: ReactChildren,
@@ -14,6 +14,7 @@ export type Props = {
 class Grid extends PureComponent {
   static defaultProps = {
     componentClass: 'div',
+    fluid: false,
   };
   props: Props;
   render() {

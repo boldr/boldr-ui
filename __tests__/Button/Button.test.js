@@ -190,13 +190,13 @@ describe('<Button />', () => {
     mount(<Button />);
     expect(buttonNode.type).toBe('button');
 
-    mount(<Button type="submit" />);
+    mount(<Button htmlType="submit" />);
     expect(buttonNode.type).toBe('submit');
 
-    mount(<Button type="reset" />);
+    mount(<Button htmlType="reset" />);
     expect(buttonNode.type).toBe('reset');
 
-    mount(<Button type="button" />);
+    mount(<Button htmlType="button" />);
     expect(buttonNode.type).toBe('button');
   });
 

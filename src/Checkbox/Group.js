@@ -69,7 +69,7 @@ export default class Group extends PureComponent {
     });
 
     const classString = classNames({
-      [`${prefix}-checkbox-group`]: true,
+      [`${prefix}-checkbox__group`]: true,
       [className]: !!className,
     });
 

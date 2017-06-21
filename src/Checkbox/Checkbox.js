@@ -61,16 +61,16 @@ export default class Checkbox extends Component {
 
     const classString = classNames({
       [className]: !!className,
-      [`${prefix}-checkbox-wrap`]: true,
-      [`${prefix}-checkbox-checked`]: !!checked,
-      [`${prefix}-checkbox-disabled`]: disabled || readOnly,
-      [`${prefix}-checkbox-indeterminate`]: indeterminate,
+      [`${prefix}-checkbox__wrap`]: true,
+      [`${prefix}-checkbox__checked`]: !!checked,
+      [`${prefix}-checkbox__disabled`]: disabled || readOnly,
+      [`${prefix}-checkbox__indeterminate`]: indeterminate,
     });
 
     return (
       <label className={classString} style={style}>
         <span className={`${prefix}-checkbox`}>
-          <span className={`${prefix}-checkbox-inner`} />
+          <span className={`${prefix}-checkbox__inner`} />
           <input
             {...others}
             type="checkbox"

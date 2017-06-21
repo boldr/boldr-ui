@@ -248,58 +248,6 @@ $topbar-border: (
     )
 );
 
-/// The default min width for a mobile device.
-/// @type Number
-/// @group media-queries
-$md-mobile-min-width: 320px !default;
-
-/// The default min width for a tablet device.
-/// @type Number
-/// @group media-queries
-$md-tablet-min-width: 768px !default;
-
-/// The default min width for a desktop screen.
-/// @type Number
-/// @group media-queries
-$md-desktop-min-width: 1025px !default;
-
-/// The default mobile media query.
-/// @type String
-/// @group media-queries
-$md-mobile-media: 'screen and (min-width: #{$md-mobile-min-width})' !default;
-
-/// The default media query for a portrait mobile device.
-/// @type String
-/// @group media-queries
-$md-mobile-portrait-media: 'screen and (min-width: #{$md-mobile-min-width}) and (orientation: portrait)' !default;
-
-/// The default media query for a landscape mobile device.
-/// @type String
-/// @group media-queries
-$md-mobile-landscape-media: 'screen and (min-width: #{$md-mobile-min-width}) and (orientation: landscape)' !default;
-
-/// The default media query for a tablet device.
-/// @type String
-/// @group media-queries
-$md-tablet-media: 'screen and (min-width: #{$md-tablet-min-width})' !default;
-
-/// The default media query for a portrait tablet device.
-/// @type String
-/// @group media-queries
-$md-tablet-portrait-media: 'screen and (min-width: #{$md-tablet-min-width}) and (orientation: protrait)' !default;
-
-/// The default media query for a landscape tablet device.
-/// @type String
-/// @group media-queries
-$md-tablet-landscape-media: 'screen and (min-width: #{$md-tablet-min-width}) and (orientation: landscape)' !default;
-
-/// The default media query for a desktop device.
-/// @type String
-/// @group media-queries
-$desktop-media: 'screen and (min-width: #{$md-desktop-min-width})' !default;
-
-
-
 /// Z-Indexes
 /// @group zindex
 /// Efficient way of keeping track of z-indexes

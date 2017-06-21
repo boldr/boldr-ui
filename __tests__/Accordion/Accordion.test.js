@@ -2,8 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
-import Accordion from '../../src/Accordion';
-import AccordionItem from '../../src/Accordion/AccordionItem';
+import { Accordion, AccordionItem } from '../../src/Accordion';
 
 describe('Accordion', () => {
   it('renders correctly with min params', () => {

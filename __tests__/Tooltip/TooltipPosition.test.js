@@ -1,4 +1,4 @@
-import position from './TooltipPosition';
+import position from '../../src/Tooltip/TooltipPosition';
 
 describe('Tooltip position calculation helper', () => {
   let anchor, element;

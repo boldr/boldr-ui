@@ -1,9 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import AccordionItemTitle from '../../src/Accordion/AccordionItemTitle/AccordionItemTitle';
-import AccordionItemBody from '../../src/Accordion/AccordionItemBody/AccordionItemBody';
-import AccordionItem from '../../src/Accordion/AccordionItem';
+import { AccordionItem, AccordionItemTitle, AccordionItemBody } from '../../src/Accordion';
 
 jest.mock('uuid', () => {
   return {

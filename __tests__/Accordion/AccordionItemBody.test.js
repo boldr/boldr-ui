@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import AccordionItemBody from '../../src/Accordion/AccordionItemBody';
+import {AccordionItemBody} from '../../src/Accordion';
 
 describe('AccordionItemBody', () => {
   it('renders correctly with min params', () => {

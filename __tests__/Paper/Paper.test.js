@@ -1,19 +1,11 @@
 /* eslint-env jest */
 import React from 'react';
-import { findDOMNode } from 'react-dom';
-import TestUtils from 'react-dom/lib/ReactTestUtils';
-
+import { shallowToJson } from 'enzyme-to-json';
+import { shallow, mount } from 'enzyme';
 import Paper from '../../src/Paper';
 
-test('<Paper /> merges className and style', () => {
-  const props = {
-    style: { background: 'black' },
-    className: 'test',
-  };
+test('<Paper /> matches the snapshot', () => {
+  const wrapper = shallow(<Paper zDepth={3} />);
 
-  const paper = TestUtils.renderIntoDocument(<Paper {...props} />);
-
-  const paperNode = findDOMNode(paper);
-  expect(paperNode.style.background).toBe(props.style.background);
-  expect(paperNode.className).toContain(props.className);
+  expect(shallowToJson(wrapper)).toMatchSnapshot();
 });

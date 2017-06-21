@@ -68,15 +68,15 @@ const iconList = [
   'replace',
 ];
 
-type Props = {
-  color: string,
-  className: string,
-  height: number,
+export type Props = {
+  color: ?string,
+  className: ?string,
+  height: ?number,
   kind: string,
-  preview: boolean,
-  onClick: () => void,
-  size: number,
-  width: number,
+  preview: ?boolean,
+  onClick: ?() => void,
+  size: ?number | ?string,
+  width: ?number,
 };
 export default class Icon extends PureComponent {
   static defaultProps = {

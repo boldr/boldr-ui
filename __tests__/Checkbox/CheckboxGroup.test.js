@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-dom/lib/ReactTestUtils';
 import Checkbox from '../../src/Checkbox';
-import CheckboxGroup from '../../src/Checkbox/CheckboxGroup';
+import CheckboxGroup from '../../src/Checkbox/Group';
 
 describe('Controlled CheckboxGroup', () => {
   it('value', () => {

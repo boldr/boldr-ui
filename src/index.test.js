@@ -8,9 +8,5 @@
 import * as BoldrUI from './index';
 
 describe('BoldrUI', () => {
-  it('should have exports', () => assert.ok(BoldrUI));
-
-  it('should not do undefined exports', () => {
-    Object.keys(BoldrUI).forEach(exportKey => assert.ok(BoldrUI[exportKey]));
-  });
+  it('should have exports', () => expect(BoldrUI).toBeDefined());
 });
