@@ -4,7 +4,7 @@ coverage
 /lib
 .eslintcache
 tmp
-
+packages/material-ui-icons
 # OS files
 .DS_STORE
 
