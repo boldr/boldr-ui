@@ -7,6 +7,8 @@
   "main": "./src/index.js",
   "keywords": [
     "react",
+    "boldr",
+    "react-ui",
     "react-component"
   ],
   "repository": {
