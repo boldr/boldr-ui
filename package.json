@@ -38,6 +38,7 @@
     "start": "cd docs && npm start",
     "flow": "flow",
     "test": "NODE_ENV=test jest",
+    "test:ci": "NODE_ENV=test jest",
     "publish": "npm run build && cd build && npm publish --tag next"
   },
   "peerDependencies": {
