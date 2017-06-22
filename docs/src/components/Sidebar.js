@@ -60,7 +60,7 @@ function Sidebar(props) {
         <Nav id="orders">
           <NavIcon><Icon kind="folder-upload" color="#fff" size="20" /></NavIcon>
           <NavText>
-          Orders
+            Orders
           </NavText>
         </Nav>
 

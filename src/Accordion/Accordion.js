@@ -70,8 +70,7 @@ class Accordion extends Component {
 
     return React.Children.map(children, (item, index) => {
       const key = index;
-      const expanded =
-        this.state.activeItems.indexOf(key) !== -1 && !item.props.disabled;
+      const expanded = this.state.activeItems.indexOf(key) !== -1 && !item.props.disabled;
 
       return React.cloneElement(item, {
         disabled: item.props.disabled,

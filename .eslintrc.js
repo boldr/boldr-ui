@@ -3,6 +3,6 @@ module.exports = {
   root: true,
   extends: ['boldr', 'boldr/react', 'boldr/flowtype'],
   rules: {
-    'max-lines': 0
-  }
+    'max-lines': 0,
+  },
 };

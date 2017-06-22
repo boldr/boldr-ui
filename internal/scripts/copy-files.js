@@ -41,7 +41,7 @@ function createPackageFile() {
       } = packageData;
 
       const minimalPackage = {
-        name: 'boldr-ui',
+        name: '@boldr/ui',
         author,
         version,
         description,

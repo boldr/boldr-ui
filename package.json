@@ -1,8 +1,7 @@
 {
   "name": "@boldr/ui",
-  "private": true,
   "author": "Steven Truesdell",
-  "version": "0.1.0-beta.1",
+  "version": "0.1.0-beta.2",
   "description": "UI components for Boldr",
   "main": "./src/index.js",
   "keywords": [
@@ -41,7 +40,7 @@
     "flow": "flow",
     "test": "NODE_ENV=test jest",
     "test:ci": "NODE_ENV=test jest",
-    "publish": "npm run build && cd build && npm publish --tag next"
+    "publish": "npm run build && cd build && npm publish --access=public"
   },
   "peerDependencies": {
     "react": "^15.6.0",
