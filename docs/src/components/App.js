@@ -2,14 +2,18 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import Page from 'docs/src/components/Page';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory';
+
+import Home from 'docs/src/pages/Home';
+const history = createHistory();
 
 function App(props) {
-  return <Page />;
+  return (
+    <Router history={history}>
+      <Route path="/" component={Home} />
+    </Router>
+  );
 }
-
-App.propTypes = {
-  dark: PropTypes.bool.isRequired,
-};
 
 export default App;

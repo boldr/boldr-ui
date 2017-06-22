@@ -1,6 +1,7 @@
 // @flow weak
 const path = require('path');
 const webpack = require('webpack');
+const LodashWebpackPlugin = require('lodash-webpack-plugin');
 const BabiliWebpackPlugin = require('babili-webpack-plugin');
 const libraryName = 'boldr-ui';
 
@@ -62,6 +63,7 @@ if (process.env.NODE_ENV === 'production') {
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production'),
       }),
+      new LodashWebpackPlugin(),
       new BabiliWebpackPlugin(),
     ]),
   });

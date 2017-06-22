@@ -1,71 +1,92 @@
-/* @flow */
-/* eslint-disable max-len, react/no-unescaped-entities */
+/* @flow eslint-disable max-lines, max-len, react/no-unescaped-entities */
 import React, { PureComponent } from 'react';
 
 import classnames from 'classnames';
 import BaseIcon from './BaseIcon';
 
 const iconList = [
-  'menu',
-  'grid-view',
-  'list-view',
-  'visible',
-  'hidden',
-  'edit',
-  'delete',
-  'calendar',
-  'new-post',
-  'facebook',
-  'twitter',
-  'google',
-  'linkedin',
-  'github',
-  'chevron-right',
-  'account-card',
-  'tags',
-  'folder-upload',
-  'routes',
-  'shovel',
-  'posts',
-  'settings',
-  'close',
-  'search',
-  'more',
-  'more_vert',
-  'archive',
+  'activity',
   'account',
-  'logout',
-  'dashboard',
-  'arrow-left',
-  'datepicker-arrow',
-  'bold',
-  'italic',
-  'underline',
-  'align-right',
-  'align-left',
+  'account-card',
+  'anchor',
   'align-center',
-  'justify',
-  'outdent',
-  'indent',
-  'ordered',
-  'unordered',
+  'align-left',
+  'align-right',
+  'archive',
+  'arrow-left',
+  'bold',
+  'calendar',
+  'chevron-left',
+  'chevron-right',
+  'chevron-up',
+  'chevron-down',
+  'close',
   'color',
+  'crosshair',
+  'dashboard',
+  'datepicker-arrow',
+  'delete',
+  'edit',
   'embedded',
   'emoji',
-  'link',
-  'unlink',
-  'image',
-  'undo',
-  'redo',
-  'history',
   'eraser',
-  'strikethrough',
+  'external-link',
+  'file',
+  'file-plus',
+  'file-minus',
+  'file-text',
+  'headphones',
+  'layout',
+  'facebook',
+  'folder',
+  'folder-upload',
+  'github',
+  'globe',
+  'google',
+  'grid',
+  'grid-view',
+  'hash',
+  'hidden',
+  'history',
+  'image',
+  'indent',
+  'italic',
+  'justify',
+  'link',
+  'linkedin',
+  'list-view',
+  'logout',
+  'menu',
   'monospace',
+  'more',
+  'more_vert',
+  'navigation',
+  'new-post',
+  'ordered',
+  'outdent',
+  'package',
+  'plus2',
+  'posts',
+  'redo',
+  'replace',
+  'routes',
+  'search',
+  'settings',
+  'shield',
+  'shovel',
+  'strikethrough',
   'subscript',
   'superscript',
-  'external-link',
-  'plus2',
-  'replace',
+  'tags',
+  'tag',
+  'trash',
+  'twitter',
+  'underline',
+  'undo',
+  'unlink',
+  'unordered',
+  'visible',
+  'zap',
 ];
 
 export type Props = {
@@ -81,7 +102,7 @@ export type Props = {
 export default class Icon extends PureComponent {
   static defaultProps = {
     size: 24,
-    color: '#fff',
+    color: '#f4f4f4',
   };
   props: Props;
   renderIcon(kind: string) {
@@ -90,6 +111,487 @@ export default class Icon extends PureComponent {
     switch (kind) {
       default:
         return null;
+
+      case 'folder':
+        return (
+          /* eslint-disable */
+          <BaseIcon viewBox="0 0 24 24" {...this.props}>
+            <g>
+              <path
+                d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+                fill="none"
+                stroke={this.props.color}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+              />
+            </g>
+          </BaseIcon>
+          /* eslint-enable */
+        );
+      case 'file':
+        return (
+          /* eslint-disable */
+          <BaseIcon viewBox="0 0 24 24" {...this.props}>
+            <g
+              fill="none"
+              stroke={this.props.color}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            >
+              <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+              <polyline points="13 2 13 9 20 9" />
+            </g>
+          </BaseIcon>
+          /* eslint-enable */
+        );
+      case 'file-plus':
+        return (
+          /* eslint-disable */
+          <BaseIcon viewBox="0 0 24 24" {...this.props}>
+            <path
+              d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              fill="none"
+              stroke={this.props.color}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
+            <polyline
+              points="14 2 14 8 20 8"
+              fill="none"
+              stroke={this.props.color}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
+            <line
+              x1="12"
+              y1="18"
+              x2="12"
+              y2="12"
+              fill="none"
+              stroke={this.props.color}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
+            <line
+              x1="9"
+              y1="15"
+              x2="15"
+              y2="15"
+              fill="none"
+              stroke={this.props.color}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
+          </BaseIcon>
+          /* eslint-enable */
+        );
+      case 'file-minus':
+        return (
+          /* eslint-disable */
+          <BaseIcon viewBox="0 0 24 24" {...this.props}>
+            <path
+              d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              fill="none"
+              stroke={this.props.color}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
+            <polyline
+              points="14 2 14 8 20 8"
+              fill="none"
+              stroke={this.props.color}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
+            <line
+              x1="9"
+              y1="15"
+              x2="15"
+              y2="15"
+              fill="none"
+              stroke={this.props.color}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
+          </BaseIcon>
+          /* eslint-enable */
+        );
+      case 'file-text':
+        return (
+          /* eslint-disable */
+          <BaseIcon viewBox="0 0 24 24" {...this.props}>
+            <g>
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                fill="none"
+                stroke={this.props.color}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+              />
+              <polyline
+                points="14 2 14 8 20 8"
+                fill="none"
+                stroke={this.props.color}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+              />
+              <line
+                x1="16"
+                y1="13"
+                x2="8"
+                y2="13"
+                fill="none"
+                stroke={this.props.color}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+              />
+              <line
+                x1="16"
+                y1="17"
+                x2="8"
+                y2="17"
+                fill="none"
+                stroke={this.props.color}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+              />
+              <polyline
+                points="10 9 9 9 8 9"
+                fill="none"
+                stroke={this.props.color}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+              />
+
+            </g>
+          </BaseIcon>
+          /* eslint-enable */
+        );
+
+      case 'headphones':
+        return (
+          /* eslint-disable */
+          <BaseIcon viewBox="0 0 24 24" {...this.props}>
+            <path
+              d="M3 18v-6a9 9 0 0 1 18 0v6"
+              fill="none"
+              stroke={this.props.color}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
+            <path
+              d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"
+              fill="none"
+              stroke={this.props.color}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
+          </BaseIcon>
+          /* eslint-enable */
+        );
+      case 'layout':
+        return (
+          /* eslint-disable */
+          <BaseIcon viewBox="0 0 24 24" {...this.props}>
+            <rect
+              x="3"
+              y="3"
+              width="18"
+              height="18"
+              rx="2"
+              ry="2"
+              fill="none"
+              stroke={this.props.color}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
+            <line
+              x1="3"
+              y1="9"
+              x2="21"
+              y2="9"
+              fill="none"
+              stroke={this.props.color}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
+            <line
+              x1="9"
+              y1="21"
+              x2="9"
+              y2="9"
+              fill="none"
+              stroke={this.props.color}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
+          </BaseIcon>
+          /* eslint-enable */
+        );
+      case 'anchor':
+        return (
+          /* eslint-disable */
+          <BaseIcon viewBox="0 0 24 24" {...this.props}>
+            <circle
+              cx="12"
+              cy="5"
+              r="3"
+              fill="none"
+              stroke={this.props.color}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
+            <line
+              x1="12"
+              y1="22"
+              x2="12"
+              y2="8"
+              fill="none"
+              stroke={this.props.color}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
+            <path
+              d="M5 12H2a10 10 0 0 0 20 0h-3"
+              fill="none"
+              stroke={this.props.color}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
+          </BaseIcon>
+          /* eslint-enable */
+        );
+      case 'zap':
+        return (
+          /* eslint-disable */
+          <BaseIcon viewBox="0 0 24 24" {...this.props}>
+            <g>
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+            </g>
+          </BaseIcon>
+          /* eslint-enable */
+        );
+      case 'package':
+        return (
+          /* eslint-disable */
+          <BaseIcon viewBox="0 0 24 24" {...this.props}>
+            <path
+              d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"
+              fill="none"
+              stroke={this.props.color}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
+            <polyline
+              points="2.32 6.16 12 11 21.68 6.16"
+              fill="none"
+              stroke={this.props.color}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
+            <line
+              x1="12"
+              y1="22.76"
+              x2="12"
+              y2="11"
+              fill="none"
+              stroke={this.props.color}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
+            <line
+              x1="7"
+              y1="3.5"
+              x2="17"
+              y2="8.5"
+              fill="none"
+              stroke={this.props.color}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
+
+          </BaseIcon>
+          /* eslint-enable */
+        );
+      case 'shield':
+        return (
+          /* eslint-disable */
+          <BaseIcon viewBox="0 0 24 24" {...this.props}>
+            <path
+              d="M12 22s8-4 8-10V4l-8-2-8 2v8c0 6 8 10 8 10z"
+              fill="none"
+              stroke={this.props.color}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
+          </BaseIcon>
+          /* eslint-enable */
+        );
+      case 'tag':
+        return (
+          /* eslint-disable */
+          <BaseIcon
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke={this.props.color}
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            {...this.props}
+          >
+            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+            <line x1="7" y1="7" x2="7" y2="7" />
+          </BaseIcon>
+          /* eslint-enable */
+        );
+      case 'globe':
+        return (
+          /* eslint-disable */
+          <BaseIcon viewBox="0 0 24 24" {...this.props}>
+            <g>
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+                fill="none"
+                stroke={this.props.color}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+              />
+              <path
+                d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                fill="none"
+                stroke={this.props.color}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+              />
+            </g>
+          </BaseIcon>
+          /* eslint-enable */
+        );
+      case 'crosshair':
+        return (
+          /* eslint-disable */
+          <BaseIcon viewBox="0 0 24 24" {...this.props}>
+            <g>
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+                fill="none"
+                stroke={this.props.color}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+              />
+              <path
+                d="M22 12h-4M6 12H2M12 6V2M12 22v-4"
+                fill="none"
+                stroke={this.props.color}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+              />
+            </g>
+          </BaseIcon>
+          /* eslint-enable */
+        );
+      case 'navigation':
+        return (
+          /* eslint-disable */
+          <BaseIcon viewBox="0 0 24 24" {...this.props}>
+            <g>
+              <path
+                fill="none"
+                stroke={this.props.color}
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 11l19-9-9 19-2-8-8-2z"
+              />
+            </g>
+          </BaseIcon>
+          /* eslint-enable */
+        );
+      case 'activity':
+        return (
+          /* eslint-disable */
+          <BaseIcon viewBox="0 0 24 24" {...this.props}>
+            <g>
+              <path
+                d="M22 12h-4l-3 9L9 3l-3 9H2"
+                fill="none"
+                stroke={this.props.color}
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </g>
+          </BaseIcon>
+          /* eslint-enable */
+        );
+      case 'grid':
+        return (
+          /* eslint-disable */
+          <BaseIcon viewBox="0 0 24 24" {...this.props}>
+            <g>
+              <path
+                stroke={this.props.color}
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"
+              />
+            </g>
+          </BaseIcon>
+          /* eslint-enable */
+        );
+      case 'hash':
+        return (
+          /* eslint-disable */
+          <BaseIcon
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke={this.props.color}
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            {...this.props}
+          >
+            <line x1="4" y1="9" x2="20" y2="9" />
+            <line x1="4" y1="15" x2="20" y2="15" />
+            <line x1="10" y1="3" x2="8" y2="21" />
+            <line x1="16" y1="3" x2="14" y2="21" />
+          </BaseIcon>
+          /* eslint-enable */
+        );
       case 'menu':
         return (
           <BaseIcon viewBox="0 0 48 48" {...this.props}>
@@ -106,7 +608,6 @@ export default class Icon extends PureComponent {
       case 'list-view':
         return (
           <BaseIcon viewBox="0 0 24 24" {...this.props}>
-
             {/* eslint-disable */}
             <path d="M9,5V9H21V5M9,19H21V15H9M9,14H21V10H9M4,9H8V5H4M4,19H8V15H4M4,14H8V10H4V14Z" />
 
@@ -115,7 +616,6 @@ export default class Icon extends PureComponent {
       case 'visible':
         return (
           <BaseIcon viewBox="0 0 24 24" {...this.props}>
-
             {/* eslint-disable */}
             <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z" />
 
@@ -218,7 +718,7 @@ export default class Icon extends PureComponent {
         );
       case 'tags':
         return (
-          <BaseIcon viewBox="0 0 48 48" {...this.props}>
+          <BaseIcon viewBox="0 0 24 24" {...this.props}>
 
             {/* eslint-disable */}
             <path d="M5.5,9A1.5,1.5 0 0,0 7,7.5A1.5,1.5 0 0,0 5.5,6A1.5,1.5 0 0,0 4,7.5A1.5,1.5 0 0,0 5.5,9M17.41,11.58C17.77,11.94 18,12.44 18,13C18,13.55 17.78,14.05 17.41,14.41L12.41,19.41C12.05,19.77 11.55,20 11,20C10.45,20 9.95,19.78 9.58,19.41L2.59,12.42C2.22,12.05 2,11.55 2,11V6C2,4.89 2.89,4 4,4H9C9.55,4 10.05,4.22 10.41,4.58L17.41,11.58M13.54,5.71L14.54,4.71L21.41,11.58C21.78,11.94 22,12.45 22,13C22,13.55 21.78,14.05 21.42,14.41L16.04,19.79L15.04,18.79L20.75,13L13.54,5.71Z" />
@@ -227,7 +727,7 @@ export default class Icon extends PureComponent {
         );
       case 'shovel':
         return (
-          <BaseIcon viewBox="0 0 48 48" {...this.props}>
+          <BaseIcon viewBox="0 0 24 24" {...this.props}>
 
             {/* eslint-disable */}
             <path d="M15.1,1.81L12.27,4.64C11.5,5.42 11.5,6.69 12.27,7.47L13.68,8.88L9.13,13.43L6.31,10.6L4.89,12C-0.06,17 3.5,20.5 3.5,20.5C3.5,20.5 7,24 12,19.09L13.41,17.68L10.61,14.88L15.15,10.34L16.54,11.73C17.32,12.5 18.59,12.5 19.37,11.73L22.2,8.9L15.1,1.81M17.93,10.28L16.55,8.9L15.11,7.46L13.71,6.06L15.12,4.65L19.35,8.88L17.93,10.28Z" />
@@ -236,7 +736,7 @@ export default class Icon extends PureComponent {
         );
       case 'routes':
         return (
-          <BaseIcon viewBox="0 0 48 48" {...this.props}>
+          <BaseIcon viewBox="0 0 24 24" {...this.props}>
 
             {/* eslint-disable */}
             <path d="M11,10H5L3,8L5,6H11V3L12,2L13,3V4H19L21,6L19,8H13V10H19L21,12L19,14H13V20A2,2 0 0,1 15,22H9A2,2 0 0,1 11,20V10Z" />
@@ -245,7 +745,7 @@ export default class Icon extends PureComponent {
         );
       case 'posts':
         return (
-          <BaseIcon viewBox="0 0 48 48" {...this.props}>
+          <BaseIcon viewBox="0 0 24 24" {...this.props}>
 
             {/* eslint-disable */}
             <path d="M16,9H21.5L16,3.5V9M7,2H17L23,8V18A2,2 0 0,1 21,20H7C5.89,20 5,19.1 5,18V4A2,2 0 0,1 7,2M3,6V22H21V24H3A2,2 0 0,1 1,22V6H3Z" />
@@ -254,20 +754,66 @@ export default class Icon extends PureComponent {
         );
       case 'settings':
         return (
-          <BaseIcon viewBox="0 0 48 48" {...this.props}>
+          <BaseIcon viewBox="0 0 24 24" {...this.props}>
+            <circle
+              cx="12"
+              cy="12"
+              r="3"
+              fill="none"
+              stroke={this.props.color}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
+            <path
+              d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+              fill="none"
+              stroke={this.props.color}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
+
+          </BaseIcon>
+        );
+      case 'chevron-left':
+        return (
+          <BaseIcon viewBox="0 0 24 24" {...this.props}>
 
             {/* eslint-disable */}
-            <path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z" />
-
+            <g>
+              <path d="M15 18l-6-6 6-6" />
+            </g>
           </BaseIcon>
         );
       case 'chevron-right':
         return (
-          <BaseIcon viewBox="0 0 48 48" {...this.props}>
+          <BaseIcon viewBox="0 0 24 24" {...this.props}>
 
             {/* eslint-disable */}
-            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+            <g>
+              <path d="M9 18l6-6-6-6" />
+            </g>
+          </BaseIcon>
+        );
+      case 'chevron-up':
+        return (
+          <BaseIcon viewBox="0 0 24 24" {...this.props}>
 
+            {/* eslint-disable */}
+            <g>
+              <path d="M18 15l-6-6-6 6" />
+            </g>
+          </BaseIcon>
+        );
+      case 'chevron-down':
+        return (
+          <BaseIcon viewBox="0 0 24 24" {...this.props}>
+
+            {/* eslint-disable */}
+            <g>
+              <path d="M6 9l6 6 6-6" />
+            </g>
           </BaseIcon>
         );
       case 'search':
@@ -483,7 +1029,14 @@ export default class Icon extends PureComponent {
           <BaseIcon viewBox="0 0 20 20" {...this.props}>
 
             {/* eslint-disable */}
-            <path d="M9 20v-1.7l.01-.24L15.07 12h2.94c1.1 0 1.99.89 1.99 2v4a2 2 0 0 1-2 2H9zm0-3.34V5.34l2.08-2.07a1.99 1.99 0 0 1 2.82 0l2.83 2.83a2 2 0 0 1 0 2.82L9 16.66zM0 1.99C0 .9.89 0 2 0h4a2 2 0 0 1 2 2v16c0 1.1-.89 2-2 2H2a2 2 0 0 1-2-2V2zM4 17a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+            <path
+              d="M9 20v-1.7l.01-.24L15.07 12h2.94c1.1 0 1.99.89 1.99 2v4a2 2 0 0 1-2 2H9zm0-3.34V5.34l2.08-2.07a1.99 1.99 0 0 1 2.82 0l2.83 2.83a2 2 0 0 1 0 2.82L9 16.66zM0 1.99C0 .9.89 0 2 0h4a2 2 0 0 1 2 2v16c0 1.1-.89 2-2 2H2a2 2 0 0 1-2-2V2zM4 17a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
+              fill="none"
+              stroke={this.props.color}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
           </BaseIcon>
         );
       case 'embedded':
@@ -662,12 +1215,22 @@ export default class Icon extends PureComponent {
       case 'replace':
         return (
           <BaseIcon viewBox="0 0 717 1024" {...this.props}>
-
             {/* eslint-disable */}
             <g>
               <path d="M481.311 665.782l153.6 153.6v-36.204l-153.6 153.6c-9.997 9.997-9.997 26.206 0 36.204s26.206 9.997 36.204 0l153.6-153.6c9.997-9.997 9.997-26.206 0-36.204l-153.6-153.6c-9.997-9.997-26.206-9.997-36.204 0s-9.997 26.206 0 36.204z" />
               <path d="M653.012 775.68h-281.6c-155.513 0-281.6-126.087-281.6-281.6 0-14.138-11.462-25.6-25.6-25.6s-25.6 11.462-25.6 25.6c0 183.79 149.01 332.8 332.8 332.8h281.6c14.138 0 25.6-11.462 25.6-25.6s-11.462-25.6-25.6-25.6zM236.209 370.689L82.609 204.09v34.705l153.6-166.599c9.584-10.395 8.926-26.59-1.469-36.174s-26.59-8.926-36.174 1.469L44.966 204.09c-9.038 9.803-9.038 24.902 0 34.705l153.6 166.599c9.584 10.395 25.779 11.052 36.174 1.469s11.052-25.779 1.469-36.174z" />
               <path d="M63.788 247.043h281.6c155.027 0 281.6 137.285 281.6 307.599 0 14.138 11.462 25.6 25.6 25.6s25.6-11.462 25.6-25.6c0-197.704-148.525-358.799-332.8-358.799h-281.6c-14.138 0-25.6 11.462-25.6 25.6s11.462 25.6 25.6 25.6z" />
+            </g>
+          </BaseIcon>
+        );
+      case 'trash':
+        return (
+          <BaseIcon viewBox="0 0 390 445" {...this.props}>
+            <g>
+              <g fill="currentColor">
+                <path d="M181 184h28v193h-28zM124 184h28v193h-28zM238 184h29v193h-29z" />
+                <path d="M267 65V9H124v56H9v29h29v343h314V94h29V65H267zM152 36h86v30h-86V36zm172 373H67V94h257v315z" />
+              </g>
             </g>
           </BaseIcon>
         );

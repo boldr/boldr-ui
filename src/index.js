@@ -49,8 +49,18 @@ export { Radio, RadioGroup } from './Radio';
 export { default as ResponsiveImage } from './ResponsiveImage';
 export { default as Select, Option, SelectTrigger, InputTrigger, TagsTrigger } from './Select';
 export { default as Social, Google, Facebook, Twitter, LinkedIn, Github } from './Social';
-export { default as Sidebar, SidebarNav, SidebarNavItem, SidebarHeader } from './Sidebar';
-export { default as SideNav, Nav, NavIcon, NavText, withRR4 } from './SideNav';
+export {
+  default as SideNav,
+  Nav,
+  NavIcon,
+  NavText,
+  withRR4,
+  SideNavHeader,
+  SideNavWrapper,
+  SeparatorTitle,
+  Title,
+  Separator,
+} from './SideNav';
 export { default as Toggler } from './Toggler';
 export { default as Tag } from './Tag';
 export { default as Topbar, TopbarSearch, TopbarLink, TopbarPlainLink } from './Topbar';

@@ -8,7 +8,7 @@ export type Props = {
   className?: string,
   style?: Object,
   componentClass: ReactElement,
-  children?: number | string | React.Element | Array<any>,
+  children?: ReactChildren,
   xs?: number | boolean,
   sm?: number | boolean,
   md?: number | boolean,

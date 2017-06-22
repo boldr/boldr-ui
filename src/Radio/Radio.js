@@ -60,15 +60,15 @@ export default class Radio extends PureComponent {
 
     const classString = classNames({
       [className]: !!className,
-      [`${prefix}-radio-wrap`]: true,
-      [`${prefix}-radio-checked`]: !!checked,
-      [`${prefix}-radio-disabled`]: disabled || readOnly,
+      [`${prefix}-radio__wrap`]: true,
+      [`${prefix}-radio__checked`]: !!checked,
+      [`${prefix}-radio__disabled`]: disabled || readOnly,
     });
 
     return (
       <label className={classString} style={style}>
         <span className={`${prefix}-radio`}>
-          <span className={`${prefix}-radio-inner`} />
+          <span className={`${prefix}-radio__inner`} />
           <input
             {...others}
             type="radio"

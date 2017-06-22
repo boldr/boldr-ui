@@ -4,6 +4,21 @@ import classNames from 'classnames';
 import BoldrComponent from '../utils/BoldrComponent';
 
 class Tag extends BoldrComponent {
+  static propTypes = {
+    children: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    thumb: PropTypes.element,
+    onRemove: PropTypes.func,
+    removable: PropTypes.bool,
+    size: PropTypes.oneOf(['small', 'large']),
+    wrap: PropTypes.bool,
+    disabled: PropTypes.bool,
+  };
+  static defaultProps = {
+    onRemove: () => {},
+    size: 'small',
+    removable: true,
+  };
   render() {
     const { id, children, thumb, removable, onRemove, size, wrap, disabled } = this.props;
 
@@ -32,22 +47,5 @@ class Tag extends BoldrComponent {
     );
   }
 }
-
-Tag.propTypes = {
-  children: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  thumb: PropTypes.element,
-  onRemove: PropTypes.func,
-  removable: PropTypes.bool,
-  size: PropTypes.oneOf(['small', 'large']),
-  wrap: PropTypes.bool,
-  disabled: PropTypes.bool,
-};
-
-Tag.defaultProps = {
-  onRemove: () => {},
-  size: 'small',
-  removable: true,
-};
 
 export default Tag;

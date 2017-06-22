@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InputWrapper /> renders snapshot 1`] = `
+<styled.div
+  ui={
+    Object {
+      "a": "",
+    }
+  }
+>
+  <Label
+    label="abc"
+    required={false}
+    ui={
+      Object {
+        "a": "",
+      }
+    }
+  />
+  <Feedback
+    label="abc"
+    ui={
+      Object {
+        "a": "",
+      }
+    }
+  />
+</styled.div>
+`;

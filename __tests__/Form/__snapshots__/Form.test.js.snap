@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Form /> renders snapshot 1`] = `
+<styled.form
+  className="boldrui-form"
+  handleSubmit={[Function]}
+  inline={false}
+  onSubmit={[Function]}
+/>
+`;
