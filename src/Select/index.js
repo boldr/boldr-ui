@@ -1,7 +1,3 @@
-/**
- * Index
- */
-
 import Select from './Select';
 import Option from './components/Option';
 import SelectTrigger from './triggers/SelectTrigger';

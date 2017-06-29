@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 type Props = {
-  meta: Object,
+  meta?: Object,
 };
 
 const Feedback = (props: Props) => {

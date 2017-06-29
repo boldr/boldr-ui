@@ -4,18 +4,20 @@ import styled from 'styled-components';
 
 type Props = {
   children: ReactElement,
-  inline: boolean,
-  handleSubmit: () => void,
+  inline: ?boolean,
+  handleSubmit?: () => void,
 };
 
 export type MetaProps = {
-  error: string,
-  warning: string,
-  touched: boolean,
+  error: ?string,
+  warning: ?string,
+  touched: ?boolean,
 };
 
 const CustomForm = styled.form`
-  display: {props => props.inline ? 'inline' : 'block'};
+  display: {
+    props: 'block';
+  }
 `;
 const Form = (props: Props) => {
   const { handleSubmit } = props;

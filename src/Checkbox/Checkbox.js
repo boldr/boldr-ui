@@ -4,16 +4,16 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 type Props = {
-  checked: number | boolean,
-  disabled: boolean,
-  readOnly: boolean,
-  indeterminate: boolean,
-  onChange: () => void,
-  className: string,
-  style: Object,
-  prefix: string,
-  children: ReactChildren,
-  value: number | string,
+  checked: ?number | boolean,
+  disabled: ?boolean,
+  readOnly: ?boolean,
+  indeterminate: ?boolean,
+  onChange?: () => void,
+  className?: string,
+  style: ?Object,
+  prefix: ?string,
+  children: ?ReactChildren,
+  value?: number | string,
 };
 
 export default class Checkbox extends Component {

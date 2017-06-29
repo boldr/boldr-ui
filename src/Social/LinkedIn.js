@@ -3,8 +3,8 @@ import React from 'react';
 import Icon from '../Icons';
 
 type Props = {
-  href: ?String,
-  size: Number,
+  href: ?string,
+  size: string,
 };
 
 const LinkedIn = (props: Props) => {
@@ -19,7 +19,10 @@ const LinkedIn = (props: Props) => {
   }
 };
 
-LinkedIn.defaultProps = {
-  size: 24,
+const defaultProps = {
+  size: '24px',
 };
+
+LinkedIn.defaultProps = defaultProps;
+
 export default LinkedIn;

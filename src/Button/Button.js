@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import cxN from 'classnames';
 import omit from 'lodash/omit';
+import Link from 'react-router-dom/Link';
+import TouchRipple from '../utils/TouchRipple';
 
 const BLACK_LIST = [
   'type',
@@ -73,17 +75,23 @@ export default class Button extends Component {
     const nodeProps = omit(this.props, LINK_BLACKLIST);
 
     return (
-      <Element
-        {...(disabled ? {} : { href, target })}
+      <Link
+        {...(disabled ? {} : { to: href, target })}
         {...nodeProps}
         className={classNames}
         onClick={this.handleClick}
       >
         {this.props.children}
-      </Element>
+      </Link>
     );
   }
+  startRipple = e => {
+    this.refs.touchRipple.addRipple(e);
+  };
 
+  endRipple = () => {
+    this.refs.touchRipple.removeRipple();
+  };
   // render button
   renderButton(classNames) {
     const Element = this.props.component || 'button';
@@ -100,6 +108,7 @@ export default class Button extends Component {
         onClick={this.handleClick}
       >
         {this.props.children}
+        <TouchRipple ref="touchRipple" className="btn-ripple" />
       </Element>
     );
   }

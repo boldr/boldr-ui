@@ -2,7 +2,7 @@
 import React from 'react';
 
 type Props = {
-  index: string | number,
+  index?: string | number,
   url: string,
   children: ReactChildren,
 };

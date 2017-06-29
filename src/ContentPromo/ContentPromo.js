@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { string, bool, oneOf, node } from 'prop-types';
 import mergeClassNames from 'classnames';
 import omit from 'lodash/omit';
 
@@ -43,40 +43,39 @@ const ContentPromo = props => {
 };
 ContentPromo.propTypes = {
   // The children to render within the stage.
-  children: PropTypes.node.isRequired,
+  children: node.isRequired,
   // The theme of the stage.
-  theme: PropTypes.oneOf(['bright', 'secondary', 'teritary', 'darkGrey', 'grey', 'lightGrey'])
-    .isRequired,
+  theme: oneOf(['bright', 'secondary', 'teritary', 'darkGrey', 'grey', 'lightGrey']).isRequired,
 
   /**
    * If `true`, reduces the top and bottom padding of the wrapper.
    */
-  isTiny: PropTypes.bool.isRequired,
+  isTiny: bool.isRequired,
 
   /**
    * If `true`, reduces the max-width of the inner contents.
    */
-  isNarrow: PropTypes.bool.isRequired,
+  isNarrow: bool.isRequired,
 
   /**
    * If `true`, removes width / max-width of the inner contents.
    */
-  isWide: PropTypes.bool.isRequired,
+  isWide: bool.isRequired,
 
   /**
    * If `true`, centers the passed text contents.
    */
-  isCentered: PropTypes.bool.isRequired,
+  isCentered: bool.isRequired,
 
   /**
    * An optional className to attach to the wrapper.
    */
-  className: PropTypes.string,
+  className: string,
 
   /**
    * An optional className to attach to the inner contents wrapper.
    */
-  contentsClassName: PropTypes.string,
+  contentsClassName: string,
 };
 ContentPromo.defaultProps = {
   theme: 'bright',

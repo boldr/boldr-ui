@@ -2,10 +2,10 @@
 import React, { Component } from 'react';
 
 type Props = {
-  accordion: boolean,
+  accordion: ?boolean,
   children: ReactChildren,
-  className: string,
-  onChange: () => void,
+  className: ?string,
+  onChange: ?() => void,
 };
 type State = {
   activeItems: Array<any>,

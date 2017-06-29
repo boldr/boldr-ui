@@ -121,7 +121,7 @@ class Popup extends Component {
   }
 
   render() {
-    let {
+    const {
       cid,
       selectedItems,
       emptyText,

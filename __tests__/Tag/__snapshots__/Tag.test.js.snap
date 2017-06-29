@@ -14,6 +14,7 @@ exports[`<Tag /> matches the snapshot 1`] = `
   <a
     className="boldrui-tag__remove--btn"
     onClick={[Function]}
+    onKeyPress={[Function]}
   />
 </span>
 `;

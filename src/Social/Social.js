@@ -28,17 +28,31 @@ export type Props = {
   gurl: ?string,
   linkedin: ?boolean,
   lurl: ?string,
+  iconSize: ?string,
 };
 const Social = (props: Props) => {
   return (
     <SocialList>
-      {props.facebook ? <SocialItem><Facebook href={props.fburl} /></SocialItem> : null}
-      {props.twitter ? <SocialItem><Twitter href={props.turl} /></SocialItem> : null}
-      {props.github ? <SocialItem><Github href={props.ghurl} /></SocialItem> : null}
-      {props.google ? <SocialItem><Google href={props.gurl} /></SocialItem> : null}
-      {props.linkedin ? <SocialItem><LinkedIn href={props.lurl} /></SocialItem> : null}
+      {props.facebook
+        ? <SocialItem><Facebook href={props.fburl} size={props.iconSize} /></SocialItem>
+        : null}
+      {props.twitter
+        ? <SocialItem><Twitter href={props.turl} size={props.iconSize} /></SocialItem>
+        : null}
+      {props.github
+        ? <SocialItem><Github href={props.ghurl} size={props.iconSize} /></SocialItem>
+        : null}
+      {props.google
+        ? <SocialItem><Google href={props.gurl} size={props.iconSize} /></SocialItem>
+        : null}
+      {props.linkedin
+        ? <SocialItem><LinkedIn href={props.lurl} size={props.iconSize} /></SocialItem>
+        : null}
     </SocialList>
   );
 };
-
+const defaultProps = {
+  iconSize: '24px',
+};
+Social.defaultProps = defaultProps;
 export default Social;

@@ -3,12 +3,12 @@ import React from 'react';
 import Dialog from '../Dialog';
 
 export type Props = {
-  onClose: () => void,
-  onAfterOpen: () => void,
+  onClose?: () => void,
+  onAfterOpen?: () => void,
   children: ReactChildren,
   visible: boolean,
-  closeable: boolean,
-  title: string,
+  closeable?: boolean,
+  title?: string,
 };
 
 const Modal = (props: Props) => {

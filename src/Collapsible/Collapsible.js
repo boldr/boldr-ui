@@ -14,7 +14,7 @@ export type CollapsibleProps = {
   title: string,
   // When passed, a trash icon will be rendered beside the
   // toggle icon within the header.
-  onDelete: () => void,
+  onDelete?: () => void,
   // An optional ID which the anchor will link to and the
   // wrapper will inherit.
   id: ?string,
@@ -22,7 +22,7 @@ export type CollapsibleProps = {
   // will receive the new isOpen state as the first and only argument.
   onToggle: () => void,
   // optional css class name
-  className: string,
+  className?: string,
 };
 class Collapsible extends PureComponent {
   static defaultProps = {

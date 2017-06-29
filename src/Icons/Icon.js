@@ -533,8 +533,8 @@ export default class Icon extends PureComponent {
               <path
                 fill="none"
                 stroke={this.props.color}
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M3 11l19-9-9 19-2-8-8-2z"
               />
             </g>
@@ -550,8 +550,8 @@ export default class Icon extends PureComponent {
                 d="M22 12h-4l-3 9L9 3l-3 9H2"
                 fill="none"
                 stroke={this.props.color}
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinejoin="round"
+                strokeWidth="2"
               />
             </g>
           </BaseIcon>
@@ -564,9 +564,9 @@ export default class Icon extends PureComponent {
             <g>
               <path
                 stroke={this.props.color}
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"
               />
             </g>

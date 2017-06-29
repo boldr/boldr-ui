@@ -14,13 +14,13 @@ function findIndex(array, predicate) {
 
 type Props = {
   value: Array<Object>,
-  isValueEqual: () => void,
-  onChange: () => void,
-  className: string,
-  style: Object,
-  prefix: string,
-  disabled: boolean,
-  readOnly: boolean,
+  isValueEqual?: () => void,
+  onChange?: () => void,
+  className: ?string,
+  style: ?Object,
+  prefix: ?string,
+  disabled: ?boolean,
+  readOnly: ?boolean,
   children: ReactChildren,
 };
 export default class Group extends PureComponent {

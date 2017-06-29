@@ -8,10 +8,10 @@ import type { MetaProps } from '../Form';
 
 type Props = {
   input: any,
-  placeholder: string,
-  label: string,
-  type: string,
-  meta: MetaProps,
+  placeholder: ?string,
+  label: ?string,
+  type: ?string,
+  meta: ?MetaProps,
   addonBefore: ?any,
   addonAfter: ?any,
 };

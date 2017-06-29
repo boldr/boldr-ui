@@ -3,8 +3,8 @@ import React from 'react';
 import Icon from '../Icons';
 
 type Props = {
-  href: ?String,
-  size: Number,
+  href: ?string,
+  size: string,
 };
 
 const Google = (props: Props) => {
@@ -19,7 +19,10 @@ const Google = (props: Props) => {
   }
 };
 
-Google.defaultProps = {
-  size: 24,
+const defaultProps = {
+  size: '24px',
 };
+
+Google.defaultProps = defaultProps;
+
 export default Google;

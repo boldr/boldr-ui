@@ -8,7 +8,7 @@ exports[`<Google /> 1`] = `
   <Icon
     color="#1c3050"
     kind="google"
-    size={24}
+    size="24px"
   />
 </a>
 `;

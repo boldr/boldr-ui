@@ -8,7 +8,7 @@ exports[`<Github /> 1`] = `
   <Icon
     color="#1c3050"
     kind="github"
-    size={24}
+    size="24px"
   />
 </a>
 `;

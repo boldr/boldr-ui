@@ -3,8 +3,8 @@ import React from 'react';
 import Icon from '../Icons';
 
 type Props = {
-  href: ?String,
-  size: Number,
+  href: ?string,
+  size: string,
 };
 
 const Twitter = (props: Props) => {
@@ -19,7 +19,10 @@ const Twitter = (props: Props) => {
   }
 };
 
-Twitter.defaultProps = {
-  size: 24,
+const defaultProps = {
+  size: '24px',
 };
+
+Twitter.defaultProps = defaultProps;
+
 export default Twitter;

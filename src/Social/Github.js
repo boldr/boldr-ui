@@ -3,8 +3,8 @@ import React from 'react';
 import Icon from '../Icons';
 
 type Props = {
-  href: ?String,
-  size: Number,
+  href: ?string,
+  size: string,
 };
 
 const Github = (props: Props) => {
@@ -19,7 +19,10 @@ const Github = (props: Props) => {
   }
 };
 
-Github.defaultProps = {
-  size: 24,
+const defaultProps = {
+  size: '24px',
 };
+
+Github.defaultProps = defaultProps;
+
 export default Github;

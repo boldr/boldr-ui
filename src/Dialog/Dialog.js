@@ -7,12 +7,12 @@ import { font, palette } from 'styled-theme';
 import Headline from '../Headline';
 import Icon from '../Icons';
 
-type Props = {
+export type Props = {
   children: ReactChildren,
-  title: string,
-  closeable: boolean,
-  reverse: boolean,
-  onClose: () => void,
+  title?: string,
+  closeable: ?boolean,
+  reverse: ?boolean,
+  onClose?: () => void,
 };
 
 const overlayStyles = css`

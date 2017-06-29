@@ -43,7 +43,7 @@ class ImageDisplay extends BoldrComponent {
             </div>
             <div className="boldrui-image-display__bg">
               <div className="boldrui-image-display__btns">
-                <Tooltip content="Replace" {...tooltipCommonProps}>
+                <Tooltip content="Edit image properties" {...tooltipCommonProps}>
                   <div
                     data-hook="update-image"
                     className="boldrui-image-display__btn"
