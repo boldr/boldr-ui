@@ -3,7 +3,12 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 import { StyleClasses, BOLDR_NS } from '../theme/styleClasses';
 import SidebarNavItem from './SidebarNavItem';
-import { createItemTree, toggleExpandedItemWithId, activateItemWithLink } from './SidebarUtils';
+import {
+  createItemTree,
+  toggleExpandedItemWithId,
+  expandParent,
+  activateItemWithLink,
+} from './SidebarUtils';
 import type { SidebarLink, SidebarLinks } from './Sidebar';
 
 const BASE_ELEMENT = StyleClasses.SIDEBAR_NAV;
@@ -12,8 +17,6 @@ type Props = {
   items: SidebarLinks,
   isPrimaryColor: ?boolean,
   activeItem: ?string,
-  iconColor: ?string,
-  iconSize: ?string,
   location: Object,
   expanded: boolean,
   onExpandCollapse: () => void,
@@ -67,8 +70,6 @@ class SidebarNav extends Component {
         expanded={this.props.expanded}
         onExpandCollapse={this.props.onExpandCollapse}
         activeItem={this.props.activeItem}
-        iconColor={this.props.iconColor}
-        iconSize={this.props.iconSize}
         onItemClick={this.onItemClick}
         location={this.props.location}
         {...item}

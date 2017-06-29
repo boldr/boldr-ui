@@ -6,7 +6,7 @@ import Icon from '../Icons/Icon';
 
 export const Chevron = props => {
   const iconKind = props.expanded ? 'chevron-down' : 'chevron-left';
-  return <Icon className={props.className} color="#f1f1f1" kind={iconKind} size="20px" />;
+  return <Icon className={props.className} color="#fff" kind={iconKind} />;
 };
 
 Chevron.propTypes = {
@@ -17,6 +17,16 @@ Chevron.propTypes = {
 Chevron.defaultProps = {
   className: '',
   expanded: false,
+};
+
+export const FaIcon = props => <i className={classNames('fa', props.className)} />;
+
+FaIcon.propTypes = {
+  className: PropTypes.string,
+};
+
+FaIcon.defaultProps = {
+  className: '',
 };
 
 export const createItemTree = (input, level = 0) =>

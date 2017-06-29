@@ -6,8 +6,9 @@ import classnames from 'classnames';
 import NavLink from 'react-router-dom/NavLink';
 import Icon from '../Icons/Icon';
 import { StyleClasses, BOLDR_NS } from '../theme/styleClasses';
-import { Chevron } from './SidebarUtils';
+import Anchor from '../Anchor';
 import type { SidebarLink, SidebarLinks } from './Sidebar';
+import { Chevron, FaIcon } from './SidebarUtils';
 
 const PARENT_ELEMENT = StyleClasses.SIDEBAR_NAV;
 const BASE_ELEMENT = StyleClasses.SIDEBAR_NAV_ITEM;
@@ -23,22 +24,16 @@ export type SidebarNavItemProps = {
   active: boolean,
   expanded: boolean,
   items: SidebarLinks,
-  iconColor: ?string,
-  iconSize: ?string,
 };
 
 const SidebarNavTitle = (props: SidebarNavItemProps) => {
   return (
-    <div
-      className={classnames(`${BASE_ELEMENT}-title`)}
-      onClick={props.onExpandCollapse}
-      onKeyDown={props.onExpandCollapse}
-    >
+    <div className={classnames(`${BASE_ELEMENT}-title`)} onClick={props.onExpandCollapse}>
       {/* if theres an icon we're going to render it */}
       {props.icon
         ? <Icon
-            color={props.iconColor}
-            size={props.iconSize}
+            color="#f1f1f1"
+            size="20px"
             className={classnames(`${PARENT_ELEMENT}-icon`)}
             kind={props.icon}
           />
@@ -52,11 +47,6 @@ const SidebarNavTitle = (props: SidebarNavItemProps) => {
     </div>
   );
 };
-const sbNavTitleDefaults = {
-  iconColor: '#f1f1f1',
-  iconSize: '20px',
-};
-SidebarNavTitle.defaultProps = sbNavTitleDefaults;
 
 export type SidebarNavLinkProps = {
   active: boolean,
@@ -64,8 +54,6 @@ export type SidebarNavLinkProps = {
   link: string,
   icon: ?string,
   label: string,
-  iconSize: ?string,
-  iconColor: ?string,
 };
 
 const SidebarNavLink = (props: SidebarNavLinkProps) => {
@@ -75,22 +63,17 @@ const SidebarNavLink = (props: SidebarNavLinkProps) => {
         active: props.active,
       })}
     >
-      <NavLink to={props.link} className="boldrui-link">
-        {props.icon
-          ? <Icon
-              className="boldrui-icon"
-              color={props.iconColor}
-              size={props.iconSize}
-              kind={icon}
-            />
-          : null}
-        {props.label}
-      </NavLink>
+      <Anchor
+        to={props.link}
+        label={props.label}
+        icon={props.icon ? props.icon : null}
+        iconColor="#f1f1f1"
+        iconSize="20px"
+        className={`${BASE_ELEMENT}-link`}
+      />
     </div>
   );
 };
-
-SidebarNavLink.defaultProps = sbNavTitleDefaults;
 
 const SidebarNavSubNav = (props: SidebarNavItemProps) => {
   return (

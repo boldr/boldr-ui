@@ -1,6 +1,6 @@
 /* @flow */
 import React, { Component } from 'react';
-import withRouter from 'react-router-dom/withRouter';
+import { NavLink, withRouter } from 'react-router-dom';
 import classnames from 'classnames';
 
 import { StyleClasses } from '../theme/styleClasses';
@@ -19,7 +19,7 @@ export type SidebarLink = {
 
 export type SidebarLinks = Array<SidebarLink>;
 
-export type Props = {
+type Props = {
   className: ?string,
   navClassName: ?string,
   items: SidebarLinks,
@@ -35,8 +35,6 @@ export type Props = {
   expanded: boolean,
   onVisibilityChange: () => void,
   onExpandCollapse: () => void,
-  iconColor: ?string,
-  iconSize: ?string,
   // url for the logo image
   logoImg: string,
   // Where should the logo link to? Default is /
@@ -75,8 +73,6 @@ class Sidebar extends Component {
           navClassName={this.props.navClassName}
           location={this.props.location}
           expanded={this.props.expanded}
-          iconColor={this.props.iconColor}
-          iconSize={this.props.iconSize}
           onExpandCollapse={this.props.onExpandCollapse}
         />
       </SidebarWrapper>
