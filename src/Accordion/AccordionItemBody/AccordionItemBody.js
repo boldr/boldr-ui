@@ -5,12 +5,12 @@ import classNames from 'classnames';
 type Props = {
   id: string,
   expanded: boolean,
-  onClick: () => void,
-  ariaControls: string,
+  onClick: ?() => void,
+  ariaControls: ?string,
   children: ReactChildren,
-  className: string,
-  hideBodyClassName: string,
-  role: string,
+  className: ?string,
+  hideBodyClassName: ?string,
+  role: ?string,
 };
 
 const defaultProps = {

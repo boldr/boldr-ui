@@ -5,9 +5,9 @@ type Props = {
   id: string,
   expanded: boolean,
   onClick: () => void,
-  ariaControls: string,
+  ariaControls: ?string,
   children: ReactChildren,
-  role: string,
+  role: ?string,
 };
 
 class AccordionItemTitle extends PureComponent {

@@ -17,7 +17,7 @@ describe('(React Component) Paragraph', () => {
 
   it('should add the "lead" className if the "isLead" prop is truthy.', () => {
     const wrapper = shallow(<Paragraph isLead>My contents</Paragraph>);
-    expect(wrapper.is('.boldrui-p__lead')).toBe(true);
+    expect(wrapper.is('.boldrui-paragraph__lead')).toBe(true);
   });
 
   it('should propagate props to the wrapper element.', () => {
