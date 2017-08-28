@@ -1,13 +1,13 @@
 /* @flow */
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import type { Node, Element } from 'react';
 import cn from 'classnames';
 
 type Props = {
   src?: string,
   alt?: string,
-  icon?: ReactNode,
-  children?: ReactChildren,
+  icon?: Node,
+  children?: Array<Element<*>>,
   random?: boolean,
   suffixes?: Array<string>,
   suffix?: string,
@@ -22,7 +22,7 @@ type Props = {
  * Any other props given to the Avatar component such as event listeners
  * or styles will also be applied.
  */
-export default class Avatar extends PureComponent {
+export default class Avatar extends React.PureComponent<Props, *> {
   static defaultProps = {
     suffixes: [
       'red',
@@ -55,7 +55,7 @@ export default class Avatar extends PureComponent {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: Object) {
     if (
       nextProps.random &&
       (this.props.src !== nextProps.src || this.props.icon !== nextProps.icon)

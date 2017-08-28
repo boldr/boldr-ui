@@ -1,9 +1,9 @@
-# Image
+# ResponsiveImage
 
 
 ### Usage
 ```javascript
-<Image
+<ResponsiveImage
     src="http://i.magaimg.net/img/frh.jpg"
     alt="A gorgeous sunset"
     width={1600}

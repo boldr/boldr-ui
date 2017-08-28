@@ -1,31 +1,21 @@
-import classNames from 'classnames';
+/* @flow */
 import React from 'react';
-
+import cx from 'classnames';
+import { StyleClasses } from '../theme/styleClasses';
 import BreadcrumbItem from './BreadcrumbItem';
-import { bsClass, getClassSet, splitBsProps } from '../../core/utils';
 
-class Breadcrumb extends React.Component {
-  render() {
-    const { className, ...props } = this.props;
-    const [bsProps, elementProps] = splitBsProps(props);
+export type Props = {
+  className?: string,
+};
 
-    const classes = getClassSet(bsProps);
+const BASE_ELEMENT = StyleClasses.BREADCRUMB;
 
-    return (
-      <ol
-        {...elementProps}
-        role="navigation"
-        aria-label="breadcrumbs"
-        className={classNames('boldrui-breadcrumb')}
-      />
-    );
-  }
-}
-
-const defaultProps = {
-  className: 'boldrui-breadcrumb',
+const Breadcrumb = (props: Props) => {
+  const { className, ...rest } = props;
+  const classes = cx(BASE_ELEMENT, className);
+  return <ol {...rest} role="navigation" aria-label="breadcrumbs" className={classes} />;
 };
 
 Breadcrumb.Item = BreadcrumbItem;
-Breadcrumb.defaultProps = defaultProps;
-export default bsClass('breadcrumb', Breadcrumb);
+
+export default Breadcrumb;

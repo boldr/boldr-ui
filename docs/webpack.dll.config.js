@@ -4,7 +4,13 @@ const webpack = require('webpack');
 const packageJsonSrc = require('../package.json');
 const packageJson = require('./package.json');
 
-const excludedDeps = ['lodash', 'recompose', 'object-assign', 'babel-runtime'];
+const excludedDeps = [
+  'lodash',
+  'recompose',
+  'object-assign',
+  'babel-runtime',
+  'react-transition-group',
+];
 
 const deps = [
   'react-hot-loader/index',

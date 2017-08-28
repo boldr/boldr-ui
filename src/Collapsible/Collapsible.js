@@ -1,20 +1,20 @@
 /* @flow */
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import omit from 'lodash/omit';
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import * as React from 'react';
+import omit from 'lodash.omit';
 import mergeClassNames from 'classnames';
 import FontIcon from '../FontIcon';
 
 export type CollapsibleProps = {
   // The children to conditionally render.
-  children: ReactChildren,
+  children: Array<React.Node>,
   // When `true`, the contents are rendered.
   isOpen: boolean,
   // The title of the Collapsible
   title: string,
   // When passed, a trash icon will be rendered beside the
   // toggle icon within the header.
-  onDelete?: () => void,
+  onDelete: () => void,
   // An optional ID which the anchor will link to and the
   // wrapper will inherit.
   id: ?string,
@@ -22,9 +22,9 @@ export type CollapsibleProps = {
   // will receive the new isOpen state as the first and only argument.
   onToggle: () => void,
   // optional css class name
-  className?: string,
+  className: string,
 };
-class Collapsible extends PureComponent {
+class Collapsible extends React.PureComponent<CollapsibleProps, *> {
   static defaultProps = {
     isOpen: false,
     title: 'Unnamed',
@@ -35,7 +35,7 @@ class Collapsible extends PureComponent {
     isContentsAlreadyRendered: this.props.isOpen,
   };
   props: CollapsibleProps;
-  handleToggleChildren = e => {
+  handleToggleChildren = (e: Event) => {
     const { onToggle } = this.props;
     const isOpen = !this.state.isOpen;
 
@@ -75,11 +75,11 @@ class Collapsible extends PureComponent {
     });
     const togglerClassName = mergeClassNames({
       'boldrui-collapsible__toggler': true,
-      ['boldrui-collapsible__toggler-active']: isOpen,
+      'boldrui-collapsible__toggler-active': isOpen,
     });
     const contentsClassName = mergeClassNames({
-      ['boldrui-collapsible__contents']: true,
-      ['boldrui-collapsible__contents-active']: isOpen,
+      'boldrui-collapsible__contents': true,
+      'boldrui-collapsible__contents-active': isOpen,
     });
     const anchorProps = {};
 

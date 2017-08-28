@@ -1,37 +1,40 @@
-/* @flow */
+// @flow
 import React from 'react';
-import styled from 'styled-components';
-import { Grid, Col } from '../Layout';
+import classNames from 'classnames';
+import {
+  removeColorProps,
+  removeSizeProps,
+  getColorModifiers,
+  getSizeModifiers,
+  createWrappedComponent,
+} from '../util/boldrui';
+import { combineModifiers, getDomSafeProps } from '../util/helpers';
 
-type Props = {
-  bgImg: ?string,
-  children: ReactChildren,
-  bgColor: ?string,
-  bgHeight: ?number,
+export type Props = {
+  tag?: string,
+  className?: string,
+  isBold?: boolean,
+  isFullHeight?: boolean,
+  isHalfHeight?: boolean,
 };
 
-const Hero = (props: Props) => {
-  const BoldrHero = styled.div`
-    background-color: ${props.bgColor};
-    background-image: url(${props.bgImg});
-    height: ${props.bgHeight}px;
-    position: relative;
-    background-size: cover;
-    margin-bottom: 20px;
-    background-position-x: 50%;
-    background-position-y: 50%;
-  `;
-  return (
-    <div className="boldrui-hero">
-      <BoldrHero>
-        {props.children}
-      </BoldrHero>
-    </div>
+export function Hero({ tag = 'section', ...props }: Props) {
+  const className = classNames(
+    'boldrui-hero',
+    {
+      'is-bold': props.isBold,
+      'is-fullheight': props.isFullHeight,
+      'is-halfheight': props.isHalfHeight,
+      ...combineModifiers(props, getColorModifiers, getSizeModifiers),
+    },
+    props.className,
   );
-};
 
-Hero.defaultProps = {
-  bgHeight: 450,
-};
+  const { ...rest } = props;
 
-export default Hero;
+  const HTMLProps = getDomSafeProps(rest, removeColorProps, removeSizeProps);
+
+  return React.createElement(tag, { ...HTMLProps, className });
+}
+
+export default createWrappedComponent(Hero);

@@ -1,39 +1,34 @@
-import React from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import cxN from 'classnames';
 
-/**
- * The paragraph should be used to display long strings.
- * A good rule is to separate long texts in paragraphs after the third row.
- */
-const Paragraph = ({ className, isLead, isLight, children, ...rest }) => {
-  const finalClassName = cxN({
-    'boldrui-paragraph': true,
-    'boldrui-paragraph__lead': isLead,
-    'boldrui-paragraph__light': isLight,
-    [className]: className && className.length,
-  });
+const Paragraph = styled.p`
+  margin: 0 0 1.5rem;
+  font-size: ${props => (props.isLead ? '1.3rem' : '1rem')};
+  line-height: ${props => (props.isLead ? '2' : '1.5')};
+  color: ${props =>
+    props.isLight ? `${props.theme.fontColor.light}` : `${props.theme.fontColor.dark}`};
+`;
 
-  return (
-    <p {...rest} className={finalClassName}>
-      {children}
-    </p>
-  );
-};
 Paragraph.propTypes = {
-  children: PropTypes.node.isRequired,
-
-  /**
-   * If set to `true` the paragraph will be displayed in a
-   * slightly bigger manner.
-   */
   isLead: PropTypes.bool,
   isLight: PropTypes.bool,
-  className: PropTypes.string,
+  theme: PropTypes.shape({
+    fontColor: PropTypes.shape({
+      light: PropTypes.string,
+      dark: PropTypes.string,
+    }),
+  }),
 };
+
 Paragraph.defaultProps = {
   isLead: false,
   isLight: false,
+  theme: {
+    fontColor: {
+      light: '#F7F7F9',
+      dark: '#030507',
+    },
+  },
 };
 
 export default Paragraph;

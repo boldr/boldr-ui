@@ -1,36 +1,34 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 
-type Props = {
-  children: ReactElement,
-  inline: ?boolean,
-  handleSubmit?: () => void,
+export type Props = {
+  children: Array<React.Node>,
+  isInline: boolean,
+  handleSubmit: () => void,
+  className?: string,
 };
 
 export type MetaProps = {
-  error: ?string,
-  warning: ?string,
-  touched: ?boolean,
+  error?: string,
+  warning?: string,
+  touched?: boolean,
 };
 
-const CustomForm = styled.form`
-  display: {
-    props: 'block';
-  }
-`;
+const FormElement = styled.form`display: ${props => (props.isInline ? 'inline-block' : 'block')};`;
+
 const Form = (props: Props) => {
-  const { handleSubmit } = props;
+  const { handleSubmit, className } = props;
 
   return (
-    <CustomForm className="boldrui-form" onSubmit={handleSubmit} {...props}>
+    <FormElement className={className} onSubmit={handleSubmit} {...props}>
       {props.children}
-    </CustomForm>
+    </FormElement>
   );
 };
 
 Form.defaultProps = {
-  inline: false,
+  isInline: false,
 };
 
 export default Form;

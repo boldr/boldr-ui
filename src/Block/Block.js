@@ -1,13 +1,23 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import mergeClassNames from 'classnames';
+// @flow
+import * as React from 'react';
+import cN from 'classnames';
 
-/**
-* A Box can display more important content in a simple manner.
-*/
-const Block = ({ className, children, ...rest }) => {
-  const finalClassName = mergeClassNames({
+type Props = {
+  /**
+   * The children to render within the Box.
+   */
+  children: Array<React.Node>,
+  /**
+   * An optional className of the Box.
+   */
+  className?: string,
+};
+// A Box can display more important content in a simple manner.
+
+const Block = ({ className, children, ...rest }: Props) => {
+  const finalClassName = cN({
     'boldrui-block': true,
+    // $FlowIssue
     [className]: className && className.length,
   });
 
@@ -16,17 +26,6 @@ const Block = ({ className, children, ...rest }) => {
       {children}
     </div>
   );
-};
-Block.propTypes = {
-  /**
-   * The children to render within the Box.
-   */
-  children: PropTypes.node.isRequired,
-
-  /**
-   * An optional className of the Box.
-   */
-  className: PropTypes.string,
 };
 
 export default Block;

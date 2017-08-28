@@ -2,12 +2,12 @@ import React, { PureComponent, Children } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 
-import getField from '../utils/getField';
+import getField from '../util/getField';
 import Paper from '../Paper/Paper';
-import Collapse from '../utils/Collapse';
+import Collapse from '../util/Collapse';
 import contextTypes from './contextTypes';
 
-export default class Card extends PureComponent {
+export default class Card extends React.PureComponent {
   static propTypes = {
     /**
      * An optional style to apply.
@@ -222,7 +222,11 @@ export default class Card extends PureComponent {
       }
 
       const collapsed = expanderIndex === -1 || expanderIndex === i || !expanded;
-      return <Collapse collapsed={collapsed} animate={animate}>{child}</Collapse>;
+      return (
+        <Collapse collapsed={collapsed} animate={animate}>
+          {child}
+        </Collapse>
+      );
     });
 
     return (

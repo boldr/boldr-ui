@@ -1,19 +1,19 @@
 /* @flow */
-import React, { PureComponent } from 'react';
+import * as React from 'react';
 import classNames from 'classnames';
 
 export type Props = {
-  fluid: ?boolean,
+  fluid: boolean,
   className: ?string,
   style: ?Object,
-  children: ReactChildren,
-  componentClass: ReactElement,
+  children: Array<React.Node>,
+  componentClass: string,
 };
 
-class Grid extends PureComponent {
+class Grid extends React.PureComponent<Props, *> {
   static defaultProps = {
-    componentClass: 'div',
     fluid: false,
+    componentClass: 'div',
   };
   props: Props;
   render() {

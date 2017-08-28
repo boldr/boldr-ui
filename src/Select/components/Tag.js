@@ -1,21 +1,11 @@
-/* @flow */
 import React, { Component } from 'react';
-
-export type Props = {
-  prefixCls?: string,
-  cid?: string,
-  value?: any,
-  text?: any,
-  onFocus?: Function,
-};
+import PropTypes from 'prop-types';
 
 class Tag extends Component {
-  constructor(props: Props) {
+  constructor(props) {
     super(props);
     this.deleteTagHandler = this.deleteTagHandler.bind(this);
   }
-
-  props: Props;
 
   deleteTagHandler(evt) {
     evt.preventDefault();
@@ -38,5 +28,13 @@ class Tag extends Component {
     );
   }
 }
+
+Tag.propTypes = {
+  prefixCls: PropTypes.string,
+  cid: PropTypes.string,
+  value: PropTypes.any,
+  text: PropTypes.any,
+  onFocus: PropTypes.func,
+};
 
 export default Tag;

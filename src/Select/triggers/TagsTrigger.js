@@ -1,29 +1,31 @@
-/* @flow */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import noop from 'lodash.noop';
+
 import Tag from '../components/Tag';
 
-const noop = function() {};
-
-export type Props = {
-  prefixCls?: string,
-  selectedItems?: Array<any>,
-  selectedItem?: Object,
-  placeholder?: string,
-  value?: any,
-  onDelete?: Function,
-};
-
 class TagsTrigger extends Component {
-  constructor(props: Props) {
+  static propTypes = {
+    prefixCls: PropTypes.string,
+    selectedItems: PropTypes.array,
+    selectedItem: PropTypes.object,
+    placeholder: PropTypes.string,
+    value: PropTypes.any,
+    onDelete: PropTypes.func,
+  };
+
+  static defaultProps = {
+    selectedItems: [],
+    onDelete: noop,
+  };
+  constructor(props) {
     super(props);
     this.deleteTagHandler = this.deleteTagHandler.bind(this);
   }
 
-  props: Props;
-
   componentWillReceiveProps(nextProps) {
-    let { selectedItems } = this.props;
-    let { cid, text, value } = nextProps;
+    const { selectedItems } = this.props;
+    const { cid, text, value } = nextProps;
 
     if (this.isDelete || this.isAdded) {
       this.isDelete = false;
@@ -31,7 +33,7 @@ class TagsTrigger extends Component {
       return;
     }
 
-    let isExist = selectedItems.filter(item => item.cid === cid).length > 0;
+    const isExist = selectedItems.filter(item => item.cid === cid).length > 0;
 
     if (typeof cid !== 'undefined' && !isExist) {
       selectedItems.push({
@@ -57,8 +59,8 @@ class TagsTrigger extends Component {
   }
 
   deleteTagHandler(cid) {
-    let { selectedItems } = this.props;
-    let deleteItem = selectedItems.filter(item => item.cid === cid)[0];
+    const { selectedItems } = this.props;
+    const deleteItem = selectedItems.filter(item => item.cid === cid)[0];
     this.isDelete = true;
     this.props.onDelete(deleteItem);
     this.props.onChange({
@@ -69,7 +71,7 @@ class TagsTrigger extends Component {
   }
 
   render() {
-    let { prefixCls, placeholder, onClick, selectedItems } = this.props;
+    const { prefixCls, placeholder, onClick, selectedItems } = this.props;
 
     return (
       <div className={`${prefixCls}-tags`} onClick={onClick}>
@@ -90,10 +92,5 @@ class TagsTrigger extends Component {
     );
   }
 }
-
-TagsTrigger.defaultProps = {
-  selectedItems: [],
-  onDelete: noop,
-};
 
 export default TagsTrigger;

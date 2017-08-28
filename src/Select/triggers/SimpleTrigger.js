@@ -1,21 +1,19 @@
-/* @flow */
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export type Props = {
-  prefixCls?: string,
-  value?: any,
-  text?: any,
-  placeholder?: string,
-};
-
-const SimpleTrigger = (props: Props) => {
-  let { prefixCls, onClick } = props;
-
+const SimpleTrigger = ({ prefixCls, onClick, text, placeholder }) => {
   return (
     <div className={`${prefixCls}-simple`} onClick={onClick}>
-      {props.text || props.placeholder}
+      {text || placeholder}
     </div>
   );
+};
+
+SimpleTrigger.propTypes = {
+  prefixCls: PropTypes.string,
+  value: PropTypes.any,
+  text: PropTypes.any,
+  placeholder: PropTypes.string,
 };
 
 export default SimpleTrigger;

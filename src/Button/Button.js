@@ -1,9 +1,9 @@
-/* @flow */
 import React, { Component } from 'react';
 import cxN from 'classnames';
-import omit from 'lodash/omit';
-import Link from 'react-router-dom/Link';
-import TouchRipple from '../utils/TouchRipple';
+import omit from 'lodash.omit';
+import PropTypes from 'prop-types';
+// import Link from 'react-router-dom/Link';
+import TouchRipple from '../util/TouchRipple';
 
 const BLACK_LIST = [
   'type',
@@ -23,24 +23,6 @@ const BTN_BLACKLIST = ['href', 'target'].concat(BLACK_LIST);
 
 const LINK_BLACKLIST = ['href', 'target'].concat(BLACK_LIST);
 
-export type ButtonProps = {
-  kind?: 'default' | 'primary' | 'secondary' | 'danger' | 'link',
-  size?: 'large' | 'medium' | 'small',
-  htmlType?: 'button' | 'submit' | 'reset',
-  className?: string,
-  block?: boolean,
-  component?: string | Function,
-  disabled?: boolean,
-  loading?: boolean,
-  outline?: boolean,
-  bordered?: boolean,
-  prefix?: string,
-  onClick: ?Function,
-  children: ?ReactChildren,
-  href: ?string,
-  target: ?string,
-};
-
 export default class Button extends Component {
   static defaultProps = {
     kind: 'default',
@@ -54,8 +36,23 @@ export default class Button extends Component {
     bordered: true,
     prefix: 'boldrui',
   };
-
-  props: ButtonProps;
+  static propTypes = {
+    kind: PropTypes.oneOf(['default', 'primary', 'secondary', 'success', 'danger', 'link']),
+    size: PropTypes.oneOf(['large', 'medium', 'small']),
+    htmlType: PropTypes.oneOf(['button', 'submit', 'reset']),
+    className: PropTypes.string,
+    block: PropTypes.bool,
+    component: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+    disabled: PropTypes.bool,
+    loading: PropTypes.bool,
+    outline: PropTypes.bool,
+    bordered: PropTypes.bool,
+    target: PropTypes.string,
+    href: PropTypes.string,
+    prefix: PropTypes.string,
+    children: PropTypes.node,
+    onClick: PropTypes.func,
+  };
 
   handleClick = event => {
     if (this.props.disabled || this.props.loading) {
@@ -67,24 +64,6 @@ export default class Button extends Component {
     }
   };
 
-  // render button as a link
-  renderLink(classNames) {
-    const Element = this.props.component || 'a';
-    const disabled = this.props.disabled || this.props.loading;
-    const { href = '', target } = this.props;
-    const nodeProps = omit(this.props, LINK_BLACKLIST);
-
-    return (
-      <Link
-        {...(disabled ? {} : { to: href, target })}
-        {...nodeProps}
-        className={classNames}
-        onClick={this.handleClick}
-      >
-        {this.props.children}
-      </Link>
-    );
-  }
   startRipple = e => {
     this.refs.touchRipple.addRipple(e);
   };
@@ -112,9 +91,25 @@ export default class Button extends Component {
       </Element>
     );
   }
+  // // render button as a link
+  // renderLink(classNames) {
+  //   const disabled = this.props.disabled || this.props.loading;
+  //   const { href = '', target } = this.props;
+  //   const nodeProps = omit(this.props, LINK_BLACKLIST);
 
+  //   return (
+  //     <Link
+  //       {...(disabled ? {} : { to: href, target })}
+  //       {...nodeProps}
+  //       className={classNames}
+  //       onClick={this.handleClick}
+  //     >
+  //       {this.props.children}
+  //     </Link>
+  //   );
+  // }
   render() {
-    const renderer = this.props.href || this.props.target ? 'renderLink' : 'renderButton';
+    const renderer = this.props.href || this.props.target ? 'renderButton' : 'renderButton';
     const {
       className,
       kind,
@@ -126,6 +121,7 @@ export default class Button extends Component {
       bordered,
       prefix,
     } = this.props;
+
     const classNames = cxN(
       `${prefix}-btn`,
       {

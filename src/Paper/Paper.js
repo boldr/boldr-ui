@@ -1,7 +1,7 @@
-/* @flow */
-import React from 'react';
+/* eslint-disable react/default-props-match-prop-types */
+// @flow
+import * as React from 'react';
 import cn from 'classnames';
-import PropTypes from 'prop-types';
 
 type Props = {
   //  The component to render the paper as.
@@ -12,14 +12,13 @@ type Props = {
   // the depth is 0, it will raise to a depth of 3 on hover.
   zDepth: number,
   // Any children to display in the paper.
-  children: ReactChildren,
+  children: Array<React.Node>,
   //  Boolean if the paper should raise to the `zDepth` of `3`
   //  on hover when the initial
-  raiseOnHover: ?boolean,
+  raiseOnHover: boolean,
   // whether we apply a border raidus or not.
-  rounded: ?boolean,
-  noPadding: ?boolean,
-  dark: ?boolean,
+  isRounded: boolean,
+  isPadded?: boolean,
 };
 
 const Paper = (props: Props) => {
@@ -28,9 +27,8 @@ const Paper = (props: Props) => {
     zDepth,
     className,
     raiseOnHover,
-    noPadding,
-    dark,
-    rounded,
+    isRounded,
+    isPadded,
     ...rest
   } = props;
 
@@ -38,28 +36,25 @@ const Paper = (props: Props) => {
     <Component
       {...rest}
       className={cn(
+        `boldrui-paper boldrui-paper__${zDepth}`,
         {
-          'boldrui-paper': !dark,
-          'boldrui-paper__dark': dark,
-        },
-        `boldrui-paper__${zDepth}`,
-        {
-          'boldrui-paper__0-hover': zDepth === 0 && raiseOnHover,
-          'boldrui-paper__round': rounded,
-          'boldrui-paper__no-pad': noPadding,
+          'boldrui-paper__0--hover': zDepth === 0 && raiseOnHover,
+          'boldrui-paper--round': isRounded,
+          'boldrui-paper--no-pad': !isPadded,
         },
         className,
       )}
     />
   );
 };
+
 const defaultProps = {
   zDepth: 1,
   component: 'div',
-  rounded: false,
-  raiseOnHover: false,
-  noPadding: false,
+  isRounded: false,
+  isPadded: false,
 };
 
 Paper.defaultProps = defaultProps;
+
 export default Paper;

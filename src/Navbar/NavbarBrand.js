@@ -1,25 +1,21 @@
 /* @flow */
-import React from 'react';
-import styled from 'styled-components';
-import cxN from 'classnames';
+import * as React from 'react';
+import classNames from 'classnames';
+import { StyleClasses } from '../theme/styleClasses';
+import { createWrappedComponent } from '../util/boldrui';
 
 export type Props = {
-  isFixed: boolean,
+  tag?: string,
+  isTransparent?: boolean,
+  className?: string,
 };
 
-const NavbarBrand = props => {
-  return (
-    <li className="boldrui-navbar-header">
-      <a className="boldrui-navbar-brand">Boldr</a>
-      <label
-        id="boldrui-navbar-hamburger"
-        className="boldrui-navbar-hamburger boldrui-navbar-hamburger-doublespin"
-        htmlFor="boldrui-navbar-checkbox"
-      >
-        <span />
-      </label>
-    </li>
-  );
-};
+const BASE_ELEMENT = StyleClasses.NAVBAR_BRAND;
 
-export default NavbarBrand;
+export function NavbarBrand({ tag = 'div', ...props }: Props) {
+  const className = classNames(BASE_ELEMENT, props.className);
+
+  return React.createElement(tag, { ...props, className });
+}
+
+export default createWrappedComponent(NavbarBrand);

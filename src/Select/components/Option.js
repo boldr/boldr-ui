@@ -1,20 +1,17 @@
-/* @flow */
 import React, { Component } from 'react';
-
-export type Props = {
-  prefixCls?: string,
-  cid?: string,
-  value?: any,
-  text?: any,
-  placeholder?: string,
-  onMouseEnter?: Function,
-};
+import PropTypes from 'prop-types';
 
 class Option extends Component {
-  props: Props;
-
-  optionClickHandler = ev => {
-    this.props.onClick(ev, this.props.cid);
+  static propTypes = {
+    cid: PropTypes.string,
+    value: PropTypes.any,
+    text: PropTypes.any,
+    onMouseEnter: PropTypes.func,
+    className: PropTypes.string,
+    onClick: PropTypes.func,
+  };
+  optionClickHandler = event => {
+    this.props.onClick(event, this.props.cid);
   };
 
   render() {

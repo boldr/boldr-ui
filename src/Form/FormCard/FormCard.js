@@ -1,15 +1,14 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 
 import styled from 'styled-components';
 import Headline from '../../Headline';
-import { Grid, Col, Row } from '../../Layout';
 
 type Props = {
-  skinny: string,
-  title: String,
+  skinny: boolean,
+  title: string,
   lightText: boolean,
-  form: ReactElement,
+  form: React.Node,
   formTitleSize: string,
 };
 
@@ -53,7 +52,7 @@ const FormHeader = styled.div`
 
 FormCard.defaultProps = {
   formTitleSize: 'h3',
-  width: '600px',
+  skinny: false,
 };
 
 export default FormCard;

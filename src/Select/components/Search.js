@@ -1,20 +1,18 @@
-/* @flow */
-
 import React, { Component } from 'react';
-
-export type Props = {
-  prefixCls?: string,
-  value?: any,
-  placeholder?: string,
-};
+import PropTypes from 'prop-types';
 
 class Search extends Component {
-  constructor(props: Props) {
+  static propTypes = {
+    prefixCls: PropTypes.string,
+    onChange: PropTypes.func,
+    keyword: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    value: PropTypes.any,
+    placeholder: PropTypes.string,
+  };
+  constructor(props) {
     super(props);
     this.changeHandler = this.changeHandler.bind(this);
   }
-
-  props: Props;
 
   componentDidMount() {
     this.input.focus();
@@ -31,7 +29,7 @@ class Search extends Component {
       <div className={`${prefixCls}-search`}>
         <input
           type="text"
-          ref={input => (this.input = input)}
+          ref={el => (this.input = el)}
           placeholder={placeholder}
           className={`${prefixCls}-filter`}
           value={keyword}

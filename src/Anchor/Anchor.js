@@ -1,9 +1,9 @@
 /* @flow */
-import React, { PureComponent } from 'react';
-import classnames from 'classnames';
-import NavLink from 'react-router-dom/NavLink';
+import * as React from 'react';
+// import {NavLink} from 'react-router-dom';
+
+import omit from 'lodash.omit';
 import Icon from '../Icons/Icon';
-import omit from 'lodash/omit';
 
 const BLACK_LIST = ['iconSize', 'iconColor'];
 
@@ -15,22 +15,22 @@ export type Props = {
   label: string,
   children: any,
   onClick: () => void,
-  icon: ?ReactElement,
+  icon: ?React.Node,
   iconColor: ?string,
   iconSize: ?string,
 };
 
-export default class Anchor extends PureComponent {
+export default class Anchor extends React.PureComponent<Props, *> {
   props: Props;
 
-  handleClick = event => {
+  handleClick = (event: Event) => {
     if (this.props.onClick) {
       this.props.onClick(event);
     }
   };
 
   // render button as a link
-  renderIcon(classNames) {
+  renderIcon() {
     const { href, label, icon, iconColor, iconSize } = this.props;
     const nodeProps = omit(this.props, PLAIN_BLACKLIST);
     return (
@@ -53,16 +53,16 @@ export default class Anchor extends PureComponent {
     const nodeProps = omit(this.props, PLAIN_BLACKLIST);
 
     return (
-      <NavLink
+      <a
         {...nodeProps}
         className="boldrui-link"
         onClick={this.handleClick}
         title={label}
-        to={href}
+        href={href}
         {...this.props}
       >
         {label}
-      </NavLink>
+      </a>
     );
   }
 

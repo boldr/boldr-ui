@@ -1,32 +1,24 @@
-/* @flow */
 import React, { Component } from 'react';
-
-export type Props = {
-  prefixCls?: string,
-  value?: any,
-  placeholder?: string,
-};
+import PropTypes from 'prop-types';
 
 class InputTrigger extends Component {
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      value: '',
-    };
-    this.inputChangeHandler = this.inputChangeHandler.bind(this);
-    this.inputFocusHandler = this.inputFocusHandler.bind(this);
-  }
-
-  props: Props;
+  static propTypes = {
+    prefixCls: PropTypes.string,
+    value: PropTypes.any,
+    placeholder: PropTypes.string,
+    onChange: PropTypes.func,
+    onClick: PropTypes.func,
+    keyword: PropTypes.string,
+    text: PropTypes.string,
+  };
+  state = {
+    value: '',
+  };
 
   componentDidMount() {
     this.props.onChange({
       extraFilter: true,
     });
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    return nextState.value !== this.state.value;
   }
 
   componentWillReceiveProps(nextProps) {
@@ -35,23 +27,18 @@ class InputTrigger extends Component {
     });
   }
 
-  inputChangeHandler(ev) {
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextState.value !== this.state.value;
+  }
+
+  inputChangeHandler = ev => {
     this.props.onChange({
-      open: true,
       keyword: ev.target.value,
     });
-  }
-
-  inputFocusHandler() {
-    this.props.onChange({
-      open: true,
-    });
-  }
+  };
 
   render() {
-    let { prefixCls, placeholder } = this.props;
-
-    let { value } = this.state;
+    const { prefixCls, placeholder, keyword, text } = this.props;
 
     return (
       <input
@@ -59,9 +46,9 @@ class InputTrigger extends Component {
         className={`${prefixCls}-input`}
         placeholder={placeholder}
         type="text"
-        value={value}
-        onFocus={this.inputFocusHandler}
+        value={keyword === null ? text : keyword}
         onChange={this.inputChangeHandler}
+        onClick={this.props.onClick}
       />
     );
   }

@@ -4,7 +4,7 @@ import cxN from 'classnames';
 import Tooltip from '../Tooltip';
 
 import Icon from '../Icons';
-import BoldrComponent from '../utils/BoldrComponent';
+import BoldrComponent from '../util/BoldrComponent';
 
 export type Props = {
   imageSrc: string,
@@ -30,15 +30,18 @@ class ImageDisplay extends BoldrComponent {
       <div className={classes}>
         <div data-hook="add-image" className="add-logo" onClick={onAddImage}>
           <div className="dashed-border" />
-          <div className="plus-icon"><Icon kind="plus2" size="47px" color="#eaf7ff" /></div>
+          <div className="plus-icon">
+            <Icon kind="plus2" size="47px" color="#eaf7ff" />
+          </div>
         </div>
-        {!!imageSrc &&
+        {imageSrc &&
           <div className="boldrui-image-display__logo--container">
             <div className="boldrui-image-display__layout">
               <img
                 data-hook="boldrui-image-display-image"
                 className="boldrui-image-display__image"
                 src={imageSrc}
+                alt="image thumbnail"
               />
             </div>
             <div className="boldrui-image-display__bg">
@@ -49,7 +52,7 @@ class ImageDisplay extends BoldrComponent {
                     className="boldrui-image-display__btn"
                     onClick={onUpdateImage}
                   >
-                    <Icon kind="replace" color="#eaf7ff" size="1.2em" />
+                    <Icon kind="edit" color="#eaf7ff" size="1.2em" />
                   </div>
                 </Tooltip>
                 <Tooltip content="Remove" {...tooltipCommonProps}>

@@ -25,5 +25,3 @@ zDepth | number |The depth of the paper. This should be a number between 0 - 5.
 raiseOnHover  | boolean | Boolean if the paper should raise to the `zDepth` of `3` on hover when the initial
 children | ReactChildren | Any children to display in the paper.
 className | string | custom css class name
-dark | boolean | use a dark bg with light text
-noPadding | boolean | do not add padding to the paper element

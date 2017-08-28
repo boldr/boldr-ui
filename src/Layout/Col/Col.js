@@ -1,19 +1,19 @@
-/* @flow */
+/* @flow weak */
 /* eslint-disable prefer-template */
-import React, { PureComponent } from 'react';
+import * as React from 'react';
 import classNames from 'classnames';
-import isNumber from 'lodash/isNumber';
+import isNumber from 'lodash.isnumber';
 
 export type Props = {
   className?: string,
   style?: Object,
-  componentClass: ReactElement,
-  children?: ReactChildren,
-  xs?: number | boolean,
-  sm?: number | boolean,
-  md?: number | boolean,
-  lg?: number | boolean,
-  xsOffset?: number,
+  componentClass: string,
+  children?: Array<React.Node>,
+  xs?: ?number | boolean,
+  sm?: ?number | boolean,
+  md?: ?number | boolean,
+  lg?: ?number | boolean,
+  xsOffset?: string,
   smOffset?: number,
   mdOffset?: number,
   lgOffset?: number,
@@ -28,7 +28,7 @@ export type Props = {
   lgLast?: boolean,
 };
 
-class Col extends PureComponent {
+class Col extends React.PureComponent<Props, *> {
   static defaultProps = {
     componentClass: 'div',
   };

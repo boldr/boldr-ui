@@ -1,5 +1,5 @@
 /* @flow */
-import React, { PureComponent } from 'react';
+import * as React from 'react';
 import cn from 'classnames';
 import FontIcon from './FontIcon';
 
@@ -7,12 +7,12 @@ type Props = {
   iconClassName?: string,
   flipped?: boolean,
   className?: string,
-  children: ReactChildren,
+  children: Array<React.Node>,
   suffix: string,
   suffixFlipped?: boolean,
 };
 
-export default class Collapser extends PureComponent {
+export default class Collapser extends React.PureComponent<Props, *> {
   static defaultProps = {
     children: 'keyboard_arrow_down',
   };

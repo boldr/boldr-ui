@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+/* @flow */
+import * as React from 'react';
 
 function isTrivialHref(href) {
   return !href || href.trim() === '#';
@@ -12,26 +12,22 @@ function isTrivialHref(href) {
  * button its accessible. It also emulates input `disabled` behavior for
  * links, which is usually desirable for Buttons, NavItems, MenuItems, etc.
  */
-class SafeAnchor extends PureComponent {
+
+export type Props = {
+  href?: string,
+  onClick?: () => mixed,
+  disabled?: boolean,
+  role?: string,
+  tabIndex?: string | number,
+  componentClass: string,
+};
+
+class SafeAnchor extends React.PureComponent<Props, *> {
   static defaultProps = {
     componentClass: 'a',
   };
-  static propTypes = {
-    href: PropTypes.string,
-    onClick: PropTypes.func,
-    disabled: PropTypes.bool,
-    role: PropTypes.string,
-    tabIndex: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 
-    componentClass: PropTypes.any,
-  };
-  constructor(props, context) {
-    super(props, context);
-
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick(event) {
+  handleClick = (event: Event) => {
     const { disabled, href, onClick } = this.props;
 
     if (disabled || isTrivialHref(href)) {
@@ -46,8 +42,8 @@ class SafeAnchor extends PureComponent {
     if (onClick) {
       onClick(event);
     }
-  }
-
+  };
+  props: Props;
   render() {
     const { componentClass: Component, disabled, ...props } = this.props;
 

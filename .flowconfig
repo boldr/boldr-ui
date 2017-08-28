@@ -10,24 +10,30 @@
 .*/docs/webpack.*
 
 [libs]
-
-internal/flow/interfaces
+internal/flow/interfaces/
+flow-typed/npm/
 
 [options]
+emoji=true
+module.system=node
+module.system.node.resolve_dirname=node_modules
+module.system.node.resolve_dirname=.
 
 esproposal.class_static_fields=enable
 esproposal.class_instance_fields=enable
+esproposal.decorators=ignore
+esproposal.export_star_as=ignore
+# Set this to true and Flow will no longer complain when you use require() with something other than a string literal.
+module.ignore_non_literal_requires=true
+munge_underscores=false
 
 module.name_mapper='.*\.\(html\|css\|svg\|png\|jpg\|gif\)$' -> '<PROJECT_ROOT>/flow/stubs/url-loader.js'
 module.name_mapper='^boldr-ui\/\(.*\)$' -> '<PROJECT_ROOT>/src/\1'
 module.name_mapper='^boldr-ui-docs\/\(.*\)$' -> '<PROJECT_ROOT>/docs/\1'
 
-module.ignore_non_literal_requires=true
-module.system.node.resolve_dirname=node_modules
-module.system.node.resolve_dirname=.
 
-suppress_type=$FlowIssue
 suppress_comment=\\(.\\|\n\\)*\\$FlowIssue
+suppress_comment= \\(.\\|\n\\)*\\$FlowIgnore
 
 [version]
-0.49.1
+0.53.1

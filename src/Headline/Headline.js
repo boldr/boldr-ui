@@ -58,9 +58,11 @@ const Headline = ({ className, type, theme, lightText, children, ...rest }) => {
       return '';
   }
 };
+
 Headline.propTypes = {
   children: PropTypes.node.isRequired,
   lightText: PropTypes.bool,
+
   /**
    * The semantic type of the heading, default to `h1`.
    */
@@ -74,6 +76,7 @@ Headline.propTypes = {
   theme: PropTypes.oneOf(validTypes),
   className: PropTypes.string,
 };
+
 Headline.defaultProps = {
   type: 'h1',
 };

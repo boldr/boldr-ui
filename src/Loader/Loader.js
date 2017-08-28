@@ -1,10 +1,10 @@
 /* @flow */
 import React from 'react';
 import classnames from 'classnames';
-import { StyleClasses, BOLDR_NS } from '../theme/styleClasses';
+import { StyleClasses } from '../theme/styleClasses';
 
 type Props = {
-  className: ?string,
+  className: string,
 };
 
 const BASE_ELEMENT = StyleClasses.LOADER;

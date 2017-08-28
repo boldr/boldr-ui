@@ -1,6 +1,6 @@
+/* eslint-disable react/prefer-stateless-function, no-unused-vars */
 import React, { Component } from 'react';
 import cn from 'classnames';
-import Button from '../Button/Button';
 import Icon from '../Icons/Icon';
 import contextTypes from './contextTypes';
 /**

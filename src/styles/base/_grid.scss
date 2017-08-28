@@ -1,27 +1,47 @@
+// stylelint-disable length-zero-no-unit, no-duplicate-selectors
+
 // ////////////////////////////////////////////////////// //
 // BEM Sass port of Flexbox Grid - http://flexboxgrid.com //
 // ////////////////////////////////////////////////////// //
 
 // Mixins
-@mixin breakpoint($breakpoint, $breakpoint-size) {
-  // The grid is mobile first so xs is the default, hence no breakpoint
-  @if $breakpoint == xs {
-    @content;
-  }
-
-  // Add breakpoints for larger screens
-  @else {
-    @media only screen and (min-width: $breakpoint-size) {
-      // Static grid
-      .grid {
-        width: map-get($grid-containers, $breakpoint);
-      }
-
-      @content;
-    }
-  }
+.#{$boldr-ns}block {
+  @include block;
 }
 
+.#{$boldr-ns}container {
+  position: relative;
+  &.is-flex {
+    @media (max-width: 999px) {
+      display: block !important;
+    }
+  }
+  @include desktop() {
+    margin: 0 auto;
+    max-width: $desktop - 40px;
+    width: $desktop - 40px;
+
+    // Modifiers
+    &.is-fluid {
+      margin: 0 20px;
+      max-width: none;
+      width: auto;
+    }
+    &.is-flex {
+      display: flex;
+    }
+  }
+
+  @include widescreen() {
+    max-width: $widescreen - 40px;
+    width: $widescreen - 40px;
+  }
+
+  @include fullhd() {
+    max-width: $fullhd - 40px;
+    width: $fullhd - 40px;
+  }
+}
 // Grid
 .grid,
 .grid--fluid {
@@ -97,7 +117,6 @@
       }
     }
 
-    // Utilities
     .grid {
       &__row {
         &--#{$breakpoint}-start {

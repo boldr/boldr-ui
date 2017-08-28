@@ -1,39 +1,29 @@
 /* @flow */
-import React from 'react';
-import styled from 'styled-components';
-import cxN from 'classnames';
-import NavbarBrand from './NavbarBrand';
+import * as React from 'react';
+import classNames from 'classnames';
+import { getActiveModifiers, removeActiveModifiers, createWrappedComponent } from '../util/boldrui';
+import { StyleClasses } from '../theme/styleClasses';
+import { getDomSafeProps } from '../util/helpers';
 
 export type Props = {
-  isFixed: boolean,
+  tag?: string,
+  className?: string,
 };
 
-class NavbarMenu extends React.Component {
-  static defaultProps = {
-    isFixed: true,
-  };
-  props: Props;
-  render() {
-    const { isFixed } = this.props;
-    const navbarClassName = cxN({
-      'boldrui-navbar-fixed': isFixed,
-      'boldrui-navbar-static': !isFixed,
-    });
-    return (
-      <div
-        id="boldrui-navbar-menu"
-        className="boldrui-navbar-menu-right boldrui-navbar-menu boldrui-navbar-menu-material-cyan"
-      >
-        <ul className="boldrui-navbar-navigation">
-          <NavbarBrand />
-          <li className="boldrui-navbar-item active"><a>Item 1</a></li>
-          <li className="boldrui-navbar-item"><a>Item 2</a></li>
-          <li className="boldrui-navbar-item"><a>Item 3</a></li>
-          <li className="boldrui-navbar-item"><a>Item 4</a></li>
-        </ul>
-      </div>
-    );
-  }
+const BASE_ELEMENT = StyleClasses.NAVBAR_MENU;
+
+export function NavbarMenu({ tag = 'div', ...props }: Props) {
+  const className = classNames(
+    BASE_ELEMENT,
+    {
+      ...getActiveModifiers(props),
+    },
+    props.className,
+  );
+
+  const HTMLProps = getDomSafeProps(props, removeActiveModifiers);
+
+  return React.createElement(tag, { ...HTMLProps, className });
 }
 
-export default NavbarMenu;
+export default createWrappedComponent(NavbarMenu);

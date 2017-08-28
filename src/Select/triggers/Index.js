@@ -1,47 +1,20 @@
-/* @flow */
-import PropTypes from 'prop-types';
-/**
- * Trigger
- */
-
 import React, { Component } from 'react';
-
-export type Props = {
-  trigger?: any,
-  open?: boolean,
-};
+import PropTypes from 'prop-types';
 
 class Trigger extends Component {
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      open: props.open,
-    };
-    this.triggerClickHandler = this.triggerClickHandler.bind(this);
-  }
-
-  props: Props;
-
   componentWillReceiveProps(nextProps) {
     this.setState(nextProps);
   }
 
-  triggerClickHandler() {
-    let { open } = this.state;
-    this.props.onChange({
-      open: !open,
-    });
-  }
-
   render() {
-    let Node = this.props.trigger;
+    const Node = this.props.trigger;
 
-    return <Node {...this.props} onClick={this.triggerClickHandler} />;
+    return <Node {...this.props} onKeyDown={this.props.onKeyDown} />;
   }
 }
 
-Trigger.defaultProps = {
-  open: false,
+Trigger.propTypes = {
+  trigger: PropTypes.any,
 };
 
 export default Trigger;

@@ -1,80 +1,79 @@
-/* @flow */
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import mergeClassNames from 'classnames';
+import uniqueId from 'lodash.uniqueid';
 import VisibilitySensor from 'react-visibility-sensor';
-import omit from 'lodash/omit';
-import { StyleClasses } from '../theme/styleClasses';
+import omit from 'lodash.omit';
 
-export type ImageQueryProps = {
-  minWidth: number,
-  height: number,
-  width: number,
-  quality: ?number,
-};
+export const imageQueryPropType = PropTypes.shape({
+  minWidth: PropTypes.number.isRequired,
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
+  quality: PropTypes.number,
+});
 
-export type Props = {
-  /**
-   * The division factor for the lazy image size,
-   * @example
-   *  <Image width={200} height={150} lazyDivideFactory={100}/>
-   * would result in a lazy image size of width: 2px and height: 1.5px.
-   *
-   * We expose this prop so that you can keep the proportions of the
-   * original image while the lazy image is in place.
-   */
-  lazyDivideFactor: ?number,
+export default class ResponsiveImage extends React.Component {
+  static propTypes = {
+    /**
+     * The division factor for the lazy image size,
+     * @example
+     *  <Image width={200} height={150} lazyDivideFactory={100}/>
+     * would result in a lazy image size of width: 2px and height: 1.5px.
+     *
+     * We expose this prop so that you can keep the proportions of the
+     * original image while the lazy image is in place.
+     */
+    lazyDivideFactor: PropTypes.number,
 
-  /**
-   * If falsy, will not load the image lazyly.
-   */
-  isLazy: ?boolean,
+    /**
+     * If falsy, will not load the image lazyly.
+     */
+    isLazy: PropTypes.bool,
 
-  /**
-   * The base src for the image.
-   */
-  src: string,
+    /**
+     * The base src for the image.
+     */
+    src: PropTypes.string.isRequired,
 
-  /**
-   * The alternative description of the image.
-   */
-  alt: string,
+    /**
+     * The alternative description of the image.
+     */
+    alt: PropTypes.string.isRequired,
 
-  /**
-   * The base image width, used to calculate proportions.
-   */
-  width: number,
+    /**
+     * The base image width, used to calculate proportions.
+     */
+    width: PropTypes.number.isRequired,
 
-  /**
-   * The base image height, used to calculate proportions.
-   */
-  height: number,
+    /**
+     * The base image height, used to calculate proportions.
+     */
+    height: PropTypes.number.isRequired,
 
-  /**
-   * if provided, an <picture/> element with sources for each item of
-   *  the array will be rendered.
-   */
-  queries: ?Array<ImageQueryProps>,
+    /**
+     * if provided, an <picture/> element with sources for each item of
+     *  the array will be rendered.
+     */
+    queries: PropTypes.arrayOf(imageQueryPropType),
 
-  /**
-   * An optional handler which will be called with the onLoad event
-   * of the final image.
-   */
-  onLoad: ?() => void,
+    /**
+     * An optional handler which will be called with the onLoad event
+     * of the final image.
+     */
+    onLoad: PropTypes.func,
 
-  /**
-   * An optional className to attach to the wrapper.
-   */
-  className: ?string,
+    /**
+     * An optional className to attach to the wrapper.
+     */
+    className: PropTypes.string,
 
-  /**
-   * Optionally specify your own lazy src which is displayed initially.
-   * Usefull if you render a base64 string on the server side initially.
-   */
-  lazySrc: ?string,
-};
+    /**
+     * Optionally specify your own lazy src which is displayed initially.
+     * Usefull if you render a base64 string on the server side initially.
+     */
+    lazySrc: PropTypes.string,
+  };
 
-export default class ResponsiveImage extends Component {
   static defaultProps = {
     isLazy: true,
     lazyDivideFactor: 100,
@@ -86,7 +85,7 @@ export default class ResponsiveImage extends Component {
     isImageLoaded: false,
   };
 
-  componentWillUpdate(nextProps: Object) {
+  componentWillUpdate(nextProps) {
     const { isLazy, src, lazySrc } = nextProps;
 
     if (isLazy && lazySrc !== this.props.lazySrc && src !== this.props.src) {
@@ -96,7 +95,7 @@ export default class ResponsiveImage extends Component {
       });
     }
   }
-  props: Props;
+
   createSrcForQuery = (src, query) => {
     const { width, height, quality = 60 } = query;
     let newSrc = src.indexOf('?') > 0 ? `${src}&` : `${src}?`;
@@ -157,11 +156,11 @@ export default class ResponsiveImage extends Component {
       : null;
     const wrapperInlineStyle = isLazy ? { backgroundImage: `url("${lazySrc}")` } : {};
     const finalClassName = mergeClassNames({
-      ['boldrui-img__wrapper']: true,
+      'boldrui-img__wrapper': true,
       [className]: className && className.length,
     });
     const imgFinalClassName = mergeClassNames({
-      ['boldrui-img']: true,
+      'boldrui-img': true,
       'boldrui-img__loaded': isImageLoaded || isLazy === false,
     });
     const imgProps = {
@@ -176,7 +175,6 @@ export default class ResponsiveImage extends Component {
 
     return (
       <picture {...rest} style={wrapperInlineStyle} className={finalClassName}>
-        {/* Do not render the VisibilitySensor if the image was already in the UAs viewport. */}
         {isImageLoadCapable ? null : sensor}
         {isImageLoadCapable
           ? queries
@@ -201,10 +199,12 @@ export default class ResponsiveImage extends Component {
                   },
                 ]);
               }, [])
-              .map((query, index) => {
+              .map(query => {
                 const { defaultSrc, retinaSrc, mq } = query;
 
-                return <source key={index} srcSet={`${defaultSrc}, ${retinaSrc}`} media={mq} />;
+                return (
+                  <source key={uniqueId()} srcSet={`${defaultSrc}, ${retinaSrc}`} media={mq} />
+                );
               })
           : null}
 

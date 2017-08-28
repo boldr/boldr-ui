@@ -1,6 +1,7 @@
 /* @flow */
 import React, { PureComponent } from 'react';
 import cn from 'classnames';
+import type { ReactChildren } from '../types/react.js';
 
 const styles = {
   sized: { width: 24, height: 24 },

@@ -1,3 +1,2 @@
-import FontIcon from './FontIcon';
-
-export default FontIcon;
+export { default } from './FontIcon';
+export { default as Collapser } from './Collapser';

@@ -1,5 +1,5 @@
 /* @flow */
-import React, { PureComponent } from 'react';
+import * as React from 'react';
 import cn from 'classnames';
 import { StyleClasses } from '../theme/styleClasses';
 
@@ -19,7 +19,7 @@ const BASE_ELEMENT = StyleClasses.DIVIDER;
  * The divider component will pass all other props such as style or
  * event listeners on to the component.
  */
-class Divider extends PureComponent {
+class Divider extends React.PureComponent<Props, *> {
   props: Props;
   render() {
     const { className, inset, vertical, ...props } = this.props;

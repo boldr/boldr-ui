@@ -1,44 +1,44 @@
 {
-  "presets": ["./internal/babel/boldr-ui-babel-preset-es2015", "stage-1", "react"],
-  "plugins": [
-    "./internal/babel/babel-transform-object-assign-require"
-  ],
   "env": {
-    "coverage": {
-      "plugins": [
-        [
-          "istanbul"
+    "story": {
+      "presets": [["env", { "modules": "commonjs" }], "react"],
+        "plugins": [
+          "transform-class-properties",
+          "transform-object-rest-spread",
+          "transform-flow-strip-types"
         ]
-      ]
     },
     "development": {
       "sourceMaps": "both",
+      "presets": ["./internal/babel/env-preset", "react"],
       "plugins": [
-        "flow-react-proptypes",
+        "transform-class-properties",
+        "transform-object-rest-spread",
         "transform-flow-strip-types"
       ]
     },
     "test": {
       "sourceMaps": "both",
+      "presets": ["./internal/babel/env-preset", "react"],
       "plugins": [
-        "flow-react-proptypes",
+        "transform-class-properties",
+        "transform-object-rest-spread",
         "transform-flow-strip-types"
       ]
     },
     "production": {
+      "compact": true,
+      "comments": false,
+      "presets": ["./internal/babel/env-preset", "react"],
       "plugins": [
+        "transform-class-properties",
+        "transform-object-rest-spread",
         "transform-react-constant-elements",
-        "transform-dev-warning",
-        "transform-runtime",
-        "ramda",
-        ["lodash", {
-                    "id": ["lodash", "async", "ramda"],
-                  }],
+
         ["transform-react-remove-prop-types", {
           "mode": "wrap",
           "plugins": [
-            "babel-plugin-flow-react-proptypes",
-            "babel-plugin-transform-flow-strip-types",
+            "babel-plugin-transform-flow-strip-types"
           ]
         }]
       ]

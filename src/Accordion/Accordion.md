@@ -4,6 +4,11 @@ Accordion component to expand or collapse content
 
 ### Usage
 
+```jsx
+  import { Accordion, AccordionItem, AccordionItemBody, AccordionItemTitle } from '@boldr/ui';
+
+  const Example = () => {
+    return (
       <Accordion>
         <AccordionItem>
             <AccordionItemTitle>
@@ -27,6 +32,10 @@ Accordion component to expand or collapse content
             </AccordionItemBody>
         </AccordionItem>
     </Accordion>
+    )
+  }
+
+```
 
 
 #### Props
@@ -35,7 +44,7 @@ Accordion component to expand or collapse content
 
 Name    Type  Definition
 --- | --- | ----
-accordion | boolean | Should it expand/collapse like an accordion
+isAccordion | boolean | Should it expand/collapse like an accordion
 children | ReactChildren | nested accordion elements
 className | string | custom css class name
 onChange | function | triggered on expand/collapse

@@ -12,6 +12,8 @@ import {
   Tag,
   Col,
   Icon,
+  Menu,
+  MenuItem,
   Row,
   ImageDisplay,
   Paper,
@@ -26,7 +28,6 @@ import {
   CardActions,
   Navbar,
   Radio,
-
 } from 'boldr-ui';
 import IconDemo from '../components/IconDemo';
 
@@ -96,6 +97,23 @@ function Home(props) {
                   Hover Tooltip
                 </Button>
               </Tooltip>
+              <Menu>
+                <MenuItem
+                  icon={<Icon kind="edit" color="#222" size="12" />}
+                  onClick={function noRefCheck() {}}
+                  text="Edit"
+                />
+                <MenuItem
+                  icon={<Icon kind="edit" color="#222" size="12" />}
+                  onClick={function noRefCheck() {}}
+                  text="Hide"
+                />
+                <MenuItem
+                  icon={<Icon kind="edit" color="#222" size="12" />}
+                  onClick={function noRefCheck() {}}
+                  text="Delete"
+                />
+              </Menu>
               <Spacer />
               <Button kind="danger" block>
                 Dangerous
@@ -143,7 +161,6 @@ function Home(props) {
         <Row>
           <Spacer />
           <Headline size="h1">Form</Headline>
-
         </Row>
       </Grid>
     </div>

@@ -1,3 +1,4 @@
+/* eslint-disable react/prefer-stateless-function, no-unused-vars */
 import React, { Component, Children, cloneElement } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';

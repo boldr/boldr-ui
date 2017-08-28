@@ -1,9 +1,9 @@
-/* eslint-disable react/no-find-dom-node */
+/* eslint-disable react/no-find-dom-node, no-unused-expressions, no-return-assign */
 import React, { cloneElement } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 
-import BoldrComponent from '../utils/BoldrComponent';
+import BoldrComponent from '../util/BoldrComponent';
 import TooltipContent from './TooltipContent';
 import position from './TooltipPosition';
 
@@ -34,7 +34,7 @@ class Tooltip extends BoldrComponent {
     hideDelay: PropTypes.number,
     showTrigger: PropTypes.oneOf(['custom', 'mouseenter', 'mouseleave', 'click', 'focus', 'blur']),
     hideTrigger: PropTypes.oneOf(['custom', 'mouseenter', 'mouseleave', 'click', 'focus', 'blur']),
-    active: PropTypes.bool,
+    isActive: PropTypes.bool,
     bounce: PropTypes.bool,
     disabled: PropTypes.bool,
     maxWidth: PropTypes.string,
@@ -68,7 +68,7 @@ class Tooltip extends BoldrComponent {
      * Negative one calculates position from right/bottom.
      */
     moveArrowTo: PropTypes.number,
-    size: PropTypes.oneOf(['normal', 'large']),
+    isSize: PropTypes.oneOf(['normal', 'large']),
     shouldCloseOnClickOutside: PropTypes.bool,
   };
 
@@ -83,11 +83,11 @@ class Tooltip extends BoldrComponent {
     maxWidth: '1200px',
     onClickOutside: null,
     onShow: null,
-    active: false,
+    isActive: false,
     theme: 'light',
     disabled: false,
     children: null,
-    size: 'normal',
+    isSize: 'normal',
     shouldCloseOnClickOutside: false,
     textAlign: 'center',
   };
@@ -122,7 +122,7 @@ class Tooltip extends BoldrComponent {
           style={{ zIndex: this.props.zIndex }}
           arrowStyle={this.state.arrowStyle}
           maxWidth={this.props.maxWidth}
-          size={this.props.size}
+          isSize={this.props.isSize}
           textAlign={this.props.textAlign}
         >
           {this.props.content}
@@ -141,21 +141,21 @@ class Tooltip extends BoldrComponent {
 
   componentWillMount() {
     super.componentWillMount && super.componentWillMount();
-    if (this.props.active) {
+    if (this.props.isActive) {
       this.show();
     }
   }
 
   componentWillReceiveProps(nextProps) {
     super.componentWillReceiveProps && super.componentWillReceiveProps(nextProps);
-    if (nextProps.active !== this.props.active) {
+    if (nextProps.isActive !== this.props.isActive) {
       if (this.state.visible && this.props.hideTrigger === 'custom') {
-        if (!nextProps.active) {
+        if (!nextProps.isActive) {
           this.hide();
         }
       }
       if (!this.state.visible && this.props.showTrigger === 'custom') {
-        if (nextProps.active) {
+        if (nextProps.isActive) {
           this.show();
         }
       }

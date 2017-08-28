@@ -1,6 +1,27 @@
+workspace:
+  base: /ci
+  path: boldr
+
 pipeline:
+  restore-cache:
+    image: drillster/drone-volume-cache
+    restore: true
+    mount:
+      - ./node_modules
+    volumes:
+      - /tmp/cache:/cache
+
   build:
-    image: node:8
+    image: node:8.4.0
     commands:
-      - yarn install --pure-lockfile
-      - yarn test:ci
+      - npm install
+      - npm run test:ci
+      - ./node_modules/.bin/codecov -t a3dc697a-382d-4d84-a07b-1f5682c3d70a -f coverage/coverage-final.json
+
+  rebuild-cache:
+    image: drillster/drone-volume-cache
+    rebuild: true
+    mount:
+      - ./node_modules
+    volumes:
+      - /tmp/cache:/cache

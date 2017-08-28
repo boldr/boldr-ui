@@ -49,26 +49,34 @@ function Sidebar(props) {
         highlightColor="#FFF"
       >
         <Nav id="dashboard">
-          <NavIcon><Icon kind="embedded" color="#fff" size="20" /></NavIcon>
+          <NavIcon>
+            <Icon kind="embedded" color="#fff" size="20" />
+          </NavIcon>
           <NavText> Dashboard </NavText>
         </Nav>
 
         <Nav id="products">
-          <NavIcon><Icon kind="activity" color="#fff" size="20" /></NavIcon>
+          <NavIcon>
+            <Icon kind="activity" color="#fff" size="20" />
+          </NavIcon>
           <NavText> Products </NavText>
         </Nav>
         <Nav id="orders">
-          <NavIcon><Icon kind="folder-upload" color="#fff" size="20" /></NavIcon>
-          <NavText>
-            Orders
-          </NavText>
+          <NavIcon>
+            <Icon kind="folder-upload" color="#fff" size="20" />
+          </NavIcon>
+          <NavText>Orders</NavText>
         </Nav>
 
         <Nav id="customers">
-          <NavIcon><Icon kind="dashboard" color="#fff" size="20" /></NavIcon>
+          <NavIcon>
+            <Icon kind="dashboard" color="#fff" size="20" />
+          </NavIcon>
           <NavText> Customers </NavText>
           <Nav id="dashboard2">
-            <NavIcon><Icon kind="routes" color="#fff" size="20" /></NavIcon>
+            <NavIcon>
+              <Icon kind="routes" color="#fff" size="20" />
+            </NavIcon>
             <NavText> Search </NavText>
           </Nav>
           <Nav
@@ -77,11 +85,15 @@ function Sidebar(props) {
               console.log('Promote clicked!', arguments);
             }}
           >
-            <NavIcon><Icon kind="bold" color="#fff" size="16" /></NavIcon>
+            <NavIcon>
+              <Icon kind="bold" color="#fff" size="16" />
+            </NavIcon>
             <NavText> Promote </NavText>
           </Nav>
           <Nav id="products2">
-            <NavIcon><Icon kind="bold" color="#fff" size="16" /></NavIcon>
+            <NavIcon>
+              <Icon kind="bold" color="#fff" size="16" />
+            </NavIcon>
             <NavText> Social Media </NavText>
           </Nav>
         </Nav>
@@ -91,11 +103,15 @@ function Sidebar(props) {
             console.log('Sales clicked!', arguments);
           }}
         >
-          <NavIcon><Icon kind="bold" color="#fff" size="16" /></NavIcon>
+          <NavIcon>
+            <Icon kind="bold" color="#fff" size="16" />
+          </NavIcon>
           <NavText> Sales </NavText>
         </Nav>
         <Nav id="deliveries">
-          <NavIcon><Icon kind="bold" color="#fff" size="16" /></NavIcon>
+          <NavIcon>
+            <Icon kind="bold" color="#fff" size="16" />
+          </NavIcon>
           <NavText> Deliveries </NavText>
         </Nav>
       </SideNav>

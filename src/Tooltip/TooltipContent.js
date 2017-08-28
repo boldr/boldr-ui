@@ -48,14 +48,14 @@ class TooltipContent extends Component {
      * Specifies if tooltip content should use bouncing animation.
      */
     bounce: PropTypes.bool,
-    size: PropTypes.oneOf(['normal', 'large']),
+    isSize: PropTypes.oneOf(['normal', 'large']),
   };
 
   static defaultProps = {
     theme: 'light',
     arrowPlacement: 'bottom',
     maxWidth: '1200px',
-    size: 'normal',
+    isSize: 'normal',
     textAlign: 'center',
   };
 
@@ -69,7 +69,7 @@ class TooltipContent extends Component {
       onMouseEnter,
       onMouseLeave,
       bounce,
-      size,
+      isSize,
       textAlign,
     } = this.props;
 
@@ -90,11 +90,13 @@ class TooltipContent extends Component {
               className={classnames(
                 'boldrui-tooltip',
                 `boldrui-tooltip ${[theme]}`,
-                `boldrui-tooltip ${[size]}`,
+                `boldrui-tooltip ${[isSize]}`,
               )}
               style={{ maxWidth: this.props.maxWidth, textAlign }}
             >
-              <div>{children}</div>
+              <div>
+                {children}
+              </div>
               <div
                 className={classnames(
                   'boldrui-tooltip__arrow',

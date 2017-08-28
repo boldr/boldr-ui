@@ -1,20 +1,9 @@
-/* @flow */
 import React from 'react';
-import type { Children } from 'react';
 import PropTypes from 'prop-types';
 
-type Props = {
-  children: Children,
-  color: string,
-  size?: string | number,
-  style?: Object,
-  width?: string,
-  onClick?: () => void,
-};
-
-const BaseIcon = ({ children, color, size, style, ...props }: Props, { reactIconBase = {} }) => {
+const BaseIcon = ({ children, color, size, style, ...props }, { reactIconBase = {} }) => {
   const computedSize = size || reactIconBase.size || '1em';
-  function onClick(e: Event) {
+  function onClick(e) {
     if (props.onClick) {
       props.onClick(e);
     }
@@ -22,7 +11,7 @@ const BaseIcon = ({ children, color, size, style, ...props }: Props, { reactIcon
   return (
     <svg
       children={children}
-      fill="currentColor"
+      fill={color}
       preserveAspectRatio="xMidYMid meet"
       height={computedSize}
       width={computedSize}
@@ -40,11 +29,22 @@ const BaseIcon = ({ children, color, size, style, ...props }: Props, { reactIcon
 };
 
 BaseIcon.defaultProps = {
-  color: '#fff',
+  color: '#222',
   size: '24',
 };
+
+BaseIcon.propTypes = {
+  children: PropTypes.node,
+  onClick: PropTypes.func,
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  style: PropTypes.object,
+};
+
 BaseIcon.contextTypes = {
-  iconBase: PropTypes.shape(BaseIcon.propTypes),
+  reactIconBase: PropTypes.shape(BaseIcon.propTypes),
 };
 
 export default BaseIcon;

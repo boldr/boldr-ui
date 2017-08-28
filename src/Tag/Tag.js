@@ -1,24 +1,27 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 import classNames from 'classnames';
-import BoldrComponent from '../utils/BoldrComponent';
+import BoldrComponent from '../util/BoldrComponent';
+
+export type Props = {
+  children: string,
+  id: string,
+  thumb?: React.Node,
+  onRemove: Function,
+  removable?: boolean,
+  // small or large
+  size?: string,
+  wrap?: boolean,
+  disabled?: boolean,
+};
 
 class Tag extends BoldrComponent {
-  static propTypes = {
-    children: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
-    thumb: PropTypes.element,
-    onRemove: PropTypes.func,
-    removable: PropTypes.bool,
-    size: PropTypes.oneOf(['small', 'large']),
-    wrap: PropTypes.bool,
-    disabled: PropTypes.bool,
-  };
   static defaultProps = {
     onRemove: () => {},
     size: 'small',
     removable: true,
   };
+  props: Props;
   render() {
     const { id, children, thumb, removable, onRemove, size, wrap, disabled } = this.props;
 
@@ -47,6 +50,7 @@ class Tag extends BoldrComponent {
         </span>
         {removable &&
           !disabled &&
+          // eslint-disable-next-line
           <a
             className="boldrui-tag__remove--btn"
             onClick={() => onRemove(id)}

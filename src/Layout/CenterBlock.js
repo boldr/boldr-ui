@@ -1,13 +1,18 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
+
 import Row from './Row';
 import Col from './Col';
 
-const CenterBlock = ({ children }: ReactChildren) => {
+type Props = {
+  children: React.ChildrenArray<number>,
+};
+
+const CenterBlock = (props: Props) => {
   return (
     <Row xsCenter>
       <Col xs={6}>
-        {children}
+        {props.children}
       </Col>
     </Row>
   );

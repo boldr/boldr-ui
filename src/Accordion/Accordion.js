@@ -1,19 +1,18 @@
 /* @flow */
-import React, { Component } from 'react';
+import * as React from 'react';
 
 type Props = {
-  accordion: ?boolean,
-  children: ReactChildren,
-  className: ?string,
-  onChange: ?() => void,
+  isAccordion: boolean,
+  children: Array<React.Node>,
+  onChange: () => mixed,
 };
 type State = {
   activeItems: Array<any>,
 };
 
-class Accordion extends Component {
+class Accordion extends React.Component<Props, State> {
   static defaultProps = {
-    accordion: true,
+    isAccordion: true,
     onChange: () => {},
   };
   constructor(props: Props) {
@@ -21,17 +20,16 @@ class Accordion extends Component {
     const activeItems = this.preExpandedItems();
     this.state = {
       activeItems,
-      accordion: true,
     };
-    (this: any).renderItems = this.renderItems.bind(this);
   }
   state: State;
   props: Props;
   preExpandedItems() {
     const activeItems = [];
     React.Children.map(this.props.children, (item, index) => {
+      // $FlowIssue
       if (item.props.expanded) {
-        if (this.props.accordion) {
+        if (this.props.isAccordion) {
           if (activeItems.length === 0) {
             activeItems.push(index);
           }
@@ -45,7 +43,7 @@ class Accordion extends Component {
 
   handleClick(key: string | number) {
     let { activeItems } = this.state;
-    if (this.props.accordion) {
+    if (this.props.isAccordion) {
       activeItems = activeItems[0] === key ? [] : [key];
     } else {
       activeItems = [...activeItems];
@@ -62,28 +60,27 @@ class Accordion extends Component {
       activeItems,
     });
 
-    this.props.onChange(this.props.accordion ? activeItems[0] : activeItems);
+    this.props.onChange(this.props.isAccordion ? activeItems[0] : activeItems);
   }
 
-  renderItems() {
-    const { accordion, children } = this.props;
+  renderItems = () => {
+    const { isAccordion, children } = this.props;
 
     return React.Children.map(children, (item, index) => {
       const key = index;
-      const expanded = this.state.activeItems.indexOf(key) !== -1 && !item.props.disabled;
+      const isExpanded = this.state.activeItems.indexOf(key) !== -1 && !item.props.disabled;
 
       return React.cloneElement(item, {
         disabled: item.props.disabled,
-        accordion,
-        expanded,
+        isAccordion,
+        isExpanded,
         key: `boldrui-accordion__item-${key}`,
         onClick: this.handleClick.bind(this, key),
       });
     });
-  }
+  };
 
   render() {
-    const { children } = this.props;
     return (
       <div className="boldrui-accordion">
         {this.renderItems()}
