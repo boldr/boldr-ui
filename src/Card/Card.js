@@ -245,7 +245,7 @@ export default class Card extends React.PureComponent {
         onMouseOver={this._handleMouseOver}
         onMouseLeave={this._handleMouseLeave}
         onTouchStart={this._handleTouchStart}
-        noPadding
+        isPadded={false}
       >
         <div className="boldrui-card__inner">
           {parts}
