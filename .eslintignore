@@ -1,0 +1,8 @@
+node_modules
+build/
+/tmp/
+coverage/
+docs/build/
+internal/flow/
+flow-typed/
+src/styles

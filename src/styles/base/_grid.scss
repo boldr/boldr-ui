@@ -1,3 +1,48 @@
+// stylelint-disable length-zero-no-unit, no-duplicate-selectors
+
+// ////////////////////////////////////////////////////// //
+// BEM Sass port of Flexbox Grid - http://flexboxgrid.com //
+// ////////////////////////////////////////////////////// //
+
+// Mixins
+.#{$boldr-ns}block {
+  @include block;
+}
+
+.#{$boldr-ns}container {
+  position: relative;
+  &.is-flex {
+    @media (max-width: 999px) {
+      display: block !important;
+    }
+  }
+  @include desktop() {
+    margin: 0 auto;
+    max-width: $desktop - 40px;
+    width: $desktop - 40px;
+
+    // Modifiers
+    &.is-fluid {
+      margin: 0 20px;
+      max-width: none;
+      width: auto;
+    }
+    &.is-flex {
+      display: flex;
+    }
+  }
+
+  @include widescreen() {
+    max-width: $widescreen - 40px;
+    width: $widescreen - 40px;
+  }
+
+  @include fullhd() {
+    max-width: $fullhd - 40px;
+    width: $fullhd - 40px;
+  }
+}
+// Grid
 .grid,
 .grid--fluid {
   margin: 0 auto;
@@ -8,6 +53,7 @@
   padding-left: $grid-gutter;
 }
 
+// Rows
 .grid__row {
   box-sizing: border-box;
   display: flex;
@@ -22,8 +68,8 @@
   }
 }
 
+// Columns
 .grid__col {
-
   &--reverse {
     flex-direction: column-reverse;
   }
@@ -31,15 +77,15 @@
 
 @each $breakpoint, $breakpoint-size in $grid-breakpoints {
   @include breakpoint($breakpoint, $breakpoint-size) {
-    $col-selectors: ('.grid__col--#{$breakpoint}');
+    $col-selectors: (".grid__col--#{$breakpoint}");
 
     @for $col from 1 through $grid-columns {
-      $col-selector: unquote('.grid__col--#{$breakpoint}-#{$col}');
+      $col-selector: unquote(".grid__col--#{$breakpoint}-#{$col}");
       $col-selectors: append($col-selectors, $col-selector, comma);
     }
 
     @for $col from 1 through $grid-columns {
-      $col-offset-selector: unquote('.grid__col--#{$breakpoint}-offset-#{$col}');
+      $col-offset-selector: unquote(".grid__col--#{$breakpoint}-offset-#{$col}");
       $col-selectors: append($col-selectors, $col-offset-selector, comma);
     }
 
@@ -51,14 +97,12 @@
     }
 
     .grid__col {
-
       &--#{$breakpoint} {
         flex-grow: 1;
         flex-basis: 0;
         max-width: 100%;
 
         @for $col from 1 through $grid-columns {
-
           &-#{$col} {
             flex-basis: (100% / $grid-columns) * $col;
             max-width: (100% / $grid-columns) * $col;
@@ -66,7 +110,6 @@
         }
 
         @for $col from 1 through $grid-columns {
-
           &-offset-#{$col} {
             margin-left: (100% / $grid-columns) * $col;
           }
@@ -75,9 +118,7 @@
     }
 
     .grid {
-
       &__row {
-
         &--#{$breakpoint}-start {
           justify-content: flex-start;
           text-align: start;
@@ -115,7 +156,6 @@
       }
 
       &__col {
-
         &--#{$breakpoint}-first {
           order: -1;
         }

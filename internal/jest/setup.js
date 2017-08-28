@@ -1,19 +1,21 @@
-import { EventEmitter } from 'events';
-import { shallow, render, mount } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
+const { EventEmitter } = require('events');
+const { shallow } = require('enzyme');
+const { shallowToJson } = require('enzyme-to-json');
+
+require('jest-enzyme');
 // "^.+\\.(css|scss|less)$": "<rootDir>/internal/jest/styleMock.js"
 // Some of the `jest-runtime` tests are very slow and cause
 // timeouts on travis
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
 
 global.shallow = shallow;
-global.render = render;
-global.mount = mount;
+
 global.shallowToJson = shallowToJson;
 
 window.matchMedia = function matchMedia() {
   return false;
 };
+
 EventEmitter.defaultMaxListeners = Infinity;
 
 global.Array = Array;

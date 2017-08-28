@@ -29,10 +29,10 @@
 }
 
 .#{$boldr-ns}loader__item {
-  background: none;
   position: relative;
   width: 200px;
   height: 200px;
+  background: none;
   margin-right: auto;
   margin-left: auto;
   transform: scale(0.25);
@@ -44,15 +44,15 @@
   left: 20px;
   width: 40px;
   height: 120px;
-  background: #207cca;
   opacity: 0.6;
+  background: #207cca;
   animation: boldr_uil 0.8s cubic-bezier(0.01, 0.73, 0.28, 0.93) infinite;
 }
 
 .#{$boldr-ns}loader__item > div:nth-of-type(2) {
   left: 80px;
   opacity: 0.8;
-  animation-delay: 0.08s;
+  animation-delay: 0.1s;
 }
 
 .#{$boldr-ns}loader__item > div:nth-of-type(3) {

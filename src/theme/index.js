@@ -1,4 +1,5 @@
 import theme, { mediaQuery } from './theme';
 import { StyleClasses, BOLDR_NS } from './styleClasses';
+import injectResetStyle from './resetStyle';
 
-export { theme, mediaQuery, StyleClasses, BOLDR_NS };
+export { injectResetStyle, theme, mediaQuery, StyleClasses, BOLDR_NS };

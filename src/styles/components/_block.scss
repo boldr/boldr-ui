@@ -1,20 +1,24 @@
-.boldrui-block {
-  margin-bottom: 1.5rem;
+////
+/// @group block
+////
+.#{$boldr-ns}block {
+  @include md-shadow(2);
   padding: 1.5rem;
-  background: #fff;
+  background: $block-bg;
   border-radius: 3px;
-  box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+  margin-bottom: 1.5rem;
 
   > :last-child {
     margin-bottom: 0;
   }
 }
-.boldrui-block__dark {
-  margin-bottom: 1.5rem;
+
+.#{$boldr-ns}block__dark {
+  @include md-shadow(2);
   padding: 1.5rem;
-  background: $outer-space;
+  background: $block-bg-dark;
   border-radius: 3px;
-  box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+  margin-bottom: 1.5rem;
 
   > :last-child {
     margin-bottom: 0;

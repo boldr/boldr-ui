@@ -1,23 +1,25 @@
-@charset 'utf-8';
+@charset "utf-8";
+@import "vendor/all";
+@import "abstracts/all";
+@import "base/all";
+@import "components/all";
 
-/// Namespace
-$boldr-ns: 'boldrui-' !default;
-$dash-ns: 'boldrui-dash-'; // .#{$dash-ns}
+.boldrui-form__radio {
+  margin-left: 5px;
+  margin-right: 5px;
+}
 
-@import 'vendor/normalize';
-@import 'abstracts/colors/all';
+.boldrui-hero {
+  background-color: inherit;
+}
 
-// Our variables
-@import 'abstracts/variables';
-// Our mixins
-@import 'abstracts/mixins';
-// Bootstrap components and custom bootstrap component variations
-@import 'vendor/all';
-// Base (typography, grid, animation)
-@import 'base/all';
-@import 'components/all';
+.boldrui-hero.is-info.boldrui-admin-layout {
+  background: #ece9e6;
+  background: -webkit-linear-gradient(to right, #f0f3f6, #ece9e6);
+  background: linear-gradient(to right, #f0f3f6, #ece9e6);
 
-@include react-md-everything;
-@include boldrui-paper;
-@include boldrui-media;
-@include boldrui-divider;
+  .boldrui-hero__body {
+    padding: 3.5rem 0;
+    align-items: flex-start;
+  }
+}

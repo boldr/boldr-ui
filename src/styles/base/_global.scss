@@ -3,61 +3,110 @@
 *:before {
   box-sizing: inherit;
 }
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  min-width: 300px;
+  height: 100%;
+  color: $text-color;
+  font-size: $font-size-base;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 body,
 html {
-  height: 100%;
   width: 100%;
+  height: 100%;
   padding: 0;
   margin: 0;
 }
 
-html {
-  height: 100%;
-  font-size: $font-size-base;
-  box-sizing: border-box;
-  color: $text-color;
-}
-
 body {
-  overflow-x: hidden;
-  font-family: $font-family;
+  background: #ECE9E6;
+  background: -webkit-linear-gradient(to right, #f0f3f6, #ECE9E6);
+  background: linear-gradient(to right, #f0f3f6, #ECE9E6);
+  font-weight: $font-weight-base;
   font-size: $font-size-base;
+  font-family: $font-family-base;
   line-height: $line-height-base;
-  background-color: $body-background;
-  text-rendering: optimizeLegibility;
+  height: 100%;
+  min-height: 100%;
 }
 
 #app {
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+  min-height: 100%;
 }
 
 a {
-  color: $primary-color;
+  color: $link-color;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: none $speed $easing;
+  cursor: pointer;
 
-  &:hover,
   &:active,
-  &:focus {
-    color: darken($primary-color, 10%);
-    text-decoration: none;
+  &:focus,
+  &:hover {
+    color: $link-hover-color;
   }
+}
+
+hr {
+  display: block;
+  height: 1px;
+  background-color: $border-color;
+  border: none;
+  margin: 1.5rem 0;
+}
+
+img {
+  max-width: 100%;
 }
 
 .boldr-icon {
   display: inline-block;
 }
 
-.boldrui-dash-main .container-fluid {
-  padding: 0 30px;
-}
-
 :root {
-
   :focus {
     outline: none !important;
   }
+}
+
+ul,
+ol {
+  padding-left: 0;
+
+  ol,
+  ul {
+    padding-left: 1em;
+  }
+}
+
+ol {
+  padding-left: 0;
+
+  li {
+    list-style: none;
+  }
+
+  li:before {
+    margin-right: 0.2em;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $text-color;
+  font-weight: $headline-font-weight;
+  font-family: $headline-font-family;
+}
+
+span {
+  font-style: inherit;
+  font-weight: inherit;
 }

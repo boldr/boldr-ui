@@ -1,7 +1,19 @@
-node_modules
+# Exclude compiled files
+build
 coverage
-dist
-lib
+/lib
+.eslintcache
+tmp
+packages/material-ui-icons
+# OS files
+.DS_STORE
+
+# npm files
+node_modules
 *.log
+
+# Editor files
 .idea
-.env
+.vscode
+
+.nyc_output

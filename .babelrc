@@ -1,25 +1,46 @@
 {
-  "presets": ["es2015", "stage-2", "react"],
-  "plugins": [
-    "syntax-flow",
-    "transform-class-properties",
-    ["transform-runtime", {
-      "polyfill": false,
-      "regenerator": false
-    }],
-  ],
   "env": {
-    "production": {
+    "story": {
+      "presets": [["env", { "modules": "commonjs" }], "react"],
+        "plugins": [
+          "transform-class-properties",
+          "transform-object-rest-spread",
+          "transform-flow-strip-types"
+        ]
+    },
+    "development": {
+      "sourceMaps": "both",
+      "presets": ["./internal/babel/env-preset", "react"],
       "plugins": [
-        "ramda",
         "transform-class-properties",
-        ["transform-runtime", {
-          "polyfill": false,
-          "regenerator": false
-        }],
-        "transform-flow-strip-types",
-        ["transform-react-remove-prop-types", {"mode": "wrap"}],
-        "add-module-exports"
+        "transform-object-rest-spread",
+        "transform-flow-strip-types"
+      ]
+    },
+    "test": {
+      "sourceMaps": "both",
+      "presets": ["./internal/babel/env-preset", "react"],
+      "plugins": [
+        "transform-class-properties",
+        "transform-object-rest-spread",
+        "transform-flow-strip-types"
+      ]
+    },
+    "production": {
+      "compact": true,
+      "comments": false,
+      "presets": ["./internal/babel/env-preset", "react"],
+      "plugins": [
+        "transform-class-properties",
+        "transform-object-rest-spread",
+        "transform-react-constant-elements",
+
+        ["transform-react-remove-prop-types", {
+          "mode": "wrap",
+          "plugins": [
+            "babel-plugin-transform-flow-strip-types"
+          ]
+        }]
       ]
     }
   }
