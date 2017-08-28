@@ -37,6 +37,7 @@ function loadStories() {
   require('../src/Pop/Pop.stories');
   require('../src/Tooltip/Tooltip.stories');
   require('../src/Card/Card.stories');
+  require('../src/Tabs/Tabs.stories');
   require('../src/Dialog/Dialog.stories');
   require('../src/Menu/Menu.stories');
   require('../src/Accordion/Accordion.stories');

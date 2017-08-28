@@ -13,7 +13,6 @@ export type Props = {
   render?: Function,
   title?: string,
   className?: string,
-  href?: string,
 };
 
 const BASE_ELEMENT = StyleClasses.NAVBAR_ITEM;
@@ -33,13 +32,7 @@ export function NavbarItem({ tag = 'div', render, isHoverable, hasDropdown, ...p
   if (render) {
     return render({ ...HTMLProps, className });
   }
-  if (props.href) {
-    return (
-      <a className={className} href={props.href} {...HTMLProps}>
-        {props.title}
-      </a>
-    );
-  }
+
   return React.createElement(tag, { ...HTMLProps, className });
 }
 

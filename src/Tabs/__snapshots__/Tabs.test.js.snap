@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs tabPosition remove card 1`] = `
+<Tabs
+  hideAdd={false}
+  prefixCls="boldrui-tabs"
+  tabBarExtraContent="xxx"
+  tabPosition="left"
+>
+  <Tabs
+    className="boldrui-tabs-vertical boldrui-tabs-line"
+    destroyInactiveTabPane={false}
+    hideAdd={false}
+    onChange={[Function]}
+    prefixCls="boldrui-tabs"
+    renderTabBar={[Function]}
+    renderTabContent={[Function]}
+    style={Object {}}
+    tabBarExtraContent="xxx"
+    tabBarPosition="left"
+    tabPosition="left"
+  >
+    <div
+      className="boldrui-tabs boldrui-tabs-left boldrui-tabs-vertical boldrui-tabs-line"
+      style={Object {}}
+    >
+      <ScrollableInkTabBar
+        activeKey="1"
+        extraContent={
+          <div
+            className="boldrui-tabs-extra-content"
+          >
+            xxx
+          </div>
+        }
+        inkBarAnimated={true}
+        onKeyDown={[Function]}
+        onNextClick={[Function]}
+        onPrevClick={[Function]}
+        onTabClick={[Function]}
+        panels={
+          <TabPane
+            placeholder={null}
+            tab="foo"
+          >
+            foo
+          </TabPane>
+        }
+        prefixCls="boldrui-tabs"
+        scrollAnimated={true}
+        styles={Object {}}
+        tabBarPosition="left"
+      >
+        <div
+          className="boldrui-tabs-bar"
+          onKeyDown={[Function]}
+          role="tablist"
+          tabIndex="0"
+        >
+          <div
+            className="boldrui-tabs-nav-container"
+          >
+            <span
+              className="boldrui-tabs-tab-prev boldrui-tabs-tab-btn-disabled"
+              onClick={null}
+              onTransitionEnd={[Function]}
+              unselectable="unselectable"
+            >
+              <span
+                className="boldrui-tabs-tab-prev-icon"
+              />
+            </span>
+            <span
+              className="boldrui-tabs-tab-next boldrui-tabs-tab-btn-disabled"
+              onClick={null}
+              unselectable="unselectable"
+            >
+              <span
+                className="boldrui-tabs-tab-next-icon"
+              />
+            </span>
+            <div
+              className="boldrui-tabs-nav-wrap"
+            >
+              <div
+                className="boldrui-tabs-nav-scroll"
+              >
+                <div
+                  className="boldrui-tabs-nav boldrui-tabs-nav-animated"
+                >
+                  <div
+                    className="boldrui-tabs-ink-bar boldrui-tabs-ink-bar-animated"
+                  />
+                  <div
+                    aria-disabled="false"
+                    aria-selected="true"
+                    className="boldrui-tabs-tab-active boldrui-tabs-tab"
+                    onClick={[Function]}
+                    role="tab"
+                  >
+                    foo
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="boldrui-tabs-extra-content"
+            style={Object {}}
+          >
+            xxx
+          </div>
+        </div>
+      </ScrollableInkTabBar>
+      <TabContent
+        activeKey="1"
+        animated={true}
+        animatedWithMargin={true}
+        destroyInactiveTabPane={false}
+        onChange={[Function]}
+        prefixCls="boldrui-tabs"
+        tabBarPosition="left"
+      >
+        <div
+          className="boldrui-tabs-content boldrui-tabs-content-animated"
+          style={
+            Object {
+              "marginTop": "0%",
+            }
+          }
+        >
+          <TabPane
+            active={true}
+            destroyInactiveTabPane={false}
+            placeholder={null}
+            rootPrefixCls="boldrui-tabs"
+            tab="foo"
+          >
+            <div
+              aria-hidden="false"
+              className="boldrui-tabs-tabpane boldrui-tabs-tabpane-active"
+              role="tabpanel"
+            >
+              foo
+            </div>
+          </TabPane>
+        </div>
+      </TabContent>
+    </div>
+  </Tabs>
+</Tabs>
+`;

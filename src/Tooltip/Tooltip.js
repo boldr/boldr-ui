@@ -161,29 +161,6 @@ class Tooltip extends BoldrComponent {
       }
     }
   }
-
-  render() {
-    const child = this.props.children;
-    if (child) {
-      return cloneElement(child, {
-        ref: ref => (this._childNode = ReactDOM.findDOMNode(ref)),
-        onClick: this._chainCallbacks(child.props ? child.props.onClick : null, this._onClick),
-        onMouseEnter: this._chainCallbacks(
-          child.props ? child.props.onMouseEnter : null,
-          this._onMouseEnter,
-        ),
-        onMouseLeave: this._chainCallbacks(
-          child.props ? child.props.onMouseLeave : null,
-          this._onMouseLeave,
-        ),
-        onFocus: this._chainCallbacks(child.props ? child.props.onFocus : null, this._onFocus),
-        onBlur: this._chainCallbacks(child.props ? child.props.onBlur : null, this._onBlur),
-      });
-    } else {
-      return <div />;
-    }
-  }
-
   _chainCallbacks = (first, second) => {
     return args => {
       if (first) {
@@ -395,6 +372,27 @@ class Tooltip extends BoldrComponent {
 
   isShown() {
     return this.state.visible;
+  }
+  render() {
+    const child = this.props.children;
+    if (child) {
+      return cloneElement(child, {
+        ref: ref => (this._childNode = ReactDOM.findDOMNode(ref)),
+        onClick: this._chainCallbacks(child.props ? child.props.onClick : null, this._onClick),
+        onMouseEnter: this._chainCallbacks(
+          child.props ? child.props.onMouseEnter : null,
+          this._onMouseEnter,
+        ),
+        onMouseLeave: this._chainCallbacks(
+          child.props ? child.props.onMouseLeave : null,
+          this._onMouseLeave,
+        ),
+        onFocus: this._chainCallbacks(child.props ? child.props.onFocus : null, this._onFocus),
+        onBlur: this._chainCallbacks(child.props ? child.props.onBlur : null, this._onBlur),
+      });
+    } else {
+      return <div />;
+    }
   }
 }
 
