@@ -1,10 +1,15 @@
 {
   "name": "@boldr/ui",
   "author": "Steven Truesdell",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "UI components for Boldr",
   "main": "./src/index.js",
-  "keywords": ["react", "boldr", "react-ui", "react-component"],
+  "keywords": [
+    "react",
+    "boldr",
+    "react-ui",
+    "react-component"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/boldr/boldr-ui.git"
@@ -62,6 +67,7 @@
     "lodash.take": "^4.1.1",
     "lodash.throttle": "^4.1.1",
     "lodash.trim": "^4.5.1",
+    "lodash.uniq": "^4.5.0",
     "lodash.uniqueid": "^4.0.1",
     "prop-types": "^15.5.10",
     "rc-tabs": "^9.1.4",
@@ -131,10 +137,21 @@
       "path": "./node_modules/cz-emoji"
     },
     "cz-emoji": {
-      "scopes": ["component", "docs", "core", "theme", "styles", "story", "ci"]
+      "scopes": [
+        "component",
+        "docs",
+        "core",
+        "theme",
+        "styles",
+        "story",
+        "ci"
+      ]
     }
   },
   "lint-staged": {
-    "*.js": ["npm run prettier", "git add"]
+    "*.js": [
+      "npm run prettier",
+      "git add"
+    ]
   }
 }
