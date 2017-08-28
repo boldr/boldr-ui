@@ -1,7 +1,7 @@
 {
   "name": "@boldr/ui",
   "author": "Steven Truesdell",
-  "version": "0.1.0-beta.13",
+  "version": "0.1.0",
   "description": "UI components for Boldr",
   "main": "./src/index.js",
   "keywords": ["react", "boldr", "react-ui", "react-component"],
