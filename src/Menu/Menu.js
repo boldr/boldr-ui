@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import BoldrComponent from '../util/BoldrComponent';
 import Tooltip from '../Tooltip';
 import IconButton from '../IconButton';
@@ -7,13 +8,13 @@ import MenuItem from './MenuItem';
 
 class Menu extends BoldrComponent {
   static propTypes = {
-    size: Tooltip.propTypes.size,
+    isSize: PropTypes.string,
     placement: Tooltip.propTypes.placement,
     buttonTheme: IconButton.propTypes.theme,
   };
 
   static defaultProps = {
-    size: 'normal',
+    isSize: 'normal',
     placement: 'top',
     buttonTheme: 'icon-standard',
   };
@@ -45,7 +46,7 @@ class Menu extends BoldrComponent {
         showTrigger="click"
         hideTrigger="click"
         theme="light"
-        size={this.props.size}
+        isSize={this.props.isSize}
         shouldCloseOnClickOutside
       >
         <IconButton type="button" height="medium" theme={this.props.buttonTheme}>

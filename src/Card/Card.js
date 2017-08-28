@@ -1,4 +1,4 @@
-import React, { PureComponent, Children } from 'react';
+import React, { Children } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 
@@ -239,7 +239,7 @@ export default class Card extends React.PureComponent {
             'boldrui-card--raise': raise,
             'boldrui-card--table': tableCard,
           },
-          'md-background--card',
+          'boldrui-background--card',
           className,
         )}
         onMouseOver={this._handleMouseOver}

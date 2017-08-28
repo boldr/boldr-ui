@@ -262,7 +262,7 @@ $layout-transition-speed: $transition-length;
 /// with a `-500` suffix.
 /// @type Color
 /// @group theme
-$primary-color: $iris-blue !default;
+$primary-color: $nice-blue !default;
 
 /// @type Color
 /// @group theme
@@ -350,11 +350,11 @@ $btn-secondary-hover: darken($secondary-color, 5%);
 /// @group btn
 $btn-secondary-active: darken($secondary-color, 5%);
 /// @group btn
-$btn-danger: #f44;
+$btn-danger: $red;
 /// @group btn
-$btn-danger-hover: #f66;
+$btn-danger-hover:  darken($red, 5%);
 /// @group btn
-$btn-danger-active: #e33;
+$btn-danger-active: darken($red, 5%);
 
 $icon-btn-height: 36px;
 $icon-btn-close-height: 18px;
@@ -719,8 +719,8 @@ $notification-max-width: 360px;
 $notification-button-width: 90px;
 $notification-close-button: "\f00d";
 
-$notification-success-bg: #fff;
-$notification-success-border: #4dc657;
+$notification-success-bg: $turtle;
+$notification-success-border: darken($turtle, 5%);
 $notification-success-icon: "\f058";
 
 $notification-default-bg: #fff;

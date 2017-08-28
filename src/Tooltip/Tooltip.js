@@ -16,7 +16,7 @@ class Tooltip extends BoldrComponent {
   }
 
   onClickOutside(e) {
-    if (this.props.shouldCloseOnClickOutside) {
+    if (this.props._supportOnClickOutside) {
       this.hide();
     } else if (this.props.onClickOutside) {
       this.props.onClickOutside && this.props.onClickOutside(e);

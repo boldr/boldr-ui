@@ -16,6 +16,7 @@ $grayish: #a1a1a1;
 $iris-blue: #00bcd4;
 /// @type Color
 $iris-blue-alt: #00b4d0;
+$nice-blue: hsl(195, 100%, 39%);
 /// @type Color
 $water: #03a9f4;
 /// @type Color
@@ -35,13 +36,13 @@ $big-stone: #333c44;
 /// @type Color
 $gunmetal: #2d343c;
 /// @type Color
-$turtle: #8bc34a;
+$turtle: hsl(150, 100%, 39%);
 /// @type Color
 $lavender: #7e57c2;
 /// @type Color
 $golden: #ffca28;
 /// @type Color
-$carmine-pink: #f44336;
+$carmine-pink: hsl(330, 100%, 39%);
 /// @type Color
 $black-base: rgba(0, 0, 0, 1);
 /// @type Color
@@ -63,13 +64,13 @@ $white: hsl(0, 0%, 100%) !default;
 
 $orange: hsl(14, 100%, 53%) !default;
 $yellow: hsl(48, 100%, 67%) !default;
-$green: hsl(141, 71%, 48%) !default;
+$green: hsl(150, 100%, 39%) !default;
 $turquoise: hsl(171, 100%, 41%) !default;
-$blue: hsl(217, 71%, 53%) !default;
+$blue: hsl(195, 100%, 39%) !default;
 $purple: hsl(271, 100%, 71%) !default;
 $red: hsl(348, 100%, 61%) !default;
 
-$primary: $turquoise !default;
+$primary: $blue !default;
 
 $info: $blue !default;
 $success: $green !default;
@@ -87,7 +88,7 @@ $blue-invert: findColorInvert($blue) !default;
 $purple-invert: findColorInvert($purple) !default;
 $red-invert: findColorInvert($red) !default;
 
-$primary-invert: $turquoise-invert !default;
+$primary-invert: $blue-invert !default;
 $info-invert: $blue-invert !default;
 $success-invert: $green-invert !default;
 $warning-invert: $yellow-invert !default;

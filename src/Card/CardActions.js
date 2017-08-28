@@ -46,11 +46,11 @@ export default class CardActions extends Component {
       <section
         {...props}
         className={cn(
-          'boldrui-card-footer',
+          'boldrui-card__footer',
           {
-            'boldrui-card-footer__inline': !stacked,
-            'boldrui-card-footer__stacked': stacked,
-            'boldrui-card-footer__centered': centered,
+            'boldrui-card__footer--inline': !stacked,
+            'boldrui-card__footer--stacked': stacked,
+            'boldrui-card__footer--centered': centered,
           },
           className,
         )}

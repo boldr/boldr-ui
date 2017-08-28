@@ -6,3 +6,4 @@ docs/build/
 internal/flow/
 flow-typed/
 src/styles
+rollup.config.js

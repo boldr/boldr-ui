@@ -17,3 +17,5 @@ node_modules
 .vscode
 
 .nyc_output
+storybook-static
+rollup.config.js
