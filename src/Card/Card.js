@@ -1,5 +1,5 @@
-import React, { Children } from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 import cn from 'classnames';
 
 import getField from '../util/getField';
@@ -7,71 +7,35 @@ import Paper from '../Paper/Paper';
 import Collapse from '../util/Collapse';
 import contextTypes from './contextTypes';
 
-export default class Card extends React.PureComponent {
-  static propTypes = {
-    /**
-     * An optional style to apply.
-     */
-    style: PropTypes.object,
+export type ExpanderTooltipPosition = 'top' | 'right' | 'bottom' | 'left';
+export type CardProps = {
+  // An optional style to apply.
+  style?: Object,
+  // An optional className to apply to the card.
+  className?: string,
+  // Any Card parts that should be rendered.
+  children?: React.ChildrenArray<*>,
+  // Boolean if the card is expanded by default when there is an expander component
+  defaultExpanded?: boolean,
+  // Boolean if the card should raise on hover when on a desktop display.
+  raise?: boolean,
+  // Boolean if the card is currently expanded. This will require the `onExpanderClick` function
+  // to toggle the state. The card will become controlled if this is not `undefined`.
+  expanded?: boolean,
+  //  An optional function to call when the expander is clicked.
+  onExpanderClick?: Function,
+  // The icon className to use for the expander icon.
+  expanderIconClassName?: string,
+  // Any icon children required for the expander icon.
+  expanderIconChildren?: React.Node,
+  // The tooltip position for the expander icon.
+  expanderTooltipPosition?: ExpanderTooltipPosition,
+  // The optional tooltip to display for the expander icon.
+  expanderTooltipLabel?: React.Node,
+  // An optional delay before the tooltip appears for the expander icon on hover.
+  expanderTooltipDelay?: number,
 
-    /**
-     * An optional className to apply to the card.
-     */
-    className: PropTypes.string,
-
-    /**
-     * Any Card parts that should be rendered.
-     */
-    children: PropTypes.node,
-
-    /**
-     * Boolean if the card is expanded by default when there is an expander
-     * component.
-     */
-    defaultExpanded: PropTypes.bool,
-
-    /**
-     * Boolean if the card should raise on hover when on a desktop display.
-     */
-    raise: PropTypes.bool,
-
-    /**
-     * Boolean if the card is currently expanded. This will require the `onExpanderClick` function
-     * to toggle the state. The card will become controlled if this is not `undefined`.
-     */
-    expanded: PropTypes.bool,
-
-    /**
-     * An optional function to call when the expander is clicked.
-     */
-    onExpanderClick: PropTypes.func,
-
-    /**
-     * The icon className to use for the expander icon.
-     */
-    expanderIconClassName: PropTypes.string,
-
-    /**
-     * Any icon children required for the expander icon.
-     */
-    expanderIconChildren: PropTypes.node,
-
-    /**
-     * The tooltip position for the expander icon.
-     */
-    expanderTooltipPosition: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
-
-    /**
-     * The optional tooltip to display for the expander icon.
-     */
-    expanderTooltipLabel: PropTypes.node,
-
-    /**
-     * An optional delay before the tooltip appears for the expander icon on hover.
-     */
-    expanderTooltipDelay: PropTypes.number,
-
-    /**
+  /**
      * Boolean if the card contains a table. It will update the styling accordingly.
      * When using the `DataTable` component, do not wrap it in a `CardText` component.
      *
@@ -84,29 +48,17 @@ export default class Card extends React.PureComponent {
      * </Card>
      * ```
      */
-    tableCard: PropTypes.bool,
-
-    /**
-     * An optional function to call when the mouseover event is triggered.
-     */
-    onMouseOver: PropTypes.func,
-
-    /**
-     * An optional function to call when the mouseleave event is triggered.
-     */
-    onMouseLeave: PropTypes.func,
-
-    /**
-     * An optional function to call when the touchstart event is triggered.
-     */
-    onTouchStart: PropTypes.func,
-
-    /**
-     * Boolean if the card expansion should be animated.
-     */
-    animate: PropTypes.bool,
-  };
-
+  tableCard?: boolean,
+  //  An optional function to call when the mouseover event is triggered
+  onMouseOver?: Function,
+  //  An optional function to call when the mouseleave event is triggered.
+  onMouseLeave?: Function,
+  // An optional function to call when the touchstart event is triggered.
+  onTouchStart?: Function,
+  //  Boolean if the card expansion should be animated.
+  animate?: boolean,
+};
+export default class Card extends React.PureComponent<CardProps, *> {
   static defaultProps = {
     animate: true,
     expanderIconChildren: 'keyboard_arrow_down',
@@ -116,7 +68,7 @@ export default class Card extends React.PureComponent {
 
   static childContextTypes = contextTypes;
 
-  constructor(props) {
+  constructor(props: CardProps) {
     super(props);
 
     this.state = {
@@ -147,7 +99,10 @@ export default class Card extends React.PureComponent {
     };
   }
 
-  _handleMouseOver = e => {
+  props: CardProps;
+  _touched: boolean;
+
+  _handleMouseOver = (e: SyntheticEvent<>) => {
     if (this.props.onMouseOver) {
       this.props.onMouseOver(e);
     }
@@ -157,7 +112,7 @@ export default class Card extends React.PureComponent {
     }
   };
 
-  _handleMouseLeave = e => {
+  _handleMouseLeave = (e: SyntheticEvent<>) => {
     if (this.props.onMouseLeave) {
       this.props.onMouseLeave(e);
     }
@@ -168,7 +123,7 @@ export default class Card extends React.PureComponent {
     }
   };
 
-  _handleTouchStart = e => {
+  _handleTouchStart = (e: SyntheticEvent<>) => {
     if (this.props.onTouchStart) {
       this.props.onTouchStart(e);
     }
@@ -176,7 +131,7 @@ export default class Card extends React.PureComponent {
     this._touched = true;
   };
 
-  _handleExpandClick = e => {
+  _handleExpandClick = (e: SyntheticEvent<>) => {
     const { onExpanderClick } = this.props;
     const expanded = !getField(this.props, this.state, 'expanded');
     if (onExpanderClick) {
@@ -188,7 +143,7 @@ export default class Card extends React.PureComponent {
     }
   };
 
-  render() {
+  render(): React.Node {
     const { zDepth } = this.state;
     const {
       className,
@@ -210,7 +165,7 @@ export default class Card extends React.PureComponent {
 
     const expanded = getField(this.props, this.state, 'expanded');
     let expanderIndex = -1;
-    const parts = Children.map(Children.toArray(children), (child, i) => {
+    const parts = React.Children.map(React.Children.toArray(children), (child, i) => {
       if (!child || !child.props) {
         return child;
       } else if (expanderIndex < 0 && (child.props.isExpander || child.props.expander)) {
@@ -247,9 +202,7 @@ export default class Card extends React.PureComponent {
         onTouchStart={this._handleTouchStart}
         isPadded={false}
       >
-        <div className="boldrui-card__inner">
-          {parts}
-        </div>
+        <div className="boldrui-card__inner">{parts}</div>
       </Paper>
     );
   }

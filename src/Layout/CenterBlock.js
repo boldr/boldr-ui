@@ -5,15 +5,13 @@ import Row from './Row';
 import Col from './Col';
 
 type Props = {
-  children: React.ChildrenArray<number>,
+  children: Array<React.Node>,
 };
 
 const CenterBlock = (props: Props) => {
   return (
     <Row xsCenter>
-      <Col xs={6}>
-        {props.children}
-      </Col>
+      <Col xs={6}>{props.children}</Col>
     </Row>
   );
 };

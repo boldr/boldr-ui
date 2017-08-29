@@ -16,5 +16,7 @@ module.exports = {
     'react/boolean-prop-naming': 0,
     'react/no-unused-prop-types': 0,
     'react/default-props-match-prop-types': 0,
+    'react/no-unused-state': 0,
+    'no-implicit-coercion': 0,
   },
 };

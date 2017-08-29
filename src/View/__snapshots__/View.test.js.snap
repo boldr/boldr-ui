@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<View /> renders snapshot 1`] = `
+.c0 {
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+}
+
+<div
+  className="c0"
+/>
+`;
