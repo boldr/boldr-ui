@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import Paper from './Paper';
 
 storiesOf('Paper', module)
-  .add('default', () =>
+  .add('default', () => (
     <Paper>
       Wolf whatever craft beer, readymade blue bottle raclette squid next level af franzen heirloom
       90's XOXO beard. Twee schlitz health goth cray. Biodiesel butcher coloring book venmo
@@ -14,9 +14,9 @@ storiesOf('Paper', module)
       post-ironic, la croix cardigan. Gentrify tousled scenester, iceland dreamcatcher master
       cleanse kombucha hoodie mlkshk cardigan seitan before they sold out drinking vinegar ethical
       kickstarter.
-    </Paper>,
-  )
-  .add('without padding', () =>
+    </Paper>
+  ))
+  .add('without padding', () => (
     <Paper isPadded={false}>
       Wolf whatever craft beer, readymade blue bottle raclette squid next level af franzen heirloom
       90's XOXO beard. Twee schlitz health goth cray. Biodiesel butcher coloring book venmo
@@ -26,9 +26,9 @@ storiesOf('Paper', module)
       post-ironic, la croix cardigan. Gentrify tousled scenester, iceland dreamcatcher master
       cleanse kombucha hoodie mlkshk cardigan seitan before they sold out drinking vinegar ethical
       kickstarter.
-    </Paper>,
-  )
-  .add('zDepth 2', () =>
+    </Paper>
+  ))
+  .add('zDepth 2', () => (
     <Paper zDepth={2}>
       Wolf whatever craft beer, readymade blue bottle raclette squid next level af franzen heirloom
       90's XOXO beard. Twee schlitz health goth cray. Biodiesel butcher coloring book venmo
@@ -38,5 +38,5 @@ storiesOf('Paper', module)
       post-ironic, la croix cardigan. Gentrify tousled scenester, iceland dreamcatcher master
       cleanse kombucha hoodie mlkshk cardigan seitan before they sold out drinking vinegar ethical
       kickstarter.
-    </Paper>,
-  );
+    </Paper>
+  ));

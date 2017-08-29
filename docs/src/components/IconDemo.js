@@ -99,9 +99,7 @@ const iconList = [
 
 function IconDemo() {
   return (
-    <div>
-      {iconList.map((ic, index) => <Icon key={index} kind={ic} color="#222" size="24" />)}
-    </div>
+    <div>{iconList.map((ic, index) => <Icon key={index} kind={ic} color="#222" size="24" />)}</div>
   );
 }
 

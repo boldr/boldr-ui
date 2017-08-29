@@ -51,11 +51,7 @@ class AccordionItem extends React.Component<Props, State> {
   };
 
   render() {
-    return (
-      <div className="boldrui-accordion__item">
-        {this.renderChildren()}
-      </div>
-    );
+    return <div className="boldrui-accordion__item">{this.renderChildren()}</div>;
   }
 }
 

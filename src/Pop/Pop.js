@@ -210,10 +210,7 @@ class Pop extends Component {
 
     return (
       <Popover.Content>
-        {header &&
-          <div className="boldrui-pop-header">
-            {header}
-          </div>}
+        {header && <div className="boldrui-pop-header">{header}</div>}
         <div className="boldrui-pop-inner">
           {content}
           <BoundPopAction
@@ -268,11 +265,7 @@ class Pop extends Component {
     }
 
     if (trigger === 'focus') {
-      return (
-        <Trigger.Focus>
-          {children}
-        </Trigger.Focus>
-      );
+      return <Trigger.Focus>{children}</Trigger.Focus>;
     }
 
     if (trigger === 'none') {

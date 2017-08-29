@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Accordion, AccordionItem, AccordionItemTitle, AccordionItemBody } from './index';
 
-storiesOf('Accordion', module).add('Default', () =>
+storiesOf('Accordion', module).add('Default', () => (
   <Accordion accordion>
     <AccordionItem isExpanded>
       <AccordionItemTitle>
@@ -22,5 +22,5 @@ storiesOf('Accordion', module).add('Default', () =>
         <p>The story you just told</p>
       </AccordionItemBody>
     </AccordionItem>
-  </Accordion>,
-);
+  </Accordion>
+));

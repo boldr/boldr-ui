@@ -151,9 +151,9 @@ export default class ResponsiveImage extends React.Component {
         height: height / lazyDivideFactor,
       });
     const baseSrc = isImageLoadCapable ? this.createSrcForQuery(src, { width, height }) : lazySrc;
-    const sensor = isLazy
-      ? <VisibilitySensor onChange={this.handleViewportVisibilityChange} partialVisibility />
-      : null;
+    const sensor = isLazy ? (
+      <VisibilitySensor onChange={this.handleViewportVisibilityChange} partialVisibility />
+    ) : null;
     const wrapperInlineStyle = isLazy ? { backgroundImage: `url("${lazySrc}")` } : {};
     const finalClassName = mergeClassNames({
       'boldrui-img__wrapper': true,
@@ -176,37 +176,35 @@ export default class ResponsiveImage extends React.Component {
     return (
       <picture {...rest} style={wrapperInlineStyle} className={finalClassName}>
         {isImageLoadCapable ? null : sensor}
-        {isImageLoadCapable
-          ? queries
-              .reduce((pictures, query, index) => {
-                const nextQuery = queries[index + 1];
-                const { minWidth, ...rest } = query;
-                const baseSrc = this.createSrcForQuery(src, rest);
-                const defaultSrc = `${baseSrc} 1x`;
-                const retinaSrc = `${baseSrc}&dpr=2 2x`;
-                let mq = `(min-width: ${minWidth}px)`;
+        {isImageLoadCapable ? (
+          queries
+            .reduce((pictures, query, index) => {
+              const nextQuery = queries[index + 1];
+              const { minWidth, ...rest } = query;
+              const baseSrc = this.createSrcForQuery(src, rest);
+              const defaultSrc = `${baseSrc} 1x`;
+              const retinaSrc = `${baseSrc}&dpr=2 2x`;
+              let mq = `(min-width: ${minWidth}px)`;
 
-                if (nextQuery) {
-                  mq = `(min-width: ${minWidth}px) AND (max-width: ${nextQuery.minWidth - 1}px)`;
-                }
+              if (nextQuery) {
+                mq = `(min-width: ${minWidth}px) AND (max-width: ${nextQuery.minWidth - 1}px)`;
+              }
 
-                return pictures.concat([
-                  {
-                    defaultSrc,
-                    retinaSrc,
-                    minWidth,
-                    mq,
-                  },
-                ]);
-              }, [])
-              .map(query => {
-                const { defaultSrc, retinaSrc, mq } = query;
+              return pictures.concat([
+                {
+                  defaultSrc,
+                  retinaSrc,
+                  minWidth,
+                  mq,
+                },
+              ]);
+            }, [])
+            .map(query => {
+              const { defaultSrc, retinaSrc, mq } = query;
 
-                return (
-                  <source key={uniqueId()} srcSet={`${defaultSrc}, ${retinaSrc}`} media={mq} />
-                );
-              })
-          : null}
+              return <source key={uniqueId()} srcSet={`${defaultSrc}, ${retinaSrc}`} media={mq} />;
+            })
+        ) : null}
 
         <img {...imgProps} src={baseSrc} alt={alt} />
       </picture>

@@ -92,21 +92,19 @@ class Collapsible extends React.PureComponent<CollapsibleProps, *> {
         <a {...anchorProps} className={togglerClassName} onClick={this.handleToggleChildren}>
           {title}
 
-          {onDelete
-            ? <FontIcon
-                onClick={onDelete}
-                value={'delete_forever'}
-                className="boldrui-collapsible__toggler-icon__delete"
-              />
-            : null}
+          {onDelete ? (
+            <FontIcon
+              onClick={onDelete}
+              value={'delete_forever'}
+              className="boldrui-collapsible__toggler-icon__delete"
+            />
+          ) : null}
           <FontIcon
             value={isOpen ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
             className="boldrui-collapsible__toggler-icon"
           />
         </a>
-        <div className={contentsClassName}>
-          {this.renderContents()}
-        </div>
+        <div className={contentsClassName}>{this.renderContents()}</div>
       </div>
     );
   }

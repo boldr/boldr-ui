@@ -5,7 +5,7 @@ import Button from '../Button';
 import { Input, Control, FormField } from '../Form';
 import { Level, LevelItem, LevelRight, LevelLeft } from './index';
 
-storiesOf('Level', module).add('default', () =>
+storiesOf('Level', module).add('default', () => (
   <Level>
     <LevelLeft>
       <LevelItem>
@@ -39,5 +39,5 @@ storiesOf('Level', module).add('default', () =>
         <Button kind="success">New</Button>
       </LevelItem>
     </LevelRight>
-  </Level>,
-);
+  </Level>
+));

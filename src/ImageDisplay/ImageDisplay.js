@@ -51,7 +51,7 @@ class ImageDisplay extends BoldrComponent {
             <Icon kind="plus" size="1.2em" color={iconColor} />
           </div>
         </div>
-        {imageSrc &&
+        {imageSrc && (
           <div className="boldrui-image-display__logo--container">
             <div className="boldrui-image-display__layout">
               <img
@@ -83,7 +83,8 @@ class ImageDisplay extends BoldrComponent {
                 </Tooltip>
               </div>
             </div>
-          </div>}
+          </div>
+        )}
       </div>
     );
   }

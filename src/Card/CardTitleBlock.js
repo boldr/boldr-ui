@@ -35,9 +35,7 @@ export default class CardTitleBlock extends PureComponent {
         })}
       >
         {title}
-        <h3 className="boldrui-card-title--title md-text--secondary">
-          {subtitle}
-        </h3>
+        <h3 className="boldrui-card-title--title md-text--secondary">{subtitle}</h3>
       </div>
     );
   }

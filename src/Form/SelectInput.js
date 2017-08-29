@@ -40,9 +40,7 @@ export function SelectInput(props: Props) {
 
   return (
     <div className={wrapperClassName}>
-      <select {...HTMLProps}>
-        {children}
-      </select>
+      <select {...HTMLProps}>{children}</select>
     </div>
   );
 }

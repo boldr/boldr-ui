@@ -78,11 +78,7 @@ export default class PopoverTrigger extends Component {
 
     const childrenType = typeof children;
     if ((count === 1 && childrenType === 'string') || childrenType === 'number') {
-      return (
-        <span>
-          {children}
-        </span>
-      );
+      return <span>{children}</span>;
     }
 
     if (count > 1) {

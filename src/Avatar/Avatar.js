@@ -111,10 +111,7 @@ export default class Avatar extends React.PureComponent<Props, *> {
         )}
       >
         {src && <img src={src} alt={alt} role={role} className="boldrui-avatar__img" />}
-        {!src &&
-          <div className="boldrui-avatar__content">
-            {icon || children}
-          </div>}
+        {!src && <div className="boldrui-avatar__content">{icon || children}</div>}
       </div>
     );
   }

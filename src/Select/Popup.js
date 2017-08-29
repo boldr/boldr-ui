@@ -212,14 +212,16 @@ class Popup extends Component {
         onKeyDown={this.keydownHandler}
         tabIndex="0"
       >
-        {!extraFilter && (filter || onAsyncFilter)
-          ? <Search
-              keyword={keyword}
-              prefixCls={prefixCls}
-              placeholder={searchPlaceholder}
-              onChange={this.searchFilterHandler}
-            />
-          : ''}
+        {!extraFilter && (filter || onAsyncFilter) ? (
+          <Search
+            keyword={keyword}
+            prefixCls={prefixCls}
+            placeholder={searchPlaceholder}
+            onChange={this.searchFilterHandler}
+          />
+        ) : (
+          ''
+        )}
         {filterData.map((item, index) => {
           const currentCls = item.cid === currentId ? 'current' : '';
           const activeCls =
@@ -236,12 +238,13 @@ class Popup extends Component {
             />
           );
         })}
-        {showEmpty &&
+        {showEmpty && (
           <Option
             className={`${prefixCls}-empty`}
             text={emptyText}
             onClick={this.optionChangedHandler}
-          />}
+          />
+        )}
       </div>
     );
   }

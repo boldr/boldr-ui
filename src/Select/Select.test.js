@@ -51,7 +51,10 @@ describe('<Select />', () => {
     const wrapper = mount(<Select data={[1, 2, 3]} />);
     wrapper.find('SelectTrigger').simulate('click');
     const pop = new ReactWrapper(wrapper.instance().popup, true);
-    pop.find('Option').at(1).simulate('click');
+    pop
+      .find('Option')
+      .at(1)
+      .simulate('click');
     expect(wrapper.state('selectedItem').value).toBe(2);
   });
 
@@ -98,18 +101,25 @@ describe('<Select />', () => {
       <Select
         data={['Option 1', 'Option 2', 'Option 3']}
         filter={(item, keyword) =>
-          keyword && item.value.trim().toLowerCase().indexOf(keyword.trim().toLowerCase()) > -1}
+          keyword &&
+          item.value
+            .trim()
+            .toLowerCase()
+            .indexOf(keyword.trim().toLowerCase()) > -1}
         searchPlaceholder="search"
       />,
     );
     wrapper.find('SelectTrigger').simulate('click');
     let pop = new ReactWrapper(wrapper.instance().popup, true);
     expect(pop.find('Option').length).toBe(3);
-    pop.find('Search').find('input').simulate('change', {
-      target: {
-        value: '1',
-      },
-    });
+    pop
+      .find('Search')
+      .find('input')
+      .simulate('change', {
+        target: {
+          value: '1',
+        },
+      });
     expect(pop.find('Option').length).toBe(1);
 
     const asyncMock = jest.fn().mockImplementation(() => {
@@ -131,11 +141,14 @@ describe('<Select />', () => {
     wrapper.find('SelectTrigger').simulate('click');
     pop = new ReactWrapper(wrapper.instance().popup, true);
     expect(pop.find('Option').length).toBe(3);
-    pop.find('Search').find('input').simulate('change', {
-      target: {
-        value: 'anything',
-      },
-    });
+    pop
+      .find('Search')
+      .find('input')
+      .simulate('change', {
+        target: {
+          value: 'anything',
+        },
+      });
     expect(pop.find('Option').length).toBe(1);
     expect(pop.find('Option').prop('value')).toBe('Option 3');
   });
@@ -146,21 +159,37 @@ describe('<Select />', () => {
 
     wrapper.find('TagsTrigger').simulate('click');
     const pop = new ReactWrapper(wrapper.instance().popup, true);
-    pop.find('Option').at(1).simulate('click');
+    pop
+      .find('Option')
+      .at(1)
+      .simulate('click');
     wrapper.find('TagsTrigger').simulate('click');
-    pop.find('Option').at(2).simulate('click');
+    pop
+      .find('Option')
+      .at(2)
+      .simulate('click');
     expect(wrapper.state('selectedItems').length).toBe(2);
 
-    wrapper.find('Tag').at(0).find('i').simulate('click');
+    wrapper
+      .find('Tag')
+      .at(0)
+      .find('i')
+      .simulate('click');
     expect(wrapper.state('selectedItems').length).toBe(1);
 
     wrapper.find('TagsTrigger').simulate('click');
-    pop.find('Option').at(2).simulate('click');
+    pop
+      .find('Option')
+      .at(2)
+      .simulate('click');
     expect(wrapper.state('selectedItems').length).toBe(1);
 
     // HACK: branch
     wrapper.find('TagsTrigger').simulate('click');
-    pop.find('Option').at(3).simulate('click');
+    pop
+      .find('Option')
+      .at(3)
+      .simulate('click');
   });
 
   it('Popup button event', () => {
@@ -227,7 +256,10 @@ describe('<Select />', () => {
     const wrapper = mount(<Select data={data} />);
     wrapper.find('SelectTrigger').simulate('click');
     const pop = new ReactWrapper(wrapper.instance().popup, true);
-    pop.find('Option').at(1).simulate('click');
+    pop
+      .find('Option')
+      .at(1)
+      .simulate('click');
 
     // HACK: branch Select.js line 89
     wrapper.setProps({ data });

@@ -5,10 +5,11 @@ import { NavbarLink } from '../NavbarLink';
 
 describe('NavbarLink', () => {
   it('should render a custom component with NavbarLink props', () => {
-    const customComponent = props =>
+    const customComponent = props => (
       <div>
         My Button <a {...props} />
-      </div>;
+      </div>
+    );
 
     const customComponentRendered = (
       <div>

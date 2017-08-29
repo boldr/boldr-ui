@@ -14,7 +14,7 @@ import {
 } from './index';
 
 storiesOf('Navbar', module)
-  .add('default', () =>
+  .add('default', () => (
     <Navbar>
       <NavbarBrand>
         <NavbarItem>BoldrUI</NavbarItem>
@@ -26,9 +26,9 @@ storiesOf('Navbar', module)
       <NavbarEnd>
         <NavbarItem href="#/" title="Logout" />
       </NavbarEnd>
-    </Navbar>,
-  )
-  .add('dropdown', () =>
+    </Navbar>
+  ))
+  .add('dropdown', () => (
     <Navbar>
       <NavbarBrand>
         <NavbarItem>BoldrUI</NavbarItem>
@@ -49,5 +49,5 @@ storiesOf('Navbar', module)
         </NavbarItem>
         <NavbarItem href="#/" title="Logout" />
       </NavbarEnd>
-    </Navbar>,
-  );
+    </Navbar>
+  ));

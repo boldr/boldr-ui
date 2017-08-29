@@ -22,9 +22,7 @@ const HeroArticle = (props: Props) => {
   `;
   return (
     <div className="boldrui-hero">
-      <BoldrHero>
-        {props.children}
-      </BoldrHero>
+      <BoldrHero>{props.children}</BoldrHero>
     </div>
   );
 };

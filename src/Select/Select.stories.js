@@ -9,16 +9,16 @@ storiesOf('Select', module)
   .addDecorator(centered)
   .add('Default', () => <Select data={data} optionValue="id" optionText="name" />)
   .add('Disabled', () => <Select data={data} optionValue="id" optionText="name" disabled />)
-  .add('Filter', () =>
+  .add('Filter', () => (
     <Select
       data={data}
       optionValue="id"
       optionText="name"
       onEmptySelected={action(data)}
       filter={(item, keyword) => item.name.indexOf(keyword) > -1}
-    />,
-  )
-  .add('Search', () =>
+    />
+  ))
+  .add('Search', () => (
     <Select
       data={data}
       optionValue="id"
@@ -27,14 +27,14 @@ storiesOf('Select', module)
       filter={(item, keyword) => {
         return `${item.value}` === `${keyword}`;
       }}
-    />,
-  )
-  .add('Tags', () =>
+    />
+  ))
+  .add('Tags', () => (
     <Select
       data={data}
       optionValue="id"
       optionText="name"
       tags
       filter={(item, keyword) => item.name.indexOf(keyword) > -1}
-    />,
-  );
+    />
+  ));

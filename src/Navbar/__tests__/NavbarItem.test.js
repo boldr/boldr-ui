@@ -5,10 +5,11 @@ import { NavbarItem } from '../NavbarItem';
 
 describe('<NavbarItem />', () => {
   it('should render a custom component with NavbarItem props', () => {
-    const customComponent = props =>
+    const customComponent = props => (
       <div>
         My Button <a {...props} />
-      </div>;
+      </div>
+    );
 
     const customComponentRendered = (
       <div>

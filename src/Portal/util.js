@@ -22,7 +22,9 @@ export function getNodeFromSelector(selector) {
 
 export function prepareNode(node, prefix, className, css) {
   node.className = cN(`${prefix}-portal`, className);
-  node.style.cssText = Object.keys(css || {}).map(k => `${k}: ${css[k]}`).join('; ');
+  node.style.cssText = Object.keys(css || {})
+    .map(k => `${k}: ${css[k]}`)
+    .join('; ');
 }
 
 export function openPortal(props) {

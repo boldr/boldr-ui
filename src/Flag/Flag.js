@@ -20,15 +20,9 @@ const Flag = props => {
     'boldrui-flag__img': true,
   });
   const image = (
-    <div className={imageWrapperFinalClassName}>
-      {asset({ className: imageFinalClassName })}
-    </div>
+    <div className={imageWrapperFinalClassName}>{asset({ className: imageFinalClassName })}</div>
   );
-  const contents = (
-    <div className="boldrui-flag__contents">
-      {children}
-    </div>
-  );
+  const contents = <div className="boldrui-flag__contents">{children}</div>;
   const isImageLeftAligned = imageAlignment === 'left';
 
   return (

@@ -33,9 +33,7 @@ const ContentPromo = props => {
 
   return (
     <section className={finalClassName} {...rest}>
-      <div className={finalContentsClassName}>
-        {children}
-      </div>
+      <div className={finalContentsClassName}>{children}</div>
     </section>
   );
 };

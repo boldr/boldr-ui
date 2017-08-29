@@ -121,9 +121,9 @@ export default class Tabs extends React.Component<TabsProps, any> {
       React.Children.forEach(children, (child: React.Element<*>, index) => {
         let closable = child.props.closable;
         closable = typeof closable === 'undefined' ? true : closable;
-        const closeIcon = closable
-          ? <Icon kind="close" onClick={e => this.removeTab(child.key, e)} />
-          : null;
+        const closeIcon = closable ? (
+          <Icon kind="close" onClick={e => this.removeTab(child.key, e)} />
+        ) : null;
         childrenWithClose.push(
           React.cloneElement(child, {
             tab: (
@@ -147,13 +147,11 @@ export default class Tabs extends React.Component<TabsProps, any> {
       }
     }
 
-    tabBarExtraContent = tabBarExtraContent
-      ? <div className="boldrui-tabs-extra-content">
-          {tabBarExtraContent}
-        </div>
-      : null;
+    tabBarExtraContent = tabBarExtraContent ? (
+      <div className="boldrui-tabs-extra-content">{tabBarExtraContent}</div>
+    ) : null;
 
-    const renderTabBar = () =>
+    const renderTabBar = () => (
       <ScrollableInkTabBar
         inkBarAnimated={inkBarAnimated}
         extraContent={tabBarExtraContent}
@@ -161,7 +159,8 @@ export default class Tabs extends React.Component<TabsProps, any> {
         onPrevClick={onPrevClick}
         onNextClick={onNextClick}
         style={tabBarStyle}
-      />;
+      />
+    );
 
     return (
       <RcTabs

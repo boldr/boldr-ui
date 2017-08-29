@@ -18,12 +18,14 @@ class Tag extends Component {
 
     return (
       <span>
-        {text
-          ? <span className={`${prefixCls}-tag`}>
-              {text}
-              <i className={`${prefixCls}-delete`} onClick={this.deleteTagHandler} />
-            </span>
-          : ''}
+        {text ? (
+          <span className={`${prefixCls}-tag`}>
+            {text}
+            <i className={`${prefixCls}-delete`} onClick={this.deleteTagHandler} />
+          </span>
+        ) : (
+          ''
+        )}
       </span>
     );
   }

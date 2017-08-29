@@ -32,20 +32,22 @@ export type SelectReduxFormField = {
   options: Array<SelectOptType>,
 };
 
-export const TextFormField = ({ id, meta, input, label, placeholder, ...rest }: ReduxFormFields) =>
+export const TextFormField = ({
+  id,
+  meta,
+  input,
+  label,
+  placeholder,
+  ...rest
+}: ReduxFormFields) => (
   <FormField>
-    <Label>
-      {label}
-    </Label>
+    <Label>{label}</Label>
     <Control>
       <Input id={id} placeholder={placeholder} {...input} {...rest} />
     </Control>
-    {meta.touched &&
-      meta.error &&
-      <Help isColor="danger">
-        {meta.error}
-      </Help>}
-  </FormField>;
+    {meta.touched && meta.error && <Help isColor="danger">{meta.error}</Help>}
+  </FormField>
+);
 
 export const TextAreaFormField = ({
   id,
@@ -54,20 +56,15 @@ export const TextAreaFormField = ({
   label,
   placeholder,
   ...rest
-}: ReduxFormFields) =>
+}: ReduxFormFields) => (
   <FormField>
-    <Label>
-      {label}
-    </Label>
+    <Label>{label}</Label>
     <Control>
       <TextArea id={id} placeholder={placeholder} {...input} {...rest} />
     </Control>
-    {meta.touched &&
-      meta.error &&
-      <Help isColor="danger">
-        {meta.error}
-      </Help>}
-  </FormField>;
+    {meta.touched && meta.error && <Help isColor="danger">{meta.error}</Help>}
+  </FormField>
+);
 
 export const SelectFormField = ({
   id,
@@ -76,51 +73,40 @@ export const SelectFormField = ({
   label,
   options,
   ...rest
-}: SelectReduxFormField) =>
+}: SelectReduxFormField) => (
   <FormField>
-    <Label>
-      {label}
-    </Label>
+    <Label>{label}</Label>
     <Control>
       <SelectInput id={id} {...input}>
-        {(options || []).map(opt =>
+        {(options || []).map(opt => (
           <option value={opt.value} key={opt.value}>
             {opt.text}
-          </option>,
-        )}
+          </option>
+        ))}
       </SelectInput>
     </Control>
-    {meta.touched &&
-      meta.error &&
-      <Help isColor="danger">
-        {meta.error}
-      </Help>}
-  </FormField>;
+    {meta.touched && meta.error && <Help isColor="danger">{meta.error}</Help>}
+  </FormField>
+);
 
-export const CheckboxFormField = ({ id, meta, input, label, ...rest }: ReduxFormFields) =>
+export const CheckboxFormField = ({ id, meta, input, label, ...rest }: ReduxFormFields) => (
   <FormField>
     <Control>
       <Checkbox id={id} {...input} {...rest}>
         {label}
       </Checkbox>
     </Control>
-    {meta.touched &&
-      meta.error &&
-      <Help isColor="danger">
-        {meta.error}
-      </Help>}
-  </FormField>;
+    {meta.touched && meta.error && <Help isColor="danger">{meta.error}</Help>}
+  </FormField>
+);
 
-export const RadioFormField = ({ id, meta, input, label, ...rest }: ReduxFormFields) =>
+export const RadioFormField = ({ id, meta, input, label, ...rest }: ReduxFormFields) => (
   <FormField>
     <Control>
       <Radio id={id} name={input.name} {...input}>
         {label}
       </Radio>
     </Control>
-    {meta.touched &&
-      meta.error &&
-      <Help isColor="danger">
-        {meta.error}
-      </Help>}
-  </FormField>;
+    {meta.touched && meta.error && <Help isColor="danger">{meta.error}</Help>}
+  </FormField>
+);

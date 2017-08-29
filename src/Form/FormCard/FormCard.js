@@ -32,9 +32,7 @@ const FormCard = (props: Props) => {
           {props.title}
         </Headline>
       </FormHeader>
-      <FormInner>
-        {props.form}
-      </FormInner>
+      <FormInner>{props.form}</FormInner>
     </FCard>
   );
 };

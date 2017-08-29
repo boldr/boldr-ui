@@ -29,11 +29,7 @@ class Menu extends BoldrComponent {
       return <MenuItem {...passThroughProps} onClick={onClickWithHide} key={i} />;
     });
 
-    const tooltipContent = (
-      <ul className="boldrui-menu">
-        {menuItems}
-      </ul>
-    );
+    const tooltipContent = <ul className="boldrui-menu">{menuItems}</ul>;
 
     return (
       <Tooltip

@@ -7,10 +7,7 @@ export type Props = {
   children: Array<React.Node>,
 };
 
-const ThemedApp = ({ className, children }: Props) =>
-  <div className={className}>
-    {children}
-  </div>;
+const ThemedApp = ({ className, children }: Props) => <div className={className}>{children}</div>;
 
 export default styled(ThemedApp)`
   background-color: ${props => props.theme.colors.background};

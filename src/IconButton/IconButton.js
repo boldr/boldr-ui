@@ -32,11 +32,11 @@ class IconButton extends BoldrComponent {
     const iconSize = height === 'small' ? '8px' : height === 'medium' ? '12px' : '16px';
     const dataHook =
       className === 'boldrui-iconbtn-prefix' ? 'boldrui-iconbtn-prefix' : 'boldrui-iconbtn-suffix';
-    return icon
-      ? <div className={className} data-hook={dataHook}>
-          {React.cloneElement(icon, { size: iconSize })}
-        </div>
-      : null;
+    return icon ? (
+      <div className={className} data-hook={dataHook}>
+        {React.cloneElement(icon, { size: iconSize })}
+      </div>
+    ) : null;
   }
 
   addPrefix() {

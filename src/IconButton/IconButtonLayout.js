@@ -26,9 +26,7 @@ const IconButtonLayout = props => {
     return React.cloneElement(
       children,
       { className, style: _style },
-      <div className="boldrui-iconbtn__inner">
-        {children.props.children}
-      </div>,
+      <div className="boldrui-iconbtn__inner">{children.props.children}</div>,
     );
   }
 };

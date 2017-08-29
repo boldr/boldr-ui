@@ -94,9 +94,7 @@ class TooltipContent extends Component {
               )}
               style={{ maxWidth: this.props.maxWidth, textAlign }}
             >
-              <div>
-                {children}
-              </div>
+              <div>{children}</div>
               <div
                 className={classnames(
                   'boldrui-tooltip__arrow',

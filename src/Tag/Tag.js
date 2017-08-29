@@ -41,21 +41,17 @@ class Tag extends BoldrComponent {
 
     return (
       <span className={className} disabled={disabled} id={id} title={title}>
-        {thumb &&
-          <span className="boldrui-tag__thumb">
-            {thumb}
-          </span>}
-        <span className={innerClassName}>
-          {children}
-        </span>
+        {thumb && <span className="boldrui-tag__thumb">{thumb}</span>}
+        <span className={innerClassName}>{children}</span>
         {removable &&
-          !disabled &&
+        !disabled && (
           // eslint-disable-next-line
           <a
             className="boldrui-tag__remove--btn"
             onClick={() => onRemove(id)}
             onKeyPress={() => onRemove(id)}
-          />}
+          />
+        )}
       </span>
     );
   }

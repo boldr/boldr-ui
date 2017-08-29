@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import Paragraph from './Paragraph';
 
 storiesOf('Paragraph', module)
-  .add('default', () =>
+  .add('default', () => (
     <Paragraph>
       Wolf whatever craft beer, readymade blue bottle raclette squid next level af franzen heirloom
       90's XOXO beard. Twee schlitz health goth cray. Biodiesel butcher coloring book venmo
@@ -14,9 +14,9 @@ storiesOf('Paragraph', module)
       post-ironic, la croix cardigan. Gentrify tousled scenester, iceland dreamcatcher master
       cleanse kombucha hoodie mlkshk cardigan seitan before they sold out drinking vinegar ethical
       kickstarter.
-    </Paragraph>,
-  )
-  .add('lead', () =>
+    </Paragraph>
+  ))
+  .add('lead', () => (
     <Paragraph isLead>
       Wolf whatever craft beer, readymade blue bottle raclette squid next level af franzen heirloom
       90's XOXO beard. Twee schlitz health goth cray. Biodiesel butcher coloring book venmo
@@ -26,9 +26,9 @@ storiesOf('Paragraph', module)
       post-ironic, la croix cardigan. Gentrify tousled scenester, iceland dreamcatcher master
       cleanse kombucha hoodie mlkshk cardigan seitan before they sold out drinking vinegar ethical
       kickstarter.
-    </Paragraph>,
-  )
-  .add('light', () =>
+    </Paragraph>
+  ))
+  .add('light', () => (
     <div style={{ backgroundColor: '#1B252F' }}>
       <Paragraph isLight>
         Wolf whatever craft beer, readymade blue bottle raclette squid next level af franzen
@@ -40,5 +40,5 @@ storiesOf('Paragraph', module)
         dreamcatcher master cleanse kombucha hoodie mlkshk cardigan seitan before they sold out
         drinking vinegar ethical kickstarter.
       </Paragraph>
-    </div>,
-  );
+    </div>
+  ));
