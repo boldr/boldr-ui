@@ -85,14 +85,10 @@ exports[`AccordionItem still renders with incorrect type children 1`] = `
 <div
   className="boldrui-accordion__item"
 >
-  <div
-    isExpanded={false}
-  >
+  <div>
     Fake title
   </div>
-  <div
-    isExpanded={false}
-  >
+  <div>
     Fake body
   </div>
 </div>

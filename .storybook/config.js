@@ -1,4 +1,5 @@
-import { configure, setAddon } from '@storybook/react';
+import React from 'react';
+import { configure, setAddon, addDecorator } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
 import infoAddon from '@storybook/addon-info';
 
@@ -13,7 +14,7 @@ setOptions({
   sortStoriesByKind: true,
   hierarchySeparator: /\/|\./,
 });
-
+// addDecorator(story => <div style={{ padding: 20 }}>{story()}</div>);
 setAddon(infoAddon);
 
 function loadStories() {
@@ -25,6 +26,7 @@ function loadStories() {
   require('../src/ContentPromo/ContentPromo.stories');
   require('../src/Flag/Flag.stories');
   require('../src/Heading/Heading.stories');
+  require('../src/Headline/Headline.stories');
   require('../src/ImageDisplay/ImageDisplay.stories');
   require('../src/Loader/Loader.stories');
 

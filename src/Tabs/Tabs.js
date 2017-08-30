@@ -1,6 +1,6 @@
 // @flow
-import * as React from 'react';
-
+import React from 'react';
+import type { Node } from 'react';
 import RcTabs, { TabPane } from 'rc-tabs';
 import ScrollableInkTabBar from 'rc-tabs/lib/ScrollableInkTabBar';
 import TabContent from 'rc-tabs/lib/TabContent';
@@ -19,7 +19,7 @@ export type TabsProps = {
   onTabClick?: Function,
   onPrevClick?: SyntheticEvent<>,
   onNextClick?: SyntheticEvent<>,
-  tabBarExtraContent?: React.Node | null,
+  tabBarExtraContent?: Node | null,
   tabBarStyle?: Object,
   type?: TabsType,
   tabPosition?: TabsPosition,
@@ -33,7 +33,7 @@ export type TabsProps = {
 
 // Tabs
 export type TabPaneProps = {
-  tab?: React.Node | string,
+  tab?: Node | string,
   style?: Object,
   closable?: boolean,
   className?: string,

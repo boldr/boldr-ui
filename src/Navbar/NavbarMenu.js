@@ -1,5 +1,5 @@
 /* @flow */
-import * as React from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import { getActiveModifiers, removeActiveModifiers, createWrappedComponent } from '../util/boldrui';
 import { StyleClasses } from '../theme/styleClasses';

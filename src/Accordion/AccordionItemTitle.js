@@ -1,16 +1,20 @@
 /* @flow */
-import * as React from 'react';
+import React from 'react';
+import type { Node } from 'react';
+import cn from 'classnames';
 
 type Props = {
   id: string,
   isExpanded: boolean,
   onClick: Function,
-  ariaControls: string,
-  children: Array<React.Node>,
+  ariaControls?: string,
+  children: Array<Node>,
   role: string,
+  className?: string,
+  hideBodyClassName?: string,
 };
 
-class AccordionItemTitle extends React.PureComponent<Props, *> {
+class AccordionItemTitle extends React.Component<Props, void> {
   static defaultProps = {
     id: '',
     isExpanded: false,
@@ -27,15 +31,29 @@ class AccordionItemTitle extends React.PureComponent<Props, *> {
   };
   props: Props;
   render() {
-    const { id, isExpanded, ariaControls, onClick, children, role } = this.props;
+    const {
+      id,
+      isExpanded,
+      ariaControls,
+      onClick,
+      children,
+      className,
+      role,
+      hideBodyClassName,
+    } = this.props;
+    const titleClassName = cn('boldrui-accordion__title', className, {
+      [hideBodyClassName]: hideBodyClassName && !isExpanded,
+    });
+
     return (
       <div // eslint-disable-line jsx-a11y/no-static-element-interactions
         id={id}
         aria-expanded={isExpanded}
         aria-controls={ariaControls}
-        className="boldrui-accordion__title"
+        className={titleClassName}
         onClick={onClick}
         role={role}
+        tabIndex="0"
         onKeyPress={this.handleKeyPress}
       >
         {children}

@@ -1,6 +1,6 @@
 /* @flow */
-import * as React from 'react';
-
+import React from 'react';
+import type { Node } from 'react';
 import styled from 'styled-components';
 import Headline from '../../Headline';
 
@@ -8,7 +8,7 @@ type Props = {
   skinny: boolean,
   title: string,
   lightText: boolean,
-  form: React.Node,
+  form: Node,
   formTitleSize: string,
 };
 

@@ -1,5 +1,6 @@
 /* @flow */
-import * as React from 'react';
+import React from 'react';
+import type { Node } from 'react';
 // import {NavLink} from 'react-router-dom';
 
 import omit from 'lodash.omit';
@@ -15,9 +16,9 @@ export type Props = {
   label: string,
   children: any,
   onClick: () => void,
-  icon: ?React.Node,
-  iconColor: ?string,
-  iconSize: ?string,
+  icon?: Node,
+  iconColor?: string,
+  iconSize?: string,
 };
 
 export default class Anchor extends React.PureComponent<Props, *> {

@@ -1,11 +1,12 @@
 /* @flow */
-import * as React from 'react';
+import React from 'react';
+import type { Node } from 'react';
 
 import Row from './Row';
 import Col from './Col';
 
 type Props = {
-  children: Array<React.Node>,
+  children: Array<Node>,
 };
 
 const CenterBlock = (props: Props) => {

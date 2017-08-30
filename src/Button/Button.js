@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import cxN from 'classnames';
 import omit from 'lodash.omit';
 import PropTypes from 'prop-types';
@@ -23,7 +23,7 @@ const BTN_BLACKLIST = ['href', 'target'].concat(BLACK_LIST);
 
 const LINK_BLACKLIST = ['href', 'target'].concat(BLACK_LIST);
 
-export default class Button extends Component {
+export default class Button extends React.Component {
   static defaultProps = {
     kind: 'default',
     size: 'medium',

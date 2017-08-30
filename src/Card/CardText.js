@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 
@@ -6,7 +6,7 @@ import cn from 'classnames';
  * The `CardText` component is a simple wrapper for text or any content in a `Card`.
  * It really just adds correct padding and font color.
  */
-export default class CardText extends PureComponent {
+export default class CardText extends React.PureComponent {
   static propTypes = {
     /**
      * An optional style to apply.

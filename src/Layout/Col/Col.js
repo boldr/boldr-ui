@@ -1,6 +1,7 @@
 /* @flow weak */
 /* eslint-disable prefer-template */
-import * as React from 'react';
+import React from 'react';
+import type { Node } from 'react';
 import classNames from 'classnames';
 import isNumber from 'lodash.isnumber';
 
@@ -8,7 +9,7 @@ export type Props = {
   className?: string,
   style?: Object,
   componentClass: string,
-  children?: Array<React.Node>,
+  children?: Array<Node>,
   xs?: ?number | boolean,
   sm?: ?number | boolean,
   md?: ?number | boolean,
@@ -32,8 +33,8 @@ class Col extends React.PureComponent<Props, *> {
   static defaultProps = {
     componentClass: 'div',
   };
-  props: Props;
-  render() {
+
+  render(): Node {
     const ComponentClass = this.props.componentClass;
 
     const classes = classNames(

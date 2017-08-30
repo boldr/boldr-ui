@@ -1,5 +1,6 @@
 /* @flow */
-import * as React from 'react';
+import React from 'react';
+import type { Node } from 'react';
 import classNames from 'classnames';
 import { StyleClasses } from '../theme/styleClasses';
 import { getActiveModifiers, removeActiveModifiers, createWrappedComponent } from '../util/boldrui';
@@ -9,7 +10,7 @@ export type Props = {
   tag?: string,
   isTransparent?: boolean,
   className?: string,
-  children: Array<React.Node>,
+  children: Array<Node>,
 };
 
 const BASE_ELEMENT = StyleClasses.NAVBAR_BURGER;
@@ -27,8 +28,11 @@ export function NavbarBurger({ tag = 'div', ...props }: Props) {
   return React.createElement(
     tag,
     { ...HTMLProps, className },
+    // $FlowIssue
     React.createElement('span', null),
+    // $FlowIssue
     React.createElement('span', null),
+    // $FlowIssue
     React.createElement('span', null),
   );
 }

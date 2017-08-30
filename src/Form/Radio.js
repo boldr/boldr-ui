@@ -1,5 +1,6 @@
 // @flow
-import * as React from 'react';
+import React from 'react';
+import type { Node } from 'react';
 import classNames from 'classnames';
 
 import { createWrappedComponent } from '../util/boldrui';
@@ -9,7 +10,7 @@ const BASE_ELEMENT = StyleClasses.RADIO;
 export type Props = {
   disabled?: boolean,
   className?: string,
-  children: Array<React.Node>,
+  children: Array<Node>,
 };
 export function Radio(props: Props) {
   const wrapperClassName = classNames(BASE_ELEMENT, props.className);

@@ -1,6 +1,7 @@
 /* eslint-disable react/default-props-match-prop-types */
 // @flow
-import * as React from 'react';
+import React from 'react';
+import type { Node } from 'react';
 import cn from 'classnames';
 
 type Props = {
@@ -12,7 +13,7 @@ type Props = {
   // the depth is 0, it will raise to a depth of 3 on hover.
   zDepth: number,
   // Any children to display in the paper.
-  children: Array<React.Node>,
+  children: Array<Node>,
   //  Boolean if the paper should raise to the `zDepth` of `3`
   //  on hover when the initial
   raiseOnHover: boolean,

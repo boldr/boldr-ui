@@ -1,12 +1,13 @@
 /* @flow */
-import * as React from 'react';
+import React from 'react';
+import type { Node } from 'react';
 import uniqueId from 'lodash.uniqueid';
 
 type Props = {
   isExpanded?: boolean,
   isAccordion?: boolean,
   onClick: Function,
-  children: Array<React.Node>,
+  children: Array<Node>,
 };
 
 type State = {
@@ -19,34 +20,40 @@ class AccordionItem extends React.Component<Props, State> {
     isExpanded: false,
     onClick: () => {},
   };
+  constructor() {
+    super();
 
-  state: State = {
-    itemUuid: uniqueId(),
-  };
-
+    this.state = {
+      itemUuid: uniqueId(),
+    };
+  }
   props: Props;
   renderChildren = () => {
     const { isAccordion, isExpanded, onClick, children } = this.props;
     const { itemUuid } = this.state;
 
     return React.Children.map(children, item => {
-      const itemProps = {
-        isExpanded,
-      };
+      const itemProps = {};
 
       if (item.type.accordionElementName === 'AccordionItemTitle') {
+        itemProps.isExpanded = isExpanded;
         itemProps.key = 'title';
         itemProps.id = `boldrui-accordion__title-${itemUuid}`;
         itemProps.ariaControls = `boldrui-accordion__body-${itemUuid}`;
         itemProps.onClick = onClick;
         itemProps.role = isAccordion ? 'tab' : 'button';
+
+        return React.cloneElement(item, itemProps);
       } else if (item.type.accordionElementName === 'AccordionItemBody') {
+        itemProps.isExpanded = isExpanded;
         itemProps.key = 'body';
         itemProps.id = `boldrui-accordion__body-${itemUuid}`;
         itemProps.role = isAccordion ? 'tabpanel' : '';
+
+        return React.cloneElement(item, itemProps);
       }
 
-      return React.cloneElement(item, itemProps);
+      return item;
     });
   };
 

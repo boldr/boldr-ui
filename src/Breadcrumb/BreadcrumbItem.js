@@ -1,5 +1,5 @@
 /* @flow */
-import * as React from 'react';
+import React from 'react';
 import cx from 'classnames';
 import { StyleClasses } from '../theme/styleClasses';
 import SafeAnchor from './SafeAnchor';

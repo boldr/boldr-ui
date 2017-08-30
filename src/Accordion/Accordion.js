@@ -1,9 +1,10 @@
 /* @flow */
-import * as React from 'react';
+import React from 'react';
+import type { Node } from 'react';
 
 type Props = {
   isAccordion: boolean,
-  children: Array<React.Node>,
+  children: Array<Node>,
   onChange: () => mixed,
 };
 type State = {
@@ -19,7 +20,8 @@ class Accordion extends React.Component<Props, State> {
     super(props);
     const activeItems = this.preExpandedItems();
     this.state = {
-      activeItems,
+      activeItems: activeItems,
+      isAccordion: true,
     };
   }
   state: State;
@@ -27,8 +29,7 @@ class Accordion extends React.Component<Props, State> {
   preExpandedItems() {
     const activeItems = [];
     React.Children.map(this.props.children, (item, index) => {
-      // $FlowIssue
-      if (item.props.expanded) {
+      if (item.props.isExpanded) {
         if (this.props.isAccordion) {
           if (activeItems.length === 0) {
             activeItems.push(index);
@@ -41,7 +42,7 @@ class Accordion extends React.Component<Props, State> {
     return activeItems;
   }
 
-  handleClick(key: string | number) {
+  handleClick(key: number) {
     let { activeItems } = this.state;
     if (this.props.isAccordion) {
       activeItems = activeItems[0] === key ? [] : [key];
@@ -72,8 +73,8 @@ class Accordion extends React.Component<Props, State> {
 
       return React.cloneElement(item, {
         disabled: item.props.disabled,
-        isAccordion,
-        isExpanded,
+        isAccordion: isAccordion,
+        isExpanded: isExpanded,
         key: `boldrui-accordion__item-${key}`,
         onClick: this.handleClick.bind(this, key),
       });

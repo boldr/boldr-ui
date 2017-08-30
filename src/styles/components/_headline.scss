@@ -1,20 +1,49 @@
 /// @group headline
+
 .#{$boldr-ns}h {
   font-weight: $headline-font-weight;
   font-family: $headline-font-family;
+  line-height: $headline-line-height;
   text-rendering: optimizeLegibility;
+  color: $headline-font-color;
+  font-stretch: normal;
+  margin: 0;
 }
 
-.#{$boldr-ns}h-light {
-  color: #fff;
+.#{$boldr-ns}h--light {
+  font-weight: $headline-font-weight;
+  font-family: $headline-font-family;
+  text-rendering: optimizeLegibility;
+  line-height: $headline-line-height;
+  color: $headline-font-color-light;
+  font-stretch: normal;
+  margin: 0;
 }
 
-.#{$boldr-ns}heading--1 {
-  font-size: 3.5em;
+.#{$boldr-ns}h1 {
+  font-weight: $headline-font-weight;
+  font-size: $size-1;
 }
 
-.#{$boldr-ns}heading__3 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  font-weight: 200;
+.#{$boldr-ns}h2 {
+  font-weight: $headline-font-weight;
+  font-size: $size-2;
+}
+
+.#{$boldr-ns}h3 {
+  font-weight: $headline-font-weight;
+  font-size: $size-3;
+}
+
+.#{$boldr-ns}h4 {
+  font-weight: $headline-font-weight;
+  font-size: $size-4;
+}
+.#{$boldr-ns}h5 {
+  font-weight: $headline-font-weight;
+  font-size: $size-5;
+}
+.#{$boldr-ns}h6 {
+  font-weight: $headline-font-weight;
+  font-size: $size-6;
 }

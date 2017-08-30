@@ -1,12 +1,13 @@
 // @flow
-import * as React from 'react';
+import React from 'react';
+import type { Node } from 'react';
 import classNames from 'classnames';
 import BoldrComponent from '../util/BoldrComponent';
 
 export type Props = {
   children: string,
   id: string,
-  thumb?: React.Node,
+  thumb?: Node,
   onRemove: Function,
   removable?: boolean,
   // small or large
@@ -22,7 +23,7 @@ class Tag extends BoldrComponent {
     removable: true,
   };
   props: Props;
-  render() {
+  render(): Node {
     const { id, children, thumb, removable, onRemove, size, wrap, disabled } = this.props;
 
     const className = classNames({

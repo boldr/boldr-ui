@@ -32,27 +32,27 @@ describe('(React Component) Headline', () => {
 
   it('should add the associated type className to the node.', () => {
     let wrapper = shallow(<Headline>My Contents</Headline>);
-    expect(wrapper.is('.h1')).toBe(true);
+    expect(wrapper.is('.boldrui-h1')).toBe(true);
 
     wrapper = shallow(<Headline type="h2">My Contents</Headline>);
-    expect(wrapper.is('.h2')).toBe(true);
+    expect(wrapper.is('.boldrui-h2')).toBe(true);
 
     wrapper = shallow(<Headline type="h3">My Contents</Headline>);
-    expect(wrapper.is('.h3')).toBe(true);
+    expect(wrapper.is('.boldrui-h3')).toBe(true);
 
     wrapper = shallow(<Headline type="h4">My Contents</Headline>);
-    expect(wrapper.is('.h4')).toBe(true);
+    expect(wrapper.is('.boldrui-h4')).toBe(true);
 
     wrapper = shallow(<Headline type="h5">My Contents</Headline>);
-    expect(wrapper.is('.h5')).toBe(true);
+    expect(wrapper.is('.boldrui-h5')).toBe(true);
 
     wrapper = shallow(<Headline type="h6">My Contents</Headline>);
-    expect(wrapper.is('.h6')).toBe(true);
+    expect(wrapper.is('.boldrui-h6')).toBe(true);
   });
 
   it('should override the associated type className if a "theme" prop was passed.', () => {
-    const wrapper = shallow(<Headline theme="h4">My Contents</Headline>);
-    expect(wrapper.is('.h4')).toBe(true);
+    const wrapper = shallow(<Headline theme="example">My Contents</Headline>);
+    expect(wrapper.is('.example')).toBe(true);
   });
 
   it('should propagate props to the wrapper element.', () => {

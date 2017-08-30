@@ -1,5 +1,5 @@
 // @flow
-import * as React from 'react';
+import React from 'react';
 import classNames from 'classnames';
 
 import { getSizeModifiers, removeSizeProps, createWrappedComponent } from '../util/boldrui';

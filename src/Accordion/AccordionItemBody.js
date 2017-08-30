@@ -1,22 +1,21 @@
 /* @flow */
-import * as React from 'react';
+import React from 'react';
+import type { Node } from 'react';
 import classNames from 'classnames';
 
 type Props = {
   id: string,
   isExpanded: boolean,
-  children: Array<React.Node>,
+  children: Array<Node>,
   className: string,
   hideBodyClassName: string,
   role: string,
 };
 
 const defaultProps = {
-  id: '',
   isExpanded: false,
   className: 'boldrui-accordion__body',
   hideBodyClassName: 'boldrui-accordion__body--hidden',
-  role: '',
 };
 
 const AccordionItemBody = ({

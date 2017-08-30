@@ -1,12 +1,13 @@
 // @flow
-import * as React from 'react';
+import React from 'react';
+import type { Node } from 'react';
 import cN from 'classnames';
 
 type Props = {
   /**
    * The children to render within the Box.
    */
-  children: Array<React.Node>,
+  children: Array<Node>,
   /**
    * An optional className of the Box.
    */

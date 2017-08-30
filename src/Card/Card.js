@@ -1,5 +1,6 @@
 // @flow
-import * as React from 'react';
+import React from 'react';
+import type { Node } from 'react';
 import cn from 'classnames';
 
 import getField from '../util/getField';
@@ -14,7 +15,7 @@ export type CardProps = {
   // An optional className to apply to the card.
   className?: string,
   // Any Card parts that should be rendered.
-  children?: React.ChildrenArray<*>,
+  children?: Array<Node>,
   // Boolean if the card is expanded by default when there is an expander component
   defaultExpanded?: boolean,
   // Boolean if the card should raise on hover when on a desktop display.
@@ -27,11 +28,11 @@ export type CardProps = {
   // The icon className to use for the expander icon.
   expanderIconClassName?: string,
   // Any icon children required for the expander icon.
-  expanderIconChildren?: React.Node,
+  expanderIconChildren?: Node,
   // The tooltip position for the expander icon.
   expanderTooltipPosition?: ExpanderTooltipPosition,
   // The optional tooltip to display for the expander icon.
-  expanderTooltipLabel?: React.Node,
+  expanderTooltipLabel?: Node,
   // An optional delay before the tooltip appears for the expander icon on hover.
   expanderTooltipDelay?: number,
 
@@ -143,7 +144,7 @@ export default class Card extends React.PureComponent<CardProps, *> {
     }
   };
 
-  render(): React.Node {
+  render(): Node {
     const { zDepth } = this.state;
     const {
       className,

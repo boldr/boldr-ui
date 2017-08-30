@@ -1,6 +1,7 @@
 /* eslint-disable react/prefer-stateless-function, no-unused-vars */
 // @flow
-import * as React from 'react';
+import React from 'react';
+import type { Node } from 'react';
 import cn from 'classnames';
 
 import CardExpander from './CardExpander';
@@ -18,7 +19,7 @@ export type CardActionsProps = {
   // An optional className to apply to the actions container.
   className?: string,
   // An actions to display.
-  children?: React.ChildrenArray<*>,
+  children?: Array<Node>,
   // Boolean if the actions should be centered.
   centered?: boolean,
   // Boolean if the actions should be stacked.

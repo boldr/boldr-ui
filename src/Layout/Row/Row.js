@@ -1,13 +1,14 @@
 /* @flow */
 /* eslint-disable camelcase */
-import * as React from 'react';
+import React from 'react';
+import type { Node } from 'react';
 import classNames from 'classnames';
 
 export type Props = {
   reverse?: boolean,
   className?: string,
   style?: Object,
-  children?: Array<React.Node>,
+  children?: Array<Node>,
   xsStart?: boolean,
   smStart?: boolean,
   mdStart?: boolean,
@@ -48,8 +49,7 @@ class Row extends React.PureComponent<Props, *> {
     componentClass: 'div',
   };
 
-  props: Props;
-  render() {
+  render(): Node {
     const ComponentClass = this.props.componentClass;
 
     const classes = classNames(

@@ -1,13 +1,14 @@
 /* @flow */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import * as React from 'react';
+import React from 'react';
+import type { Node } from 'react';
 import omit from 'lodash.omit';
 import mergeClassNames from 'classnames';
 import FontIcon from '../FontIcon';
 
 export type CollapsibleProps = {
   // The children to conditionally render.
-  children: Array<React.Node>,
+  children: Array<Node>,
   // When `true`, the contents are rendered.
   isOpen: boolean,
   // The title of the Collapsible
@@ -35,7 +36,7 @@ class Collapsible extends React.PureComponent<CollapsibleProps, *> {
     isContentsAlreadyRendered: this.props.isOpen,
   };
   props: CollapsibleProps;
-  handleToggleChildren = (e: Event) => {
+  handleToggleChildren = (e: SyntheticEvent<>) => {
     const { onToggle } = this.props;
     const isOpen = !this.state.isOpen;
 

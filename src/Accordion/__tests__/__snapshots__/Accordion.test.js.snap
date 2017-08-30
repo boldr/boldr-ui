@@ -154,7 +154,7 @@ exports[`Accordion pre expanded accordion 1`] = `
 >
   <AccordionItem
     isAccordion={true}
-    isExpanded={false}
+    isExpanded={true}
     onClick={[Function]}
   >
     Fake Child
@@ -175,14 +175,14 @@ exports[`Accordion pre expanded accordion when accordion is false 1`] = `
 >
   <AccordionItem
     isAccordion={false}
-    isExpanded={false}
+    isExpanded={true}
     onClick={[Function]}
   >
     Fake Child
   </AccordionItem>
   <AccordionItem
     isAccordion={false}
-    isExpanded={false}
+    isExpanded={true}
     onClick={[Function]}
   >
     Fake Child
@@ -238,7 +238,7 @@ exports[`Accordion works with multiple pre expanded accordion. Extra expands are
 >
   <AccordionItem
     isAccordion={true}
-    isExpanded={false}
+    isExpanded={true}
     onClick={[Function]}
   >
     Fake Child

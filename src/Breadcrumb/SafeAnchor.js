@@ -1,5 +1,5 @@
 /* @flow */
-import * as React from 'react';
+import React from 'react';
 
 function isTrivialHref(href) {
   return !href || href.trim() === '#';
@@ -27,7 +27,7 @@ class SafeAnchor extends React.PureComponent<Props, *> {
     componentClass: 'a',
   };
 
-  handleClick = (event: Event) => {
+  handleClick = (event: SyntheticEvent<>) => {
     const { disabled, href, onClick } = this.props;
 
     if (disabled || isTrivialHref(href)) {

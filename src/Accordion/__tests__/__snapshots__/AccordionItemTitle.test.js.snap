@@ -9,6 +9,7 @@ exports[`AccordionItemTitle renders correctly when pressing another key 1`] = `
   onClick={[Function]}
   onKeyPress={[Function]}
   role=""
+  tabIndex="0"
 >
   <div>
     Fake Title
@@ -25,6 +26,7 @@ exports[`AccordionItemTitle renders correctly when pressing enter 1`] = `
   onClick={[Function]}
   onKeyPress={[Function]}
   role=""
+  tabIndex="0"
 >
   <div>
     Fake Title
@@ -41,6 +43,7 @@ exports[`AccordionItemTitle renders correctly when pressing space 1`] = `
   onClick={[Function]}
   onKeyPress={[Function]}
   role=""
+  tabIndex="0"
 >
   <div>
     Fake Title
@@ -52,11 +55,12 @@ exports[`AccordionItemTitle renders correctly with different className 1`] = `
 <div
   aria-controls=""
   aria-expanded={false}
-  className="boldrui-accordion__title"
+  className="boldrui-accordion__title testCSSClass"
   id=""
   onClick={[Function]}
   onKeyPress={[Function]}
   role=""
+  tabIndex="0"
 >
   <div>
     Fake Title
@@ -73,6 +77,7 @@ exports[`AccordionItemTitle renders correctly with min params 1`] = `
   onClick={[Function]}
   onKeyPress={[Function]}
   role=""
+  tabIndex="0"
 >
   <div>
     Fake Title

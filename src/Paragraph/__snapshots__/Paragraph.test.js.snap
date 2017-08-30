@@ -1,15 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`(React Component) Paragraph should match the snapshop. 1`] = `
-.c0 {
-  margin: 0 0 1.5rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #030507;
-}
-
+exports[`<Paragraph /> should match the snapshot 1`] = `
 <p
-  className="c0"
+  className="boldrui-p"
 >
   My contents
 </p>

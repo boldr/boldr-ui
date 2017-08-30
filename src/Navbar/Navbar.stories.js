@@ -17,37 +17,63 @@ storiesOf('Navbar', module)
   .add('default', () => (
     <Navbar>
       <NavbarBrand>
-        <NavbarItem>BoldrUI</NavbarItem>
+        <NavbarItem>
+          {' '}
+          <img src="https://boldr.io/assets/boldr-logo-light.png" />
+        </NavbarItem>
         <NavbarBurger isActive={false} onClick={action('clicked')} />
       </NavbarBrand>
       <NavbarStart>
-        <NavbarItem href="#/" title="Home" />
+        <NavbarItem>
+          <a href="#/">Home</a>
+        </NavbarItem>
       </NavbarStart>
       <NavbarEnd>
-        <NavbarItem href="#/" title="Logout" />
+        <NavbarItem>
+          <a href="#/">Logout</a>
+        </NavbarItem>
       </NavbarEnd>
     </Navbar>
   ))
   .add('dropdown', () => (
     <Navbar>
       <NavbarBrand>
-        <NavbarItem>BoldrUI</NavbarItem>
+        <NavbarItem>
+          {' '}
+          <img src="https://boldr.io/assets/boldr-logo-light.png" />
+        </NavbarItem>
         <NavbarBurger isActive={false} onClick={action('clicked')} />
       </NavbarBrand>
       <NavbarStart>
-        <NavbarItem href="#/" title="Home" />
+        <NavbarItem>
+          <a href="#/">Home</a>
+        </NavbarItem>
+        <NavbarItem>
+          <a href="#/">Foo</a>
+        </NavbarItem>
+        <NavbarItem>
+          <a href="#/">Bar</a>
+        </NavbarItem>
       </NavbarStart>
       <NavbarEnd>
         <NavbarItem hasDropdown isHoverable>
           <NavbarLink href="#/">About</NavbarLink>
           <NavbarDropdown>
-            <NavbarItem href="#/" title="Example" />
-            <NavbarItem href="#/" title="Foo" />
+            <NavbarItem>
+              <a href="#/">Example</a>
+            </NavbarItem>
+            <NavbarItem>
+              <a href="#/">Dropdown</a>
+            </NavbarItem>
             <NavbarDivider />
-            <NavbarItem href="#/" title="Bar" />
+            <NavbarItem>
+              <a href="#/">Menu</a>
+            </NavbarItem>
           </NavbarDropdown>
         </NavbarItem>
-        <NavbarItem href="#/" title="Logout" />
+        <NavbarItem>
+          <a href="#/">Somewhere</a>
+        </NavbarItem>
       </NavbarEnd>
     </Navbar>
   ));

@@ -1,5 +1,6 @@
 /* @flow */
-import * as React from 'react';
+import React from 'react';
+import type { Node } from 'react';
 import cn from 'classnames';
 import FontIcon from './FontIcon';
 
@@ -7,7 +8,7 @@ type Props = {
   iconClassName?: string,
   flipped?: boolean,
   className?: string,
-  children: Array<React.Node>,
+  children: Array<Node>,
   suffix: string,
   suffixFlipped?: boolean,
 };

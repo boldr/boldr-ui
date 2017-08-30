@@ -1,5 +1,5 @@
 /* @flow */
-import * as React from 'react';
+import React from 'react';
 import type { Node, Element } from 'react';
 import cn from 'classnames';
 

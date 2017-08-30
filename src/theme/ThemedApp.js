@@ -1,10 +1,11 @@
 // @flow
-import * as React from 'react';
+import React from 'react';
+import type { Node } from 'react';
 import styled from 'styled-components';
 
 export type Props = {
   className?: string,
-  children: Array<React.Node>,
+  children: Array<Node>,
 };
 
 const ThemedApp = ({ className, children }: Props) => <div className={className}>{children}</div>;

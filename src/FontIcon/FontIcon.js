@@ -18,7 +18,7 @@ type Props = {
   style?: Object,
 };
 
-export default class FontIcon extends PureComponent {
+export default class FontIcon extends PureComponent<Props, void> {
   static defaultProps = {
     iconClassName: 'material-icons',
   };

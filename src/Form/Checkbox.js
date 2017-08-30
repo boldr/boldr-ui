@@ -1,5 +1,6 @@
 // @flow
-import * as React from 'react';
+import React from 'react';
+import type { Node } from 'react';
 import classNames from 'classnames';
 
 import { createWrappedComponent } from '../util/boldrui';
@@ -8,7 +9,7 @@ import { StyleClasses } from '../theme/styleClasses';
 const BASE_ELEMENT = StyleClasses.CHECKBOX;
 
 export type Props = {
-  children: Array<React.Node>,
+  children: Array<Node>,
   disabled?: boolean,
   className?: string,
 };

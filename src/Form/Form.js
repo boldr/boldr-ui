@@ -1,9 +1,10 @@
 /* @flow */
-import * as React from 'react';
+import React from 'react';
+import type { Node } from 'react';
 import styled from 'styled-components';
 
 export type Props = {
-  children: Array<React.Node>,
+  children: Array<Node>,
   isInline: boolean,
   handleSubmit: () => void,
   className?: string,

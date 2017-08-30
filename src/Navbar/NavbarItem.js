@@ -1,5 +1,5 @@
 // @flow
-import * as React from 'react';
+import React from 'react';
 import classNames from 'classnames';
 // import NavLink from 'react-router-dom/NavLink';
 import { StyleClasses } from '../theme/styleClasses';

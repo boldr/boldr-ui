@@ -1,5 +1,6 @@
 // @flow
-import * as React from 'react';
+import React from 'react';
+import type { Node } from 'react';
 import classNames from 'classnames';
 
 import {
@@ -19,7 +20,7 @@ const BASE_ELEMENT = StyleClasses.SELECT;
 export type Props = {
   disabled: boolean,
   className?: string,
-  children: Array<React.Node>,
+  children: Array<Node>,
 };
 export function SelectInput(props: Props) {
   const wrapperClassName = classNames(

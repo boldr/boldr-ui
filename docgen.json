@@ -1,0 +1,5358 @@
+{
+  "src/Accordion/Accordion.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "preExpandedItems",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleClick",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "key",
+            "type": {
+              "name": "number"
+            }
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "renderItems",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "activeItems": {
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "any"
+            }
+          ],
+          "raw": "Array<any>"
+        },
+        "required": true,
+        "description": ""
+      },
+      "isAccordion": {
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "onChange": {
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/Accordion/AccordionItem.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "renderChildren",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "itemUuid": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "isAccordion": {
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "isExpanded": {
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "onClick": {
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/Accordion/AccordionItemBody.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "id": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "isExpanded": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": true,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "children": {
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "unknown"
+            }
+          ],
+          "raw": "Array<React.Node>"
+        },
+        "required": true,
+        "description": ""
+      },
+      "className": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "",
+        "defaultValue": {
+          "value": "'boldrui-accordion__body'",
+          "computed": false
+        }
+      },
+      "hideBodyClassName": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "",
+        "defaultValue": {
+          "value": "'boldrui-accordion__body--hidden'",
+          "computed": false
+        }
+      },
+      "role": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/Alert/Alert.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "onClose",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "type": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'info'",
+              "computed": false
+            },
+            {
+              "value": "'warning'",
+              "computed": false
+            },
+            {
+              "value": "'danger'",
+              "computed": false
+            },
+            {
+              "value": "'error'",
+              "computed": false
+            }
+          ]
+        },
+        "required": true,
+        "description": "",
+        "defaultValue": {
+          "value": "'info'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'large'",
+              "computed": false
+            },
+            {
+              "value": "'normal'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'normal'",
+          "computed": false
+        }
+      },
+      "rounded": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "closable": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "onClose": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": ""
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "prefix": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'boldrui'",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/Block/Block.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "children": {
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "unknown"
+            }
+          ],
+          "raw": "Array<React.Node>"
+        },
+        "required": true,
+        "description": "The children to render within the Box."
+      },
+      "className": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "An optional className of the Box."
+      }
+    }
+  },
+  "src/Breadcrumb/Breadcrumb.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "className": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "src/Breadcrumb/BreadcrumbItem.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "active": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If set to true, renders `span` instead of `a`",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "href": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "`href` attribute for the inner `a` element"
+      },
+      "title": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "`title` attribute for the inner `a` element"
+      },
+      "target": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "`target` attribute for the inner `a` element"
+      },
+      "className": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "src/Button/Button.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "handleClick",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "startRipple",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "e",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "endRipple",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "renderButton",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "classNames",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "kind": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'default'",
+              "computed": false
+            },
+            {
+              "value": "'primary'",
+              "computed": false
+            },
+            {
+              "value": "'secondary'",
+              "computed": false
+            },
+            {
+              "value": "'success'",
+              "computed": false
+            },
+            {
+              "value": "'danger'",
+              "computed": false
+            },
+            {
+              "value": "'link'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'default'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'large'",
+              "computed": false
+            },
+            {
+              "value": "'medium'",
+              "computed": false
+            },
+            {
+              "value": "'small'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'medium'",
+          "computed": false
+        }
+      },
+      "htmlType": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'button'",
+              "computed": false
+            },
+            {
+              "value": "'submit'",
+              "computed": false
+            },
+            {
+              "value": "'reset'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'button'",
+          "computed": false
+        }
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "block": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "component": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "func"
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "loading": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "outline": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "bordered": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "target": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "href": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "prefix": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'boldrui'",
+          "computed": false
+        }
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "src/Card/CardExpander.js": {
+    "description": "The CardExpander component is just a simple `IconButton` that\ngets generated through the `Card`'s `contextTypes`. Props are not used\nat all.\n\nAny component below a component that has this component inject into it\nand has the prop `expandable={true}` will be toggleable when this is clicked.\n\nYou can manually inject the `CardExpander` component yourself if you want to\nuse a component that is not a `CardActions` or a `CardTitle`.",
+    "methods": []
+  },
+  "src/Card/CardText.js": {
+    "description": "The `CardText` component is a simple wrapper for text or any content in a `Card`.\nIt really just adds correct padding and font color.",
+    "methods": [],
+    "props": {
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "An optional style to apply."
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "An optional className to apply."
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The children to display."
+      },
+      "component": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "func"
+            }
+          ]
+        },
+        "required": true,
+        "description": "The component to render as.",
+        "defaultValue": {
+          "value": "'section'",
+          "computed": false
+        }
+      },
+      "expandable": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Boolean if this component should be expandable when there is a `CardExpander`\nabove it in the `Card`."
+      }
+    }
+  },
+  "src/Card/CardTitle.js": {
+    "description": "The `CardTitle` component is used to render a title in a Card along\nwith an optional subtitle or avatar.",
+    "methods": [],
+    "props": {
+      "id": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "number"
+            },
+            {
+              "name": "string"
+            }
+          ]
+        },
+        "required": false,
+        "description": "An optional id to add to the `title`."
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "An optional style to apply."
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "An optional className to apply."
+      },
+      "title": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The title to display."
+      },
+      "subtitle": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "An optional subtitle to display."
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Any additional children to display in the title block\nafter the avatar, title, and subtitle."
+      },
+      "avatar": {
+        "type": {
+          "name": "element"
+        },
+        "required": false,
+        "description": "An optional avatar to display before the title and subtitle."
+      },
+      "expander": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Boolean if the `CardTitle` component should inject a button\nfor expanding all children below it."
+      }
+    }
+  },
+  "src/Card/CardTitleBlock.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "id": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "number"
+            },
+            {
+              "name": "string"
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      },
+      "title": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "subtitle": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": ""
+      },
+      "avatar": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "src/ContentPromo/ContentPromo.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "theme": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'bright'",
+              "computed": false
+            },
+            {
+              "value": "'secondary'",
+              "computed": false
+            },
+            {
+              "value": "'teritary'",
+              "computed": false
+            },
+            {
+              "value": "'darkGrey'",
+              "computed": false
+            },
+            {
+              "value": "'grey'",
+              "computed": false
+            },
+            {
+              "value": "'lightGrey'",
+              "computed": false
+            }
+          ]
+        },
+        "required": true,
+        "description": "",
+        "defaultValue": {
+          "value": "'bright'",
+          "computed": false
+        }
+      },
+      "isTiny": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "If `true`, reduces the top and bottom padding of the wrapper.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "isNarrow": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "If `true`, reduces the max-width of the inner contents.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "isWide": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "If `true`, removes width / max-width of the inner contents.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "isCentered": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "If `true`, centers the passed text contents.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "An optional className to attach to the wrapper."
+      },
+      "contentsClassName": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "An optional className to attach to the inner contents wrapper."
+      }
+    }
+  },
+  "src/Dialog/Dialog.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "onClose",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "e",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "prefix": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'boldrui'",
+          "computed": false
+        }
+      },
+      "onClose": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "function() {}",
+          "computed": false
+        }
+      },
+      "visible": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "title": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": ""
+      },
+      "mask": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "maskClosable": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "footer": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/Dialog/DialogElement.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "onMaskClick",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "e",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "renderHeader",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ]
+  },
+  "src/Flag/Flag.js": {
+    "description": "A flag can be used to display an image beside corresponding\ncontents like headings, text, a table etc.",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "asset": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "A function which returns the media element to render in the background.\nIt recieves an props object which should be propagated to the JSX element."
+      },
+      "imageWidth": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'40'",
+              "computed": false
+            },
+            {
+              "value": "'60'",
+              "computed": false
+            },
+            {
+              "value": "'80'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "The percentage width of the image which is relative to the\nparent, defaults to `40`.",
+        "defaultValue": {
+          "value": "'40'",
+          "computed": false
+        }
+      },
+      "imageAlignment": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'left'",
+              "computed": false
+            },
+            {
+              "value": "'right'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "The alignment of the image, defaults to `left`.",
+        "defaultValue": {
+          "value": "'left'",
+          "computed": false
+        }
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "src/FontIcon/FontIcon.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "iconClassName": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'material-icons'",
+          "computed": false
+        }
+      },
+      "disabled": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": ""
+      },
+      "forceSize": {
+        "flowType": {
+          "name": "union",
+          "raw": "boolean | number",
+          "elements": [
+            {
+              "name": "boolean"
+            },
+            {
+              "name": "number"
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      },
+      "forceFontSize": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": ""
+      },
+      "className": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "children": {
+        "flowType": {
+          "name": "ReactChildren"
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "flowType": {
+          "name": "Object"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "src/Form/Form.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "children": {
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "unknown"
+            }
+          ],
+          "raw": "Array<React.Node>"
+        },
+        "required": true,
+        "description": ""
+      },
+      "isInline": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": true,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "handleSubmit": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "className": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "src/Form/FormCard/FormCard.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "skinny": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": true,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "title": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "lightText": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": true,
+        "description": ""
+      },
+      "form": {
+        "flowType": {
+          "name": "unknown"
+        },
+        "required": true,
+        "description": ""
+      },
+      "formTitleSize": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "",
+        "defaultValue": {
+          "value": "'h3'",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/Heading/Heading.stories.js": {
+    "description": "",
+    "methods": []
+  },
+  "src/Headline/Headline.js": {
+    "description": "A heading should always be the visual and describing start of\nanother content section.",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "lightText": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "type": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'h1'",
+              "computed": false
+            },
+            {
+              "value": "'h2'",
+              "computed": false
+            },
+            {
+              "value": "'h3'",
+              "computed": false
+            },
+            {
+              "value": "'h4'",
+              "computed": false
+            },
+            {
+              "value": "'h5'",
+              "computed": false
+            },
+            {
+              "value": "'h6'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "The semantic type of the heading, default to `h1`.",
+        "defaultValue": {
+          "value": "'h1'",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'h1'",
+              "computed": false
+            },
+            {
+              "value": "'h2'",
+              "computed": false
+            },
+            {
+              "value": "'h3'",
+              "computed": false
+            },
+            {
+              "value": "'h4'",
+              "computed": false
+            },
+            {
+              "value": "'h5'",
+              "computed": false
+            },
+            {
+              "value": "'h6'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "To separate the semantic meaning and the visual styles,\nyou can also set an optional theme, to have the semantic\nmeaning of a `h1` but the visual appearance of a `h4`."
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "src/Hero/HeroArticle.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "bgImg": {
+        "flowType": {
+          "name": "string",
+          "nullable": true
+        },
+        "required": true,
+        "description": ""
+      },
+      "children": {
+        "flowType": {
+          "name": "ReactChildren"
+        },
+        "required": true,
+        "description": ""
+      },
+      "bgColor": {
+        "flowType": {
+          "name": "string",
+          "nullable": true
+        },
+        "required": true,
+        "description": ""
+      },
+      "bgHeight": {
+        "flowType": {
+          "name": "number",
+          "nullable": true
+        },
+        "required": true,
+        "description": "",
+        "defaultValue": {
+          "value": "450",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/IconButton/IconButton.js": {
+    "description": "",
+    "displayName": "IconButton",
+    "methods": [
+      {
+        "name": "addIcon",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "className",
+            "type": null
+          },
+          {
+            "name": "icon",
+            "type": null
+          },
+          {
+            "name": "height",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "addPrefix",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "addSuffix",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": ""
+      },
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "prefixIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": ""
+      },
+      "suffixIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": ""
+      },
+      "type": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onMouseEnter": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onMouseLeave": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      }
+    },
+    "composes": [
+      "./IconButtonLayout"
+    ]
+  },
+  "src/IconButton/IconButtonLayout.js": {
+    "description": "",
+    "displayName": "IconButtonLayout",
+    "methods": [],
+    "props": {
+      "active": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "children": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": ""
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "height": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'small'",
+              "computed": false
+            },
+            {
+              "value": "'medium'",
+              "computed": false
+            },
+            {
+              "value": "'large'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'medium'",
+          "computed": false
+        }
+      },
+      "hover": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "theme": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'transparent'",
+              "computed": false
+            },
+            {
+              "value": "'close-transparent'",
+              "computed": false
+            },
+            {
+              "value": "'icon-greybackground'",
+              "computed": false
+            },
+            {
+              "value": "'icon-standard'",
+              "computed": false
+            },
+            {
+              "value": "'icon-standardsecondary'",
+              "computed": false
+            },
+            {
+              "value": "'icon-white'",
+              "computed": false
+            },
+            {
+              "value": "'icon-whitesecondary'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'icon-standard'",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/Icons/BaseIcon.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'#222'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "number"
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'24'",
+          "computed": false
+        }
+      },
+      "width": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "number"
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      },
+      "height": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "number"
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "src/Icons/Icon.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "renderIcon",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "kind",
+            "type": {
+              "name": "string"
+            }
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "color": {
+        "flowType": {
+          "name": "string",
+          "nullable": true
+        },
+        "required": true,
+        "description": "",
+        "defaultValue": {
+          "value": "'#222'",
+          "computed": false
+        }
+      },
+      "className": {
+        "flowType": {
+          "name": "string",
+          "nullable": true
+        },
+        "required": true,
+        "description": ""
+      },
+      "height": {
+        "flowType": {
+          "name": "number",
+          "nullable": true
+        },
+        "required": true,
+        "description": ""
+      },
+      "kind": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "onClick": {
+        "flowType": {
+          "name": "Function",
+          "nullable": true
+        },
+        "required": true,
+        "description": ""
+      },
+      "size": {
+        "flowType": {
+          "name": "union",
+          "raw": "?number | ?string",
+          "elements": [
+            {
+              "name": "number",
+              "nullable": true
+            },
+            {
+              "name": "string",
+              "nullable": true
+            }
+          ]
+        },
+        "required": true,
+        "description": "",
+        "defaultValue": {
+          "value": "24",
+          "computed": false
+        }
+      },
+      "width": {
+        "flowType": {
+          "name": "number",
+          "nullable": true
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "src/ImageDisplay/ImageDisplay.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "imageSrc": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "iconColor": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "",
+        "defaultValue": {
+          "value": "'#eaf7ff'",
+          "computed": false
+        }
+      },
+      "editTooltipTxt": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "",
+        "defaultValue": {
+          "value": "'Edit image properties'",
+          "computed": false
+        }
+      },
+      "removeTooltipTxt": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "",
+        "defaultValue": {
+          "value": "'Remove...'",
+          "computed": false
+        }
+      },
+      "onAddImage": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "required": false,
+        "description": ""
+      },
+      "onUpdateImage": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "required": false,
+        "description": ""
+      },
+      "onRemoveImage": {
+        "flowType": {
+          "name": "signature",
+          "type": "function",
+          "raw": "() => void",
+          "signature": {
+            "arguments": [],
+            "return": {
+              "name": "void"
+            }
+          }
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "src/Layout/CenterBlock.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "children": {
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "unknown"
+            }
+          ],
+          "raw": "Array<React.Node>"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "src/Loader/Loader.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "className": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "src/Media/Media.js": {
+    "description": "The `Media` component is used to display images, iframes, ...media. Who'da thunk?",
+    "methods": [],
+    "props": {
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "An optional className to apply to the card media component."
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Any media to display."
+      },
+      "forceAspect": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Boolean if the aspect ratio should be forced.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "aspectRatio": {
+        "type": {
+          "name": "custom",
+          "raw": "validateAspectRatio"
+        },
+        "required": false,
+        "description": "The aspect ratio to use.",
+        "defaultValue": {
+          "value": "'16-9'",
+          "computed": false
+        }
+      },
+      "expandable": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Boolean if this component should be expandable when there is a `CardExpander`\nabove it in the `Card`."
+      },
+      "component": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "func"
+            },
+            {
+              "name": "string"
+            }
+          ]
+        },
+        "required": true,
+        "description": "The component to render the card media as.",
+        "defaultValue": {
+          "value": "'section'",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/Media/MediaOverlay.js": {
+    "description": "The `MediaOverlay` component is just a very simple wrapper that adds the\n`.md-media-overlay` class name to a div. The overlay will be positioned\nat the bottom of the `Media` by default.",
+    "methods": [],
+    "props": {
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "An optional style to apply to the overlay."
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "An optional className to apply to the overlay."
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Any children to display in the overlay. This is _normally_ a `CardTitle` component\nor some buttons."
+      },
+      "component": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "func"
+            },
+            {
+              "name": "string"
+            }
+          ]
+        },
+        "required": true,
+        "description": "The component to be rendered as.",
+        "defaultValue": {
+          "value": "'div'",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/Menu/Menu.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "isSize": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'normal'",
+          "computed": false
+        }
+      },
+      "placement": {
+        "type": {
+          "name": "custom",
+          "raw": "Tooltip.propTypes.placement"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'top'",
+          "computed": false
+        }
+      },
+      "buttonTheme": {
+        "type": {
+          "name": "custom",
+          "raw": "IconButton.propTypes.theme"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'icon-standard'",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/Menu/MenuItem.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "icon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": ""
+      },
+      "text": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "src/Paper/Paper.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "component": {
+        "flowType": {
+          "name": "union",
+          "raw": "Function | string",
+          "elements": [
+            {
+              "name": "Function"
+            },
+            {
+              "name": "string"
+            }
+          ]
+        },
+        "required": true,
+        "description": "",
+        "defaultValue": {
+          "value": "'div'",
+          "computed": false
+        }
+      },
+      "className": {
+        "flowType": {
+          "name": "string",
+          "nullable": true
+        },
+        "required": true,
+        "description": ""
+      },
+      "zDepth": {
+        "flowType": {
+          "name": "number"
+        },
+        "required": true,
+        "description": "",
+        "defaultValue": {
+          "value": "1",
+          "computed": false
+        }
+      },
+      "children": {
+        "flowType": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "unknown"
+            }
+          ],
+          "raw": "Array<React.Node>"
+        },
+        "required": true,
+        "description": ""
+      },
+      "raiseOnHover": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": true,
+        "description": ""
+      },
+      "isRounded": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": true,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "isPadded": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/Pop/Pop.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "changePending",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "key",
+            "type": null
+          },
+          {
+            "name": "pending",
+            "type": null
+          },
+          {
+            "name": "callback",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "renderContent",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "renderTrigger",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "trigger": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'click'",
+              "computed": false
+            },
+            {
+              "value": "'hover'",
+              "computed": false
+            },
+            {
+              "value": "'focus'",
+              "computed": false
+            },
+            {
+              "value": "'none'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'none'",
+          "computed": false
+        }
+      },
+      "position": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'left-top'",
+              "computed": false
+            },
+            {
+              "value": "'left-center'",
+              "computed": false
+            },
+            {
+              "value": "'left-bottom'",
+              "computed": false
+            },
+            {
+              "value": "'right-top'",
+              "computed": false
+            },
+            {
+              "value": "'right-center'",
+              "computed": false
+            },
+            {
+              "value": "'right-bottom'",
+              "computed": false
+            },
+            {
+              "value": "'top-left'",
+              "computed": false
+            },
+            {
+              "value": "'top-center'",
+              "computed": false
+            },
+            {
+              "value": "'top-right'",
+              "computed": false
+            },
+            {
+              "value": "'bottom-left'",
+              "computed": false
+            },
+            {
+              "value": "'bottom-center'",
+              "computed": false
+            },
+            {
+              "value": "'bottom-right'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'top-center'",
+          "computed": false
+        }
+      },
+      "centerArrow": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "block": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "content": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": ""
+      },
+      "header": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onConfirm": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onCancel": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "confirmText": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'Ok'",
+          "computed": false
+        }
+      },
+      "cancelText": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'Cancel'",
+          "computed": false
+        }
+      },
+      "type": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'primary'",
+              "computed": false
+            },
+            {
+              "value": "'default'",
+              "computed": false
+            },
+            {
+              "value": "'danger'",
+              "computed": false
+            },
+            {
+              "value": "'success'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'primary'",
+          "computed": false
+        }
+      },
+      "onShow": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onClose": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onBeforeShow": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onBeforeClose": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "visible": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onVisibleChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "mouseLeaveDelay": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "200",
+          "computed": false
+        }
+      },
+      "mouseEnterDelay": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "200",
+          "computed": false
+        }
+      },
+      "quirk": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "closeOnClickOutside": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "isClickOutside": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "prefix": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'boldrui'",
+          "computed": false
+        }
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "wrapperClassName": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/Popover/Content.js": {
+    "description": "Like triggers, content can be replaced with your own implementation, all you have to do is extend this base class.\n\nThe props on this class are all private.",
+    "methods": [
+      {
+        "name": "getAnchor",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "getPositionedParent",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "adjustPosition",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": ""
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "getContentNode": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "visible": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "placement": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "cushion": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": ""
+      },
+      "getAnchor": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "containerSelector": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "src/Popover/Popover.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "registerDescendant",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "popover",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "unregisterDescendant",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "popover",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "isVisibilityControlled",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "props",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "getVisible",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "props",
+            "type": null
+          },
+          {
+            "name": "state",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "setVisible",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "visible",
+            "type": null
+          },
+          {
+            "name": "props",
+            "type": null
+          },
+          {
+            "name": "state",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "getPopoverNode",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "onTriggerRefChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "triggerInstance",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "getTriggerNode",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "open",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "close",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "injectIsOutsideSelf",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "impl",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "isOutsideStacked",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "node",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "validateChildren",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "safeSetState",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "updater",
+            "type": null
+          },
+          {
+            "name": "callback",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "prefix": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'boldrui'",
+          "computed": false
+        }
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "wrapperClassName": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "display": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'block'",
+          "computed": false
+        }
+      },
+      "position": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": ""
+      },
+      "cushion": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "onBeforeClose": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "noop",
+          "computed": true
+        }
+      },
+      "onBeforeShow": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "noop",
+          "computed": true
+        }
+      },
+      "onClose": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "noop",
+          "computed": true
+        }
+      },
+      "onShow": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "noop",
+          "computed": true
+        }
+      },
+      "containerSelector": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'body'",
+          "computed": false
+        }
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "visible": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onVisibleChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "src/Popover/placement/auto-bottom-center.js": {
+    "description": "",
+    "methods": []
+  },
+  "src/Popover/placement/auto-bottom-left.js": {
+    "description": "",
+    "methods": []
+  },
+  "src/Popover/placement/auto-bottom-right.js": {
+    "description": "",
+    "methods": []
+  },
+  "src/Popover/placement/auto-top-center.js": {
+    "description": "",
+    "methods": []
+  },
+  "src/Popover/placement/auto-top-left.js": {
+    "description": "",
+    "methods": []
+  },
+  "src/Popover/placement/auto-top-right.js": {
+    "description": "",
+    "methods": []
+  },
+  "src/Popover/triggers/Trigger.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "isOutsideSelf",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "target",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "getTriggerProps",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "triggerEvent",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "element",
+            "type": null
+          },
+          {
+            "name": "eventName",
+            "type": null
+          },
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "validateChildren",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false
+      },
+      "onTriggerRefChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": false
+      },
+      "getTriggerNode": {
+        "type": {
+          "name": "func"
+        },
+        "required": false
+      },
+      "getContentNode": {
+        "type": {
+          "name": "func"
+        },
+        "required": false
+      },
+      "contentVisible": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false
+      },
+      "open": {
+        "type": {
+          "name": "func"
+        },
+        "required": false
+      },
+      "close": {
+        "type": {
+          "name": "func"
+        },
+        "required": false
+      },
+      "isOutsideStacked": {
+        "type": {
+          "name": "func"
+        },
+        "required": false
+      },
+      "injectIsOutsideSelf": {
+        "type": {
+          "name": "func"
+        },
+        "required": false
+      }
+    }
+  },
+  "src/Portal/ClosablePortal.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "visible": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/Portal/Portal.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "beforeClose": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onUpdate": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onOpen": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "selector": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "object"
+            }
+          ]
+        },
+        "required": true,
+        "description": "",
+        "defaultValue": {
+          "value": "'body'",
+          "computed": false
+        }
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "css": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "prefix": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'boldrui'",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/ResponsiveImage/ResponsiveImage.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "createSrcForQuery",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "src",
+            "type": null
+          },
+          {
+            "name": "query",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleImageLoaded",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleViewportVisibilityChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "isInViewport",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "lazyDivideFactor": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The division factor for the lazy image size,\n@example\n <Image width={200} height={150} lazyDivideFactory={100}/>\nwould result in a lazy image size of width: 2px and height: 1.5px.\n\nWe expose this prop so that you can keep the proportions of the\noriginal image while the lazy image is in place.",
+        "defaultValue": {
+          "value": "100",
+          "computed": false
+        }
+      },
+      "isLazy": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "If falsy, will not load the image lazyly.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "src": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The base src for the image."
+      },
+      "alt": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The alternative description of the image."
+      },
+      "width": {
+        "type": {
+          "name": "number"
+        },
+        "required": true,
+        "description": "The base image width, used to calculate proportions."
+      },
+      "height": {
+        "type": {
+          "name": "number"
+        },
+        "required": true,
+        "description": "The base image height, used to calculate proportions."
+      },
+      "queries": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "custom",
+            "raw": "imageQueryPropType"
+          }
+        },
+        "required": false,
+        "description": "if provided, an <picture/> element with sources for each item of\n the array will be rendered.",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "onLoad": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "An optional handler which will be called with the onLoad event\nof the final image."
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "An optional className to attach to the wrapper."
+      },
+      "lazySrc": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Optionally specify your own lazy src which is displayed initially.\nUsefull if you render a base64 string on the server side initially."
+      }
+    }
+  },
+  "src/Select/Popup.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "handleScroll",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "evt",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "optionChangedHandler",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "ev",
+            "type": null
+          },
+          {
+            "name": "cid",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "searchFilterHandler",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "keyword",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "keydownHandler",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "ev",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "updateCurrentId",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "cid",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "cid": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "-1",
+          "computed": false
+        }
+      },
+      "keyword": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "selectedItems": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "searchPlaceholder": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "emptyText": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "prefixCls": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "extraFilter": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "data": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": ""
+      },
+      "filter": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onAsyncFilter": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "src/Select/Select.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "uniformData",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "props",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "getOptions",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "state",
+            "type": null
+          },
+          {
+            "name": "props",
+            "type": null
+          },
+          {
+            "name": "item",
+            "type": null
+          },
+          {
+            "name": "i",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "formateData",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "data",
+            "type": null
+          },
+          {
+            "name": "props",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "triggerChangeHandler",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "data",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "triggerDeleteHandler",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "data",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "optionChangedHandler",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "ev",
+            "type": null
+          },
+          {
+            "name": "selectedItem",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handlePopoverVisibleChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "visible",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "data": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": ""
+      },
+      "prefix": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'boldrui'",
+          "computed": false
+        }
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "open": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "popupClassName": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "placeholder": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'Choose option'",
+          "computed": false
+        }
+      },
+      "maxToShow": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": ""
+      },
+      "searchPlaceholder": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "emptyText": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'No match found'",
+          "computed": false
+        }
+      },
+      "selectedItem": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "value": {
+              "name": "any",
+              "required": false
+            },
+            "text": {
+              "name": "string",
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{\n  value: '',\n  text: '',\n}",
+          "computed": false
+        }
+      },
+      "trigger": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "SelectTrigger",
+          "computed": true
+        }
+      },
+      "optionValue": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'value'",
+          "computed": false
+        }
+      },
+      "optionText": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'text'",
+          "computed": false
+        }
+      },
+      "onChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "noop",
+          "computed": true
+        }
+      },
+      "onDelete": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "noop",
+          "computed": true
+        }
+      },
+      "filter": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onAsyncFilter": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onEmptySelected": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "noop",
+          "computed": true
+        }
+      },
+      "onOpen": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "noop",
+          "computed": true
+        }
+      },
+      "selectedItems": {
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "value": {
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "index": {
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "initialValue": {
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "initialIndex": {
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/Select/components/Option.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "optionClickHandler",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "cid": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "value": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": ""
+      },
+      "text": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onMouseEnter": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "src/Select/components/Search.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "changeHandler",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "ev",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "prefixCls": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "keyword": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "number"
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      },
+      "value": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": ""
+      },
+      "placeholder": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "src/Select/components/Tag.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "deleteTagHandler",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "evt",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "prefixCls": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "cid": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "value": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": ""
+      },
+      "text": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onFocus": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "src/Select/triggers/Index.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "trigger": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "src/Select/triggers/InputTrigger.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "inputChangeHandler",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "ev",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "prefixCls": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "value": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": ""
+      },
+      "placeholder": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "keyword": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "text": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "src/Select/triggers/SelectTrigger.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "prefixCls": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "value": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": ""
+      },
+      "text": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": ""
+      },
+      "placeholder": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "src/Select/triggers/SimpleTrigger.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "prefixCls": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "value": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": ""
+      },
+      "text": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": ""
+      },
+      "placeholder": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "src/Select/triggers/TagsTrigger.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "deleteTagHandler",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "cid",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "prefixCls": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "selectedItems": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "selectedItem": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "placeholder": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "value": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onDelete": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "noop",
+          "computed": true
+        }
+      }
+    }
+  },
+  "src/Tag/Tag.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "children": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "id": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "thumb": {
+        "flowType": {
+          "name": "unknown"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onRemove": {
+        "flowType": {
+          "name": "Function"
+        },
+        "required": true,
+        "description": "",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "removable": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "size": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'small'",
+          "computed": false
+        }
+      },
+      "wrap": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": ""
+      },
+      "disabled": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "src/Tooltip/Tooltip.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "componentElements",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "onClickOutside",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "e",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "_chainCallbacks",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "first",
+            "type": null
+          },
+          {
+            "name": "second",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "_getContainer",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "show",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "hide",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "_hideOrShow",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "_onBlur",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "_onFocus",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "_onClick",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "_onMouseEnter",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "_onMouseLeave",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "_calculatePosition",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "ref",
+            "type": null
+          },
+          {
+            "name": "tooltipNode",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "_updatePosition",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "ref",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "_adjustArrowPosition",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "placement",
+            "type": null
+          },
+          {
+            "name": "moveTo",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "_getRect",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "el",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "_adjustPosition",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "originalPosition",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "_onTooltipContentEnter",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "_onTooltipContentLeave",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "isShown",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "textAlign": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'center'",
+          "computed": false
+        }
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "content": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "placement": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'top'",
+              "computed": false
+            },
+            {
+              "value": "'right'",
+              "computed": false
+            },
+            {
+              "value": "'bottom'",
+              "computed": false
+            },
+            {
+              "value": "'left'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'left'",
+          "computed": false
+        }
+      },
+      "alignment": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'top'",
+              "computed": false
+            },
+            {
+              "value": "'right'",
+              "computed": false
+            },
+            {
+              "value": "'bottom'",
+              "computed": false
+            },
+            {
+              "value": "'left'",
+              "computed": false
+            },
+            {
+              "value": "'center'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'center'",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'light'",
+              "computed": false
+            },
+            {
+              "value": "'dark'",
+              "computed": false
+            },
+            {
+              "value": "'error'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'light'",
+          "computed": false
+        }
+      },
+      "showDelay": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "200",
+          "computed": false
+        }
+      },
+      "hideDelay": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "500",
+          "computed": false
+        }
+      },
+      "showTrigger": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'custom'",
+              "computed": false
+            },
+            {
+              "value": "'mouseenter'",
+              "computed": false
+            },
+            {
+              "value": "'mouseleave'",
+              "computed": false
+            },
+            {
+              "value": "'click'",
+              "computed": false
+            },
+            {
+              "value": "'focus'",
+              "computed": false
+            },
+            {
+              "value": "'blur'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'mouseenter'",
+          "computed": false
+        }
+      },
+      "hideTrigger": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'custom'",
+              "computed": false
+            },
+            {
+              "value": "'mouseenter'",
+              "computed": false
+            },
+            {
+              "value": "'mouseleave'",
+              "computed": false
+            },
+            {
+              "value": "'click'",
+              "computed": false
+            },
+            {
+              "value": "'focus'",
+              "computed": false
+            },
+            {
+              "value": "'blur'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'mouseleave'",
+          "computed": false
+        }
+      },
+      "isActive": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "bounce": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "maxWidth": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'1200px'",
+          "computed": false
+        }
+      },
+      "onClickOutside": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onShow": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback to be called when the tooltip has been shown",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "zIndex": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "2000",
+          "computed": false
+        }
+      },
+      "appendToParent": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "By default tooltip is appended to a body, to avoid CSS collisions.\nBut if you want your tooltip to scroll with a content, append tooltip to a parent.\nJust make sure the CSS are not leaked."
+      },
+      "moveBy": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "x": {
+              "name": "number",
+              "required": false
+            },
+            "y": {
+              "name": "number",
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": "Allows to shift the tooltip position by x and y pixels.\nBoth positive and negative values are accepted."
+      },
+      "moveArrowTo": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Allows to position the arrow relative to tooltip.\nPositive value calculates position from left/top.\nNegative one calculates position from right/bottom."
+      },
+      "isSize": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'normal'",
+              "computed": false
+            },
+            {
+              "value": "'large'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'normal'",
+          "computed": false
+        }
+      },
+      "shouldCloseOnClickOutside": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/Tooltip/TooltipContent.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "textAlign": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'center'",
+          "computed": false
+        }
+      },
+      "maxWidth": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'1200px'",
+          "computed": false
+        }
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Tooltip content to be rendered"
+      },
+      "theme": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'light'",
+              "computed": false
+            },
+            {
+              "value": "'dark'",
+              "computed": false
+            },
+            {
+              "value": "'error'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "Specifies tooltip theme",
+        "defaultValue": {
+          "value": "'light'",
+          "computed": false
+        }
+      },
+      "arrowPlacement": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'top'",
+              "computed": false
+            },
+            {
+              "value": "'right'",
+              "computed": false
+            },
+            {
+              "value": "'bottom'",
+              "computed": false
+            },
+            {
+              "value": "'left'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "Specifies on which side the arrow should be shown",
+        "defaultValue": {
+          "value": "'bottom'",
+          "computed": false
+        }
+      },
+      "arrowStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom CSS style object (used to allow setting arrow position)"
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom CSS style object (used to allow setting the position)"
+      },
+      "onMouseEnter": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback triggered when mouse enters the component\nUsed for showing tooltip when mouse leaves the target element, but hovers the tooltip itself"
+      },
+      "onMouseLeave": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback triggered when mouse leaves the component\nUsed for showing tooltip when mouse leaves the target element, but hovers the tooltip itself"
+      },
+      "bounce": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Specifies if tooltip content should use bouncing animation."
+      },
+      "isSize": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'normal'",
+              "computed": false
+            },
+            {
+              "value": "'large'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'normal'",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/theme/ThemeProvider.js": {
+    "description": "",
+    "methods": []
+  },
+  "src/util/BoldrComponent.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "checkIfEventOnElements",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "e",
+            "type": null
+          },
+          {
+            "name": "elem",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "componentElements",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "_onMouseEventsHandler",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "e",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "_addDataHook",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "dataHook",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "_supportOnClickOutside",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "dataHook": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "src/util/Collapse.js": {
+    "description": "The `Collapse` component is used to animate a single child entering\nor leaving. This uses the `react-motion` library to animate the height,\npadding-top, and padding-bottom of an element when the `collapsed` prop\nchanges.\n@param {Function} child the child component",
+    "methods": [
+      {
+        "name": "_spring",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "collapsed",
+            "type": null
+          },
+          {
+            "name": "initialOpen",
+            "type": null
+          },
+          {
+            "name": "value",
+            "type": null
+          },
+          {
+            "name": "config",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "_setHeight",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "child",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "An optional style to merge with the `Motion` style."
+      },
+      "defaultStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "An optional default style to merge with the `Motion` default style."
+      },
+      "collapsed": {
+        "type": {
+          "name": "bool"
+        },
+        "required": true,
+        "description": "Boolean if the children are currently collapsed."
+      },
+      "children": {
+        "type": {
+          "name": "element"
+        },
+        "required": true,
+        "description": "A single child to collapse or expand."
+      },
+      "springConfig": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": "The spring config to use for the animation.",
+        "defaultValue": {
+          "value": "{\n  precision: 0.5,\n}",
+          "computed": false
+        }
+      },
+      "animate": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Boolean if the the single child entering or leaving should be animated.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/util/Ripple.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "componentWillAppear",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "callback",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "componentWillEnter",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "callback",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "componentDidAppear",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "componentDidEnter",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "componentWillLeave",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "callback",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "initializeAnimation",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "callback",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "animate",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "children": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/util/component/WindowEventHandler.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "eventName": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "callback": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": ""
+      },
+      "useCapture": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/util/component/WindowResizeHandler.js": {
+    "description": "Handles window.resize event.\n\nThe event handler got a second parameter: {deltaX, deltaY}.\nThe resize event handler should be throttled since resize events can fire at a high rate.",
+    "methods": [
+      {
+        "name": "onResize",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "evt",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "onResize": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  }
+}

@@ -4,8 +4,8 @@ exports[`AccordionItemBody renders correctly with different className 1`] = `
 <div
   aria-hidden={true}
   className="testCSSClass boldrui-accordion__body--hidden"
-  id=""
-  role=""
+  id={undefined}
+  role={undefined}
 >
   <div>
     Fake body
@@ -17,8 +17,8 @@ exports[`AccordionItemBody renders correctly with expanded 1`] = `
 <div
   aria-hidden={false}
   className="boldrui-accordion__body"
-  id=""
-  role=""
+  id={undefined}
+  role={undefined}
 >
   <div>
     Fake body
@@ -30,8 +30,8 @@ exports[`AccordionItemBody renders correctly with min params 1`] = `
 <div
   aria-hidden={true}
   className="boldrui-accordion__body boldrui-accordion__body--hidden"
-  id=""
-  role=""
+  id={undefined}
+  role={undefined}
 >
   <div>
     Fake body
@@ -43,8 +43,8 @@ exports[`AccordionItemBody renders correctly with prefixClass 1`] = `
 <div
   aria-hidden={true}
   className="boldrui-accordion__body testCSSClass--hidden"
-  id=""
-  role=""
+  id={undefined}
+  role={undefined}
 >
   <div>
     Fake body

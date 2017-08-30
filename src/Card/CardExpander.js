@@ -1,5 +1,5 @@
 /* eslint-disable react/prefer-stateless-function, no-unused-vars */
-import React, { Component } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import Icon from '../Icons/Icon';
 import contextTypes from './contextTypes';
@@ -14,7 +14,7 @@ import contextTypes from './contextTypes';
  * You can manually inject the `CardExpander` component yourself if you want to
  * use a component that is not a `CardActions` or a `CardTitle`.
  */
-export default class CardExpander extends Component {
+export default class CardExpander extends React.Component {
   static contextTypes = contextTypes;
 
   render() {
