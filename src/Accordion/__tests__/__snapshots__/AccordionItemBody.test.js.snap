@@ -3,7 +3,7 @@
 exports[`AccordionItemBody renders correctly with different className 1`] = `
 <div
   aria-hidden={true}
-  className="testCSSClass boldrui-accordion__body--hidden"
+  className="testCSSClass boldr-accordion__body--hidden"
   id={undefined}
   role={undefined}
 >
@@ -16,7 +16,7 @@ exports[`AccordionItemBody renders correctly with different className 1`] = `
 exports[`AccordionItemBody renders correctly with expanded 1`] = `
 <div
   aria-hidden={false}
-  className="boldrui-accordion__body"
+  className="boldr-accordion__body"
   id={undefined}
   role={undefined}
 >
@@ -29,7 +29,7 @@ exports[`AccordionItemBody renders correctly with expanded 1`] = `
 exports[`AccordionItemBody renders correctly with min params 1`] = `
 <div
   aria-hidden={true}
-  className="boldrui-accordion__body boldrui-accordion__body--hidden"
+  className="boldr-accordion__body boldr-accordion__body--hidden"
   id={undefined}
   role={undefined}
 >
@@ -42,7 +42,7 @@ exports[`AccordionItemBody renders correctly with min params 1`] = `
 exports[`AccordionItemBody renders correctly with prefixClass 1`] = `
 <div
   aria-hidden={true}
-  className="boldrui-accordion__body testCSSClass--hidden"
+  className="boldr-accordion__body testCSSClass--hidden"
   id={undefined}
   role={undefined}
 >

@@ -9,7 +9,7 @@ export type Props = {
 };
 
 export function Footer({ tag = 'footer', ...props }: Props) {
-  const className = classNames('boldrui-footer', props.className);
+  const className = classNames('boldr-footer', props.className);
 
   return React.createElement(tag, { ...props, className });
 }

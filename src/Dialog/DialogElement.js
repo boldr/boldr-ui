@@ -4,6 +4,15 @@ import cx from 'classnames';
 import focusWithoutScroll from '../util/dom/focusWithoutScroll';
 
 export default class DialogElement extends Component {
+  componentDidMount() {
+    // Set focus to dialog iff focus is outside of dialog itself
+    const activeElement = document.activeElement;
+    const dialogNode = ReactDOM.findDOMNode(this);
+    if (dialogNode !== activeElement && dialogNode && !dialogNode.contains(activeElement)) {
+      focusWithoutScroll(dialogNode);
+    }
+  }
+
   onMaskClick = e => {
     if (e.target === e.currentTarget && this.props.mask && this.props.maskClosable) {
       this.props.onClose(e);
@@ -28,15 +37,6 @@ export default class DialogElement extends Component {
         <div className={`${prefix}-dialog-r-title`}>{title}</div>
       </div>
     );
-  }
-
-  componentDidMount() {
-    // Set focus to dialog iff focus is outside of dialog itself
-    const activeElement = document.activeElement;
-    const dialogNode = ReactDOM.findDOMNode(this);
-    if (dialogNode !== activeElement && dialogNode && !dialogNode.contains(activeElement)) {
-      focusWithoutScroll(dialogNode);
-    }
   }
 
   render() {

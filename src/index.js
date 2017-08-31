@@ -37,7 +37,6 @@ export {
   RadioFormField,
 } from './Form';
 
-export { default as Headline } from './Headline';
 export { default as Heading } from './Heading';
 export { Hero, HeroHeader, HeroBody, HeroVideo, HeroFooter } from './Hero';
 export { default as Icon } from './Icons';

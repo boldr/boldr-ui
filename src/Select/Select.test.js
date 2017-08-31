@@ -36,7 +36,7 @@ describe('<Select />', () => {
     expect(wrapper.prop('disabled')).toBe(false);
     expect(wrapper.prop('optionText')).toBe('text');
     expect(wrapper.prop('optionValue')).toBe('value');
-    expect(wrapper.prop('prefix')).toBe('boldrui');
+    expect(wrapper.prop('prefix')).toBe('boldr');
     expect(wrapper.prop('filter')).toBe(undefined);
     expect(wrapper.prop('selectedItem').value).toBe('');
     expect(wrapper.prop('selectedItem').text).toBe('');
@@ -209,7 +209,7 @@ describe('<Select />', () => {
     expect(wrapper.find('TagsTrigger').length).toBe(1);
     wrapper.find('TagsTrigger').simulate('click');
     const pop = new ReactWrapper(wrapper.instance().popup, true);
-    wrapper.find('.boldrui-select').simulate('keydown', { keyCode: 27 });
+    wrapper.find('.boldr-select').simulate('keydown', { keyCode: 27 });
     wrapper.find('TagsTrigger').simulate('click');
     expect(pop.find('.current').length).toBe(1);
     pop.find('Popup').simulate('keydown', { keyCode: 41 });

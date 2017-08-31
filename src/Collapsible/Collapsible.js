@@ -71,16 +71,16 @@ class Collapsible extends React.PureComponent<CollapsibleProps, *> {
     const rest = omit(restProps, ['isOpen', 'onToggle']);
     const { isOpen } = this.state;
     const wrapperClassName = mergeClassNames({
-      'boldrui-collapsible__wrapper': true,
+      'boldr-collapsible__wrapper': true,
       [className]: className && className.length,
     });
     const togglerClassName = mergeClassNames({
-      'boldrui-collapsible__toggler': true,
-      'boldrui-collapsible__toggler-active': isOpen,
+      'boldr-collapsible__toggler': true,
+      'boldr-collapsible__toggler-active': isOpen,
     });
     const contentsClassName = mergeClassNames({
-      'boldrui-collapsible__contents': true,
-      'boldrui-collapsible__contents-active': isOpen,
+      'boldr-collapsible__contents': true,
+      'boldr-collapsible__contents-active': isOpen,
     });
     const anchorProps = {};
 
@@ -97,12 +97,12 @@ class Collapsible extends React.PureComponent<CollapsibleProps, *> {
             <FontIcon
               onClick={onDelete}
               value={'delete_forever'}
-              className="boldrui-collapsible__toggler-icon__delete"
+              className="boldr-collapsible__toggler-icon__delete"
             />
           ) : null}
           <FontIcon
             value={isOpen ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
-            className="boldrui-collapsible__toggler-icon"
+            className="boldr-collapsible__toggler-icon"
           />
         </a>
         <div className={contentsClassName}>{this.renderContents()}</div>

@@ -74,7 +74,7 @@ class PopAction extends Component {
     }
 
     return (
-      <div className="boldrui-pop-buttons">
+      <div className="boldr-pop-buttons">
         <Button
           loading={confirmPending}
           disabled={cancelPending}
@@ -173,7 +173,7 @@ class Pop extends Component {
     mouseEnterDelay: 200,
     className: '',
     wrapperClassName: '',
-    prefix: 'boldrui',
+    prefix: 'boldr',
     quirk: true,
   };
 
@@ -210,8 +210,8 @@ class Pop extends Component {
 
     return (
       <Popover.Content>
-        {header && <div className="boldrui-pop-header">{header}</div>}
-        <div className="boldrui-pop-inner">
+        {header && <div className="boldr-pop-header">{header}</div>}
+        <div className="boldr-pop-inner">
           {content}
           <BoundPopAction
             prefix={prefix}
@@ -225,7 +225,7 @@ class Pop extends Component {
             type={type}
           />
         </div>
-        <i className="boldrui-pop-arrow" />
+        <i className="boldr-pop-arrow" />
       </Popover.Content>
     );
   }
@@ -311,8 +311,8 @@ class Pop extends Component {
         visible={closePending ? true : visible}
         onVisibleChange={closePending ? noop : onVisibleChange}
         prefix={prefix}
-        wrapperClassName={cx('boldrui-pop-wrapper', wrapperClassName)}
-        className={cx('boldrui-pop', className)}
+        wrapperClassName={cx('boldr-pop-wrapper', wrapperClassName)}
+        className={cx('boldr-pop', className)}
         cushion={10}
         position={getPosition(position, centerArrow)}
         display={block ? 'block' : 'inline-block'}

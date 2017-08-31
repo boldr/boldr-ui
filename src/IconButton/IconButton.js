@@ -31,7 +31,7 @@ class IconButton extends BoldrComponent {
     // eslint-disable-next-line
     const iconSize = height === 'small' ? '8px' : height === 'medium' ? '12px' : '16px';
     const dataHook =
-      className === 'boldrui-iconbtn-prefix' ? 'boldrui-iconbtn-prefix' : 'boldrui-iconbtn-suffix';
+      className === 'boldr-iconbtn-prefix' ? 'boldr-iconbtn-prefix' : 'boldr-iconbtn-suffix';
     return icon ? (
       <div className={className} data-hook={dataHook}>
         {React.cloneElement(icon, { size: iconSize })}
@@ -40,11 +40,11 @@ class IconButton extends BoldrComponent {
   }
 
   addPrefix() {
-    return this.addIcon('boldrui-iconbtn-prefix', this.props.prefixIcon, this.props.height);
+    return this.addIcon('boldr-iconbtn-prefix', this.props.prefixIcon, this.props.height);
   }
 
   addSuffix() {
-    return this.addIcon('boldrui-iconbtn-suffix', this.props.suffixIcon, this.props.height);
+    return this.addIcon('boldr-iconbtn-suffix', this.props.suffixIcon, this.props.height);
   }
 
   render() {

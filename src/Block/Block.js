@@ -17,7 +17,7 @@ type Props = {
 
 const Block = ({ className, children, ...rest }: Props) => {
   const finalClassName = cN({
-    'boldrui-block': true,
+    'boldr-block': true,
     // $FlowIssue
     [className]: className && className.length,
   });

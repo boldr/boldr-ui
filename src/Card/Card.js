@@ -190,12 +190,12 @@ export default class Card extends React.PureComponent<CardProps, *> {
         {...props}
         zDepth={zDepth}
         className={cn(
-          'boldrui-card',
+          'boldr-card',
           {
-            'boldrui-card--raise': raise,
-            'boldrui-card--table': tableCard,
+            'boldr-card--raise': raise,
+            'boldr-card--table': tableCard,
           },
-          'boldrui-background--card',
+          'boldr-background--card',
           className,
         )}
         onMouseOver={this._handleMouseOver}
@@ -203,7 +203,7 @@ export default class Card extends React.PureComponent<CardProps, *> {
         onTouchStart={this._handleTouchStart}
         isPadded={false}
       >
-        <div className="boldrui-card__inner">{parts}</div>
+        <div className="boldr-card__inner">{parts}</div>
       </Paper>
     );
   }

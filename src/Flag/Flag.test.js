@@ -30,7 +30,7 @@ describe('<Flag />', () => {
 
   it('should render the image.', () => {
     const wrapper = shallow(<Flag {...requiredProps}>My Contents</Flag>);
-    const image = wrapper.find('.boldrui-flag__img');
+    const image = wrapper.find('.boldr-flag__img');
 
     expect(image.length).toBe(1);
     expect(image.html()).toContain('http://placehold.it/300x300');

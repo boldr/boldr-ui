@@ -2,7 +2,7 @@
 
 exports[`Accordion different className 1`] = `
 <div
-  className="boldrui-accordion"
+  className="boldr-accordion"
 >
   <AccordionItem
     isAccordion={false}
@@ -23,7 +23,7 @@ exports[`Accordion different className 1`] = `
 
 exports[`Accordion handleClick function accordion false 1`] = `
 <div
-  className="boldrui-accordion"
+  className="boldr-accordion"
 >
   <AccordionItem
     isAccordion={false}
@@ -44,7 +44,7 @@ exports[`Accordion handleClick function accordion false 1`] = `
 
 exports[`Accordion handleClick function accordion false 2`] = `
 <div
-  className="boldrui-accordion"
+  className="boldr-accordion"
 >
   <AccordionItem
     isAccordion={false}
@@ -65,7 +65,7 @@ exports[`Accordion handleClick function accordion false 2`] = `
 
 exports[`Accordion handleClick function accordion false 3`] = `
 <div
-  className="boldrui-accordion"
+  className="boldr-accordion"
 >
   <AccordionItem
     isAccordion={false}
@@ -86,7 +86,7 @@ exports[`Accordion handleClick function accordion false 3`] = `
 
 exports[`Accordion handleClick function accordion true 1`] = `
 <div
-  className="boldrui-accordion"
+  className="boldr-accordion"
 >
   <AccordionItem
     isAccordion={true}
@@ -107,7 +107,7 @@ exports[`Accordion handleClick function accordion true 1`] = `
 
 exports[`Accordion handleClick function accordion true 2`] = `
 <div
-  className="boldrui-accordion"
+  className="boldr-accordion"
 >
   <AccordionItem
     isAccordion={true}
@@ -128,7 +128,7 @@ exports[`Accordion handleClick function accordion true 2`] = `
 
 exports[`Accordion handles disabled children 1`] = `
 <div
-  className="boldrui-accordion"
+  className="boldr-accordion"
 >
   <AccordionItem
     disabled={true}
@@ -150,7 +150,7 @@ exports[`Accordion handles disabled children 1`] = `
 
 exports[`Accordion pre expanded accordion 1`] = `
 <div
-  className="boldrui-accordion"
+  className="boldr-accordion"
 >
   <AccordionItem
     isAccordion={true}
@@ -171,7 +171,7 @@ exports[`Accordion pre expanded accordion 1`] = `
 
 exports[`Accordion pre expanded accordion when accordion is false 1`] = `
 <div
-  className="boldrui-accordion"
+  className="boldr-accordion"
 >
   <AccordionItem
     isAccordion={false}
@@ -192,7 +192,7 @@ exports[`Accordion pre expanded accordion when accordion is false 1`] = `
 
 exports[`Accordion renders correctly with accordion false 1`] = `
 <div
-  className="boldrui-accordion"
+  className="boldr-accordion"
 >
   <AccordionItem
     isAccordion={false}
@@ -213,7 +213,7 @@ exports[`Accordion renders correctly with accordion false 1`] = `
 
 exports[`Accordion renders correctly with min params 1`] = `
 <div
-  className="boldrui-accordion"
+  className="boldr-accordion"
 >
   <AccordionItem
     isAccordion={true}
@@ -234,7 +234,7 @@ exports[`Accordion renders correctly with min params 1`] = `
 
 exports[`Accordion works with multiple pre expanded accordion. Extra expands are just ignored. 1`] = `
 <div
-  className="boldrui-accordion"
+  className="boldr-accordion"
 >
   <AccordionItem
     isAccordion={true}

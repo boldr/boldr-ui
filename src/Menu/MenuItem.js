@@ -12,10 +12,10 @@ class MenuItem extends BoldrComponent {
 
   render() {
     return (
-      <li className={classNames('boldrui-menu__item')}>
-        <button type="button" className="boldrui-menu__btn" onClick={this.props.onClick}>
-          <span className="boldrui-menu__icon">{this.props.icon}</span>
-          <span className="boldrui-menu__text">{this.props.text}</span>
+      <li className={classNames('boldr-menu__item')}>
+        <button type="button" className="boldr-menu__btn" onClick={this.props.onClick}>
+          <span className="boldr-menu__icon">{this.props.icon}</span>
+          <span className="boldr-menu__text">{this.props.text}</span>
         </button>
       </li>
     );

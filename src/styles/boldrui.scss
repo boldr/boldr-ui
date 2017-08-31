@@ -4,21 +4,21 @@
 @import "base/all";
 @import "components/all";
 
-.boldrui-form__radio {
+.boldr-form__radio {
   margin-left: 5px;
   margin-right: 5px;
 }
 
-.boldrui-hero {
+.boldr-hero {
   background-color: inherit;
 }
 
-.boldrui-hero.is-info.boldrui-admin-layout {
+.boldr-hero.is-info.boldr-admin-layout {
   background: #ece9e6;
   background: -webkit-linear-gradient(to right, #f0f3f6, #ece9e6);
   background: linear-gradient(to right, #f0f3f6, #ece9e6);
 
-  .boldrui-hero__body {
+  .boldr-hero__body {
     padding: 3.5rem 0;
     align-items: flex-start;
   }

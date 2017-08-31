@@ -8,10 +8,10 @@ This component does not provide a style, but it is the cornerstone of all the sh
 Import {Portal} from '@boldr/ui';
 
 ReactDOM.render(
-	<div className="boldrui-doc-portal-container">
-		<Div className = "boldrui-doc-portal-mount-node"> here is the original content </ div>
-		<Portal selector=".boldrui-doc-portal-mount-node">
-			<Div className = "boldrui-doc-portal-content"> Here is the content that Portal is dynamically inserted </ div>
+	<div className="boldr-doc-portal-container">
+		<Div className = "boldr-doc-portal-mount-node"> here is the original content </ div>
+		<Portal selector=".boldr-doc-portal-mount-node">
+			<Div className = "boldr-doc-portal-content"> Here is the content that Portal is dynamically inserted </ div>
 		</Portal>
 	</div>
 	, mountNode

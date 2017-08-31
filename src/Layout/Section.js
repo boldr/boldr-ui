@@ -12,7 +12,7 @@ export type Props = {
 
 export function Section({ tag = 'section', ...props }: Props) {
   const className = classNames(
-    'boldrui-section',
+    'boldr-section',
     {
       ...getSizeModifiers(props),
     },

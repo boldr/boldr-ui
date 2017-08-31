@@ -143,7 +143,7 @@ export default class PopoverContent extends Component {
       return null;
     }
 
-    const cls = cN('boldrui-popover', className, id, position.toString());
+    const cls = cN('boldr-popover', className, id, position.toString());
 
     return (
       <Portal
@@ -153,7 +153,7 @@ export default class PopoverContent extends Component {
         className={cls}
         css={position.getCSSStyle()}
       >
-        <div className="boldrui-popover-content">
+        <div className="boldr-popover-content">
           {children}
           <WindowResizeHandler onResize={this.onWindowResize} />
         </div>

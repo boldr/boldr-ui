@@ -20,7 +20,7 @@ export type Props = {
 
 export function Hero({ tag = 'section', ...props }: Props) {
   const className = classNames(
-    'boldrui-hero',
+    'boldr-hero',
     {
       'is-bold': props.isBold,
       'is-fullheight': props.isFullHeight,

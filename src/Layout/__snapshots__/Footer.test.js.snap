@@ -2,7 +2,7 @@
 
 exports[`Footer should match the snapshot 1`] = `
 <footer
-  className="boldrui-footer"
+  className="boldr-footer"
 >
   Any Content
 </footer>

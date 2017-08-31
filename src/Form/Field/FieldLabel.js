@@ -13,7 +13,7 @@ export type Props = {
 
 export function FieldLabel({ tag = 'div', ...props }: Props) {
   const className = classNames(
-    'boldrui-form__field-label',
+    'boldr-form__field-label',
     {
       'is-normal': props.isNormal,
       ...getSizeModifiers(props),

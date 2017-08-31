@@ -13,7 +13,7 @@ describe('<NavbarItem />', () => {
 
     const customComponentRendered = (
       <div>
-        My Button <a href="#" className="boldrui-navbar__item" />
+        My Button <a href="#" className="boldr-navbar__item" />
       </div>
     );
 
@@ -21,52 +21,50 @@ describe('<NavbarItem />', () => {
     expect(component.contains(customComponentRendered)).toBe(true);
   });
 
-  // it('should render an anchor with .boldrui-navbar__item', () => {
+  // it('should render an anchor with .boldr-navbar__item', () => {
   //   const component = shallow(<NavbarItem href="#">My NavbarItem</NavbarItem>);
   //   expect(
   //     component.contains(
-  //       <a href="#" className="boldrui-navbar__item">
+  //       <a href="#" className="boldr-navbar__item">
   //         My NavbarItem
   //       </a>,
   //     ),
   //   ).toBe(true);
   // });
 
-  it('should render a button with .boldrui-navbar__item', () => {
+  it('should render a button with .boldr-navbar__item', () => {
     const component = shallow(<NavbarItem tag="button">My NavbarItem</NavbarItem>);
-    expect(
-      component.contains(<button className="boldrui-navbar__item">My NavbarItem</button>),
-    ).toBe(true);
-  });
-
-  it('should render a div with .boldrui-navbar__item', () => {
-    const component = shallow(<NavbarItem>My NavbarItem</NavbarItem>);
-    expect(component.contains(<div className="boldrui-navbar__item">My NavbarItem</div>)).toBe(
+    expect(component.contains(<button className="boldr-navbar__item">My NavbarItem</button>)).toBe(
       true,
     );
   });
 
-  it('should render a div with .boldrui-navbar__item and modifiers', () => {
+  it('should render a div with .boldr-navbar__item', () => {
+    const component = shallow(<NavbarItem>My NavbarItem</NavbarItem>);
+    expect(component.contains(<div className="boldr-navbar__item">My NavbarItem</div>)).toBe(true);
+  });
+
+  it('should render a div with .boldr-navbar__item and modifiers', () => {
     const component = shallow(<NavbarItem isActive isHoverable hasDropdown />);
     expect(component.is('div')).toBe(true);
-    expect(component.hasClass('boldrui-navbar__item')).toBe(true);
+    expect(component.hasClass('boldr-navbar__item')).toBe(true);
     expect(component.hasClass('is-active')).toBe(true);
     expect(component.hasClass('is-hoverable')).toBe(true);
     expect(component.hasClass('has-dropdown')).toBe(true);
   });
 
-  it('should render a div with .boldrui-navbar__item, modifiers and custom classNames', () => {
+  it('should render a div with .boldr-navbar__item, modifiers and custom classNames', () => {
     const component = shallow(<NavbarItem isActive className="custom" />);
     expect(component.is('div')).toBe(true);
-    expect(component.hasClass('boldrui-navbar__item')).toBe(true);
+    expect(component.hasClass('boldr-navbar__item')).toBe(true);
     expect(component.hasClass('is-active')).toBe(true);
     expect(component.hasClass('custom')).toBe(true);
   });
 
-  it('should render a div with .boldrui-navbar__item and custom classNames', () => {
+  it('should render a div with .boldr-navbar__item and custom classNames', () => {
     const component = shallow(<NavbarItem className="custom" />);
     expect(component.is('div')).toBe(true);
-    expect(component.hasClass('boldrui-navbar__item')).toBe(true);
+    expect(component.hasClass('boldr-navbar__item')).toBe(true);
     expect(component.hasClass('custom')).toBe(true);
   });
   it('should match the snapshot', () => {

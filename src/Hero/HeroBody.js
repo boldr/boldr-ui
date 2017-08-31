@@ -9,7 +9,7 @@ export type Props = {
 };
 
 export function HeroBody({ tag = 'div', ...props }: Props) {
-  const className = classNames('boldrui-hero__body', props.className);
+  const className = classNames('boldr-hero__body', props.className);
 
   return React.createElement(tag, { ...props, className });
 }

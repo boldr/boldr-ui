@@ -60,10 +60,8 @@ describe('Popover', () => {
     expect(wrapper.find('Portal').length).toBe(0);
     simulateWithTimers(wrapper.find('button'), 'click');
     expect(wrapper.find('Portal').length).toBe(1);
-    expect(document.querySelectorAll('.boldrui-popover-content div').length).toBe(2);
-    expect(document.querySelectorAll('.boldrui-popover-content div')[1].textContent).toBe(
-      'line two',
-    );
+    expect(document.querySelectorAll('.boldr-popover-content div').length).toBe(2);
+    expect(document.querySelectorAll('.boldr-popover-content div')[1].textContent).toBe('line two');
 
     // HACK: branch window.resize (throttle)
     wrapper
@@ -359,13 +357,13 @@ describe('Popover', () => {
         </PopoverContent>
       </Popover>,
     );
-    expect(document.querySelector('.boldrui-popover')).toBeTruthy();
+    expect(document.querySelector('.boldr-popover')).toBeTruthy();
 
     wrapper.setProps({
       visible: false,
     });
     jest.runAllTimers();
-    expect(document.querySelector('.boldrui-popover')).toBeFalsy();
+    expect(document.querySelector('.boldr-popover')).toBeFalsy();
 
     // console.log(wrapper.instance());
     wrapper.instance().open();
@@ -373,13 +371,13 @@ describe('Popover', () => {
     wrapper.setProps({
       visible: true,
     });
-    expect(document.querySelector('.boldrui-popover')).toBeTruthy();
+    expect(document.querySelector('.boldr-popover')).toBeTruthy();
 
     wrapper.setProps({
       visible: false,
     });
     jest.runAllTimers();
-    expect(document.querySelector('.boldrui-popover')).toBeFalsy();
+    expect(document.querySelector('.boldr-popover')).toBeFalsy();
   });
 
   it('onBeforeXXX can return a Promise', () => {
@@ -407,11 +405,11 @@ describe('Popover', () => {
     return p.then(v => {
       expect(v).toBe(2);
       jest.runAllTimers();
-      expect(document.querySelectorAll('.boldrui-popover-content').length).toBe(1);
+      expect(document.querySelectorAll('.boldr-popover-content').length).toBe(1);
 
       wrapper.unmount();
       dispatchWithTimers(window, new MouseEvent('click'));
-      expect(document.querySelectorAll('.boldrui-popover-content').length).toBe(0);
+      expect(document.querySelectorAll('.boldr-popover-content').length).toBe(0);
     });
   });
   //
@@ -432,11 +430,11 @@ describe('Popover', () => {
   //   );
   //   wrapper.find('button').simulate('click');
   //   jest.runAllTimers();
-  //   expect(document.querySelectorAll('.boldrui-popover-content').length).toBe(0);
+  //   expect(document.querySelectorAll('.boldr-popover-content').length).toBe(0);
   //
   //   wrapper.unmount();
   //   dispatchWithTimers(window, new MouseEvent('click'));
-  //   expect(document.querySelectorAll('.boldrui-popover-content').length).toBe(0);
+  //   expect(document.querySelectorAll('.boldr-popover-content').length).toBe(0);
   // });
   //
   // it('hover trigger closes on window blur', () => {
@@ -470,7 +468,7 @@ describe('Popover', () => {
   //   Object.defineProperty(evt, 'target', descriptor);
   //
   //   dispatchWithTimers(window, fakeEvent);
-  //   expect(document.querySelectorAll('.boldrui-popover-content').length).toBe(0);
+  //   expect(document.querySelectorAll('.boldr-popover-content').length).toBe(0);
   //   wrapper.unmount();
   // });
   //
@@ -490,13 +488,13 @@ describe('Popover', () => {
   //   expect(wrapper.find('Portal').length).toBe(1);
   //
   //   dispatchWithTimers(window, new MouseEvent('click'));
-  //   expect(document.querySelectorAll('.boldrui-popover-content').length).toBe(0);
+  //   expect(document.querySelectorAll('.boldr-popover-content').length).toBe(0);
   //
   //   wrapper.unmount();
   //
-  //   const popover = document.querySelector('.boldrui-popover');
+  //   const popover = document.querySelector('.boldr-popover');
   //   popover.parentNode.removeChild(popover);
-  //   expect(document.querySelectorAll('.boldrui-popover-content').length).toBe(0);
+  //   expect(document.querySelectorAll('.boldr-popover-content').length).toBe(0);
   // });
 
   // it('can be nested', () => {
@@ -533,16 +531,16 @@ describe('Popover', () => {
   //   );
   //
   //   simulateWithTimers(wrapper.find('.trigger-level-1'), 'click');
-  //   expect(document.querySelectorAll('.boldrui-popover-content').length).toBe(1);
+  //   expect(document.querySelectorAll('.boldr-popover-content').length).toBe(1);
   //
   //   simulateRawWithTimers(document.querySelector('.trigger-level-2'), 'click');
-  //   expect(document.querySelectorAll('.boldrui-popover-content').length).toBe(2);
+  //   expect(document.querySelectorAll('.boldr-popover-content').length).toBe(2);
   //
   //   simulateRawWithTimers(document.querySelector('.trigger-level-3'), 'click');
-  //   expect(document.querySelectorAll('.boldrui-popover-content').length).toBe(3);
+  //   expect(document.querySelectorAll('.boldr-popover-content').length).toBe(3);
   //
   //   dispatchWithTimers(window, new MouseEvent('click'));
-  //   expect(document.querySelectorAll('.boldrui-popover-content').length).toBe(0);
+  //   expect(document.querySelectorAll('.boldr-popover-content').length).toBe(0);
   //
   //   wrapper.unmount();
   // });
@@ -670,7 +668,7 @@ describe('Popover', () => {
       </Popover>,
     );
 
-    expect(wrapper.find('.boldrui-popover-wrapper span').node.textContent).toBe('abc');
+    expect(wrapper.find('.boldr-popover-wrapper span').node.textContent).toBe('abc');
   });
 
   it("won't close if click within trigger/content", () => {

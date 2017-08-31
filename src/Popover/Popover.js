@@ -96,7 +96,7 @@ export default class Popover extends Component {
   };
 
   static defaultProps = {
-    prefix: 'boldrui',
+    prefix: 'boldr',
     className: '',
     wrapperClassName: '',
     display: 'block',

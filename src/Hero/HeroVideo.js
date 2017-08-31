@@ -11,7 +11,7 @@ export type Props = {
 
 export function HeroVideo({ tag = 'div', ...props }: Props) {
   const className = classNames(
-    'boldrui-hero__video',
+    'boldr-hero__video',
     {
       'is-transparent': props.isTransparent,
     },

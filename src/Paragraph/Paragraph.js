@@ -9,9 +9,9 @@ import cN from 'classnames';
 
 const Paragraph = ({ className, isLead, isLight, children, ...rest }) => {
   const finalClassName = cN({
-    'boldrui-p': true,
-    'boldrui-p--lead': isLead,
-    'boldrui-p--light': isLight,
+    'boldr-p': true,
+    'boldr-p--lead': isLead,
+    'boldr-p--light': isLight,
     [className]: className && className.length,
   });
 

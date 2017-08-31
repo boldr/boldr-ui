@@ -21,7 +21,7 @@ const HeroArticle = (props: Props) => {
     background-position-y: 50%;
   `;
   return (
-    <div className="boldrui-hero">
+    <div className="boldr-hero">
       <BoldrHero>{props.children}</BoldrHero>
     </div>
   );

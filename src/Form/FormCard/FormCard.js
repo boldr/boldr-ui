@@ -2,7 +2,7 @@
 import React from 'react';
 import type { Node } from 'react';
 import styled from 'styled-components';
-import Headline from '../../Headline';
+import Heading from '../../Heading';
 
 type Props = {
   skinny: boolean,
@@ -28,9 +28,7 @@ const FormCard = (props: Props) => {
   return (
     <FCard>
       <FormHeader>
-        <Headline lightText={props.lightText} type={props.formTitleSize}>
-          {props.title}
-        </Headline>
+        <Heading isLight={props.lightText} type={props.formTitleSize} text={props.title} />
       </FormHeader>
       <FormInner>{props.form}</FormInner>
     </FCard>

@@ -44,7 +44,7 @@ export default class Tabs extends React.Component<TabsProps, any> {
   static TabPane = (TabPane: TabPaneProps);
 
   static defaultProps = {
-    prefixCls: 'boldrui-tabs',
+    prefixCls: 'boldr-tabs',
     hideAdd: false,
   };
 
@@ -108,11 +108,11 @@ export default class Tabs extends React.Component<TabsProps, any> {
     }
 
     let cls = classNames(className, {
-      ['boldrui-tabs-mini']: size === 'small' || size === 'mini',
-      ['boldrui-tabs-vertical']: tabPosition === 'left' || tabPosition === 'right',
-      ['boldrui-tabs-card']: type.indexOf('card') >= 0,
-      [`boldrui-tabs-${type}`]: true,
-      ['boldrui-tabs-no-animation']: !tabPaneAnimated,
+      ['boldr-tabs-mini']: size === 'small' || size === 'mini',
+      ['boldr-tabs-vertical']: tabPosition === 'left' || tabPosition === 'right',
+      ['boldr-tabs-card']: type.indexOf('card') >= 0,
+      [`boldr-tabs-${type}`]: true,
+      ['boldr-tabs-no-animation']: !tabPaneAnimated,
     });
     // only card type tabs can be added and closed
     let childrenWithClose;
@@ -127,7 +127,7 @@ export default class Tabs extends React.Component<TabsProps, any> {
         childrenWithClose.push(
           React.cloneElement(child, {
             tab: (
-              <div className={closable ? undefined : 'boldrui-tabs-tab-unclosable'}>
+              <div className={closable ? undefined : 'boldr-tabs-tab-unclosable'}>
                 {child.props.tab}
                 {closeIcon}
               </div>
@@ -140,7 +140,7 @@ export default class Tabs extends React.Component<TabsProps, any> {
       if (!hideAdd) {
         tabBarExtraContent = (
           <span>
-            <Icon kind="plus" className="boldrui-tabs-new-tab" onClick={this.createNewTab} />
+            <Icon kind="plus" className="boldr-tabs-new-tab" onClick={this.createNewTab} />
             {tabBarExtraContent}
           </span>
         );
@@ -148,7 +148,7 @@ export default class Tabs extends React.Component<TabsProps, any> {
     }
 
     tabBarExtraContent = tabBarExtraContent ? (
-      <div className="boldrui-tabs-extra-content">{tabBarExtraContent}</div>
+      <div className="boldr-tabs-extra-content">{tabBarExtraContent}</div>
     ) : null;
 
     const renderTabBar = () => (

@@ -27,28 +27,28 @@ class Tag extends BoldrComponent {
     const { id, children, thumb, removable, onRemove, size, wrap, disabled } = this.props;
 
     const className = classNames({
-      'boldrui-tag': true,
-      'boldrui-tag__lg': size === 'large',
-      'boldrui-tag__wrap': wrap,
-      'boldrui-tag__disabled': disabled,
+      'boldr-tag': true,
+      'boldr-tag__lg': size === 'large',
+      'boldr-tag__wrap': wrap,
+      'boldr-tag__disabled': disabled,
     });
 
     const innerClassName = classNames({
-      'boldrui-tag__inner-wrap': wrap,
-      'boldrui-typo-4': true,
+      'boldr-tag__inner-wrap': wrap,
+      'boldr-typo-4': true,
     });
 
     const title = wrap ? children : '';
 
     return (
       <span className={className} disabled={disabled} id={id} title={title}>
-        {thumb && <span className="boldrui-tag__thumb">{thumb}</span>}
+        {thumb && <span className="boldr-tag__thumb">{thumb}</span>}
         <span className={innerClassName}>{children}</span>
         {removable &&
         !disabled && (
           // eslint-disable-next-line
           <a
-            className="boldrui-tag__remove--btn"
+            className="boldr-tag__remove--btn"
             onClick={() => onRemove(id)}
             onKeyPress={() => onRemove(id)}
           />

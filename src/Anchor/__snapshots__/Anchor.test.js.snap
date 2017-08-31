@@ -2,7 +2,7 @@
 
 exports[`<Anchor /> renders snapshot 1`] = `
 <a
-  className="boldrui-link"
+  className="boldr-link"
   href="/"
   onClick={[Function]}
   title="Home"

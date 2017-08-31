@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
-import Headline from '../Headline';
+import Heading from '../Heading';
 import { Navbar, NavbarBrand, NavbarItem, NavbarEnd } from '../Navbar';
 import { Hero, HeroArticle, HeroBody, HeroHeader, HeroFooter, HeroVideo } from './index';
 
@@ -36,11 +36,11 @@ storiesOf('Hero', module)
         </HeroHeader>
 
         <HeroBody>
-          <Headline type="h1">Hero</Headline>
+          <Heading type="h1" texxt="Hero Heading" />
         </HeroBody>
 
         <HeroFooter>
-          <Headline type="h1">Footer</Headline>
+          <Heading type="h1" text="Footer" />
         </HeroFooter>
       </Hero>
     );

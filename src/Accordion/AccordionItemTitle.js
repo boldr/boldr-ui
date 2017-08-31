@@ -41,7 +41,7 @@ class AccordionItemTitle extends React.Component<Props, void> {
       role,
       hideBodyClassName,
     } = this.props;
-    const titleClassName = cn('boldrui-accordion__title', className, {
+    const titleClassName = cn('boldr-accordion__title', className, {
       [hideBodyClassName]: hideBodyClassName && !isExpanded,
     });
 

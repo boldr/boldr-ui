@@ -16,8 +16,8 @@ export default class CardTitleBlock extends PureComponent {
     title = (
       <h2
         id={id}
-        className={cn('boldrui-card-title--title md-text', {
-          'boldrui-card-title--large': !avatar,
+        className={cn('boldr-card-title--title md-text', {
+          'boldr-card-title--large': !avatar,
         })}
       >
         {title}
@@ -30,12 +30,12 @@ export default class CardTitleBlock extends PureComponent {
 
     return (
       <div
-        className={cn('boldrui-card-title--title-block', {
-          'boldrui-card-title--one-line': avatar,
+        className={cn('boldr-card-title--title-block', {
+          'boldr-card-title--one-line': avatar,
         })}
       >
         {title}
-        <h3 className="boldrui-card-title--title md-text--secondary">{subtitle}</h3>
+        <h3 className="boldr-card-title--title md-text--secondary">{subtitle}</h3>
       </div>
     );
   }

@@ -2,10 +2,10 @@
 
 exports[`<Loader /> renders snapshot 1`] = `
 <div
-  className="boldrui-loader"
+  className="boldr-loader"
 >
   <div
-    className="boldrui-loader__item"
+    className="boldr-loader__item"
   >
     <div />
     <div />

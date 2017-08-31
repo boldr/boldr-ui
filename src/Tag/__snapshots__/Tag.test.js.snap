@@ -2,17 +2,17 @@
 
 exports[`<Tag /> matches the snapshot 1`] = `
 <span
-  className="boldrui-tag"
+  className="boldr-tag"
   id="a"
   title=""
 >
   <span
-    className="boldrui-typo-4"
+    className="boldr-typo-4"
   >
     abc
   </span>
   <a
-    className="boldrui-tag__remove--btn"
+    className="boldr-tag__remove--btn"
     onClick={[Function]}
     onKeyPress={[Function]}
   />

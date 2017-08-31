@@ -12,24 +12,29 @@ export default class Dialog extends Component {
     prefix: PropTypes.string,
     onClose: PropTypes.func,
     visible: PropTypes.bool,
+    isVisible: PropTypes.bool,
     className: PropTypes.string,
     style: PropTypes.object,
     title: PropTypes.node,
     children: PropTypes.node,
     mask: PropTypes.bool,
-    maskClosable: PropTypes.bool,
+    hasMask: PropTypes.bool,
+    isMaskClosable: PropTypes.bool,
     footer: PropTypes.node,
   };
 
   static defaultProps = {
-    prefix: 'boldrui',
+    prefix: 'boldr',
     onClose() {},
     visible: false,
+    isVisible: false,
     className: '',
     style: {},
     title: '',
     mask: true,
+    hasMask: true,
     maskClosable: true,
+    isMaskClosable: true,
     footer: null,
   };
 
@@ -38,7 +43,7 @@ export default class Dialog extends Component {
   };
 
   render() {
-    const { visible, prefix, style } = this.props;
+    const { visible, isVisible, prefix, style } = this.props;
 
     // load default max/min-width value when width is not specified in style prop
     const elStyle = {
@@ -48,6 +53,7 @@ export default class Dialog extends Component {
 
     return (
       <DialogPortalCloseOnEsc
+        isVisible={isVisible}
         visible={visible}
         onClose={this.onClose}
         className={`${prefix}-dialog-r-anchor`}

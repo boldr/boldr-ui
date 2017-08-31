@@ -75,12 +75,12 @@ class TooltipContent extends Component {
 
     return (
       <div
-        className="boldrui-tooltip__root"
+        className="boldr-tooltip__root"
         style={style}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
       >
-        <div className="boldrui-tooltip__fadeIn">
+        <div className="boldr-tooltip--fadein">
           <div
             className={classnames({
               [`bounce-on-${arrowPlacement}`]: bounce,
@@ -88,17 +88,17 @@ class TooltipContent extends Component {
           >
             <div
               className={classnames(
-                'boldrui-tooltip',
-                `boldrui-tooltip ${[theme]}`,
-                `boldrui-tooltip ${[isSize]}`,
+                'boldr-tooltip',
+                `boldr-tooltip ${[theme]}`,
+                `boldr-tooltip ${[isSize]}`,
               )}
               style={{ maxWidth: this.props.maxWidth, textAlign }}
             >
               <div>{children}</div>
               <div
                 className={classnames(
-                  'boldrui-tooltip__arrow',
-                  `boldrui-tooltip__arrow ${[arrowPlacement]}`,
+                  'boldr-tooltip__arrow',
+                  `boldr-tooltip__arrow ${[arrowPlacement]}`,
                 )}
                 style={arrowStyle}
               />

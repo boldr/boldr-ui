@@ -1,90 +1,63 @@
 import React from 'react';
 import sinon from 'sinon';
-import 'jest-styled-components';
 import { shallow, mount } from 'enzyme';
 import Heading from './Heading';
 
-describe('<Heading />', () => {
+describe('(React Component) Heading', () => {
   it('should render the passed children.', () => {
-    const wrapper = shallow(<Heading.H1>My Contents</Heading.H1>);
+    const wrapper = shallow(<Heading text="My Contents" />);
 
     expect(wrapper.html()).toContain('My Contents');
   });
 
   it('should add the passed "className" prop to the rendered node if passed.', () => {
-    const wrapper = shallow(<Heading.H1 className="test">My Contents</Heading.H1>);
+    const wrapper = shallow(<Heading className="test" text="My Contents" />);
     expect(wrapper.is('.test')).toBe(true);
   });
 
-  it('should render a styled span if no type was specified.', () => {
-    const wrapper = shallow(<Heading>My Contents</Heading>);
-
-    expect(wrapper.type()).toEqual('span');
-  });
-
-  it('should render an h1.', () => {
-    const wrapper = shallow(<Heading.H1>My Contents</Heading.H1>);
+  it('should render a semantically first level heading if no type was specified.', () => {
+    const wrapper = shallow(<Heading text="My Contents" />);
 
     expect(wrapper.type()).toEqual('h1');
   });
-  it('should render an h2 with an h1 size.', () => {
-    const wrapper = shallow(<Heading.H2 size="h1">My Contents</Heading.H2>);
+
+  it('should render the aossicated semantically heading tag if a type prop was specified.', () => {
+    let wrapper = shallow(<Heading type="h2" text="My Contents" />);
 
     expect(wrapper.type()).toEqual('h2');
-  });
-  it('should render an h1 with an h6 size.', () => {
-    const wrapper = shallow(<Heading.H1 size="h6">My Contents</Heading.H1>);
 
-    expect(wrapper.type()).toEqual('h1');
-  });
-  it('should render an h1 with an h5 size.', () => {
-    const wrapper = shallow(<Heading.H1 size="h5">My Contents</Heading.H1>);
-
-    expect(wrapper.type()).toEqual('h1');
-  });
-  it('should render an h1 with an h4 size.', () => {
-    const wrapper = shallow(<Heading.H1 size="h4">My Contents</Heading.H1>);
-
-    expect(wrapper.type()).toEqual('h1');
-  });
-  it('should render an h1 with an h3 size.', () => {
-    const wrapper = shallow(<Heading.H1 size="h3">My Contents</Heading.H1>);
-
-    expect(wrapper.type()).toEqual('h1');
-  });
-  it('should render an h1 with an h2 size.', () => {
-    const wrapper = shallow(<Heading.H1 size="h2">My Contents</Heading.H1>);
-
-    expect(wrapper.type()).toEqual('h1');
-  });
-  it('should render an h2.', () => {
-    const wrapper = shallow(<Heading.H2>My Contents</Heading.H2>);
-
-    expect(wrapper.type()).toEqual('h2');
-  });
-  it('should render an h3.', () => {
-    const wrapper = shallow(<Heading.H3>My Contents</Heading.H3>);
-
-    expect(wrapper.type()).toEqual('h3');
-  });
-  it('should render an h4.', () => {
-    const wrapper = shallow(<Heading.H4>My Contents</Heading.H4>);
-
+    wrapper = shallow(<Heading type="h4" text="My Contents" />);
     expect(wrapper.type()).toEqual('h4');
   });
-  it('should render an h5.', () => {
-    const wrapper = shallow(<Heading.H5>My Contents</Heading.H5>);
 
-    expect(wrapper.type()).toEqual('h5');
-  });
-  it('should render an h6.', () => {
-    const wrapper = shallow(<Heading.H6>My Contents</Heading.H6>);
+  it('should add the associated type className to the node.', () => {
+    let wrapper = shallow(<Heading>My Contents</Heading>);
+    expect(wrapper.is('.boldr-h1')).toBe(true);
 
-    expect(wrapper.type()).toEqual('h6');
+    wrapper = shallow(<Heading type="h2" text="My Contents" />);
+    expect(wrapper.is('.boldr-h2')).toBe(true);
+
+    wrapper = shallow(<Heading type="h3" text="My Contents" />);
+    expect(wrapper.is('.boldr-h3')).toBe(true);
+
+    wrapper = shallow(<Heading type="h4" text="My Contents" />);
+    expect(wrapper.is('.boldr-h4')).toBe(true);
+
+    wrapper = shallow(<Heading type="h5" text="My Contents" />);
+    expect(wrapper.is('.boldr-h5')).toBe(true);
+
+    wrapper = shallow(<Heading type="h6" text="My Contents" />);
+    expect(wrapper.is('.boldr-h6')).toBe(true);
   });
+
+  it('should override the associated type className if a "theme" prop was passed.', () => {
+    const wrapper = shallow(<Heading theme="example" text="My Contents" />);
+    expect(wrapper.is('.example')).toBe(true);
+  });
+
   it('should propagate props to the wrapper element.', () => {
     const handler = sinon.spy();
-    const wrapper = mount(<Heading.H1 onClick={handler}>My Contents</Heading.H1>);
+    const wrapper = mount(<Heading onClick={handler} text="My Contents" />);
 
     wrapper.simulate('click');
 

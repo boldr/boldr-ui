@@ -2,6 +2,6 @@
 
 exports[`<Paper /> Matches the snap 1`] = `
 <div
-  className="boldrui-paper boldrui-paper__1 boldrui-paper--no-pad"
+  className="boldr-paper boldr-paper__1 boldr-paper--no-pad"
 />
 `;

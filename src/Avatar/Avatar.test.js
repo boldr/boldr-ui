@@ -6,12 +6,12 @@ import Avatar from '../Avatar';
 import FontIcon from '../FontIcon';
 
 describe('Avatar', () => {
-  it('merges additional class names with boldrui-avatar', () => {
+  it('merges additional class names with boldr-avatar', () => {
     const avatar = TestUtils.renderIntoDocument(<Avatar className="something-else">M</Avatar>);
 
     const avatarNode = ReactDOM.findDOMNode(avatar);
 
-    expect(avatarNode.classList.contains('boldrui-avatar')).toBe(true);
+    expect(avatarNode.classList.contains('boldr-avatar')).toBe(true);
     expect(avatarNode.classList.contains('something-else')).toBe(true);
   });
 
@@ -19,11 +19,9 @@ describe('Avatar', () => {
     const iconAvatar = TestUtils.renderIntoDocument(<Avatar icon={<FontIcon>wat</FontIcon>} />);
     const letterAvatar = TestUtils.renderIntoDocument(<Avatar>M</Avatar>);
 
-    const iconAvatarNode = ReactDOM.findDOMNode(iconAvatar).querySelector(
-      '.boldrui-avatar__content',
-    );
+    const iconAvatarNode = ReactDOM.findDOMNode(iconAvatar).querySelector('.boldr-avatar__content');
     const letterAvatarNode = ReactDOM.findDOMNode(letterAvatar).querySelector(
-      '.boldrui-avatar__content',
+      '.boldr-avatar__content',
     );
 
     expect(iconAvatarNode).toBeDefined();
@@ -41,7 +39,7 @@ describe('Avatar', () => {
     expect(img).toBeDefined();
     expect(img.getAttribute('src')).toBe('../image.jpg');
     expect(img.getAttribute('alt')).toBe('Nothing');
-    expect(img.classList.contains('boldrui-avatar__img')).toBe(true);
+    expect(img.classList.contains('boldr-avatar__img')).toBe(true);
   });
 
   it('can apply a specific color suffix', () => {
@@ -49,7 +47,7 @@ describe('Avatar', () => {
 
     const avatarNode = ReactDOM.findDOMNode(avatar);
 
-    expect(avatarNode.classList.contains('boldrui-avatar--color-1')).toBe(true);
+    expect(avatarNode.classList.contains('boldr-avatar--color-1')).toBe(true);
   });
 
   it('can apply a random color with the random prop', () => {
@@ -69,7 +67,7 @@ describe('Avatar', () => {
 
     const avatarNode = ReactDOM.findDOMNode(avatar);
 
-    expect(avatarNode.className).toMatch(/boldrui-avatar--(wat-wat|oh-no)/);
+    expect(avatarNode.className).toMatch(/boldr-avatar--(wat-wat|oh-no)/);
   });
 
   it('will apply the style prop to the md-avatar div', () => {

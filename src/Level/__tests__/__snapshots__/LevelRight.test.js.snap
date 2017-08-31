@@ -2,7 +2,7 @@
 
 exports[`<LevelRight /> should match the snapshot 1`] = `
 <div
-  className="boldrui-level__right"
+  className="boldr-level__right"
 >
   My LevelRight
 </div>

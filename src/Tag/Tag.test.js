@@ -12,7 +12,7 @@ test('<Tag /> matches the snapshot', () => {
 test('should add the passed "className" prop to the rendered node if passed.', () => {
   const wrapper = shallow(<Tag id="a">abc</Tag>);
 
-  expect(wrapper.is('.boldrui-tag')).toBe(true);
+  expect(wrapper.is('.boldr-tag')).toBe(true);
 });
 test('should adapt to size prop', () => {
   const wrapper = shallow(
@@ -21,5 +21,5 @@ test('should adapt to size prop', () => {
     </Tag>,
   );
 
-  expect(wrapper.is('.boldrui-tag__lg')).toBe(true);
+  expect(wrapper.is('.boldr-tag__lg')).toBe(true);
 });

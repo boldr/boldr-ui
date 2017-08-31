@@ -35,7 +35,7 @@ export default class Alert extends React.Component {
     closable: false,
     rounded: false,
     className: '',
-    prefix: 'boldrui',
+    prefix: 'boldr',
   };
 
   state = {

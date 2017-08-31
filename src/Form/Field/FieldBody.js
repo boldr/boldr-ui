@@ -10,7 +10,7 @@ export type Props = {
 };
 
 export function FieldBody({ tag = 'div', ...props }: Props) {
-  const className = classNames('boldrui-form__field-body', props.className);
+  const className = classNames('boldr-form__field-body', props.className);
 
   return React.createElement(tag, { ...props, className });
 }

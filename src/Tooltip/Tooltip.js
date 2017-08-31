@@ -315,7 +315,7 @@ class Tooltip extends BoldrComponent {
 
       const arrowStyles = this._adjustArrowPosition(this.props.placement, this.props.moveArrowTo);
       if (Object.keys(arrowStyles).length) {
-        const arrow = tooltipNode.querySelector(`.boldrui-tooltip__arrow`);
+        const arrow = tooltipNode.querySelector(`.boldr-tooltip__arrow`);
         arrow &&
           Object.keys(arrowStyles).forEach(key => {
             arrow.style[key] = arrowStyles[key];

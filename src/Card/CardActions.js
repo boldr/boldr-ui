@@ -34,11 +34,11 @@ export default class CardActions extends React.PureComponent<CardActionsProps, *
       <section
         {...props}
         className={cn(
-          'boldrui-card__footer',
+          'boldr-card__footer',
           {
-            'boldrui-card__footer--inline': !stacked,
-            'boldrui-card__footer--stacked': stacked,
-            'boldrui-card__footer--centered': centered,
+            'boldr-card__footer--inline': !stacked,
+            'boldr-card__footer--stacked': stacked,
+            'boldr-card__footer--centered': centered,
           },
           className,
         )}

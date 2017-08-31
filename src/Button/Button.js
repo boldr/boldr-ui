@@ -2,7 +2,7 @@ import React from 'react';
 import cxN from 'classnames';
 import omit from 'lodash.omit';
 import PropTypes from 'prop-types';
-// import Link from 'react-router-dom/Link';
+import { StyleClasses } from '../theme/styleClasses';
 import TouchRipple from '../util/TouchRipple';
 
 const BLACK_LIST = [
@@ -16,11 +16,10 @@ const BLACK_LIST = [
   'outline',
   'bordered',
   'className',
-  'prefix',
 ];
 
 const BTN_BLACKLIST = ['href', 'target'].concat(BLACK_LIST);
-
+const BASE_ELEMENT = StyleClasses.BUTTON;
 const LINK_BLACKLIST = ['href', 'target'].concat(BLACK_LIST);
 
 export default class Button extends React.Component {
@@ -34,7 +33,7 @@ export default class Button extends React.Component {
     loading: false,
     outline: false,
     bordered: true,
-    prefix: 'boldrui',
+    prefix: 'boldr',
   };
   static propTypes = {
     kind: PropTypes.oneOf(['default', 'primary', 'secondary', 'success', 'danger', 'link']),
@@ -49,7 +48,6 @@ export default class Button extends React.Component {
     bordered: PropTypes.bool,
     target: PropTypes.string,
     href: PropTypes.string,
-    prefix: PropTypes.string,
     children: PropTypes.node,
     onClick: PropTypes.func,
   };
@@ -110,27 +108,17 @@ export default class Button extends React.Component {
   // }
   render() {
     const renderer = this.props.href || this.props.target ? 'renderButton' : 'renderButton';
-    const {
-      className,
-      kind,
-      size,
-      block,
-      disabled,
-      loading,
-      outline,
-      bordered,
-      prefix,
-    } = this.props;
+    const { className, kind, size, block, disabled, loading, outline, bordered } = this.props;
 
     const classNames = cxN(
-      `${prefix}-btn`,
+      BASE_ELEMENT,
       {
-        [`${prefix}-btn__${kind}${outline ? '-outline' : ''}`]: kind !== 'default',
-        [`${prefix}-btn__${size}`]: size !== 'medium',
-        [`${prefix}-btn__block`]: block,
-        [`${prefix}-btn__loading`]: loading,
-        [`${prefix}-btn__disabled`]: disabled,
-        [`${prefix}-btn__border-transparent`]: !bordered,
+        [`${BASE_ELEMENT}__${kind}${outline ? '--outline' : ''}`]: kind !== 'default',
+        [`${BASE_ELEMENT}__${size}`]: size !== 'medium',
+        [`${BASE_ELEMENT}--block`]: block,
+        [`${BASE_ELEMENT}--loading`]: loading,
+        [`${BASE_ELEMENT}--disabled`]: disabled,
+        [`${BASE_ELEMENT}--transparent`]: !bordered,
       },
       className,
     );

@@ -11,7 +11,7 @@ describe('Divider', () => {
 
     let dividerNode = findDOMNode(divider);
 
-    expect(dividerNode.className).toBe('boldrui-divider');
+    expect(dividerNode.className).toBe('boldr-divider');
 
     divider = renderIntoDocument(<Divider inset />);
     dividerNode = findDOMNode(divider);

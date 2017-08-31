@@ -2,6 +2,6 @@
 
 exports[`<NavbarStart /> should match the snapshot 1`] = `
 <div
-  className="boldrui-navbar__start"
+  className="boldr-navbar__start"
 />
 `;

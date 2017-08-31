@@ -2,6 +2,6 @@
 
 exports[`NavbarLink should match the snapshot 1`] = `
 <a
-  className="boldrui-navbar__link is-active"
+  className="boldr-navbar__link is-active"
 />
 `;

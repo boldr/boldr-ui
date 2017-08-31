@@ -8,7 +8,7 @@ describe('Radio', () => {
     const component = shallow(<Radio>My Radio</Radio>);
     expect(
       component.contains(
-        <label className="boldrui-form__radio" disabled={undefined}>
+        <label className="boldr-form__radio" disabled={undefined}>
           <input type="radio" />My Radio
         </label>,
       ),
@@ -19,7 +19,7 @@ describe('Radio', () => {
     const component = shallow(<Radio disabled>My Radio</Radio>);
     expect(
       component.contains(
-        <label className="boldrui-form__radio" disabled>
+        <label className="boldr-form__radio" disabled>
           <input type="radio" disabled />My Radio
         </label>,
       ),
@@ -28,7 +28,7 @@ describe('Radio', () => {
 
   it('should render a label.radio with input[type="radio"] and custom classNames', () => {
     const component = shallow(<Radio className="custom" />);
-    expect(component.hasClass('boldrui-form__radio')).toBe(true);
+    expect(component.hasClass('boldr-form__radio')).toBe(true);
     expect(component.hasClass('custom')).toBe(true);
   });
 });

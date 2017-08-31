@@ -47,7 +47,7 @@ export default function openDialog(options = {}) {
   const {
     onClose: oldOnClose,
     ref,
-    dialogId = uniqueId('__boldrui-dialog__'),
+    dialogId = uniqueId('__boldr-dialog__'),
     parentComponent,
   } = options;
 
@@ -56,9 +56,9 @@ export default function openDialog(options = {}) {
   const container = document.createElement('div');
 
   // Make sure that multiple calls are not reported incorrectly
-  const close = evt => {
+  const close = e => {
     closeDialog(dialogId, {
-      triggerOnClose: evt !== false,
+      triggerOnClose: e !== false,
     });
   };
 

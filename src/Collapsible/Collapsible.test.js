@@ -25,14 +25,14 @@ describe('(React Component) Collapsible', () => {
 
   it('should initially not render the passed children inside a contents wrapper.', () => {
     const wrapper = shallow(<Collapsible>TEST</Collapsible>);
-    const contents = wrapper.find('.boldrui-collapsible__contents');
+    const contents = wrapper.find('.boldr-collapsible__contents');
 
     expect(contents.length).toBe(1);
   });
 
   it('should initially render the passed children inside a contents wrapper if a truthy "isOpen" prop was passed.', () => {
     const wrapper = shallow(<Collapsible isOpen>TEST</Collapsible>);
-    const contents = wrapper.find('.boldrui-collapsible__contents');
+    const contents = wrapper.find('.boldr-collapsible__contents');
 
     expect(contents.length).toBe(1);
     expect(contents.html()).toContain('TEST');

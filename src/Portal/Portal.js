@@ -21,7 +21,7 @@ export default class Portal extends Component {
     selector: 'body',
     className: '',
     css: {},
-    prefix: 'boldrui',
+    prefix: 'boldr',
   };
 
   componentDidMount() {

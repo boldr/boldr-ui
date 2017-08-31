@@ -8,7 +8,7 @@ export type Props = {
   className?: string,
 };
 export function HeroFooter({ tag = 'footer', ...props }: Props) {
-  const className = classNames('boldrui-hero__footer', props.className);
+  const className = classNames('boldr-hero__footer', props.className);
 
   return React.createElement(tag, { ...props, className });
 }

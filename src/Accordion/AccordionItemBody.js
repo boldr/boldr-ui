@@ -14,8 +14,8 @@ type Props = {
 
 const defaultProps = {
   isExpanded: false,
-  className: 'boldrui-accordion__body',
-  hideBodyClassName: 'boldrui-accordion__body--hidden',
+  className: 'boldr-accordion__body',
+  hideBodyClassName: 'boldr-accordion__body--hidden',
 };
 
 const AccordionItemBody = ({

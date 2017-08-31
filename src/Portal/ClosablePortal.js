@@ -8,10 +8,12 @@ import Portal from './Portal';
 export default class ClosablePortal extends Component {
   static propTypes = {
     visible: PropTypes.bool,
+    isVisible: PropTypes.bool,
   };
 
   static defaultProps = {
     visible: true,
+    isVisible: true,
   };
 
   render() {

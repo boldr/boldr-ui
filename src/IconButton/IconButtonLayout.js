@@ -7,11 +7,11 @@ const IconButtonLayout = props => {
 
   const className = classNames(
     {
-      ['boldrui-iconbtn']: true,
-      [`boldrui-iconbtn--${[theme]}`]: true,
-      ['boldrui-iconbtn__hover']: hover,
-      ['boldrui-iconbtn__active']: active,
-      ['boldrui-iconbtn__disabled']: disabled,
+      ['boldr-iconbtn']: true,
+      [`boldr-iconbtn--${[theme]}`]: true,
+      ['boldr-iconbtn__hover']: hover,
+      ['boldr-iconbtn__active']: active,
+      ['boldr-iconbtn__disabled']: disabled,
       // [styles[`height${height}`]]: height !== 'medium',
     },
     children.props.className,
@@ -26,7 +26,7 @@ const IconButtonLayout = props => {
     return React.cloneElement(
       children,
       { className, style: _style },
-      <div className="boldrui-iconbtn__inner">{children.props.children}</div>,
+      <div className="boldr-iconbtn__inner">{children.props.children}</div>,
     );
   }
 };

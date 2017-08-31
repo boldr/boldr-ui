@@ -18,11 +18,11 @@ describe('<Paragraph />', () => {
 
   it('should add the "lead" className if the "isLead" prop is truthy.', () => {
     const wrapper = shallow(<Paragraph isLead>My contents</Paragraph>);
-    expect(wrapper.is('.boldrui-p--lead')).toBe(true);
+    expect(wrapper.is('.boldr-p--lead')).toBe(true);
   });
   it('should add the "light" className if the "isLight" prop is truthy.', () => {
     const wrapper = shallow(<Paragraph isLight>My contents</Paragraph>);
-    expect(wrapper.is('.boldrui-p--light')).toBe(true);
+    expect(wrapper.is('.boldr-p--light')).toBe(true);
   });
   it('should propagate props to the wrapper element.', () => {
     const handler = sinon.spy();

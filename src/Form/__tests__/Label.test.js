@@ -4,27 +4,27 @@ import { shallow } from 'enzyme';
 import { Label } from '../Label';
 
 describe('Label', () => {
-  it('should render a label with .boldrui-form__label', () => {
+  it('should render a label with .boldr-form__label', () => {
     const component = shallow(<Label>My Label</Label>);
-    expect(component.contains(<label className="boldrui-form__label">My Label</label>)).toBe(true);
+    expect(component.contains(<label className="boldr-form__label">My Label</label>)).toBe(true);
   });
 
-  it('should render a label with .boldrui-form__label and modifiers', () => {
+  it('should render a label with .boldr-form__label and modifiers', () => {
     const component = shallow(<Label isSize="small" />);
-    expect(component.hasClass('boldrui-form__label')).toBe(true);
+    expect(component.hasClass('boldr-form__label')).toBe(true);
     expect(component.hasClass('is-small')).toBe(true);
   });
 
-  it('should render a label with .boldrui-form__label, modifiers and custom classNames', () => {
+  it('should render a label with .boldr-form__label, modifiers and custom classNames', () => {
     const component = shallow(<Label isSize="large" className="custom" />);
-    expect(component.hasClass('boldrui-form__label')).toBe(true);
+    expect(component.hasClass('boldr-form__label')).toBe(true);
     expect(component.hasClass('is-large')).toBe(true);
     expect(component.hasClass('custom')).toBe(true);
   });
 
-  it('should render a label with .boldrui-form__label and custom classNames', () => {
+  it('should render a label with .boldr-form__label and custom classNames', () => {
     const component = shallow(<Label className="custom" />);
-    expect(component.hasClass('boldrui-form__label')).toBe(true);
+    expect(component.hasClass('boldr-form__label')).toBe(true);
     expect(component.hasClass('custom')).toBe(true);
   });
 });

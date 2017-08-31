@@ -1,75 +1,92 @@
-import styled from 'styled-components';
+/* eslint-disable complexity */
+import React from 'react';
+import PropTypes from 'prop-types';
+import cN from 'classnames';
+import deprecated from 'prop-types-extra/lib/deprecated';
 
-const Heading = styled.span`
-  margin-bottom: ${props => props.theme.headings.marginBottom};
-  font-family: ${props => props.theme.headings.fontFamily};
-  font-weight: ${props => props.theme.headings.fontWeight};
-  line-height: ${props => props.theme.headings.lineHeight};
-  color: ${props => props.theme.fontColor.dark};
-  ${props => {
-    switch (props.size) {
-      case 'h1':
-        return `font-size: ${props.theme.headings.size.h1};`;
-      case 'h2':
-        return `font-size: ${props.theme.headings.size.h2};`;
-      case 'h3':
-        return `font-size: ${props.theme.headings.size.h3};`;
-      case 'h4':
-        return `font-size: ${props.theme.headings.size.h4};`;
-      case 'h5':
-        return `font-size: ${props.theme.headings.size.h5};`;
-      case 'h6':
-        return `font-size: ${props.theme.headings.size.h6};`;
-      default:
-        return `font-size: ${props.theme.headings.size.h1};`;
-    }
-  }};
-`;
+const validTypes = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
 
-Heading.H1 = Heading.withComponent('h1').extend`
-  ${props => !props.size && `${`font-size: ${props.theme.headings.size.h1};`}`}
-`;
+/**
+ * A heading should always be the visual and describing start of
+ * another content section.
+ */
 
-Heading.H2 = Heading.withComponent('h2').extend`
-  ${props => !props.size && `${`font-size: ${props.theme.headings.size.h2};`}`}
-`;
+const Heading = ({ className, type, theme, text, isLight, children, ...rest }) => {
+  const themeClassName = theme || `boldr-${type}`;
+  const finalClassName = cN({
+    'boldr-h': true,
+    'boldr-h--light': isLight,
+    [themeClassName]: true,
+    [className]: className && className.length,
+  });
 
-Heading.H3 = Heading.withComponent('h3').extend`
-  ${props => !props.size && `${`font-size: ${props.theme.headings.size.h3};`}`}
-`;
+  switch (type) {
+    case 'h1':
+      return (
+        <h1 {...rest} className={finalClassName}>
+          {text || children}
+        </h1>
+      );
+    case 'h2':
+      return (
+        <h2 {...rest} className={finalClassName}>
+          {text || children}
+        </h2>
+      );
+    case 'h3':
+      return (
+        <h3 {...rest} className={finalClassName}>
+          {text || children}
+        </h3>
+      );
+    case 'h4':
+      return (
+        <h4 {...rest} className={finalClassName}>
+          {text || children}
+        </h4>
+      );
+    case 'h5':
+      return (
+        <h5 {...rest} className={finalClassName}>
+          {text || children}
+        </h5>
+      );
+    case 'h6':
+      return (
+        <h6 {...rest} className={finalClassName}>
+          {text || children}
+        </h6>
+      );
+    default:
+      return '';
+  }
+};
 
-Heading.H4 = Heading.withComponent('h4').extend`
-  ${props => !props.size && `${`font-size: ${props.theme.headings.size.h4};`}`}
-`;
+Heading.propTypes = {
+  children: deprecated(PropTypes.node, 'Use `text` instead.'),
+  isLight: PropTypes.bool,
 
-Heading.H5 = Heading.withComponent('h5').extend`
-  ${props => !props.size && `${`font-size: ${props.theme.headings.size.h5};`}`}
-`;
+  /**
+   * The semantic type of the heading, default to `h1`.
+   */
+  type: PropTypes.oneOf(validTypes),
+  /**
+   * What the headline should say
+   * @type {string}
+   */
+  text: PropTypes.string,
 
-Heading.H6 = Heading.withComponent('h6').extend`
-  ${props => !props.size && `${`font-size: ${props.theme.headings.size.h6};`}`}
-`;
+  /**
+   * To separate the semantic meaning and the visual styles,
+   * you can also set an optional theme, to have the semantic
+   * meaning of a `h1` but the visual appearance of a `h4`.
+   */
+  theme: PropTypes.oneOf(validTypes),
+  className: PropTypes.string,
+};
 
 Heading.defaultProps = {
-  theme: {
-    fontColor: {
-      dark: '#030507',
-    },
-    headings: {
-      fontWeight: 700,
-      lineHeight: 1.1,
-      fontFamily: '"Chivo", Cambria, Times New Roman, Times, serif',
-      marginBottom: '.5rem',
-      size: {
-        h1: '2.5rem',
-        h2: '2rem',
-        h3: '1.75rem',
-        h4: '1.5rem',
-        h5: '1.25rem',
-        h6: '1rem',
-      },
-    },
-  },
+  type: 'h1',
 };
 
 export default Heading;

@@ -8,17 +8,17 @@ let contentId = 1;
 let headerId = 2;
 
 function findContent() {
-  return document.querySelectorAll(`.boldrui-pop-content-${contentId}`);
+  return document.querySelectorAll(`.boldr-pop-content-${contentId}`);
 }
 
 // function findHeader() {
-//   return document.querySelectorAll(`.boldrui-pop-header-${headerId}`);
+//   return document.querySelectorAll(`.boldr-pop-header-${headerId}`);
 // }
 
 const content = () => {
   contentId++;
   return (
-    <div className={`boldrui-pop-content-${contentId}`}>
+    <div className={`boldr-pop-content-${contentId}`}>
       <a>Triggered</a>
       <div>
         <input />
@@ -30,7 +30,7 @@ const content = () => {
 const header = () => {
   headerId++;
   return (
-    <div className={`boldrui-pop-header-${headerId}`}>
+    <div className={`boldr-pop-header-${headerId}`}>
       <span />
     </div>
   );
@@ -85,7 +85,7 @@ describe('Pop', () => {
     wrapper.find('button').simulate('click');
   });
 
-  it('Pop has its core function, powered by boldrui-popover, the content of popover has onConfirm and onCancel switches', () => {
+  it('Pop has its core function, powered by boldr-popover, the content of popover has onConfirm and onCancel switches', () => {
     // with both onConfirm and onCancel undefined, content will be rendered as null
     let wrapper = mount(
       <Pop content={content()} trigger={'click'} className="bar11" block header={header()}>
@@ -110,7 +110,7 @@ describe('Pop', () => {
     );
     wrapper.find('button').simulate('click');
     expect(findContent().length).toBe(1);
-    let btn = document.querySelectorAll('.boldrui-pop-buttons button');
+    let btn = document.querySelectorAll('.boldr-pop-buttons button');
     expect(btn.length).toBe(2);
     expect(btn[0].textContent).toBe('Ok');
     expect(btn[1].textContent).toBe('Cancel');
@@ -132,7 +132,7 @@ describe('Pop', () => {
     );
     wrapper.find('button').simulate('click');
     expect(findContent().length).toBe(1);
-    btn = document.querySelectorAll('.boldrui-pop-buttons button');
+    btn = document.querySelectorAll('.boldr-pop-buttons button');
     expect(btn.length).toBe(2);
     Simulate.click(btn[1]);
     jest.runAllTimers();
@@ -153,7 +153,7 @@ describe('Pop', () => {
     let wrapper = mount(
       <Pop
         content={
-          <Button className="boldrui-pop-inner-button" onClick={close}>
+          <Button className="boldr-pop-inner-button" onClick={close}>
             Open
           </Button>
         }
@@ -166,8 +166,8 @@ describe('Pop', () => {
     );
     wrapper.find('button').simulate('click');
     expect(wrapper.find('Portal').length).toBe(1);
-    expect(document.querySelectorAll('.boldrui-pop-inner-button').length).toBe(1);
-    Simulate.click(document.querySelector('.boldrui-pop-inner-button'));
+    expect(document.querySelectorAll('.boldr-pop-inner-button').length).toBe(1);
+    Simulate.click(document.querySelector('.boldr-pop-inner-button'));
     jest.runAllTimers();
     expect(wrapper.find('Portal').length).toBe(0);
 
@@ -176,7 +176,7 @@ describe('Pop', () => {
     wrapper = mount(
       <Pop
         content={
-          <Button className="boldrui-pop-inner-button" onClick={close}>
+          <Button className="boldr-pop-inner-button" onClick={close}>
             Ok
           </Button>
         }
@@ -190,35 +190,6 @@ describe('Pop', () => {
     wrapper.setProps({
       visible: false,
     });
-  });
-
-  it('always center arrow at center', () => {
-    const test = position => {
-      const wrapper = mount(
-        <Pop content={content()} position={position} trigger={'click'} centerArrow>
-          <Button>click</Button>
-        </Pop>,
-      );
-      wrapper.find('button').simulate('click');
-      jest.runAllTimers();
-      expect(findContent().length).toBe(1);
-      expect(document.querySelector(`.boldrui-popover-position-${position}`)).toBeTruthy();
-    };
-
-    [
-      'top-left',
-      'top-center',
-      'top-right',
-      'right-top',
-      'right-center',
-      'right-bottom',
-      'bottom-left',
-      'bottom-center',
-      'bottom-right',
-      'left-top',
-      'left-center',
-      'left-bottom',
-    ].forEach(test);
   });
 
   it('onConfirm/onCancel can be async(callback)', () => {
@@ -250,7 +221,7 @@ describe('Pop', () => {
     });
     jest.runAllTimers();
 
-    Simulate.click(document.querySelector('.boldrui-btn'));
+    Simulate.click(document.querySelector('.boldr-btn'));
     jest.runAllTimers();
     expect(b).toBe(1);
   });
@@ -287,7 +258,7 @@ describe('Pop', () => {
     });
     jest.runAllTimers();
 
-    document.querySelector('.boldrui-btn__primary').click();
+    document.querySelector('.boldr-btn__primary').click();
     jest.runAllTimers();
     expect(a).toBe(2);
   });

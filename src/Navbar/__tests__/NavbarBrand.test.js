@@ -4,14 +4,14 @@ import { shallowToJson } from 'enzyme-to-json';
 import { NavbarBrand } from '../NavbarBrand';
 
 describe('<NavbarBrand />', () => {
-  it('should render a div with .boldrui-navbar__brand', () => {
+  it('should render a div with .boldr-navbar__brand', () => {
     const wrapper = shallow(<NavbarBrand>Test</NavbarBrand>);
-    expect(wrapper.contains(<div className="boldrui-navbar__brand">Test</div>)).toBe(true);
+    expect(wrapper.contains(<div className="boldr-navbar__brand">Test</div>)).toBe(true);
   });
 
   it('should render a p with .navbar-brand', () => {
     const wrapper = shallow(<NavbarBrand tag="p">Test</NavbarBrand>);
-    expect(wrapper.contains(<p className="boldrui-navbar__brand">Test</p>)).toBe(true);
+    expect(wrapper.contains(<p className="boldr-navbar__brand">Test</p>)).toBe(true);
   });
 
   it('should render a div with .navbar-brand and custom classNames', () => {
@@ -20,7 +20,7 @@ describe('<NavbarBrand />', () => {
         <span>Test</span>
       </NavbarBrand>,
     );
-    expect(wrapper.hasClass('boldrui-navbar__brand')).toBe(true);
+    expect(wrapper.hasClass('boldr-navbar__brand')).toBe(true);
     expect(wrapper.hasClass('custom')).toBe(true);
   });
   it('should match the snapshot', () => {

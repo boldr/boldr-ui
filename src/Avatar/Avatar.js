@@ -75,12 +75,12 @@ export default class Avatar extends React.PureComponent<Props, *> {
 
   _getColor(suffix, suffixes, color) {
     if (suffix) {
-      return `boldrui-avatar--${suffix}`;
+      return `boldr-avatar--${suffix}`;
     } else if (!!suffixes && !color) {
-      return 'boldrui-avatar--default';
+      return 'boldr-avatar--default';
     }
 
-    return `boldrui-avatar--${color}`;
+    return `boldr-avatar--${color}`;
   }
 
   render() {
@@ -102,16 +102,16 @@ export default class Avatar extends React.PureComponent<Props, *> {
       <div
         {...props}
         className={cn(
-          'boldrui-inline-block boldrui-avatar',
+          'boldr-inline-block boldr-avatar',
           this._getColor(suffix, suffixes, this.state.color),
           {
-            'boldrui-avatar__icon-sized': iconSized,
+            'boldr-avatar__icon-sized': iconSized,
           },
           className,
         )}
       >
-        {src && <img src={src} alt={alt} role={role} className="boldrui-avatar__img" />}
-        {!src && <div className="boldrui-avatar__content">{icon || children}</div>}
+        {src && <img src={src} alt={alt} role={role} className="boldr-avatar__img" />}
+        {!src && <div className="boldr-avatar__content">{icon || children}</div>}
       </div>
     );
   }

@@ -18,16 +18,16 @@ const ContentPromo = props => {
   } = props;
   const rest = omit(restProps, ['label']);
   const finalClassName = mergeClassNames({
-    'boldrui-cont-promo__wrapper': true,
-    [`boldrui-cont-promo__${theme}`]: true,
-    'boldrui-cont-promo__tiny': isTiny,
-    'boldrui-cont-promo__narrow': isNarrow,
-    'boldrui-cont-promo__wide': isWide,
-    'boldrui-cont-promo__centered': isCentered,
+    'boldr-cont-promo__wrapper': true,
+    [`boldr-cont-promo__${theme}`]: true,
+    'boldr-cont-promo__tiny': isTiny,
+    'boldr-cont-promo__narrow': isNarrow,
+    'boldr-cont-promo__wide': isWide,
+    'boldr-cont-promo__centered': isCentered,
     [className]: className && className.length,
   });
   const finalContentsClassName = mergeClassNames({
-    'boldrui-cont-promo__contents': true,
+    'boldr-cont-promo__contents': true,
     [contentsClassName]: contentsClassName && contentsClassName.length,
   });
 

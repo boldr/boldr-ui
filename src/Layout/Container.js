@@ -12,7 +12,7 @@ export type Props = {
 
 export function Container({ tag = 'div', ...props }: Props) {
   const className = classNames(
-    'boldrui-container',
+    'boldr-container',
     {
       'is-fluid': props.isFluid,
       'is-flex': true,

@@ -4,50 +4,50 @@ import { shallow } from 'enzyme';
 import { Hero } from '../Hero';
 
 describe('Hero', () => {
-  it('should render a section with .boldrui-hero', () => {
+  it('should render a section with .boldr-hero', () => {
     const container = shallow(<Hero>My Hero</Hero>);
-    expect(container.contains(<section className="boldrui-hero">My Hero</section>)).toBe(true);
+    expect(container.contains(<section className="boldr-hero">My Hero</section>)).toBe(true);
   });
 
-  it('should render a div with .boldrui-hero', () => {
+  it('should render a div with .boldr-hero', () => {
     const container = shallow(<Hero tag="div">My Hero</Hero>);
-    expect(container.contains(<div className="boldrui-hero">My Hero</div>)).toBe(true);
+    expect(container.contains(<div className="boldr-hero">My Hero</div>)).toBe(true);
   });
 
-  it('should render a section with .boldrui-hero with modifiers', () => {
+  it('should render a section with .boldr-hero with modifiers', () => {
     const container = shallow(<Hero isBold isFullHeight />);
-    expect(container.hasClass('boldrui-hero')).toBe(true);
+    expect(container.hasClass('boldr-hero')).toBe(true);
     expect(container.hasClass('is-bold')).toBe(true);
     expect(container.hasClass('is-fullheight')).toBe(true);
   });
 
-  it('should render a section with .boldrui-hero and color modifiers', () => {
+  it('should render a section with .boldr-hero and color modifiers', () => {
     const container = shallow(<Hero isBold isFullHeight isColor="light" />);
-    expect(container.hasClass('boldrui-hero')).toBe(true);
+    expect(container.hasClass('boldr-hero')).toBe(true);
     expect(container.hasClass('is-bold')).toBe(true);
     expect(container.hasClass('is-fullheight')).toBe(true);
     expect(container.hasClass('is-light')).toBe(true);
   });
 
-  it('should render a section with .boldrui-hero and size modifiers', () => {
+  it('should render a section with .boldr-hero and size modifiers', () => {
     const container = shallow(<Hero isBold isFullHeight isSize="medium" />);
-    expect(container.hasClass('boldrui-hero')).toBe(true);
+    expect(container.hasClass('boldr-hero')).toBe(true);
     expect(container.hasClass('is-bold')).toBe(true);
     expect(container.hasClass('is-fullheight')).toBe(true);
     expect(container.hasClass('is-medium')).toBe(true);
   });
 
-  it('should render a section with .boldrui-hero, modifiers and custom classNames', () => {
+  it('should render a section with .boldr-hero, modifiers and custom classNames', () => {
     const container = shallow(<Hero isBold className="custom loader" />);
-    expect(container.hasClass('boldrui-hero')).toBe(true);
+    expect(container.hasClass('boldr-hero')).toBe(true);
     expect(container.hasClass('is-bold')).toBe(true);
     expect(container.hasClass('custom')).toBe(true);
     expect(container.hasClass('loader')).toBe(true);
   });
 
-  it('should render a section with .boldrui-hero and custom classNames', () => {
+  it('should render a section with .boldr-hero and custom classNames', () => {
     const container = shallow(<Hero className="custom loader" />);
-    expect(container.hasClass('boldrui-hero')).toBe(true);
+    expect(container.hasClass('boldr-hero')).toBe(true);
     expect(container.hasClass('custom')).toBe(true);
     expect(container.hasClass('loader')).toBe(true);
   });

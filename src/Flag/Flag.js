@@ -9,20 +9,20 @@ import cxN from 'classnames';
 const Flag = props => {
   const { className, children, asset, imageWidth, imageAlignment, ...rest } = props;
   const finalClassName = cxN({
-    'boldrui-flag__wrapper': true,
+    'boldr-flag__wrapper': true,
     [className]: className && className.length,
   });
   const imageWrapperFinalClassName = cxN({
-    'boldrui-flag__img-wrapper': true,
-    [`boldrui-flag__img-wrapper-${imageWidth}`]: true,
+    'boldr-flag__img-wrapper': true,
+    [`boldr-flag__img-wrapper-${imageWidth}`]: true,
   });
   const imageFinalClassName = cxN({
-    'boldrui-flag__img': true,
+    'boldr-flag__img': true,
   });
   const image = (
     <div className={imageWrapperFinalClassName}>{asset({ className: imageFinalClassName })}</div>
   );
-  const contents = <div className="boldrui-flag__contents">{children}</div>;
+  const contents = <div className="boldr-flag__contents">{children}</div>;
   const isImageLeftAligned = imageAlignment === 'left';
 
   return (

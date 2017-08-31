@@ -60,7 +60,7 @@ storiesOf('Accordion', module)
         <AccordionItemTitle>
           <h3 className="u-position-relative">
             Accordion
-            <div className="boldrui-accordion__arrow" role="presentation" />
+            <div className="boldr-accordion__arrow" role="presentation" />
           </h3>
         </AccordionItemTitle>
         <AccordionItemBody>
@@ -100,7 +100,7 @@ storiesOf('Accordion', module)
         <AccordionItemTitle>
           <h3 className="u-position-relative">
             AccordionItem
-            <div className="boldrui-accordion__arrow" role="presentation" />
+            <div className="boldr-accordion__arrow" role="presentation" />
           </h3>
         </AccordionItemTitle>
         <AccordionItemBody>
@@ -134,7 +134,7 @@ storiesOf('Accordion', module)
         <AccordionItemTitle>
           <h3 className="u-position-relative">
             AccordionItemTitle
-            <div className="boldrui-accordion__arrow" role="presentation" />
+            <div className="boldr-accordion__arrow" role="presentation" />
           </h3>
         </AccordionItemTitle>
         <AccordionItemBody>
@@ -162,7 +162,7 @@ storiesOf('Accordion', module)
         <AccordionItemTitle>
           <h3 className="u-position-relative">
             AccordionItemBody
-            <div className="boldrui-accordion__arrow" role="presentation" />
+            <div className="boldr-accordion__arrow" role="presentation" />
           </h3>
         </AccordionItemTitle>
         <AccordionItemBody>

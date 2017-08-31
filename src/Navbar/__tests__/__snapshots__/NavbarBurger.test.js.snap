@@ -2,7 +2,7 @@
 
 exports[`<NavbarBurger /> should match the snapshot 1`] = `
 <div
-  className="boldrui-navbar__burger"
+  className="boldr-navbar__burger"
 >
   <span />
   <span />

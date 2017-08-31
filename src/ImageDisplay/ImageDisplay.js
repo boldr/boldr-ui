@@ -42,7 +42,7 @@ class ImageDisplay extends BoldrComponent {
       placement: 'top',
       moveBy: { x: 2, y: 0 },
     };
-    const classes = cxN('boldrui-image-display__container', { 'has-logo': imageSrc });
+    const classes = cxN('boldr-image-display__container', { 'has-logo': imageSrc });
     return (
       <div className={classes}>
         <div data-hook="add-image" className="add-logo" onClick={onAddImage}>
@@ -52,21 +52,21 @@ class ImageDisplay extends BoldrComponent {
           </div>
         </div>
         {imageSrc && (
-          <div className="boldrui-image-display__logo--container">
-            <div className="boldrui-image-display__layout">
+          <div className="boldr-image-display__logo--container">
+            <div className="boldr-image-display__layout">
               <img
-                data-hook="boldrui-image-display-image"
-                className="boldrui-image-display__image"
+                data-hook="boldr-image-display-image"
+                className="boldr-image-display__image"
                 src={imageSrc}
                 alt="image thumbnail"
               />
             </div>
-            <div className="boldrui-image-display__bg">
-              <div className="boldrui-image-display__btns">
+            <div className="boldr-image-display__bg">
+              <div className="boldr-image-display__btns">
                 <Tooltip content={editTooltipTxt} {...tooltipCommonProps}>
                   <div
                     data-hook="update-image"
-                    className="boldrui-image-display__btn"
+                    className="boldr-image-display__btn"
                     onClick={onUpdateImage}
                   >
                     <Icon kind="edit" color={iconColor} size="1.2em" />
@@ -75,7 +75,7 @@ class ImageDisplay extends BoldrComponent {
                 <Tooltip content={removeTooltipTxt} {...tooltipCommonProps}>
                   <div
                     data-hook="remove-image"
-                    className="boldrui-image-display__btn"
+                    className="boldr-image-display__btn"
                     onClick={onRemoveImage}
                   >
                     <Icon kind="delete" color={iconColor} size="1.2em" />

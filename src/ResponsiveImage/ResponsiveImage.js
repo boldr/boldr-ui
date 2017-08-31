@@ -156,12 +156,12 @@ export default class ResponsiveImage extends React.Component {
     ) : null;
     const wrapperInlineStyle = isLazy ? { backgroundImage: `url("${lazySrc}")` } : {};
     const finalClassName = mergeClassNames({
-      'boldrui-img__wrapper': true,
+      'boldr-img__wrapper': true,
       [className]: className && className.length,
     });
     const imgFinalClassName = mergeClassNames({
-      'boldrui-img': true,
-      'boldrui-img__loaded': isImageLoaded || isLazy === false,
+      'boldr-img': true,
+      'boldr-img__loaded': isImageLoaded || isLazy === false,
     });
     const imgProps = {
       className: imgFinalClassName,

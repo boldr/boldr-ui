@@ -2,6 +2,6 @@
 
 exports[`NavbarDivider should match the snapshot 1`] = `
 <hr
-  className="boldrui-navbar__divider"
+  className="boldr-navbar__divider"
 />
 `;

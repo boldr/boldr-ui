@@ -47,6 +47,6 @@ export default class CardText extends React.PureComponent {
       ...props
     } = this.props;
 
-    return <Component {...props} className={cn('boldrui-card-text', className)} />;
+    return <Component {...props} className={cn('boldr-card-text', className)} />;
   }
 }

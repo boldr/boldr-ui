@@ -37,11 +37,11 @@ const Paper = (props: Props) => {
     <Component
       {...rest}
       className={cn(
-        `boldrui-paper boldrui-paper__${zDepth}`,
+        `boldr-paper boldr-paper__${zDepth}`,
         {
-          'boldrui-paper__0--hover': zDepth === 0 && raiseOnHover,
-          'boldrui-paper--round': isRounded,
-          'boldrui-paper--no-pad': !isPadded,
+          'boldr-paper__0--hover': zDepth === 0 && raiseOnHover,
+          'boldr-paper--round': isRounded,
+          'boldr-paper--no-pad': !isPadded,
         },
         className,
       )}

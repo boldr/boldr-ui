@@ -15,9 +15,9 @@ describe('Dialog component', () => {
       title: 'hello',
       children: 'content',
     });
-    expect(document.querySelectorAll('.boldrui-dialog-r-anchor').length).toBe(1);
+    expect(document.querySelectorAll('.boldr-dialog-r-anchor').length).toBe(1);
     unmount();
-    expect(document.querySelectorAll('.boldrui-dialog-r-anchor').length).toBe(0);
+    expect(document.querySelectorAll('.boldr-dialog-r-anchor').length).toBe(0);
   });
 
   it('should ignore `visible` config', () => {
@@ -25,7 +25,7 @@ describe('Dialog component', () => {
       children: 'content',
       visible: false,
     });
-    expect(document.querySelectorAll('.boldrui-dialog-r-anchor').length).toBe(1);
+    expect(document.querySelectorAll('.boldr-dialog-r-anchor').length).toBe(1);
     unmount();
   });
 
@@ -47,7 +47,7 @@ describe('Dialog component', () => {
       ref: 'stringRefNotWorking',
     });
 
-    const rootNode = document.querySelector('.boldrui-dialog-r-anchor div[data-reactroot]');
+    const rootNode = document.querySelector('.boldr-dialog-r-anchor div[data-reactroot]');
     const instance = rootNode[Object.keys(rootNode)[0]];
     const dialog = instance._currentElement._owner._instance; // eslint-disable-line
 
@@ -88,10 +88,10 @@ describe('Dialog component', () => {
       title: 'hello',
       children: 'content',
     });
-    expect(document.querySelectorAll('.boldrui-dialog-r-anchor').length).toBe(1);
+    expect(document.querySelectorAll('.boldr-dialog-r-anchor').length).toBe(1);
     closeDialog('foobar');
     jest.runOnlyPendingTimers();
-    expect(document.querySelectorAll('.boldrui-dialog-r-anchor').length).toBe(0);
+    expect(document.querySelectorAll('.boldr-dialog-r-anchor').length).toBe(0);
   });
 
   it('closeDialog is a noop if dialogId not found', () => {

@@ -69,7 +69,7 @@ describe('Portal', () => {
         <div className="portal-child" />
       </Portal>,
     );
-    const container = document.body.querySelector('.custom-className.boldrui-portal');
+    const container = document.body.querySelector('.custom-className.boldr-portal');
     expect(container).toBeTruthy();
     expect(container.querySelector('.portal-child')).toBeTruthy();
     unmountPortal(wrapper);
@@ -81,7 +81,7 @@ describe('Portal', () => {
         <div className="portal-child" />
       </Portal>,
     );
-    const container = document.body.querySelector('.boldrui-portal');
+    const container = document.body.querySelector('.boldr-portal');
     expect(container).toBeTruthy();
     expect(container.style.position).toBe('absolute');
     expect(container.style.top).toBe('100px');
@@ -126,7 +126,7 @@ describe('Portal', () => {
     });
 
     jest.runOnlyPendingTimers();
-    expect(container.querySelector('.boldrui-portal.new-className')).toBeTruthy();
+    expect(container.querySelector('.boldr-portal.new-className')).toBeTruthy();
     unmountPortal(wrapper);
     removeContainer(container);
   });

@@ -343,7 +343,7 @@ Select.propTypes = {
 };
 
 Select.defaultProps = {
-  prefix: 'boldrui',
+  prefix: 'boldr',
   disabled: false,
   className: '',
   open: false,

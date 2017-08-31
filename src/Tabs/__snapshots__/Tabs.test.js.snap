@@ -3,16 +3,16 @@
 exports[`Tabs tabPosition remove card 1`] = `
 <Tabs
   hideAdd={false}
-  prefixCls="boldrui-tabs"
+  prefixCls="boldr-tabs"
   tabBarExtraContent="xxx"
   tabPosition="left"
 >
   <Tabs
-    className="boldrui-tabs-vertical boldrui-tabs-line"
+    className="boldr-tabs-vertical boldr-tabs-line"
     destroyInactiveTabPane={false}
     hideAdd={false}
     onChange={[Function]}
-    prefixCls="boldrui-tabs"
+    prefixCls="boldr-tabs"
     renderTabBar={[Function]}
     renderTabContent={[Function]}
     style={Object {}}
@@ -21,14 +21,14 @@ exports[`Tabs tabPosition remove card 1`] = `
     tabPosition="left"
   >
     <div
-      className="boldrui-tabs boldrui-tabs-left boldrui-tabs-vertical boldrui-tabs-line"
+      className="boldr-tabs boldr-tabs-left boldr-tabs-vertical boldr-tabs-line"
       style={Object {}}
     >
       <ScrollableInkTabBar
         activeKey="1"
         extraContent={
           <div
-            className="boldrui-tabs-extra-content"
+            className="boldr-tabs-extra-content"
           >
             xxx
           </div>
@@ -46,55 +46,55 @@ exports[`Tabs tabPosition remove card 1`] = `
             foo
           </TabPane>
         }
-        prefixCls="boldrui-tabs"
+        prefixCls="boldr-tabs"
         scrollAnimated={true}
         styles={Object {}}
         tabBarPosition="left"
       >
         <div
-          className="boldrui-tabs-bar"
+          className="boldr-tabs-bar"
           onKeyDown={[Function]}
           role="tablist"
           tabIndex="0"
         >
           <div
-            className="boldrui-tabs-nav-container"
+            className="boldr-tabs-nav-container"
           >
             <span
-              className="boldrui-tabs-tab-prev boldrui-tabs-tab-btn-disabled"
+              className="boldr-tabs-tab-prev boldr-tabs-tab-btn-disabled"
               onClick={null}
               onTransitionEnd={[Function]}
               unselectable="unselectable"
             >
               <span
-                className="boldrui-tabs-tab-prev-icon"
+                className="boldr-tabs-tab-prev-icon"
               />
             </span>
             <span
-              className="boldrui-tabs-tab-next boldrui-tabs-tab-btn-disabled"
+              className="boldr-tabs-tab-next boldr-tabs-tab-btn-disabled"
               onClick={null}
               unselectable="unselectable"
             >
               <span
-                className="boldrui-tabs-tab-next-icon"
+                className="boldr-tabs-tab-next-icon"
               />
             </span>
             <div
-              className="boldrui-tabs-nav-wrap"
+              className="boldr-tabs-nav-wrap"
             >
               <div
-                className="boldrui-tabs-nav-scroll"
+                className="boldr-tabs-nav-scroll"
               >
                 <div
-                  className="boldrui-tabs-nav boldrui-tabs-nav-animated"
+                  className="boldr-tabs-nav boldr-tabs-nav-animated"
                 >
                   <div
-                    className="boldrui-tabs-ink-bar boldrui-tabs-ink-bar-animated"
+                    className="boldr-tabs-ink-bar boldr-tabs-ink-bar-animated"
                   />
                   <div
                     aria-disabled="false"
                     aria-selected="true"
-                    className="boldrui-tabs-tab-active boldrui-tabs-tab"
+                    className="boldr-tabs-tab-active boldr-tabs-tab"
                     onClick={[Function]}
                     role="tab"
                   >
@@ -105,7 +105,7 @@ exports[`Tabs tabPosition remove card 1`] = `
             </div>
           </div>
           <div
-            className="boldrui-tabs-extra-content"
+            className="boldr-tabs-extra-content"
             style={Object {}}
           >
             xxx
@@ -118,11 +118,11 @@ exports[`Tabs tabPosition remove card 1`] = `
         animatedWithMargin={true}
         destroyInactiveTabPane={false}
         onChange={[Function]}
-        prefixCls="boldrui-tabs"
+        prefixCls="boldr-tabs"
         tabBarPosition="left"
       >
         <div
-          className="boldrui-tabs-content boldrui-tabs-content-animated"
+          className="boldr-tabs-content boldr-tabs-content-animated"
           style={
             Object {
               "marginTop": "0%",
@@ -133,12 +133,12 @@ exports[`Tabs tabPosition remove card 1`] = `
             active={true}
             destroyInactiveTabPane={false}
             placeholder={null}
-            rootPrefixCls="boldrui-tabs"
+            rootPrefixCls="boldr-tabs"
             tab="foo"
           >
             <div
               aria-hidden="false"
-              className="boldrui-tabs-tabpane boldrui-tabs-tabpane-active"
+              className="boldr-tabs-tabpane boldr-tabs-tabpane-active"
               role="tabpanel"
             >
               foo

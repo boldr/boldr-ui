@@ -26,7 +26,7 @@ function loadStories() {
   require('../src/ContentPromo/ContentPromo.stories');
   require('../src/Flag/Flag.stories');
   require('../src/Heading/Heading.stories');
-  require('../src/Headline/Headline.stories');
+  // require('../src/Headline/Headline.stories');
   require('../src/ImageDisplay/ImageDisplay.stories');
   require('../src/Loader/Loader.stories');
 

@@ -36,13 +36,13 @@ export default class Anchor extends React.PureComponent<Props, *> {
     const nodeProps = omit(this.props, PLAIN_BLACKLIST);
     return (
       <NavLink
-        className="boldrui-link"
+        className="boldr-link"
         onClick={this.handleClick}
         title={label}
         to={href}
         {...nodeProps}
       >
-        <Icon className="boldrui-icon" color={iconColor} size={iconSize} kind={icon} />
+        <Icon className="boldr-icon" color={iconColor} size={iconSize} kind={icon} />
         {label}
       </NavLink>
     );
@@ -56,7 +56,7 @@ export default class Anchor extends React.PureComponent<Props, *> {
     return (
       <a
         {...nodeProps}
-        className="boldrui-link"
+        className="boldr-link"
         onClick={this.handleClick}
         title={label}
         href={href}

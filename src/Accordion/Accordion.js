@@ -75,14 +75,14 @@ class Accordion extends React.Component<Props, State> {
         disabled: item.props.disabled,
         isAccordion: isAccordion,
         isExpanded: isExpanded,
-        key: `boldrui-accordion__item-${key}`,
+        key: `boldr-accordion__item-${key}`,
         onClick: this.handleClick.bind(this, key),
       });
     });
   };
 
   render() {
-    return <div className="boldrui-accordion">{this.renderItems()}</div>;
+    return <div className="boldr-accordion">{this.renderItems()}</div>;
   }
 }
 

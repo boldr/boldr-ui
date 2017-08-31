@@ -38,8 +38,8 @@ class AccordionItem extends React.Component<Props, State> {
       if (item.type.accordionElementName === 'AccordionItemTitle') {
         itemProps.isExpanded = isExpanded;
         itemProps.key = 'title';
-        itemProps.id = `boldrui-accordion__title-${itemUuid}`;
-        itemProps.ariaControls = `boldrui-accordion__body-${itemUuid}`;
+        itemProps.id = `boldr-accordion__title-${itemUuid}`;
+        itemProps.ariaControls = `boldr-accordion__body-${itemUuid}`;
         itemProps.onClick = onClick;
         itemProps.role = isAccordion ? 'tab' : 'button';
 
@@ -47,7 +47,7 @@ class AccordionItem extends React.Component<Props, State> {
       } else if (item.type.accordionElementName === 'AccordionItemBody') {
         itemProps.isExpanded = isExpanded;
         itemProps.key = 'body';
-        itemProps.id = `boldrui-accordion__body-${itemUuid}`;
+        itemProps.id = `boldr-accordion__body-${itemUuid}`;
         itemProps.role = isAccordion ? 'tabpanel' : '';
 
         return React.cloneElement(item, itemProps);
@@ -58,7 +58,7 @@ class AccordionItem extends React.Component<Props, State> {
   };
 
   render() {
-    return <div className="boldrui-accordion__item">{this.renderChildren()}</div>;
+    return <div className="boldr-accordion__item">{this.renderChildren()}</div>;
   }
 }
 

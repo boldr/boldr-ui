@@ -80,9 +80,9 @@ export default class CardTitle extends Component {
         {...props}
         style={style}
         className={cn(
-          'boldrui-card__title',
+          'boldr-card__title',
           {
-            'boldrui-card__title--primary': !avatar,
+            'boldr-card__title--primary': !avatar,
           },
           className,
         )}

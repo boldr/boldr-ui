@@ -4,33 +4,33 @@ import { shallowToJson } from 'enzyme-to-json';
 import { Container } from './Container';
 
 describe('Container', () => {
-  // it('should render a div with .boldrui-container', () => {
+  // it('should render a div with .boldr-container', () => {
   //   const container = shallow(<Container>My Container</Container>);
-  //   expect(container.contains(<div className="boldrui-container">My Container</div>)).toBe(true);
+  //   expect(container.contains(<div className="boldr-container">My Container</div>)).toBe(true);
   // });
   //
-  // it('should render a p with .boldrui-container', () => {
+  // it('should render a p with .boldr-container', () => {
   //   const container = shallow(<Container tag="p">My Container</Container>);
-  //   expect(container.contains(<p className="boldrui-container">My Container</p>)).toBe(true);
+  //   expect(container.contains(<p className="boldr-container">My Container</p>)).toBe(true);
   // });
 
-  it('should render a div with .boldrui-container with modifiers', () => {
+  it('should render a div with .boldr-container with modifiers', () => {
     const container = shallow(<Container isFluid />);
-    expect(container.hasClass('boldrui-container')).toBe(true);
+    expect(container.hasClass('boldr-container')).toBe(true);
     expect(container.hasClass('is-fluid')).toBe(true);
   });
 
-  it('should render a div with .boldrui-container, modifiers and custom classNames', () => {
+  it('should render a div with .boldr-container, modifiers and custom classNames', () => {
     const container = shallow(<Container isFluid className="custom loader" />);
-    expect(container.hasClass('boldrui-container')).toBe(true);
+    expect(container.hasClass('boldr-container')).toBe(true);
     expect(container.hasClass('is-fluid')).toBe(true);
     expect(container.hasClass('custom')).toBe(true);
     expect(container.hasClass('loader')).toBe(true);
   });
 
-  it('should render a div with .boldrui-container and custom classNames', () => {
+  it('should render a div with .boldr-container and custom classNames', () => {
     const container = shallow(<Container className="custom loader" />);
-    expect(container.hasClass('boldrui-container')).toBe(true);
+    expect(container.hasClass('boldr-container')).toBe(true);
     expect(container.hasClass('custom')).toBe(true);
     expect(container.hasClass('loader')).toBe(true);
   });

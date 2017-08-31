@@ -2,11 +2,11 @@
 
 exports[`AccordionItem renders correctly with accordion false 1`] = `
 <div
-  className="boldrui-accordion__item"
+  className="boldr-accordion__item"
 >
   <div
-    ariaControls="boldrui-accordion__body-2"
-    id="boldrui-accordion__title-2"
+    ariaControls="boldr-accordion__body-2"
+    id="boldr-accordion__title-2"
     isExpanded={false}
     onClick={[Function]}
     role="button"
@@ -16,7 +16,7 @@ exports[`AccordionItem renders correctly with accordion false 1`] = `
     </div>
   </div>
   <div
-    id="boldrui-accordion__body-2"
+    id="boldr-accordion__body-2"
     isExpanded={false}
     role=""
   >
@@ -29,11 +29,11 @@ exports[`AccordionItem renders correctly with accordion false 1`] = `
 
 exports[`AccordionItem renders correctly with accordion true 1`] = `
 <div
-  className="boldrui-accordion__item"
+  className="boldr-accordion__item"
 >
   <div
-    ariaControls="boldrui-accordion__body-1"
-    id="boldrui-accordion__title-1"
+    ariaControls="boldr-accordion__body-1"
+    id="boldr-accordion__title-1"
     isExpanded={false}
     onClick={[Function]}
     role="tab"
@@ -43,7 +43,7 @@ exports[`AccordionItem renders correctly with accordion true 1`] = `
     </div>
   </div>
   <div
-    id="boldrui-accordion__body-1"
+    id="boldr-accordion__body-1"
     isExpanded={false}
     role="tabpanel"
   >
@@ -56,11 +56,11 @@ exports[`AccordionItem renders correctly with accordion true 1`] = `
 
 exports[`AccordionItem renders with different className 1`] = `
 <div
-  className="boldrui-accordion__item"
+  className="boldr-accordion__item"
 >
   <div
-    ariaControls="boldrui-accordion__body-4"
-    id="boldrui-accordion__title-4"
+    ariaControls="boldr-accordion__body-4"
+    id="boldr-accordion__title-4"
     isExpanded={false}
     onClick={[Function]}
     role="tab"
@@ -70,7 +70,7 @@ exports[`AccordionItem renders with different className 1`] = `
     </div>
   </div>
   <div
-    id="boldrui-accordion__body-4"
+    id="boldr-accordion__body-4"
     isExpanded={false}
     role="tabpanel"
   >
@@ -83,7 +83,7 @@ exports[`AccordionItem renders with different className 1`] = `
 
 exports[`AccordionItem still renders with incorrect type children 1`] = `
 <div
-  className="boldrui-accordion__item"
+  className="boldr-accordion__item"
 >
   <div>
     Fake title

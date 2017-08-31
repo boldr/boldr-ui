@@ -2,7 +2,7 @@
 
 exports[`<NavbarItem /> should match the snapshot 1`] = `
 <div
-  className="boldrui-navbar__item"
+  className="boldr-navbar__item"
   href="#"
 >
   My NavbarItem

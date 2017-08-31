@@ -13,7 +13,7 @@ describe('NavbarLink', () => {
 
     const customComponentRendered = (
       <div>
-        My Button <a href="#" className="boldrui-navbar__link" />
+        My Button <a href="#" className="boldr-navbar__link" />
       </div>
     );
 
@@ -21,43 +21,43 @@ describe('NavbarLink', () => {
     expect(component.contains(customComponentRendered)).toBe(true);
   });
 
-  it('should render an anchor with .boldrui-navbar__link', () => {
+  it('should render an anchor with .boldr-navbar__link', () => {
     const component = shallow(<NavbarLink href="#">My NavbarLink</NavbarLink>);
     expect(
       component.contains(
-        <a href="#" className="boldrui-navbar__link">
+        <a href="#" className="boldr-navbar__link">
           My NavbarLink
         </a>,
       ),
     ).toBe(true);
   });
 
-  it('should render a button with .boldrui-navbar__link', () => {
+  it('should render a button with .boldr-navbar__link', () => {
     const component = shallow(<NavbarLink tag="button">My NavbarLink</NavbarLink>);
-    expect(
-      component.contains(<button className="boldrui-navbar__link">My NavbarLink</button>),
-    ).toBe(true);
+    expect(component.contains(<button className="boldr-navbar__link">My NavbarLink</button>)).toBe(
+      true,
+    );
   });
 
-  it('should render a a with .boldrui-navbar__link and modifiers', () => {
+  it('should render a a with .boldr-navbar__link and modifiers', () => {
     const component = shallow(<NavbarLink isActive />);
     expect(component.is('a')).toBe(true);
-    expect(component.hasClass('boldrui-navbar__link')).toBe(true);
+    expect(component.hasClass('boldr-navbar__link')).toBe(true);
     expect(component.hasClass('is-active')).toBe(true);
   });
 
-  it('should render a a with .boldrui-navbar__link, modifiers and custom classNames', () => {
+  it('should render a a with .boldr-navbar__link, modifiers and custom classNames', () => {
     const component = shallow(<NavbarLink isActive className="custom" />);
     expect(component.is('a')).toBe(true);
-    expect(component.hasClass('boldrui-navbar__link')).toBe(true);
+    expect(component.hasClass('boldr-navbar__link')).toBe(true);
     expect(component.hasClass('is-active')).toBe(true);
     expect(component.hasClass('custom')).toBe(true);
   });
 
-  it('should render a a with .boldrui-navbar__link and custom classNames', () => {
+  it('should render a a with .boldr-navbar__link and custom classNames', () => {
     const component = shallow(<NavbarLink className="custom" />);
     expect(component.is('a')).toBe(true);
-    expect(component.hasClass('boldrui-navbar__link')).toBe(true);
+    expect(component.hasClass('boldr-navbar__link')).toBe(true);
     expect(component.hasClass('custom')).toBe(true);
   });
   it('should match the snapshot', () => {

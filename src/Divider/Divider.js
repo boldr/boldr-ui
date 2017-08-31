@@ -39,8 +39,8 @@ class Divider extends React.PureComponent<DividerProps, *> {
         className={cn(
           BASE_ELEMENT,
           {
-            'boldrui-divider__vertical': vertical,
-            'boldrui-divider__inset': inset,
+            'boldr-divider__vertical': vertical,
+            'boldr-divider__inset': inset,
           },
           className,
         )}
