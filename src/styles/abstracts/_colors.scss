@@ -48,22 +48,27 @@ $black-transparent: rgba(0, 0, 0, 0.87);
 // Colors
 $black: hsl(0, 0%, 4%) !default;
 // Neutral Colors
-$neutral-1: #ECF0F0;
-$neutral-2: #F7F7F9;
-$neutral-3: #DEE0E3;
-$neutral-4: #9198A0;
+$neutral-1: #ECF0F0 !default;
+$neutral-2: #F7F7F9 !default;
+$neutral-3: #DEE0E3 !default;
+$neutral-4: #9198A0 !default;
 
-// Primary Colors
-$primary-1: #3C97D3;
-
-$primary-3: #1B252F;
-$primary-4: #243140;
-$primary-4_5: #233040;
-$primary-5: #2D3E50;
-$primary-6: #4F6A92;
+/// @type Color
+$primary-1: #3C97D3 !default;
 /// @type Color
 /// @group theme
-$primary-2: #3178B7;
+$primary-2: #3178B7 !default;
+/// @type Color
+$primary-3: #1B252F !default;
+/// @type Color
+$primary-4: $midnight !default;
+/// @type Color
+$primary-4_5: #233040 !default;
+/// @type Color
+$primary-5: #2D3E50 !default;
+/// @type Color
+$primary-6: #4F6A92 !default;
+
 $grey-darker: hsl(0, 0%, 21%) !default;
 $grey-dark: hsl(0, 0%, 29%) !default;
 $grey: hsl(0, 0%, 48%) !default;
